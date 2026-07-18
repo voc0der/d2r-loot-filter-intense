@@ -112,18 +112,14 @@ const UNPOPULAR_BASE_KEYS = [
   '9st', // Yari
   '9p9', // Lance
   // Amazon-class spears use separate codes and stay visible for player use
-  // Swords — Phase Blade, Colossus Blade and Colossal Sword stay visible
+  // Swords — useful A5 mercenary bases, Phase Blade, Colossus Sword and
+  // Colossus Blade stay visible
   '7sm', // Ataghan
   '7ss', // Falcata
   '7sb', // Elegant Blade
   '7fc', // Hydra Edge
-  '7bs', // Conquest Sword
-  '72h', // Legend Sword
   '7cm', // Highland Blade
-  '7gs', // Balrog Blade
   '7b7', // Champion Sword
-  '7wd', // Mythical Sword (hides Bul-Kathos set sword)
-  '7ls', // Cryptic Sword
   // Crossbows — all elite crossbows
   '6lx', // Pellet Bow
   '6mx', // Gorgon Crossbow

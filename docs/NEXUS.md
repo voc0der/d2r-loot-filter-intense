@@ -36,7 +36,7 @@ A tiny D2RMM mod that hides trash drops with a barely-visible dot and optionally
 [*][b]Hide Ammo[/b] — arrows and bolts
 [*][b]Hide Large Charms[/b] — hides the Large Charm base label; warning: this includes an unidentified Hellfire Torch because it shares the same base string (an identified Torch remains visible)
 [*][b]Hide Throwing Potions[/b] — all gas and oil potions
-[*][b]Hide Unpopular Bases[/b] — aggressively hides 78 low-priority endgame bases, including normal/exceptional Act 2 merc weapons, weak elite shields and lower Paladin shields; Sacred Targe/Rondache, Vortex, Gilded/HoZ, Monarch, Hyperion and Troll Nest stay visible
+[*][b]Hide Unpopular Bases[/b] — aggressively hides 73 low-priority endgame bases, including normal/exceptional Act 2 merc weapons, weak elite shields and lower Paladin shields; useful Act 5 mercenary sword bases and desirable shields stay visible
 [*][b]Black Labels to Dots[/b] — converts labels whose final inline color is #000/black (ÿc6) from an earlier D2RMM filter into the selected tiny dot
 [*][b]Gem Crunch[/b] — renames all 35 gems by tier: 1Topaz, 2Topaz, 3Topaz, 4Topaz, PTopaz; keeps an earlier inline gem color when possible
 [/list]

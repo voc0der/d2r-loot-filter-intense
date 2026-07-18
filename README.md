@@ -16,7 +16,7 @@ All filters are **off by default** — turn on the ones you want in D2RMM's conf
 | **Hide Ammo** | Arrows and Bolts. |
 | **Hide Large Charms** | The Large Charm base label. **This includes unidentified Hellfire Torch drops; read the warning below.** Small and Grand Charms stay visible. |
 | **Hide Throwing Potions** | Rancid/Choking/Strangling Gas Potions and Oil/Exploding/Fulminating Potions. |
-| **Hide Unpopular Bases** | 78 aggressively filtered, low-priority endgame bases, including normal/exceptional Act 2 merc weapons, weak elite shields, and lower Paladin shields — see the full list below. The genuinely useful shield bases stay visible. **Read the warning below before enabling.** |
+| **Hide Unpopular Bases** | 73 aggressively filtered, low-priority endgame bases, including normal/exceptional Act 2 merc weapons, weak elite shields, and lower Paladin shields — see the full list below. Useful Act 5 mercenary sword bases and genuinely useful shield bases stay visible. **Read the warning below before enabling.** |
 | **Black Labels to Dots** | Converts labels whose final active inline color is D2's `#000`/black code (`ÿc6`) from an earlier D2RMM loot filter into the selected tiny dot. This mod must load later. |
 | **Gem Crunch** | All 35 gems get compact, colored tier labels: `1Topaz`, `2Topaz`, `3Topaz`, `4Topaz`, `PTopaz`. Existing inline gem colors from an earlier filter are kept when possible. |
 
@@ -53,10 +53,12 @@ A ground label is **one string per base, shared by every rarity** — the game e
 
 This is intentionally an **endgame** option. It hides every normal and exceptional generic polearm/spear, including Halberd and useful progression bases such as Bill and Partizan. Their unique/set versions are hidden too, including Woestave, Kelpie Snare, Hone Sundan and Hwanin's Justice. Leave this option off while leveling, or if you still want budget/niche mercenary weapons. The popular elite Act 2 merc bases remain visible; Ogre Axe remains filtered.
 
-The same strict policy now applies to shields. Sacred Targe, Sacred Rondache and Vortex Shield stay visible as the desirable elite Paladin bases, while Gilded Shield stays visible specifically so an unidentified Herald of Zakarum is never masked. Monarch, Hyperion and Troll Nest also stay visible. Lower Paladin shields and weak elite alternatives are filtered, including Heater. This also masks their low-priority unique/set drops: Blackoak Shield, Spike Thorn, Medusa's Gaze, Spirit Ward, Taebaek's Glory and Dragonscale. Other affected uniques (Bonehew, Doombringer, Flamebellow, Demon Limb, Hellrack, Fleshripper, …) and sets (Bul-Kathos' Tribal Guardian, Dangoon's Teaching, Sazabi's Cobalt Redeemer) follow the same aggressive endgame policy. If you disagree with any entry, delete its line from `UNPOPULAR_BASE_KEYS` in [mod.js](mod.js) and reinstall.
+The same strict policy now applies to shields. Sacred Targe, Sacred Rondache and Vortex Shield stay visible as the desirable elite Paladin bases, while Gilded Shield stays visible specifically so an unidentified Herald of Zakarum is never masked. Monarch, Hyperion and Troll Nest also stay visible. Lower Paladin shields and weak elite alternatives are filtered, including Heater. This also masks their low-priority unique/set drops: Blackoak Shield, Spike Thorn, Medusa's Gaze, Spirit Ward, Taebaek's Glory and Dragonscale.
+
+Useful Act 5 mercenary sword bases are carved out of the filter: Conquest Sword, Legend Sword, Balrog Blade, Mythical Sword and Cryptic Sword all stay visible. This preserves Dreadfang and viable ethereal runeword bases, along with Flamebellow, Frostwind, Bul-Kathos' Tribal Guardian and Sazabi's Cobalt Redeemer. Other affected uniques (Bonehew, Doombringer, Demon Limb, Hellrack, Fleshripper, …) and sets (Dangoon's Teaching) follow the aggressive endgame policy. If you disagree with any entry, delete its line from `UNPOPULAR_BASE_KEYS` in [mod.js](mod.js) and reinstall.
 
 <details>
-<summary>Full list (78 bases)</summary>
+<summary>Full list (73 bases)</summary>
 
 - **Axes (1H):** Tomahawk, Small Crescent, War Spike — *kept: Berserker Axe (Grief/BotD), Ettin Axe (eth Oath)*
 - **Axes (2H):** Feral Axe, Silver-edged Axe, Decapitator, Champion Axe, Glorious Axe
@@ -66,7 +68,7 @@ The same strict policy now applies to shields. Sacred Targe, Sacred Rondache and
 - **Javelins:** Ghost Glaive, Hyperion Javelin, Stygian Pilum, Balrog Spear, Winged Harpoon — *Amazon javelins are separate item codes and unaffected*
 - **Polearms:** Bardiche, Voulge, Scythe, Poleaxe, Halberd, War Scythe; Lochaber Axe, Bill, Battle Scythe, Partizan, Bec-de-Corbin, Grim Scythe; Ogre Axe — *kept: elite Colossus Voulge, Thresher, Cryptic Axe, Great Poleaxe, Giant Thresher (endgame A2 merc / Insight / Infinity)*
 - **Spears:** Spear, Trident, Brandistock, Spetum, Pike; War Spear, Fuscina, War Fork, Yari, Lance — *kept: all elite and Amazon-class spears*
-- **Swords:** Ataghan, Falcata, Elegant Blade, Hydra Edge, Conquest Sword, Legend Sword, Highland Blade, Balrog Blade, Champion Sword, Mythical Sword, Cryptic Sword — *kept: Phase Blade, Colossus Blade, Colossal Sword*
+- **Swords:** Ataghan, Falcata, Elegant Blade, Hydra Edge, Highland Blade, Champion Sword — *kept: Conquest Sword, Legend Sword (Dreadfang), Balrog Blade, Mythical Sword, Cryptic Sword, Phase Blade, Colossus Sword, Colossus Blade*
 - **Crossbows:** Pellet Bow, Gorgon Crossbow, Colossus Crossbow, Demon Crossbow
 - **Generic shields:** Heater, Luna, Blade Barrier, Aegis, Ward — *kept: Monarch, Hyperion, Troll Nest*
 - **Paladin shields:** Targe, Rondache, Heraldic Shield, Aerin Shield, Crown Shield; Akaran Targe, Akaran Rondache, Protector Shield, Royal Shield; Kurast Shield, Zakarum Shield — *kept: Gilded Shield (Herald of Zakarum), Sacred Targe, Sacred Rondache, Vortex Shield*
