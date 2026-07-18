@@ -1,9 +1,9 @@
 {
   "name": "D2R Loot Filter — Intense",
-  "description": "Hides trash drops such as potions, ammo, Large Charms, and low-priority equipment bases including weak shields; converts inherited black labels to dots; and can crunch gems into compact tier labels such as 1Topaz and PTopaz. Works standalone or stacked after another D2RMM loot filter. Display strings only — drops are unchanged.",
+  "description": "Hides trash drops such as potions, ammo, Large Charms, and low-priority equipment bases including weak shields and claws; converts inherited black labels to dots; crunches gem names; and can compact Gold pile labels. Works standalone or stacked after another D2RMM loot filter. Display strings only — drops are unchanged.",
   "author": "voc0der",
   "website": "https://github.com/voc0der/d2r-loot-filter-intense",
-  "version": "0.3.2",
+  "version": "0.3.3",
   "config": [
     {
       "type": "section",
@@ -44,7 +44,7 @@
           "type": "checkbox",
           "id": "hideUnpopularBases",
           "name": "Hide Unpopular Bases",
-          "description": "Aggressively hide 73 low-priority endgame bases, including normal/exceptional Act 2 merc weapons, weak elite shields, and lower Paladin shields. Useful Act 5 mercenary sword bases and desirable shield bases stay visible. ENDGAME WARNING: hides ALL rarities, including useful leveling bases and their unique/set drops.",
+          "description": "Aggressively hide 88 low-priority endgame bases, including normal/exceptional Act 2 merc weapons, weak shields, lower Paladin shields, and six non-staffmod claws. Useful Act 5 mercenary swords and desirable shield/staffmod bases stay visible. ENDGAME WARNING: hides ALL rarities, including useful leveling bases and their unique/set drops.",
           "defaultValue": false
         },
         {
@@ -83,6 +83,31 @@
             {
               "label": "Black dot",
               "value": "ÿc6."
+            }
+          ]
+        },
+        {
+          "type": "select",
+          "id": "goldLabel",
+          "name": "Compact Gold Label",
+          "description": "Replace the word Gold after a ground-pile amount with $, neutral G, or no suffix. D2R builds this as a suffix, so the results are 1234 $, 1234 G, or 1234.",
+          "defaultValue": "unchanged",
+          "options": [
+            {
+              "label": "No change",
+              "value": "unchanged"
+            },
+            {
+              "label": "Dollar sign ($)",
+              "value": "dollar"
+            },
+            {
+              "label": "Neutral gold (G)",
+              "value": "neutral"
+            },
+            {
+              "label": "Amount only",
+              "value": "amountOnly"
             }
           ]
         }

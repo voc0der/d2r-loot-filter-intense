@@ -1,14 +1,21 @@
 /**
  * D2R Loot Filter — Intense
  *
- * Hides trash drops with a tiny-dot label and optionally crunches gem names
- * into compact tier labels. Runs after any base loot filter in D2RMM load
- * order: readJson sees earlier output, so writing the same Key overrides it.
+ * Hides trash drops with a tiny-dot label, optionally crunches gem names into
+ * compact tier labels, and can shorten Gold pile labels. Runs after any base
+ * loot filter in D2RMM load order: readJson sees earlier output, so writing the
+ * same Key overrides it.
  */
 
 const ITEM_NAMES_PATH = 'local/lng/strings/item-names.json';
 const ITEM_NAME_AFFIXES_PATH = 'local/lng/strings/item-nameaffixes.json';
 const BLACK_COLOR_CODE = 'ÿc6';
+const GOLD_LABEL_KEY = 'gld';
+const GOLD_LABELS = {
+  dollar: '$',
+  neutral: 'G',
+  amountOnly: '',
+};
 
 // Item codes per filter group. Add codes here to hide more items.
 const REJUV_ONLY_KEYS = [
@@ -69,10 +76,15 @@ const UNPOPULAR_BASE_KEYS = [
   '7gm', // Thunder Maul
   '7ma', // Reinforced Mace
   '7mt', // Devil Star
-  // Daggers — Bone Knife (Wizardspike) stays visible
-  '7di', // Mithral Point
-  '7bl', // Legend Spike
-  '7kr', // Fanged Knife
+  // Daggers stay visible: Reign of the Warlock made every dagger a Warlock
+  // staffmod base, and the 3-socket bases can make Ritual/Void.
+  // Assassin claws without staffmods, useful collisions, or 3 sockets
+  'ktr', // Katar
+  'wrb', // Wrist Blade
+  'axf', // Hatchet Hands
+  'ces', // Cestus
+  '9wb', // Wrist Spike
+  '9xf', // Fascia
   // Throwing — Winged Knife (Warshrike) stays visible
   '7ta', // Flying Axe
   '7b8', // Winged Axe
@@ -125,7 +137,22 @@ const UNPOPULAR_BASE_KEYS = [
   '6mx', // Gorgon Crossbow
   '6hx', // Colossus Crossbow
   '6rx', // Demon Crossbow
-  // Generic shields — Monarch, Hyperion and Troll Nest stay visible
+  // Generic shields (normal)
+  'buc', // Buckler (hides Pelta Lunata and Hsarus' Iron Fist)
+  'sml', // Small Shield (hides Umbral Disk and Cleglaw's Claw)
+  'lrg', // Large Shield (hides Stormguild and Civerb's Ward)
+  'kit', // Kite Shield (hides Steelclash and Milabrega's Orb)
+  'tow', // Tower Shield (hides Bverrit Keep and Sigon's Guard)
+  'gts', // Gothic Shield (hides The Ward and Isenhart's Parry)
+  'bsh', // Bone Shield (hides Wall of the Eyeless)
+  'spk', // Spiked Shield (hides Swordback Hold)
+  // Generic shields (exceptional) — Defender, Round Shield, Pavise, and Grim
+  // Shield stay visible for their genuinely useful unique/set collisions
+  'xrg', // Scutum (hides Stormchaser)
+  'xit', // Dragon Shield (hides Tiamat's Rebuke)
+  'xts', // Ancient Shield (hides Radament's Sphere)
+  'xpk', // Barbed Shield (hides Lance Guard)
+  // Generic shields (elite) — Monarch, Hyperion and Troll Nest stay visible
   'uuc', // Heater
   'uml', // Luna (hides Blackoak Shield)
   'upk', // Blade Barrier (hides Spike Thorn)
@@ -177,6 +204,19 @@ function crunchGemLabel(current, gem) {
   return genderPrefix + color + gem.label;
 }
 
+function compactGoldLabel(current, label) {
+  if (label === '') {
+    return '';
+  }
+
+  const currentString = typeof current === 'string' ? current : '';
+  const genderPrefixMatch = currentString.match(/^(\[[mf]s\])/);
+  const colorMatches = currentString.match(/ÿc./g);
+  const genderPrefix = genderPrefixMatch !== null ? genderPrefixMatch[1] : '';
+  const color = colorMatches !== null ? colorMatches[colorMatches.length - 1] : '';
+  return genderPrefix + color + label;
+}
+
 function hasTerminalBlackColor(value, replacement) {
   if (typeof value !== 'string' || value === replacement) {
     return false;
@@ -199,6 +239,7 @@ function updateStringFile(
   path,
   keysToHide,
   gemRenames,
+  goldLabel,
   changedKeys,
   hideString,
   blackLabelsToDots,
@@ -225,7 +266,7 @@ function updateStringFile(
 
     // Write every locale field, not just enUS, so this works on non-English
     // clients too. Explicit hiding wins, followed by inherited black labels,
-    // then Gem Crunch.
+    // then Gem Crunch and the compact Gold suffix.
     if (keysToHide[entry.Key] === true) {
       for (const field in entry) {
         if (field !== 'id' && field !== 'Key') {
@@ -249,6 +290,13 @@ function updateStringFile(
         }
       }
       changedKeys[entry.Key] = true;
+    } else if (entry.Key === GOLD_LABEL_KEY && goldLabel !== null) {
+      for (const field in entry) {
+        if (field !== 'id' && field !== 'Key') {
+          entry[field] = compactGoldLabel(entry[field], goldLabel);
+        }
+      }
+      changedKeys[entry.Key] = true;
     }
   });
 
@@ -265,9 +313,17 @@ const hideGroups = [
 
 const gemCrunchEnabled = config.gemCrunch === true;
 const blackLabelsToDotsEnabled = config.blackLabelsToDots === true;
+const goldLabel = Object.prototype.hasOwnProperty.call(GOLD_LABELS, config.goldLabel)
+  ? GOLD_LABELS[config.goldLabel]
+  : null;
 const hideString = config.hideStyle;
 
-if (hideGroups.length === 0 && !gemCrunchEnabled && !blackLabelsToDotsEnabled) {
+if (
+  hideGroups.length === 0
+  && !gemCrunchEnabled
+  && !blackLabelsToDotsEnabled
+  && goldLabel === null
+) {
   console.log('No filter groups enabled — nothing to do.');
 } else {
   // Combined key maps from all enabled groups so item-names.json is read and
@@ -296,12 +352,13 @@ if (hideGroups.length === 0 && !gemCrunchEnabled && !blackLabelsToDotsEnabled) {
     ITEM_NAMES_PATH,
     keysToHide,
     gemRenames,
+    goldLabel,
     changedKeys,
     hideString,
     blackLabelsToDotsEnabled,
     blackLabelChanges,
   );
-  if (gemCrunchEnabled || blackLabelsToDotsEnabled) {
+  if (gemCrunchEnabled || blackLabelsToDotsEnabled || goldLabel !== null) {
     // Regular Diamond/Emerald/Ruby/Sapphire are stored here instead of in
     // item-names.json. Processing the full rename map keeps this resilient if
     // Blizzard moves any other gem strings between the two files. This is also
@@ -310,6 +367,7 @@ if (hideGroups.length === 0 && !gemCrunchEnabled && !blackLabelsToDotsEnabled) {
       ITEM_NAME_AFFIXES_PATH,
       {},
       gemRenames,
+      goldLabel,
       changedKeys,
       hideString,
       blackLabelsToDotsEnabled,
@@ -327,6 +385,9 @@ if (hideGroups.length === 0 && !gemCrunchEnabled && !blackLabelsToDotsEnabled) {
   }
   if (gemCrunchEnabled) {
     reportGroups.push({ name: 'Gem Crunch', verb: 'renamed', keys: gemKeys });
+  }
+  if (goldLabel !== null) {
+    reportGroups.push({ name: 'Compact Gold Label', verb: 'renamed', keys: [GOLD_LABEL_KEY] });
   }
 
   let totalChanged = 0;
