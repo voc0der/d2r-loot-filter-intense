@@ -1,6 +1,8 @@
 # D2R Loot Filter — Intense
 
-A tiny [D2RMM](https://www.nexusmods.com/diablo2resurrected/mods/169) mod for Diablo II: Resurrected that hides trash drops with a barely-visible dot, crunches gem names into compact tier labels, and can shorten Gold pile labels.
+A tiny [D2RMM](https://www.nexusmods.com/diablo2resurrected/mods/169) mod for Diablo II: Resurrected's **Lord of Destruction ruleset** that hides trash drops with a barely-visible dot, crunches gem names into compact tier labels, and can shorten Gold pile labels.
+
+> **Ruleset:** This mod targets Lord of Destruction content. Reign of the Warlock items, runewords, classes and mechanics are intentionally excluded from its filtering decisions.
 
 It is standalone — it works with no other mods installed — but it also stacks cleanly as an overlay **after any other D2RMM loot filter** (e.g. [Caedendi's Loot Filter Extended](https://github.com/Caedendi/D2RMM-Loot-Filter-Extended)) in D2RMM load order. Because D2RMM mods see the output of earlier mods, whatever this mod hides or renames wins over whatever the base filter did with the same item. Changes are written to every locale field, so they work on non-English clients too.
 
@@ -16,7 +18,7 @@ All filters are **off by default** — turn on the ones you want in D2RMM's conf
 | **Hide Ammo** | Arrows and Bolts. |
 | **Hide Large Charms** | The Large Charm base label. **This includes unidentified Hellfire Torch drops; read the warning below.** Small and Grand Charms stay visible. |
 | **Hide Throwing Potions** | Rancid/Choking/Strangling Gas Potions and Oil/Exploding/Fulminating Potions. |
-| **Hide Unpopular Bases** | 88 aggressively filtered, low-priority endgame bases, including normal/exceptional Act 2 merc weapons, weak shields, lower Paladin shields, and non-staffmod claws — see the full list below. Useful Act 5 mercenary swords and genuinely useful shield/staffmod bases stay visible. **Read the warning below before enabling.** |
+| **Hide Unpopular Bases** | 90 aggressively filtered, low-priority LoD endgame bases, including normal/exceptional Act 2 merc weapons, weak shields, lower Paladin shields, weak elite daggers, and non-staffmod claws — see the full list below. Useful Act 5 mercenary swords and genuinely useful shield/staffmod bases stay visible. **Read the warning below before enabling.** |
 | **Black Labels to Dots** | Converts labels whose final active inline color is D2's `#000`/black code (`ÿc6`) from an earlier D2RMM loot filter into the selected tiny dot. This mod must load later. |
 | **Gem Crunch** | All 35 gems get compact, colored tier labels: `1Topaz`, `2Topaz`, `3Topaz`, `4Topaz`, `PTopaz`. Standard gem-type colors from an earlier filter are recognized inside multi-color labels. |
 | **Compact Gold Label** | Replaces the word after a ground-pile amount with `$`, neutral `G`, or nothing: `1234 $`, `1234 G`, or `1234`. |
@@ -64,28 +66,29 @@ The same strict policy now applies to shields. Every normal generic shield is fi
 
 Sacred Targe, Sacred Rondache and Vortex Shield stay visible as the desirable elite Paladin bases, while Gilded Shield stays visible specifically so an unidentified Herald of Zakarum is never masked. Lower Paladin shields, Kurast Shield and Zakarum Shield remain filtered. This is a popularity decision rather than a claim that they can never roll well: every Paladin shield can still spawn up to 45 all resistance (or enhanced damage/attack rating) and four sockets. Enabling the option knowingly sacrifices those less-popular Spirit/Exile bases and Dragonscale.
 
-The class-base audit deliberately keeps **all 15 Sorceress orbs and all 15 Necromancer heads**. Damage and defense tier do not make them safe trash: any high-level orb can roll the same endgame Sorceress caster affixes plus staffmods, and even a low-strength Necromancer head can carry valuable staffmods into Rhyme, Splendor or Reign of the Warlock's Vigilance. Barbarian helms, Druid pelts, Amazon weapons and Warlock grimoires are kept for the same staffmod/automod or runeword reason.
+The class-base audit deliberately keeps **all 15 Sorceress orbs and all 15 Necromancer heads**. Damage and defense tier do not make them safe trash: any high-level orb can roll the same endgame Sorceress caster affixes plus staffmods, and even a low-strength Necromancer head can carry valuable staffmods into Rhyme or Splendor. Barbarian helms, Druid pelts and Amazon weapons are kept for the same staffmod/automod or runeword reason.
 
-Six old normal/exceptional Assassin claw bases are filtered because they cannot roll Assassin staffmods, cap at two sockets and have no unique/set collision. Every skill-bearing claw and every three-socket Mosaic/Chaos/Pattern/Plague candidate stays visible. Conversely, **no dagger is filtered anymore**: [Reign of the Warlock](https://news.blizzard.com/en-us/article/24243863/rain-annihilation-in-reign-of-the-warlock) made all daggers Warlock staffmod weapons and added Ritual/Void dagger runewords. Mithril Point, Legend Spike and Fanged Knife were restored; this also prevents the filter from masking Bloodpact Shard, Ghostflame and Fleshripper.
+Six old normal/exceptional Assassin claw bases are filtered because they cannot roll Assassin staffmods, cap at two sockets and have no unique/set collision. Every skill-bearing claw and every three-socket Mosaic/Chaos/Pattern/Plague candidate stays visible. The LoD dagger policy filters Mithril Point and Legend Spike, masking Ghostflame. Bone Knife stays visible for Wizardspike, while Fanged Knife stays visible because it is a fast three-socket Plague base and carries Fleshripper.
 
-Useful Act 5 mercenary sword bases are carved out of the filter: Conquest Sword, Legend Sword, Balrog Blade, Mythical Sword and Cryptic Sword all stay visible. This preserves Dreadfang and viable ethereal runeword bases, along with Flamebellow, Frostwind, Bul-Kathos' Tribal Guardian and Sazabi's Cobalt Redeemer. Other affected uniques (Bonehew, Doombringer, Demon Limb, Hellrack, …) and sets (Dangoon's Teaching) follow the aggressive endgame policy. If you disagree with any entry, delete its line from `UNPOPULAR_BASE_KEYS` in [mod.js](mod.js) and reinstall.
+Useful Act 5 mercenary sword bases are carved out of the filter: Conquest Sword, Legend Sword, Balrog Blade, Mythical Sword and Cryptic Sword all stay visible as viable ethereal runeword bases, along with Flamebellow, Frostwind, Bul-Kathos' Tribal Guardian and Sazabi's Cobalt Redeemer. Other affected uniques (Bonehew, Doombringer, Demon Limb, Hellrack, …) and sets (Dangoon's Teaching) follow the aggressive endgame policy. If you disagree with any entry, delete its line from `UNPOPULAR_BASE_KEYS` in [mod.js](mod.js) and reinstall.
 
 <details>
-<summary>Full list (88 bases)</summary>
+<summary>Full list (90 bases)</summary>
 
 - **Axes (1H):** Tomahawk, Small Crescent, War Spike — *kept: Berserker Axe (Grief/BotD), Ettin Axe (eth Oath)*
 - **Axes (2H):** Feral Axe, Silver-edged Axe, Decapitator, Champion Axe, Glorious Axe
 - **Clubs/Maces/Hammers:** Truncheon, Tyrant Club, Thunder Maul, Reinforced Mace, Devil Star — *kept: Scourge (Stormlash), Legendary Mallet (Schaefer's), Ogre Maul (IK set)*
+- **Daggers:** Mithril Point, Legend Spike — *kept: Bone Knife (Wizardspike), Fanged Knife (three-socket Plague/Fleshripper)*
 - **Assassin claws:** Katar, Wrist Blade, Hatchet Hands, Cestus, Wrist Spike, Fascia — *kept: every claw with Assassin staffmods or a three-socket runeword cap*
 - **Throwing:** Flying Axe, Winged Axe, Flying Knife — *kept: Winged Knife (Warshrike)*
 - **Javelins:** Ghost Glaive, Hyperion Javelin, Stygian Pilum, Balrog Spear, Winged Harpoon — *Amazon javelins are separate item codes and unaffected*
 - **Polearms:** Bardiche, Voulge, Scythe, Poleaxe, Halberd, War Scythe; Lochaber Axe, Bill, Battle Scythe, Partizan, Bec-de-Corbin, Grim Scythe; Ogre Axe — *kept: elite Colossus Voulge, Thresher, Cryptic Axe, Great Poleaxe, Giant Thresher (endgame A2 merc / Insight / Infinity)*
 - **Spears:** Spear, Trident, Brandistock, Spetum, Pike; War Spear, Fuscina, War Fork, Yari, Lance — *kept: all elite and Amazon-class spears*
-- **Swords:** Ataghan, Falcata, Elegant Blade, Hydra Edge, Highland Blade, Champion Sword — *kept: Conquest Sword, Legend Sword (Dreadfang), Balrog Blade, Mythical Sword, Cryptic Sword, Phase Blade, Colossus Sword, Colossus Blade*
+- **Swords:** Ataghan, Falcata, Elegant Blade, Hydra Edge, Highland Blade, Champion Sword — *kept: Conquest Sword, Legend Sword, Balrog Blade, Mythical Sword, Cryptic Sword, Phase Blade, Colossus Sword, Colossus Blade*
 - **Crossbows:** Pellet Bow, Gorgon Crossbow, Colossus Crossbow, Demon Crossbow
 - **Generic shields:** Buckler, Small Shield, Large Shield, Kite Shield, Tower Shield, Gothic Shield, Bone Shield, Spiked Shield; Scutum, Dragon Shield, Ancient Shield, Barbed Shield; Heater, Luna, Blade Barrier, Aegis, Ward — *kept: Defender, Round Shield, Pavise, Grim Shield, Monarch, Hyperion, Troll Nest*
 - **Paladin shields:** Targe, Rondache, Heraldic Shield, Aerin Shield, Crown Shield; Akaran Targe, Akaran Rondache, Protector Shield, Royal Shield; Kurast Shield, Zakarum Shield — *kept: Gilded Shield (Herald of Zakarum), Sacred Targe, Sacred Rondache, Vortex Shield*
-- **Other families kept in full:** Daggers, bows, staves, wands, scepters, Sorceress orbs, Necromancer heads, Barbarian helms, Druid pelts, Amazon class weapons and Warlock grimoires
+- **Other families kept in full:** Bows, staves, wands, scepters, Sorceress orbs, Necromancer heads, Barbarian helms, Druid pelts and Amazon class weapons
 
 </details>
 
@@ -93,7 +96,7 @@ Useful Act 5 mercenary sword bases are carved out of the filter: Conquest Sword,
 
 Display-string mods are **rarity-blind**. An unidentified magic, rare, unique or set item on the ground shows its *base name* — the exact same string a white drop uses — and the engine picks the color per drop. There is no data-driven hook to rename or hide a label for one rarity only, which is why no D2RMM loot filter (including the big community ones) offers "hide blues" / "hide rares". Rules like *"hide all magic items except jewels"* can't be built this way; the closest approximation is hiding whole bases you never want at any rarity (the **Hide Unpopular Bases** option above). Jewels, by the way, are never touched by this mod, so they always stay visible.
 
-Ethereal status is also a runtime property, not part of an item's base-name string. This overlay therefore cannot hide only ethereal boots, gloves or belts while continuing to show their non-ethereal versions; rewriting those base names would also hide every non-eth drop and unidentified unique on the same bases. A global ethereal color from another mod is applied at render time, so **Black Labels to Dots** cannot detect it either. Use D2R's [built-in Loot Filter](https://news.blizzard.com/en-us/article/24243863/rain-annihilation-in-reign-of-the-warlock#Quality-of-Life) instead: an **Ethereal / Socketed** hide rule limited to the Boots, Gloves and Belts categories handles ordinary gray ethereal items in those slots. Keep unique exceptions in mind — ethereal Sandstorm Trek is desirable because it repairs its own durability.
+Ethereal status is also a runtime property, not part of an item's base-name string. This overlay therefore cannot hide only ethereal boots, gloves or belts while continuing to show their non-ethereal versions; rewriting those base names would also hide every non-eth drop and unidentified unique on the same bases. A global ethereal color from another mod is applied at render time, so **Black Labels to Dots** cannot detect it either. LoD's display-string data provides no conditional hook for that rule; a runtime-aware filtering system would be required. Keep unique exceptions in mind — ethereal Sandstorm Trek is desirable because it repairs its own durability.
 
 ## Screenshots
 

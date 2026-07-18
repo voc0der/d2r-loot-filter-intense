@@ -4,7 +4,7 @@
  * Hides trash drops with a tiny-dot label, optionally crunches gem names into
  * compact tier labels, and can shorten Gold pile labels. Runs after any base
  * loot filter in D2RMM load order: readJson sees earlier output, so writing the
- * same Key overrides it.
+ * same Key overrides it. Targets D2R's Lord of Destruction ruleset.
  */
 
 const ITEM_NAMES_PATH = 'local/lng/strings/item-names.json';
@@ -76,8 +76,10 @@ const UNPOPULAR_BASE_KEYS = [
   '7gm', // Thunder Maul
   '7ma', // Reinforced Mace
   '7mt', // Devil Star
-  // Daggers stay visible: Reign of the Warlock made every dagger a Warlock
-  // staffmod base, and the 3-socket bases can make Ritual/Void.
+  // Daggers (LoD) — Bone Knife (Wizardspike) stays visible
+  '7di', // Mithril Point
+  '7bl', // Legend Spike (hides Ghostflame)
+  // Fanged Knife stays visible: 3-socket Plague base and Fleshripper collision
   // Assassin claws without staffmods, useful collisions, or 3 sockets
   'ktr', // Katar
   'wrb', // Wrist Blade
