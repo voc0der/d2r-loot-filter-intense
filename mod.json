@@ -3,7 +3,7 @@
   "description": "Hides trash drops such as potions, ammo, Large Charms, and low-priority equipment bases including weak shields; converts inherited black labels to dots; and can crunch gems into compact tier labels such as 1Topaz and PTopaz. Works standalone or stacked after another D2RMM loot filter. Display strings only — drops are unchanged.",
   "author": "voc0der",
   "website": "https://github.com/voc0der/d2r-loot-filter-intense",
-  "version": "0.3.1",
+  "version": "0.3.2",
   "config": [
     {
       "type": "section",
@@ -58,7 +58,7 @@
           "type": "checkbox",
           "id": "gemCrunch",
           "name": "Gem Crunch",
-          "description": "Rename every gem to a compact colored tier label: 1 = Chipped, 2 = Flawed, 3 = regular, 4 = Flawless, P = Perfect (for example, 1Topaz and PTopaz). Keeps an existing inline gem color when stacked after another filter. See the README for the shared-affix caveat.",
+          "description": "Rename every gem to a compact colored tier label: 1 = Chipped, 2 = Flawed, 3 = regular, 4 = Flawless, P = Perfect (for example, 1Topaz and PTopaz). Recognizes standard gem-type colors in multi-color labels from an earlier filter; otherwise preserves its first inline color. See the README for the shared-affix caveat.",
           "defaultValue": false
         }
       ]

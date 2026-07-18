@@ -38,7 +38,7 @@ A tiny D2RMM mod that hides trash drops with a barely-visible dot and optionally
 [*][b]Hide Throwing Potions[/b] — all gas and oil potions
 [*][b]Hide Unpopular Bases[/b] — aggressively hides 73 low-priority endgame bases, including normal/exceptional Act 2 merc weapons, weak elite shields and lower Paladin shields; useful Act 5 mercenary sword bases and desirable shields stay visible
 [*][b]Black Labels to Dots[/b] — converts labels whose final inline color is #000/black (ÿc6) from an earlier D2RMM filter into the selected tiny dot
-[*][b]Gem Crunch[/b] — renames all 35 gems by tier: 1Topaz, 2Topaz, 3Topaz, 4Topaz, PTopaz; keeps an earlier inline gem color when possible
+[*][b]Gem Crunch[/b] — renames all 35 gems by tier: 1Topaz, 2Topaz, 3Topaz, 4Topaz, PTopaz; recognizes standard gem-type colors inside multi-color labels from an earlier filter
 [/list]
 
 Hidden labels become a gray or near-invisible black dot (selectable). Display strings only — drops are unchanged, works in every client language. See the README for the Large Charm/Hellfire Torch warning, shield/unique collisions, Black Labels compatibility details, Gem Crunch's four shared-affix strings, and the ethereal-item limitation.

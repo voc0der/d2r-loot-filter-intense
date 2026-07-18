@@ -18,7 +18,7 @@ All filters are **off by default** — turn on the ones you want in D2RMM's conf
 | **Hide Throwing Potions** | Rancid/Choking/Strangling Gas Potions and Oil/Exploding/Fulminating Potions. |
 | **Hide Unpopular Bases** | 73 aggressively filtered, low-priority endgame bases, including normal/exceptional Act 2 merc weapons, weak elite shields, and lower Paladin shields — see the full list below. Useful Act 5 mercenary sword bases and genuinely useful shield bases stay visible. **Read the warning below before enabling.** |
 | **Black Labels to Dots** | Converts labels whose final active inline color is D2's `#000`/black code (`ÿc6`) from an earlier D2RMM loot filter into the selected tiny dot. This mod must load later. |
-| **Gem Crunch** | All 35 gems get compact, colored tier labels: `1Topaz`, `2Topaz`, `3Topaz`, `4Topaz`, `PTopaz`. Existing inline gem colors from an earlier filter are kept when possible. |
+| **Gem Crunch** | All 35 gems get compact, colored tier labels: `1Topaz`, `2Topaz`, `3Topaz`, `4Topaz`, `PTopaz`. Standard gem-type colors from an earlier filter are recognized inside multi-color labels. |
 
 Hidden items are not removed from the game — their name label is renamed to a tiny dot so they no longer clutter your screen on Alt. You can pick the dot style:
 
@@ -43,7 +43,7 @@ Gem Crunch replaces the quality word with a one-character tier while keeping the
 | Flawless | `4Topaz` |
 | Perfect | `PTopaz` |
 
-The same scheme applies to Amethyst, Diamond, Emerald, Ruby, Sapphire, Topaz and Skull. When an earlier D2RMM filter already added an inline color, Gem Crunch keeps its first color code; otherwise it uses purple/white/green/red/blue/yellow/gray by gem type. The compact English labels are written to every locale.
+The same scheme applies to Amethyst, Diamond, Emerald, Ruby, Sapphire, Topaz and Skull. When an earlier D2RMM filter uses separate colors for the quality word and gem name, Gem Crunch recognizes and keeps the standard gem-type color; otherwise it preserves the first existing inline color or uses purple/white/green/red/blue/yellow/gray by gem type. The compact English labels are written to every locale.
 
 **Shared-affix caveat:** D2R stores the regular Diamond, Emerald, Ruby and Sapphire strings in `item-nameaffixes.json`, where those four keys can also be reused in generated magic-item names. Renaming all 35 gems therefore can also change that shared word — for example, `Ruby Jewel of Fervor` may display as `3Ruby Jewel of Fervor`. There is no separate gem-only display string for those four regular gems.
 

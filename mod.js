@@ -148,10 +148,10 @@ const UNPOPULAR_BASE_KEYS = [
 
 // Gem Crunch: compact tiered gem labels — Chipped -> 1, Flawed -> 2,
 // regular -> 3, Flawless -> 4, Perfect -> P (e.g. "Chipped Topaz" -> "1Topaz").
-// Labels are colored per gem by default; if an earlier mod in load order
-// already colored a gem, its first inline color code is kept instead. Four
-// regular gem keys live in item-nameaffixes.json; the other 31 are in
-// item-names.json, so both files must be processed for complete coverage.
+// Labels are colored per gem by default. If an earlier mod used multiple
+// colors, prefer the known gem-type color wherever it appears; otherwise keep
+// its first inline color. Four regular gem keys live in item-nameaffixes.json;
+// the other 31 are in item-names.json, so both files must be processed.
 const GEM_TIER_LABELS = ['1', '2', '3', '4', 'P'];
 const GEM_CRUNCH = [
   // codes are [chipped, flawed, regular, flawless, perfect]
@@ -169,9 +169,11 @@ function crunchGemLabel(current, gem) {
   // Some localizations begin with a grammatical-gender token. D2R ignores a
   // color placed before it, so keep the token first and put the color after it.
   const genderPrefixMatch = currentString.match(/^(\[[mf]s\])/);
-  const existingColor = currentString.match(/ÿc./);
+  const existingColors = currentString.match(/ÿc./g);
   const genderPrefix = genderPrefixMatch !== null ? genderPrefixMatch[1] : '';
-  const color = existingColor !== null ? existingColor[0] : gem.color;
+  const color = existingColors === null
+    ? gem.color
+    : (existingColors.indexOf(gem.color) !== -1 ? gem.color : existingColors[0]);
   return genderPrefix + color + gem.label;
 }
 
