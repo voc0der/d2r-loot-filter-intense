@@ -3,7 +3,7 @@
   "description": "Hides trash drops (non-rejuv potions, ammo, throwing potions) by renaming their ground labels to a tiny dot. Designed to stack cleanly after ChrisTitusTech/d2r-loot-filter in D2RMM load order, but works standalone too. Display strings only — does not affect actual drops.",
   "author": "voc0der",
   "website": "https://github.com/voc0der/d2r-loot-filter-intense",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "config": [
     {
       "type": "section",
@@ -31,6 +31,13 @@
           "id": "hideThrowing",
           "name": "Hide Throwing Potions",
           "description": "Hide all gas and oil throwing potions.",
+          "defaultValue": false
+        },
+        {
+          "type": "checkbox",
+          "id": "hideUnpopularBases",
+          "name": "Hide Unpopular Bases",
+          "description": "Hide 40 junk elite weapon bases nobody uses (bad axes, off-meta swords, non-Amazon javelins, all elite crossbows...). Merc bases and popular runeword/unique bases stay visible. WARNING: hides ALL rarities of these bases, including their (junk-tier) unique and set drops — ground labels are one string per base.",
           "defaultValue": false
         }
       ]

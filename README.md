@@ -13,6 +13,7 @@ All filters are **off by default** — turn on the ones you want in D2RMM's conf
 | **100% Rejuv Only** | Every potion that is not a Full Rejuvenation Potion: small rejuvs, Minor→Super Healing, Minor→Super Mana. Full Rejuvs stay visible. |
 | **Hide Ammo** | Arrows and Bolts. |
 | **Hide Throwing Potions** | Rancid/Choking/Strangling Gas Potions and Oil/Exploding/Fulminating Potions. |
+| **Hide Unpopular Bases** | 40 junk elite weapon bases nobody uses — see the full list below. Merc bases (elite polearms/spears, one-hand swords) and popular runeword/unique bases stay visible. **Read the warning below before enabling.** |
 
 Hidden items are not removed from the game — their name label is renamed to a tiny dot so they no longer clutter your screen on Alt. You can pick the dot style:
 
@@ -20,6 +21,30 @@ Hidden items are not removed from the game — their name label is renamed to a 
 - **Black dot** (`ÿc6.`) — near-invisible on dark ground.
 
 A dot is used instead of an empty string because an empty name renders as an ugly empty highlight box.
+
+## Hide Unpopular Bases — what's on the list
+
+A ground label is **one string per base, shared by every rarity** — the game engine colors it white/blue/yellow/green/gold at render time. So hiding a base hides *all* of its drops, including uniques and set items on that base. Every base on this list was cross-checked against game data: the affected uniques (Bonehew, Doombringer, Flamebellow, Demon Limb, Hellrack, Fleshripper, …) and set items (Bul-Kathos' Tribal Guardian, Dangoon's Teaching, Sazabi's Cobalt Redeemer) are all junk-tier. If you disagree with any entry, delete its line from `UNPOPULAR_BASE_KEYS` in [mod.js](mod.js) and reinstall.
+
+<details>
+<summary>Full list (40 bases)</summary>
+
+- **Axes (1H):** Tomahawk, Small Crescent, War Spike — *kept: Berserker Axe (Grief/BotD), Ettin Axe (eth Oath)*
+- **Axes (2H):** Feral Axe, Silver-edged Axe, Decapitator, Champion Axe, Glorious Axe
+- **Clubs/Maces/Hammers:** Truncheon, Tyrant Club, Thunder Maul, Reinforced Mace, Devil Star — *kept: Scourge (Stormlash), Legendary Mallet (Schaefer's), Ogre Maul (IK set)*
+- **Daggers:** Mithral Point, Legend Spike, Fanged Knife — *kept: Bone Knife (Wizardspike)*
+- **Throwing:** Flying Axe, Winged Axe, Flying Knife — *kept: Winged Knife (Warshrike)*
+- **Javelins:** Ghost Glaive, Hyperion Javelin, Stygian Pilum, Balrog Spear, Winged Harpoon — *Amazon javelins are separate item codes and unaffected*
+- **Polearms:** Ogre Axe — *kept: Colossus Voulge, Thresher, Cryptic Axe, Great Poleaxe, Giant Thresher (A2 merc / Insight / Infinity)*
+- **Swords:** Ataghan, Falcata, Elegant Blade, Hydra Edge, Conquest Sword, Legend Sword, Highland Blade, Balrog Blade, Champion Sword, Mythical Sword, Cryptic Sword — *kept: Phase Blade, Colossus Blade, Colossal Sword*
+- **Crossbows:** Pellet Bow, Gorgon Crossbow, Colossus Crossbow, Demon Crossbow
+- **Spears, bows, staves, wands, scepters, orbs, claws, class items:** none hidden
+
+</details>
+
+## Limitations — why there's no "hide magic items" option
+
+Display-string mods are **rarity-blind**. An unidentified magic, rare, unique or set item on the ground shows its *base name* — the exact same string a white drop uses — and the engine picks the color per drop. There is no data-driven hook to rename or hide a label for one rarity only, which is why no D2RMM loot filter (including the big community ones) offers "hide blues" / "hide rares". Rules like *"hide all magic items except jewels"* can't be built this way; the closest approximation is hiding whole bases you never want at any rarity (the **Hide Unpopular Bases** option above). Jewels, by the way, are never touched by this mod, so they always stay visible.
 
 ## Screenshots
 
