@@ -21,6 +21,9 @@ const REJUV_ONLY_KEYS = [
   'mp3', // Mana Potion
   'mp4', // Greater Mana Potion
   'mp5', // Super Mana Potion
+  'wms', // Thawing Potion
+  'yps', // Antidote Potion
+  'vps', // Stamina Potion
 ];
 
 const AMMO_KEYS = [

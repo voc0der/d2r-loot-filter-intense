@@ -10,7 +10,7 @@ All filters are **off by default** — turn on the ones you want in D2RMM's conf
 
 | Option | Hides |
 | --- | --- |
-| **100% Rejuv Only** | Every potion that is not a Full Rejuvenation Potion: small rejuvs, Minor→Super Healing, Minor→Super Mana. Full Rejuvs stay visible. |
+| **100% Rejuv Only** | Every potion that is not a Full Rejuvenation Potion: small rejuvs, Minor→Super Healing, Minor→Super Mana, Thawing, Antidote, Stamina. Full Rejuvs (and quest potions) stay visible. |
 | **Hide Ammo** | Arrows and Bolts. |
 | **Hide Throwing Potions** | Rancid/Choking/Strangling Gas Potions and Oil/Exploding/Fulminating Potions. |
 | **Hide Unpopular Bases** | 40 junk elite weapon bases nobody uses — see the full list below. Merc bases (elite polearms/spears, one-hand swords) and popular runeword/unique bases stay visible. **Read the warning below before enabling.** |
