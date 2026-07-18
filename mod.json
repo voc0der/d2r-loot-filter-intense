@@ -1,9 +1,9 @@
 {
   "name": "D2R Loot Filter — Intense",
-  "description": "Hides trash drops (non-rejuv potions, ammo, throwing potions) by renaming their ground labels to a tiny dot. Designed to stack cleanly after ChrisTitusTech/d2r-loot-filter in D2RMM load order, but works standalone too. Display strings only — does not affect actual drops.",
+  "description": "Hides trash drops (non-rejuv potions, ammo, throwing potions, junk bases) by renaming their ground labels to a tiny dot. Works standalone or stacked after any other D2RMM loot filter (order this one later). Display strings only — does not affect actual drops.",
   "author": "voc0der",
   "website": "https://github.com/voc0der/d2r-loot-filter-intense",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "config": [
     {
       "type": "section",

@@ -127,7 +127,13 @@ if (enabledGroups.length === 0) {
     const renamedKeys = {};
     itemNames.forEach((entry) => {
       if (entry != null && keysToHide[entry.Key] === true) {
-        entry.enUS = hideString;
+        // Write every locale field, not just enUS, so hiding works on
+        // non-English clients too.
+        for (const field in entry) {
+          if (field !== 'id' && field !== 'Key') {
+            entry[field] = hideString;
+          }
+        }
         renamedKeys[entry.Key] = true;
       }
     });

@@ -2,7 +2,9 @@
 
 A tiny [D2RMM](https://www.nexusmods.com/diablo2resurrected/mods/169) mod for Diablo II: Resurrected that hides trash drops by renaming their ground labels to a barely-visible dot.
 
-It is standalone — it works with no other mods installed — but it is also designed to stack cleanly as an overlay **after** [ChrisTitusTech/d2r-loot-filter](https://github.com/ChrisTitusTech/d2r-loot-filter) (or any other base loot filter) in D2RMM load order. Because D2RMM mods see the output of earlier mods, whatever this mod hides wins over whatever the base filter did with the same item.
+It is standalone — it works with no other mods installed — but it also stacks cleanly as an overlay **after any other D2RMM loot filter** (e.g. [Caedendi's Loot Filter Extended](https://github.com/Caedendi/D2RMM-Loot-Filter-Extended)) in D2RMM load order. Because D2RMM mods see the output of earlier mods, whatever this mod hides wins over whatever the base filter did with the same item. Hiding writes every locale field, so it works on non-English clients too.
+
+> **Note on [ChrisTitusTech/d2r-loot-filter](https://github.com/ChrisTitusTech/d2r-loot-filter):** that filter is a standalone MPQ launched with its own `-mod lootfilter` argument — it is *not* a D2RMM mod. The game loads only one `-mod` at a time, so it cannot be combined with D2RMM-managed mods (including this one). Launch with `-mod D2RMM` and use a D2RMM-based filter if you want stacking.
 
 ## What it does
 
@@ -61,9 +63,18 @@ _Before/after screenshots coming soon._
    ```
 
 3. Launch D2RMM and enable **D2R Loot Filter — Intense**.
-4. Order it **after** any base loot filter you use (e.g. ChrisTitusTech's d2r-loot-filter) — later mods override earlier ones.
+4. Order it **after** any other D2RMM loot filter you use — later mods override earlier ones.
 5. Pick your filters in the config panel, then click **Install Mods**.
 6. Launch the game with the arguments `-mod D2RMM -txt` (D2RMM's Launch Game button does this for you).
+
+## Troubleshooting — "items are still labeled the old way"
+
+1. **Re-install after every config change.** Toggling checkboxes does nothing until you click **Install Mods** again.
+2. **Read D2RMM's install log.** This mod prints one line per enabled group, e.g. `Hide Ammo: hid 2 of 2 item names.` A warning means a key wasn't found in the current game data.
+3. **Check the output actually contains the hide.** Open `mods\D2RMM\D2RMM.mpq\data\local\lng\strings\item-names.json` and search for `"aqv"` — its name fields should be a tiny `ÿc5.` dot. If they are but the game still shows the old label, the game isn't loading D2RMM's output (next two points).
+4. **Launch with `-mod D2RMM -txt`** — use D2RMM's own Launch Game button to be sure. Launching through Battle.net loads vanilla data.
+5. **Don't combine with MPQ-based filters** (like ChrisTitusTech's) — only one `-mod` loads at a time; whichever argument you launch with wins and the other filter is ignored entirely.
+6. **Order matters within D2RMM**: if another enabled mod rewrites item names and sits *after* this one, its names win. Put this mod last.
 
 ## Safety
 
