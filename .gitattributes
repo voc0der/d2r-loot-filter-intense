@@ -1,0 +1,6 @@
+# The ÿ (U+00FF) color-code escape in mod.json must survive checkout on every
+# platform — force UTF-8 working-tree encoding so nothing re-encodes it.
+* text=auto
+*.json text working-tree-encoding=UTF-8 eol=lf
+*.js text working-tree-encoding=UTF-8 eol=lf
+*.md text eol=lf

@@ -1,0 +1,15 @@
+# Editor / OS junk
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Node junk (no build tooling in this repo, but just in case)
+node_modules/
+
+# Local tooling settings — not part of the mod
+.claude/

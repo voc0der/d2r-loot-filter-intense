@@ -1,0 +1,64 @@
+{
+  "name": "D2R Loot Filter — Intense",
+  "description": "Hides trash drops (non-rejuv potions, ammo, throwing potions) by renaming their ground labels to a tiny dot. Designed to stack cleanly after ChrisTitusTech/d2r-loot-filter in D2RMM load order, but works standalone too. Display strings only — does not affect actual drops.",
+  "author": "voc0der",
+  "website": "https://github.com/voc0der/d2r-loot-filter-intense",
+  "version": "0.1.0",
+  "config": [
+    {
+      "type": "section",
+      "id": "filters",
+      "name": "Filters",
+      "defaultExpanded": true,
+      "allowToggleAll": true,
+      "children": [
+        {
+          "type": "checkbox",
+          "id": "rejuvOnly",
+          "name": "100% Rejuv Only",
+          "description": "Hide every potion that is not a Full Rejuvenation Potion: small rejuvs, all healing potions, all mana potions.",
+          "defaultValue": false
+        },
+        {
+          "type": "checkbox",
+          "id": "hideAmmo",
+          "name": "Hide Ammo",
+          "description": "Hide Arrows and Bolts.",
+          "defaultValue": false
+        },
+        {
+          "type": "checkbox",
+          "id": "hideThrowing",
+          "name": "Hide Throwing Potions",
+          "description": "Hide all gas and oil throwing potions.",
+          "defaultValue": false
+        }
+      ]
+    },
+    {
+      "type": "section",
+      "id": "appearance",
+      "name": "Appearance",
+      "defaultExpanded": true,
+      "children": [
+        {
+          "type": "select",
+          "id": "hideStyle",
+          "name": "Hidden Item Style",
+          "description": "Hidden items are renamed to a tiny colored dot instead of an empty string, because an empty name renders as an ugly empty highlight box.",
+          "defaultValue": "ÿc5.",
+          "options": [
+            {
+              "label": "Gray dot",
+              "value": "ÿc5."
+            },
+            {
+              "label": "Black dot",
+              "value": "ÿc6."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
