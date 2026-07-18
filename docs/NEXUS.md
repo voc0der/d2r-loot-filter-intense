@@ -1,0 +1,44 @@
+# Publishing to Nexus Mods (enables D2RMM update checking)
+
+D2RMM's **Check for Updates** only works for mods whose `mod.json` `website`
+points to a Nexus mod page (`https://www.nexusmods.com/diablo2resurrected/mods/<ID>`).
+It then compares the local `version` against the versions of the files uploaded
+to Nexus, using your Nexus login in D2RMM. GitHub-hosted mods are invisible to it.
+
+## One-time setup
+
+1. On nexusmods.com → Diablo II: Resurrected → *Upload a mod*.
+2. Fill the page (suggested content below), upload the latest release zip from
+   [GitHub releases](https://github.com/voc0der/d2r-loot-filter-intense/releases)
+   as the main file. **File version must exactly match `version` in mod.json.**
+3. Note the mod ID (the number in the page URL), set `website` in mod.json to
+   `https://www.nexusmods.com/diablo2resurrected/mods/<ID>`, and release.
+
+## Every release afterwards
+
+Upload the new zip to the Nexus page with the new version number. D2RMM
+flags the update for anyone on an older version. (Update *detection* works for
+any logged-in Nexus account; one-click in-app download is a Nexus Premium
+perk — free accounts get routed through the website.)
+
+## Suggested page content
+
+**Name:** D2R Loot Filter — Intense
+**Summary:** Hides trash drops (non-rejuv potions, ammo, throwing potions, junk elite bases) by renaming ground labels to a tiny dot. Stacks after any other D2RMM loot filter or works standalone.
+
+**Description (BBCode):**
+
+```
+A tiny D2RMM mod that hides trash drops by renaming their ground labels to a barely-visible dot. Works standalone or stacked [b]after[/b] any other D2RMM loot filter (later mods win). All filters are off by default.
+
+[list]
+[*][b]100% Rejuv Only[/b] — hides every potion that is not a Full Rejuvenation Potion (healing, mana, small rejuvs, thawing/antidote/stamina)
+[*][b]Hide Ammo[/b] — arrows and bolts
+[*][b]Hide Throwing Potions[/b] — all gas and oil potions
+[*][b]Hide Unpopular Bases[/b] — 40 junk elite weapon bases nobody uses; merc bases and popular runeword/unique bases stay visible
+[/list]
+
+Hidden labels become a gray or near-invisible black dot (selectable). Display strings only — drops are unchanged, works in every client language.
+
+Source, full base list and docs: [url=https://github.com/voc0der/d2r-loot-filter-intense]GitHub[/url]
+```
