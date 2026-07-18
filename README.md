@@ -18,8 +18,8 @@ All filters are **off by default** — turn on the ones you want in D2RMM's conf
 | **Hide Ammo** | Arrows and Bolts. |
 | **Hide Large Charms** | The Large Charm base label. **This includes unidentified Hellfire Torch drops; read the warning below.** Small and Grand Charms stay visible. |
 | **Hide Throwing Potions** | Rancid/Choking/Strangling Gas Potions and Oil/Exploding/Fulminating Potions. |
-| **Hide Unpopular Bases** | 90 aggressively filtered, low-priority LoD endgame bases, including normal/exceptional Act 2 merc weapons, weak shields, lower Paladin shields, weak elite daggers, and non-staffmod claws — see the full list below. Useful Act 5 mercenary swords and genuinely useful shield/staffmod bases stay visible. **Read the warning below before enabling.** |
-| **Black Labels to Dots** | Converts labels whose final active inline color is D2's `#000`/black code (`ÿc6`) from an earlier D2RMM loot filter into the selected tiny dot. This mod must load later. |
+| **Hide Unpopular Bases** | 91 aggressively filtered, low-priority LoD endgame bases, including normal/exceptional Act 2 merc weapons, Short War Bow, weak shields, lower Paladin shields, weak elite daggers, and non-staffmod claws — see the full list below. Useful Act 5 mercenary swords and genuinely useful shield/staffmod bases stay visible. **Read the warning below before enabling.** |
+| **Black Labels to Dots** | Converts direct labels whose final active inline color is D2's `#000`/black code (`ÿc6`) into the selected tiny dot. Composed inferior-quality labels have an engine limitation explained below. This mod must load later. |
 | **Gem Crunch** | All 35 gems get compact, colored tier labels: `1Topaz`, `2Topaz`, `3Topaz`, `4Topaz`, `PTopaz`. Standard gem-type colors from an earlier filter are recognized inside multi-color labels. |
 | **Compact Gold Label** | Replaces the word after a ground-pile amount with `$`, neutral `G`, or nothing: `1234 $`, `1234 G`, or `1234`. |
 
@@ -30,7 +30,9 @@ Hidden items are not removed from the game — their name label is renamed to a 
 
 A dot is used instead of an empty string because an empty name renders as an ugly empty highlight box.
 
-**Black Labels to Dots compatibility:** D2 string files encode `#000` as `ÿc6`. When this option is enabled, the mod scans item names and item-name affixes inherited from earlier D2RMM mods and replaces entries whose final active color is black. The current ChrisTitusTech filter uses that convention for the four inferior-quality prefixes (Low Quality, Damaged, Cracked and Crude). Affix replacements retain a terminal black code after the selected dot so D2's subsequently appended base name does not become visible again. Literal names containing the word “Black” and labels that reset to a visible color are untouched.
+**Black Labels to Dots compatibility:** D2 string files encode `#000` as `ÿc6`. When this option is enabled, the mod scans item names and item-name affixes inherited from earlier D2RMM mods and replaces entries whose final active color is black. Direct black item-name entries collapse to the selected dot. Literal names containing the word “Black” and labels that reset to a visible color are untouched.
+
+The current ChrisTitusTech filter instead uses terminal black on the four **inferior-quality prefix fragments** (Low Quality, Damaged, Cracked and Crude). D2 appends the shared base name afterward at runtime. Intense replaces that prefix with a dot and retains terminal black so the appended base does not become bright, but a string-only prefix cannot erase the appended text conditionally. For example, the composed value is effectively `ÿc5.ÿc6Short War Bow`: a gray dot followed by a black base name. If **Hide Unpopular Bases** also includes that base, every rarity of the base is replaced independently; Short War Bow is now included for this reason and because it is a low-priority LoD endgame base. An inferior Short War Bow can consequently render as two tiny dots (one prefix and one base), but the black name itself is gone.
 
 > **Hide Large Charms warning:** On unidentified drops, D2R uses the same `cm2` base string for ordinary Large Charms and the unique **Hellfire Torch**. Enabling this option therefore turns an unidentified Torch ground label into the selected tiny dot. Once identified, the Torch uses its separate name and remains visible. Small Charms (`cm1`) and Grand Charms (`cm3`) are not changed.
 
@@ -72,8 +74,10 @@ Six old normal/exceptional Assassin claw bases are filtered because they cannot 
 
 Useful Act 5 mercenary sword bases are carved out of the filter: Conquest Sword, Legend Sword, Balrog Blade, Mythical Sword and Cryptic Sword all stay visible as viable ethereal runeword bases, along with Flamebellow, Frostwind, Bul-Kathos' Tribal Guardian and Sazabi's Cobalt Redeemer. Other affected uniques (Bonehew, Doombringer, Demon Limb, Hellrack, …) and sets (Dangoon's Teaching) follow the aggressive endgame policy. If you disagree with any entry, delete its line from `UNPOPULAR_BASE_KEYS` in [mod.js](mod.js) and reinstall.
 
+Short War Bow is filtered as a normal-tier leveling base. Because the name is rarity-blind, this also masks Hellclap and Arctic Horn; leave the option off if you still want either progression item.
+
 <details>
-<summary>Full list (90 bases)</summary>
+<summary>Full list (91 bases)</summary>
 
 - **Axes (1H):** Tomahawk, Small Crescent, War Spike — *kept: Berserker Axe (Grief/BotD), Ettin Axe (eth Oath)*
 - **Axes (2H):** Feral Axe, Silver-edged Axe, Decapitator, Champion Axe, Glorious Axe
@@ -85,10 +89,11 @@ Useful Act 5 mercenary sword bases are carved out of the filter: Conquest Sword,
 - **Polearms:** Bardiche, Voulge, Scythe, Poleaxe, Halberd, War Scythe; Lochaber Axe, Bill, Battle Scythe, Partizan, Bec-de-Corbin, Grim Scythe; Ogre Axe — *kept: elite Colossus Voulge, Thresher, Cryptic Axe, Great Poleaxe, Giant Thresher (endgame A2 merc / Insight / Infinity)*
 - **Spears:** Spear, Trident, Brandistock, Spetum, Pike; War Spear, Fuscina, War Fork, Yari, Lance — *kept: all elite and Amazon-class spears*
 - **Swords:** Ataghan, Falcata, Elegant Blade, Hydra Edge, Highland Blade, Champion Sword — *kept: Conquest Sword, Legend Sword, Balrog Blade, Mythical Sword, Cryptic Sword, Phase Blade, Colossus Sword, Colossus Blade*
+- **Bows:** Short War Bow — *all other generic and Amazon-class bows stay visible*
 - **Crossbows:** Pellet Bow, Gorgon Crossbow, Colossus Crossbow, Demon Crossbow
 - **Generic shields:** Buckler, Small Shield, Large Shield, Kite Shield, Tower Shield, Gothic Shield, Bone Shield, Spiked Shield; Scutum, Dragon Shield, Ancient Shield, Barbed Shield; Heater, Luna, Blade Barrier, Aegis, Ward — *kept: Defender, Round Shield, Pavise, Grim Shield, Monarch, Hyperion, Troll Nest*
 - **Paladin shields:** Targe, Rondache, Heraldic Shield, Aerin Shield, Crown Shield; Akaran Targe, Akaran Rondache, Protector Shield, Royal Shield; Kurast Shield, Zakarum Shield — *kept: Gilded Shield (Herald of Zakarum), Sacred Targe, Sacred Rondache, Vortex Shield*
-- **Other families kept in full:** Bows, staves, wands, scepters, Sorceress orbs, Necromancer heads, Barbarian helms, Druid pelts and Amazon class weapons
+- **Other families kept in full:** Staves, wands, scepters, Sorceress orbs, Necromancer heads, Barbarian helms, Druid pelts and Amazon class weapons
 
 </details>
 
@@ -120,7 +125,7 @@ _Before/after screenshots coming soon._
 ## Troubleshooting — "items are still labeled the old way"
 
 1. **Re-install after every config change.** Toggling checkboxes does nothing until you click **Install Mods** again.
-2. **Read D2RMM's install log.** This mod prints one line per enabled group, e.g. `Hide Ammo: hid 2 of 2 item names.`, `Black Labels to Dots: replaced 4 black label(s).`, `Gem Crunch: renamed 35 of 35 item names.`, or `Compact Gold Label: renamed 1 of 1 item names.` A warning means a key wasn't found in the current game data.
+2. **Read D2RMM's install log.** This mod prints one line per enabled group, e.g. `Hide Ammo: hid 2 of 2 item names.`, `Black Labels to Dots: replaced 4 black string entries.`, `Gem Crunch: renamed 35 of 35 item names.`, or `Compact Gold Label: renamed 1 of 1 item names.` A warning means a key wasn't found in the current game data.
 3. **Check the output actually contains the change.** Open `mods\D2RMM\D2RMM.mpq\data\local\lng\strings\item-names.json` and search for `"aqv"` (hidden ammo) or `"gcy"` (Chipped Topaz). Hidden ammo should be a tiny `ÿc5.` dot and Chipped Topaz should end in `1Topaz`. The four regular Diamond/Emerald/Ruby/Sapphire entries and Gold's `"gld"` suffix are instead in `item-nameaffixes.json`. If the output is correct but the game still shows the old label, the game isn't loading D2RMM's output (next two points).
 4. **Launch with `-mod D2RMM -txt`** — use D2RMM's own Launch Game button to be sure. Launching through Battle.net loads vanilla data.
 5. **Don't combine with MPQ-based filters** (like ChrisTitusTech's) — only one `-mod` loads at a time; whichever argument you launch with wins and the other filter is ignored entirely.

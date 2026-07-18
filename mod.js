@@ -134,6 +134,8 @@ const UNPOPULAR_BASE_KEYS = [
   '7fc', // Hydra Edge
   '7cm', // Highland Blade
   '7b7', // Champion Sword
+  // Bows (normal) — low-priority leveling base
+  'swb', // Short War Bow (hides Hellclap and Arctic Horn)
   // Crossbows — all elite crossbows
   '6lx', // Pellet Bow
   '6mx', // Gorgon Crossbow
@@ -259,9 +261,10 @@ function updateStringFile(
       return;
     }
 
-    // Prefix fragments in item-nameaffixes.json are followed by the base name
-    // at render time. Keep a terminal black code there so only our dot remains
-    // visible; a plain dot would make the appended base inherit the dot color.
+    // Prefix fragments in item-nameaffixes.json are followed by the shared base
+    // name at render time. Keep a terminal black code so the appended base stays
+    // black; a plain dot would make it inherit the visible dot color. A prefix
+    // string cannot conditionally erase that separately appended base name.
     const blackReplacement = path === ITEM_NAME_AFFIXES_PATH
       ? hideString + BLACK_COLOR_CODE
       : hideString;
@@ -396,7 +399,8 @@ if (
   reportGroups.forEach((group) => {
     if (group.keys === undefined) {
       totalChanged += group.count;
-      console.log(`${group.name}: ${group.verb} ${group.count} black label(s).`);
+      const entryLabel = group.count === 1 ? 'black string entry' : 'black string entries';
+      console.log(`${group.name}: ${group.verb} ${group.count} ${entryLabel}.`);
       return;
     }
 

@@ -36,8 +36,8 @@ A tiny D2RMM mod for the [b]Lord of Destruction ruleset[/b] that hides trash dro
 [*][b]Hide Ammo[/b] — arrows and bolts
 [*][b]Hide Large Charms[/b] — hides the Large Charm base label; warning: this includes an unidentified Hellfire Torch because it shares the same base string (an identified Torch remains visible)
 [*][b]Hide Throwing Potions[/b] — all gas and oil potions
-[*][b]Hide Unpopular Bases[/b] — aggressively hides 90 low-priority LoD endgame bases, including normal/exceptional Act 2 merc weapons, weak shields, lower Paladin shields, two weak elite daggers and six non-staffmod claws; desirable staffmod, mercenary and shield bases stay visible
-[*][b]Black Labels to Dots[/b] — converts labels whose final inline color is #000/black (ÿc6) from an earlier D2RMM filter into the selected tiny dot
+[*][b]Hide Unpopular Bases[/b] — aggressively hides 91 low-priority LoD endgame bases, including Short War Bow, normal/exceptional Act 2 merc weapons, weak shields, lower Paladin shields, two weak elite daggers and six non-staffmod claws; desirable staffmod, mercenary and shield bases stay visible
+[*][b]Black Labels to Dots[/b] — converts direct labels whose final inline color is #000/black (ÿc6) into the selected tiny dot; inferior-prefix labels retain a black appended base name unless that base is also hidden
 [*][b]Gem Crunch[/b] — renames all 35 gems by tier: 1Topaz, 2Topaz, 3Topaz, 4Topaz, PTopaz; recognizes standard gem-type colors inside multi-color labels from an earlier filter
 [*][b]Compact Gold Label[/b] — changes the Gold suffix to $, neutral G, or nothing; displays as 1234 $, 1234 G, or 1234
 [/list]

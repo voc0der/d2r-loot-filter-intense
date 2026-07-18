@@ -1,9 +1,9 @@
 {
   "name": "D2R Loot Filter — Intense",
-  "description": "A D2R Lord of Destruction loot-filter overlay. Hides trash drops and 90 low-priority equipment bases including weak shields and claws; converts inherited black labels to dots; crunches gem names; and can compact Gold pile labels. Reign of the Warlock content is intentionally excluded. Display strings only — drops are unchanged.",
+  "description": "A D2R Lord of Destruction loot-filter overlay. Hides trash drops and 91 low-priority equipment bases including weak shields and claws; converts inherited black labels to dots; crunches gem names; and can compact Gold pile labels. Reign of the Warlock content is intentionally excluded. Display strings only — drops are unchanged.",
   "author": "voc0der",
   "website": "https://github.com/voc0der/d2r-loot-filter-intense",
-  "version": "0.3.4",
+  "version": "0.3.5",
   "config": [
     {
       "type": "section",
@@ -44,14 +44,14 @@
           "type": "checkbox",
           "id": "hideUnpopularBases",
           "name": "Hide Unpopular Bases",
-          "description": "Aggressively hide 90 low-priority LoD endgame bases, including normal/exceptional Act 2 merc weapons, weak shields, lower Paladin shields, two weak elite daggers, and six non-staffmod claws. Useful Act 5 mercenary swords and desirable shield/staffmod bases stay visible. ENDGAME WARNING: hides ALL rarities, including useful leveling bases and their unique/set drops.",
+          "description": "Aggressively hide 91 low-priority LoD endgame bases, including normal/exceptional Act 2 merc weapons, Short War Bow, weak shields, lower Paladin shields, two weak elite daggers, and six non-staffmod claws. Useful Act 5 mercenary swords and desirable shield/staffmod bases stay visible. ENDGAME WARNING: hides ALL rarities, including useful leveling bases and their unique/set drops.",
           "defaultValue": false
         },
         {
           "type": "checkbox",
           "id": "blackLabelsToDots",
           "name": "Black Labels to Dots",
-          "description": "Replace labels whose final active inline color is D2's #000/black code (ÿc6) from an earlier D2RMM loot filter with the selected tiny dot. Keep this mod later in load order.",
+          "description": "Replace direct labels whose final active inline color is D2's #000/black code (ÿc6) with the selected dot. Inferior-quality prefixes become a dot but their separately appended base name remains black unless Hide Unpopular Bases also hides that base. Keep this mod later in load order.",
           "defaultValue": false
         },
         {
