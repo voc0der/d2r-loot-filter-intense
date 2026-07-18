@@ -1,9 +1,9 @@
 {
   "name": "D2R Loot Filter — Intense",
-  "description": "Hides trash drops (non-rejuv potions, ammo, throwing potions, junk bases) by renaming their ground labels to a tiny dot. Works standalone or stacked after any other D2RMM loot filter (order this one later). Display strings only — does not affect actual drops.",
+  "description": "Hides trash drops such as potions, ammo, Large Charms, and low-priority equipment bases including weak shields; converts inherited black labels to dots; and can crunch gems into compact tier labels such as 1Topaz and PTopaz. Works standalone or stacked after another D2RMM loot filter. Display strings only — drops are unchanged.",
   "author": "voc0der",
   "website": "https://github.com/voc0der/d2r-loot-filter-intense",
-  "version": "0.2.2",
+  "version": "0.3.0",
   "config": [
     {
       "type": "section",
@@ -28,6 +28,13 @@
         },
         {
           "type": "checkbox",
+          "id": "hideLargeCharms",
+          "name": "Hide Large Charms",
+          "description": "Hide the Large Charm base label. WARNING: this also hides an unidentified Hellfire Torch drop because it shares the same cm2 base string. Once identified, the Torch's separate name remains visible.",
+          "defaultValue": false
+        },
+        {
+          "type": "checkbox",
           "id": "hideThrowing",
           "name": "Hide Throwing Potions",
           "description": "Hide all gas and oil throwing potions.",
@@ -37,7 +44,21 @@
           "type": "checkbox",
           "id": "hideUnpopularBases",
           "name": "Hide Unpopular Bases",
-          "description": "Hide 40 junk elite weapon bases nobody uses (bad axes, off-meta swords, non-Amazon javelins, all elite crossbows...). Merc bases and popular runeword/unique bases stay visible. WARNING: hides ALL rarities of these bases, including their (junk-tier) unique and set drops — ground labels are one string per base.",
+          "description": "Aggressively hide 78 low-priority endgame bases, including normal/exceptional Act 2 merc weapons, weak elite shields, and lower Paladin shields. Sacred Targe, Sacred Rondache, Vortex Shield, Gilded Shield/Herald of Zakarum, Monarch, Hyperion, and Troll Nest stay visible. ENDGAME WARNING: hides ALL rarities, including useful leveling bases and their unique/set drops.",
+          "defaultValue": false
+        },
+        {
+          "type": "checkbox",
+          "id": "blackLabelsToDots",
+          "name": "Black Labels to Dots",
+          "description": "Replace labels whose final active inline color is D2's #000/black code (ÿc6) from an earlier D2RMM loot filter with the selected tiny dot. Keep this mod later in load order.",
+          "defaultValue": false
+        },
+        {
+          "type": "checkbox",
+          "id": "gemCrunch",
+          "name": "Gem Crunch",
+          "description": "Rename every gem to a compact colored tier label: 1 = Chipped, 2 = Flawed, 3 = regular, 4 = Flawless, P = Perfect (for example, 1Topaz and PTopaz). Keeps an existing inline gem color when stacked after another filter. See the README for the shared-affix caveat.",
           "defaultValue": false
         }
       ]
