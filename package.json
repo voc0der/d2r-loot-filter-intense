@@ -1,0 +1,12 @@
+{
+  "private": true,
+  "scripts": {
+    "policy:generate": "node scripts/write-base-policy.js",
+    "policy:render": "node scripts/render-base-policy.js",
+    "test": "node --test test/*.test.js",
+    "check": "node --check mod.js && node --test test/*.test.js"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

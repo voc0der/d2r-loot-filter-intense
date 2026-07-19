@@ -1,0 +1,5420 @@
+{
+  "source": {
+    "ruleset": "Diablo II: Resurrected — Lord of Destruction",
+    "d2dataCommit": "bb26870f321c05479df88119285f26b76c4cec32",
+    "generatedFrom": [
+      "json/weapons.json",
+      "json/armor.json",
+      "json/uniqueitems.json",
+      "json/setitems.json",
+      "json/localestrings-eng.json"
+    ]
+  },
+  "items": {
+    "2ax": {
+      "name": "Double Axe",
+      "kind": "weapon",
+      "type": "axe",
+      "tier": "normal",
+      "maxSockets": 5,
+      "unique": [
+        "Bladebone"
+      ],
+      "set": [
+        "Berserker's Hatchet"
+      ]
+    },
+    "2hs": {
+      "name": "Two-Handed Sword",
+      "kind": "weapon",
+      "type": "swor",
+      "tier": "normal",
+      "maxSockets": 3,
+      "unique": [
+        "Shadowfang"
+      ],
+      "set": []
+    },
+    "6bs": {
+      "name": "Shillelagh",
+      "kind": "weapon",
+      "type": "staf",
+      "tier": "elite",
+      "maxSockets": 4,
+      "unique": [],
+      "set": []
+    },
+    "6cb": {
+      "name": "Great Bow",
+      "kind": "weapon",
+      "type": "bow",
+      "tier": "elite",
+      "maxSockets": 4,
+      "unique": [],
+      "set": []
+    },
+    "6cs": {
+      "name": "Elder Staff",
+      "kind": "weapon",
+      "type": "staf",
+      "tier": "elite",
+      "maxSockets": 4,
+      "unique": [
+        "Ondal's Wisdom"
+      ],
+      "set": [
+        "Naj's Puzzler"
+      ]
+    },
+    "6hb": {
+      "name": "Blade Bow",
+      "kind": "weapon",
+      "type": "bow",
+      "tier": "elite",
+      "maxSockets": 4,
+      "unique": [],
+      "set": []
+    },
+    "6hx": {
+      "name": "Colossus Crossbow",
+      "kind": "weapon",
+      "type": "xbow",
+      "tier": "elite",
+      "maxSockets": 6,
+      "unique": [
+        "Hellrack"
+      ],
+      "set": []
+    },
+    "6l7": {
+      "name": "Crusader Bow",
+      "kind": "weapon",
+      "type": "bow",
+      "tier": "elite",
+      "maxSockets": 6,
+      "unique": [
+        "Eaglehorn"
+      ],
+      "set": []
+    },
+    "6lb": {
+      "name": "Shadow Bow",
+      "kind": "weapon",
+      "type": "bow",
+      "tier": "elite",
+      "maxSockets": 5,
+      "unique": [],
+      "set": []
+    },
+    "6ls": {
+      "name": "Stalagmite",
+      "kind": "weapon",
+      "type": "staf",
+      "tier": "elite",
+      "maxSockets": 3,
+      "unique": [],
+      "set": []
+    },
+    "6lw": {
+      "name": "Hydra Bow",
+      "kind": "weapon",
+      "type": "bow",
+      "tier": "elite",
+      "maxSockets": 6,
+      "unique": [
+        "Windforce"
+      ],
+      "set": []
+    },
+    "6lx": {
+      "name": "Pellet Bow",
+      "kind": "weapon",
+      "type": "xbow",
+      "tier": "elite",
+      "maxSockets": 3,
+      "unique": [],
+      "set": []
+    },
+    "6mx": {
+      "name": "Gorgon Crossbow",
+      "kind": "weapon",
+      "type": "xbow",
+      "tier": "elite",
+      "maxSockets": 4,
+      "unique": [],
+      "set": []
+    },
+    "6rx": {
+      "name": "Demon Crossbow",
+      "kind": "weapon",
+      "type": "xbow",
+      "tier": "elite",
+      "maxSockets": 5,
+      "unique": [
+        "Gutsiphon"
+      ],
+      "set": []
+    },
+    "6s7": {
+      "name": "Diamond Bow",
+      "kind": "weapon",
+      "type": "bow",
+      "tier": "elite",
+      "maxSockets": 5,
+      "unique": [],
+      "set": []
+    },
+    "6sb": {
+      "name": "Spider Bow",
+      "kind": "weapon",
+      "type": "bow",
+      "tier": "elite",
+      "maxSockets": 3,
+      "unique": [],
+      "set": []
+    },
+    "6ss": {
+      "name": "Walking Stick",
+      "kind": "weapon",
+      "type": "staf",
+      "tier": "elite",
+      "maxSockets": 2,
+      "unique": [],
+      "set": []
+    },
+    "6sw": {
+      "name": "Ward Bow",
+      "kind": "weapon",
+      "type": "bow",
+      "tier": "elite",
+      "maxSockets": 5,
+      "unique": [
+        "Widowmaker"
+      ],
+      "set": []
+    },
+    "6ws": {
+      "name": "Archon Staff",
+      "kind": "weapon",
+      "type": "staf",
+      "tier": "elite",
+      "maxSockets": 6,
+      "unique": [
+        "Mang Song's Lesson"
+      ],
+      "set": []
+    },
+    "72a": {
+      "name": "Ettin Axe",
+      "kind": "weapon",
+      "type": "axe",
+      "tier": "elite",
+      "maxSockets": 5,
+      "unique": [
+        "Runemaster"
+      ],
+      "set": []
+    },
+    "72h": {
+      "name": "Legend Sword",
+      "kind": "weapon",
+      "type": "swor",
+      "tier": "elite",
+      "maxSockets": 3,
+      "unique": [],
+      "set": []
+    },
+    "7ar": {
+      "name": "Suwayyah",
+      "kind": "weapon",
+      "type": "h2h2",
+      "tier": "elite",
+      "maxSockets": 3,
+      "unique": [],
+      "set": []
+    },
+    "7ax": {
+      "name": "Small Crescent",
+      "kind": "weapon",
+      "type": "axe",
+      "tier": "elite",
+      "maxSockets": 4,
+      "unique": [],
+      "set": []
+    },
+    "7b7": {
+      "name": "Champion Sword",
+      "kind": "weapon",
+      "type": "swor",
+      "tier": "elite",
+      "maxSockets": 4,
+      "unique": [
+        "Doombringer"
+      ],
+      "set": []
+    },
+    "7b8": {
+      "name": "Winged Axe",
+      "kind": "weapon",
+      "type": "taxe",
+      "tier": "elite",
+      "maxSockets": 0,
+      "unique": [
+        "Lacerator"
+      ],
+      "set": []
+    },
+    "7ba": {
+      "name": "Silver-edged Axe",
+      "kind": "weapon",
+      "type": "axe",
+      "tier": "elite",
+      "maxSockets": 5,
+      "unique": [
+        "Ethereal Edge"
+      ],
+      "set": []
+    },
+    "7bk": {
+      "name": "Winged Knife",
+      "kind": "weapon",
+      "type": "tkni",
+      "tier": "elite",
+      "maxSockets": 0,
+      "unique": [
+        "Warshrike"
+      ],
+      "set": []
+    },
+    "7bl": {
+      "name": "Legend Spike",
+      "kind": "weapon",
+      "type": "knif",
+      "tier": "elite",
+      "maxSockets": 2,
+      "unique": [
+        "Ghostflame"
+      ],
+      "set": []
+    },
+    "7br": {
+      "name": "Mancatcher",
+      "kind": "weapon",
+      "type": "spea",
+      "tier": "elite",
+      "maxSockets": 5,
+      "unique": [
+        "Viperfork"
+      ],
+      "set": []
+    },
+    "7bs": {
+      "name": "Conquest Sword",
+      "kind": "weapon",
+      "type": "swor",
+      "tier": "elite",
+      "maxSockets": 4,
+      "unique": [],
+      "set": []
+    },
+    "7bt": {
+      "name": "Decapitator",
+      "kind": "weapon",
+      "type": "axe",
+      "tier": "elite",
+      "maxSockets": 5,
+      "unique": [
+        "Hellslayer"
+      ],
+      "set": []
+    },
+    "7bw": {
+      "name": "Lich Wand",
+      "kind": "weapon",
+      "type": "wand",
+      "tier": "elite",
+      "maxSockets": 2,
+      "unique": [
+        "Boneshade"
+      ],
+      "set": []
+    },
+    "7cl": {
+      "name": "Truncheon",
+      "kind": "weapon",
+      "type": "club",
+      "tier": "elite",
+      "maxSockets": 2,
+      "unique": [
+        "Nord's Tenderizer"
+      ],
+      "set": []
+    },
+    "7cm": {
+      "name": "Highland Blade",
+      "kind": "weapon",
+      "type": "swor",
+      "tier": "elite",
+      "maxSockets": 4,
+      "unique": [],
+      "set": []
+    },
+    "7cr": {
+      "name": "Phase Blade",
+      "kind": "weapon",
+      "type": "swor",
+      "tier": "elite",
+      "maxSockets": 6,
+      "unique": [
+        "Azurewrath",
+        "Lightsabre"
+      ],
+      "set": []
+    },
+    "7cs": {
+      "name": "Battle Cestus",
+      "kind": "weapon",
+      "type": "h2h2",
+      "tier": "elite",
+      "maxSockets": 2,
+      "unique": [
+        "Shadowkiller"
+      ],
+      "set": []
+    },
+    "7dg": {
+      "name": "Bone Knife",
+      "kind": "weapon",
+      "type": "knif",
+      "tier": "elite",
+      "maxSockets": 1,
+      "unique": [
+        "Wizardspike"
+      ],
+      "set": []
+    },
+    "7di": {
+      "name": "Mithril Point",
+      "kind": "weapon",
+      "type": "knif",
+      "tier": "elite",
+      "maxSockets": 1,
+      "unique": [],
+      "set": []
+    },
+    "7fb": {
+      "name": "Colossus Sword",
+      "kind": "weapon",
+      "type": "swor",
+      "tier": "elite",
+      "maxSockets": 5,
+      "unique": [],
+      "set": []
+    },
+    "7fc": {
+      "name": "Hydra Edge",
+      "kind": "weapon",
+      "type": "swor",
+      "tier": "elite",
+      "maxSockets": 2,
+      "unique": [],
+      "set": []
+    },
+    "7fl": {
+      "name": "Scourge",
+      "kind": "weapon",
+      "type": "mace",
+      "tier": "elite",
+      "maxSockets": 5,
+      "unique": [
+        "Horizon's Tornado",
+        "Stormlash"
+      ],
+      "set": []
+    },
+    "7ga": {
+      "name": "Champion Axe",
+      "kind": "weapon",
+      "type": "axe",
+      "tier": "elite",
+      "maxSockets": 6,
+      "unique": [
+        "Messerschmidt's Reaver"
+      ],
+      "set": []
+    },
+    "7gd": {
+      "name": "Colossus Blade",
+      "kind": "weapon",
+      "type": "swor",
+      "tier": "elite",
+      "maxSockets": 6,
+      "unique": [
+        "The Grandfather"
+      ],
+      "set": [
+        "Bul-Kathos' Sacred Charge"
+      ]
+    },
+    "7gi": {
+      "name": "Glorious Axe",
+      "kind": "weapon",
+      "type": "axe",
+      "tier": "elite",
+      "maxSockets": 6,
+      "unique": [
+        "Executioner's Justice"
+      ],
+      "set": []
+    },
+    "7gl": {
+      "name": "Ghost Glaive",
+      "kind": "weapon",
+      "type": "jave",
+      "tier": "elite",
+      "maxSockets": 0,
+      "unique": [
+        "Wraithflight"
+      ],
+      "set": []
+    },
+    "7gm": {
+      "name": "Thunder Maul",
+      "kind": "weapon",
+      "type": "hamm",
+      "tier": "elite",
+      "maxSockets": 6,
+      "unique": [
+        "Earthshifter",
+        "The Cranium Basher"
+      ],
+      "set": []
+    },
+    "7gs": {
+      "name": "Balrog Blade",
+      "kind": "weapon",
+      "type": "swor",
+      "tier": "elite",
+      "maxSockets": 4,
+      "unique": [
+        "Flamebellow"
+      ],
+      "set": []
+    },
+    "7gw": {
+      "name": "Unearthed Wand",
+      "kind": "weapon",
+      "type": "wand",
+      "tier": "elite",
+      "maxSockets": 2,
+      "unique": [
+        "Deaths's Web"
+      ],
+      "set": []
+    },
+    "7h7": {
+      "name": "Great Poleaxe",
+      "kind": "weapon",
+      "type": "pole",
+      "tier": "elite",
+      "maxSockets": 6,
+      "unique": [],
+      "set": []
+    },
+    "7ha": {
+      "name": "Tomahawk",
+      "kind": "weapon",
+      "type": "axe",
+      "tier": "elite",
+      "maxSockets": 2,
+      "unique": [
+        "Razoredge"
+      ],
+      "set": []
+    },
+    "7ja": {
+      "name": "Hyperion Javelin",
+      "kind": "weapon",
+      "type": "jave",
+      "tier": "elite",
+      "maxSockets": 0,
+      "unique": [],
+      "set": []
+    },
+    "7kr": {
+      "name": "Fanged Knife",
+      "kind": "weapon",
+      "type": "knif",
+      "tier": "elite",
+      "maxSockets": 3,
+      "unique": [
+        "Fleshripper"
+      ],
+      "set": []
+    },
+    "7la": {
+      "name": "Feral Axe",
+      "kind": "weapon",
+      "type": "axe",
+      "tier": "elite",
+      "maxSockets": 4,
+      "unique": [],
+      "set": []
+    },
+    "7ls": {
+      "name": "Cryptic Sword",
+      "kind": "weapon",
+      "type": "swor",
+      "tier": "elite",
+      "maxSockets": 4,
+      "unique": [
+        "Frostwind"
+      ],
+      "set": [
+        "Sazabi's Cobalt Redeemer"
+      ]
+    },
+    "7lw": {
+      "name": "Feral Claws",
+      "kind": "weapon",
+      "type": "h2h2",
+      "tier": "elite",
+      "maxSockets": 3,
+      "unique": [
+        "Firelizard's Talons"
+      ],
+      "set": []
+    },
+    "7m7": {
+      "name": "Ogre Maul",
+      "kind": "weapon",
+      "type": "hamm",
+      "tier": "elite",
+      "maxSockets": 6,
+      "unique": [
+        "Windhammer"
+      ],
+      "set": [
+        "Immortal King's Stone Crusher"
+      ]
+    },
+    "7ma": {
+      "name": "Reinforced Mace",
+      "kind": "weapon",
+      "type": "mace",
+      "tier": "elite",
+      "maxSockets": 2,
+      "unique": [],
+      "set": [
+        "Dangoon's Teaching"
+      ]
+    },
+    "7mp": {
+      "name": "War Spike",
+      "kind": "weapon",
+      "type": "axe",
+      "tier": "elite",
+      "maxSockets": 6,
+      "unique": [
+        "Cranebeak"
+      ],
+      "set": []
+    },
+    "7mt": {
+      "name": "Devil Star",
+      "kind": "weapon",
+      "type": "mace",
+      "tier": "elite",
+      "maxSockets": 3,
+      "unique": [
+        "Baranar's Star"
+      ],
+      "set": []
+    },
+    "7o7": {
+      "name": "Ogre Axe",
+      "kind": "weapon",
+      "type": "pole",
+      "tier": "elite",
+      "maxSockets": 3,
+      "unique": [
+        "Bonehew"
+      ],
+      "set": []
+    },
+    "7p7": {
+      "name": "War Pike",
+      "kind": "weapon",
+      "type": "spea",
+      "tier": "elite",
+      "maxSockets": 6,
+      "unique": [
+        "Steelpillar"
+      ],
+      "set": []
+    },
+    "7pa": {
+      "name": "Cryptic Axe",
+      "kind": "weapon",
+      "type": "pole",
+      "tier": "elite",
+      "maxSockets": 5,
+      "unique": [
+        "Tomb Reaver"
+      ],
+      "set": []
+    },
+    "7pi": {
+      "name": "Stygian Pilum",
+      "kind": "weapon",
+      "type": "jave",
+      "tier": "elite",
+      "maxSockets": 0,
+      "unique": [],
+      "set": []
+    },
+    "7qr": {
+      "name": "Scissors Suwayyah",
+      "kind": "weapon",
+      "type": "h2h2",
+      "tier": "elite",
+      "maxSockets": 3,
+      "unique": [],
+      "set": [
+        "Natalya's Mark"
+      ]
+    },
+    "7qs": {
+      "name": "Seraph Rod",
+      "kind": "weapon",
+      "type": "scep",
+      "tier": "elite",
+      "maxSockets": 3,
+      "unique": [],
+      "set": []
+    },
+    "7s7": {
+      "name": "Balrog Spear",
+      "kind": "weapon",
+      "type": "jave",
+      "tier": "elite",
+      "maxSockets": 0,
+      "unique": [
+        "Demon's Arch"
+      ],
+      "set": []
+    },
+    "7s8": {
+      "name": "Thresher",
+      "kind": "weapon",
+      "type": "pole",
+      "tier": "elite",
+      "maxSockets": 5,
+      "unique": [
+        "The Reaper's Toll"
+      ],
+      "set": []
+    },
+    "7sb": {
+      "name": "Elegant Blade",
+      "kind": "weapon",
+      "type": "swor",
+      "tier": "elite",
+      "maxSockets": 2,
+      "unique": [
+        "Bloodmoon"
+      ],
+      "set": []
+    },
+    "7sc": {
+      "name": "Mighty Scepter",
+      "kind": "weapon",
+      "type": "scep",
+      "tier": "elite",
+      "maxSockets": 2,
+      "unique": [
+        "Heaven's Light",
+        "The Reedeemer"
+      ],
+      "set": []
+    },
+    "7sm": {
+      "name": "Ataghan",
+      "kind": "weapon",
+      "type": "swor",
+      "tier": "elite",
+      "maxSockets": 2,
+      "unique": [
+        "Djinnslayer"
+      ],
+      "set": []
+    },
+    "7sp": {
+      "name": "Tyrant Club",
+      "kind": "weapon",
+      "type": "club",
+      "tier": "elite",
+      "maxSockets": 3,
+      "unique": [
+        "Demonlimb"
+      ],
+      "set": []
+    },
+    "7sr": {
+      "name": "Hyperion Spear",
+      "kind": "weapon",
+      "type": "spea",
+      "tier": "elite",
+      "maxSockets": 3,
+      "unique": [
+        "Arioc's Needle"
+      ],
+      "set": []
+    },
+    "7ss": {
+      "name": "Falcata",
+      "kind": "weapon",
+      "type": "swor",
+      "tier": "elite",
+      "maxSockets": 2,
+      "unique": [],
+      "set": []
+    },
+    "7st": {
+      "name": "Ghost Spear",
+      "kind": "weapon",
+      "type": "spea",
+      "tier": "elite",
+      "maxSockets": 6,
+      "unique": [],
+      "set": []
+    },
+    "7ta": {
+      "name": "Flying Axe",
+      "kind": "weapon",
+      "type": "taxe",
+      "tier": "elite",
+      "maxSockets": 0,
+      "unique": [
+        "Gimmershred"
+      ],
+      "set": []
+    },
+    "7tk": {
+      "name": "Flying Knife",
+      "kind": "weapon",
+      "type": "tkni",
+      "tier": "elite",
+      "maxSockets": 0,
+      "unique": [],
+      "set": []
+    },
+    "7tr": {
+      "name": "Stygian Pike",
+      "kind": "weapon",
+      "type": "spea",
+      "tier": "elite",
+      "maxSockets": 4,
+      "unique": [],
+      "set": []
+    },
+    "7ts": {
+      "name": "Winged Harpoon",
+      "kind": "weapon",
+      "type": "jave",
+      "tier": "elite",
+      "maxSockets": 0,
+      "unique": [
+        "Gargoyle's Bite"
+      ],
+      "set": []
+    },
+    "7tw": {
+      "name": "Runic Talons",
+      "kind": "weapon",
+      "type": "h2h2",
+      "tier": "elite",
+      "maxSockets": 3,
+      "unique": [],
+      "set": []
+    },
+    "7vo": {
+      "name": "Colossus Voulge",
+      "kind": "weapon",
+      "type": "pole",
+      "tier": "elite",
+      "maxSockets": 4,
+      "unique": [],
+      "set": []
+    },
+    "7wa": {
+      "name": "Berserker Axe",
+      "kind": "weapon",
+      "type": "axe",
+      "tier": "elite",
+      "maxSockets": 6,
+      "unique": [
+        "Deathcleaver"
+      ],
+      "set": []
+    },
+    "7wb": {
+      "name": "Wrist Sword",
+      "kind": "weapon",
+      "type": "h2h2",
+      "tier": "elite",
+      "maxSockets": 3,
+      "unique": [
+        "Jadetalon"
+      ],
+      "set": []
+    },
+    "7wc": {
+      "name": "Giant Thresher",
+      "kind": "weapon",
+      "type": "pole",
+      "tier": "elite",
+      "maxSockets": 6,
+      "unique": [
+        "Stormspire"
+      ],
+      "set": []
+    },
+    "7wd": {
+      "name": "Mythical Sword",
+      "kind": "weapon",
+      "type": "swor",
+      "tier": "elite",
+      "maxSockets": 3,
+      "unique": [],
+      "set": [
+        "Bul-Kathos' Tribal Guardian"
+      ]
+    },
+    "7wh": {
+      "name": "Legendary Mallet",
+      "kind": "weapon",
+      "type": "hamm",
+      "tier": "elite",
+      "maxSockets": 4,
+      "unique": [
+        "Schaefer's Hammer",
+        "Stone Crusher"
+      ],
+      "set": []
+    },
+    "7wn": {
+      "name": "Polished Wand",
+      "kind": "weapon",
+      "type": "wand",
+      "tier": "elite",
+      "maxSockets": 2,
+      "unique": [],
+      "set": []
+    },
+    "7ws": {
+      "name": "Caduceus",
+      "kind": "weapon",
+      "type": "scep",
+      "tier": "elite",
+      "maxSockets": 5,
+      "unique": [
+        "Ironward"
+      ],
+      "set": [
+        "Griswolds's Redemption"
+      ]
+    },
+    "7xf": {
+      "name": "War Fist",
+      "kind": "weapon",
+      "type": "h2h2",
+      "tier": "elite",
+      "maxSockets": 2,
+      "unique": [],
+      "set": []
+    },
+    "7yw": {
+      "name": "Ghost Wand",
+      "kind": "weapon",
+      "type": "wand",
+      "tier": "elite",
+      "maxSockets": 2,
+      "unique": [],
+      "set": []
+    },
+    "8bs": {
+      "name": "Gothic Staff",
+      "kind": "weapon",
+      "type": "staf",
+      "tier": "exceptional",
+      "maxSockets": 4,
+      "unique": [
+        "Warpspear"
+      ],
+      "set": []
+    },
+    "8cb": {
+      "name": "Double Bow",
+      "kind": "weapon",
+      "type": "bow",
+      "tier": "exceptional",
+      "maxSockets": 4,
+      "unique": [
+        "Endlesshail"
+      ],
+      "set": []
+    },
+    "8cs": {
+      "name": "Cedar Staff",
+      "kind": "weapon",
+      "type": "staf",
+      "tier": "exceptional",
+      "maxSockets": 4,
+      "unique": [
+        "Chromatic Ire"
+      ],
+      "set": []
+    },
+    "8hb": {
+      "name": "Razor Bow",
+      "kind": "weapon",
+      "type": "bow",
+      "tier": "exceptional",
+      "maxSockets": 4,
+      "unique": [
+        "Riphook"
+      ],
+      "set": []
+    },
+    "8hx": {
+      "name": "Ballista",
+      "kind": "weapon",
+      "type": "xbow",
+      "tier": "exceptional",
+      "maxSockets": 6,
+      "unique": [
+        "Buriza-Do Kyanon"
+      ],
+      "set": []
+    },
+    "8l8": {
+      "name": "Large Siege Bow",
+      "kind": "weapon",
+      "type": "bow",
+      "tier": "exceptional",
+      "maxSockets": 6,
+      "unique": [
+        "Cliffkiller"
+      ],
+      "set": []
+    },
+    "8lb": {
+      "name": "Cedar Bow",
+      "kind": "weapon",
+      "type": "bow",
+      "tier": "exceptional",
+      "maxSockets": 5,
+      "unique": [
+        "Kuko Shakaku"
+      ],
+      "set": []
+    },
+    "8ls": {
+      "name": "Quarterstaff",
+      "kind": "weapon",
+      "type": "staf",
+      "tier": "exceptional",
+      "maxSockets": 3,
+      "unique": [
+        "Ribcracker"
+      ],
+      "set": []
+    },
+    "8lw": {
+      "name": "Gothic Bow",
+      "kind": "weapon",
+      "type": "bow",
+      "tier": "exceptional",
+      "maxSockets": 6,
+      "unique": [
+        "Godstrike Arch"
+      ],
+      "set": []
+    },
+    "8lx": {
+      "name": "Arbalest",
+      "kind": "weapon",
+      "type": "xbow",
+      "tier": "exceptional",
+      "maxSockets": 3,
+      "unique": [
+        "Langer Briser"
+      ],
+      "set": []
+    },
+    "8mx": {
+      "name": "Siege Crossbow",
+      "kind": "weapon",
+      "type": "xbow",
+      "tier": "exceptional",
+      "maxSockets": 4,
+      "unique": [
+        "Pus Spiter"
+      ],
+      "set": []
+    },
+    "8rx": {
+      "name": "Chu-Ko-Nu",
+      "kind": "weapon",
+      "type": "xbow",
+      "tier": "exceptional",
+      "maxSockets": 5,
+      "unique": [
+        "Demon Machine"
+      ],
+      "set": []
+    },
+    "8s8": {
+      "name": "Short Siege Bow",
+      "kind": "weapon",
+      "type": "bow",
+      "tier": "exceptional",
+      "maxSockets": 5,
+      "unique": [
+        "Whichwild String"
+      ],
+      "set": []
+    },
+    "8sb": {
+      "name": "Edge Bow",
+      "kind": "weapon",
+      "type": "bow",
+      "tier": "exceptional",
+      "maxSockets": 3,
+      "unique": [
+        "Skystrike"
+      ],
+      "set": []
+    },
+    "8ss": {
+      "name": "Jo Staff",
+      "kind": "weapon",
+      "type": "staf",
+      "tier": "exceptional",
+      "maxSockets": 2,
+      "unique": [
+        "Razorswitch"
+      ],
+      "set": []
+    },
+    "8sw": {
+      "name": "Rune Bow",
+      "kind": "weapon",
+      "type": "bow",
+      "tier": "exceptional",
+      "maxSockets": 5,
+      "unique": [
+        "Magewrath"
+      ],
+      "set": []
+    },
+    "8ws": {
+      "name": "Rune Staff",
+      "kind": "weapon",
+      "type": "staf",
+      "tier": "exceptional",
+      "maxSockets": 6,
+      "unique": [
+        "Skullcollector"
+      ],
+      "set": []
+    },
+    "92a": {
+      "name": "Twin Axe",
+      "kind": "weapon",
+      "type": "axe",
+      "tier": "exceptional",
+      "maxSockets": 5,
+      "unique": [
+        "Islestrike"
+      ],
+      "set": []
+    },
+    "92h": {
+      "name": "Espandon",
+      "kind": "weapon",
+      "type": "swor",
+      "tier": "exceptional",
+      "maxSockets": 3,
+      "unique": [
+        "Crainte Vomir"
+      ],
+      "set": []
+    },
+    "9ar": {
+      "name": "Quhab",
+      "kind": "weapon",
+      "type": "h2h",
+      "tier": "exceptional",
+      "maxSockets": 3,
+      "unique": [],
+      "set": []
+    },
+    "9ax": {
+      "name": "Cleaver",
+      "kind": "weapon",
+      "type": "axe",
+      "tier": "exceptional",
+      "maxSockets": 4,
+      "unique": [
+        "Butcher's Pupil"
+      ],
+      "set": []
+    },
+    "9b7": {
+      "name": "Lochaber Axe",
+      "kind": "weapon",
+      "type": "pole",
+      "tier": "exceptional",
+      "maxSockets": 3,
+      "unique": [
+        "The Meat Scraper"
+      ],
+      "set": []
+    },
+    "9b8": {
+      "name": "Hurlbat",
+      "kind": "weapon",
+      "type": "taxe",
+      "tier": "exceptional",
+      "maxSockets": 0,
+      "unique": [],
+      "set": []
+    },
+    "9b9": {
+      "name": "Gothic Sword",
+      "kind": "weapon",
+      "type": "swor",
+      "tier": "exceptional",
+      "maxSockets": 4,
+      "unique": [
+        "Cloudcrack"
+      ],
+      "set": []
+    },
+    "9ba": {
+      "name": "Bearded Axe",
+      "kind": "weapon",
+      "type": "axe",
+      "tier": "exceptional",
+      "maxSockets": 5,
+      "unique": [
+        "Spellsteel"
+      ],
+      "set": []
+    },
+    "9bk": {
+      "name": "War Dart",
+      "kind": "weapon",
+      "type": "tkni",
+      "tier": "exceptional",
+      "maxSockets": 0,
+      "unique": [],
+      "set": []
+    },
+    "9bl": {
+      "name": "Stiletto",
+      "kind": "weapon",
+      "type": "knif",
+      "tier": "exceptional",
+      "maxSockets": 2,
+      "unique": [
+        "Stormspike"
+      ],
+      "set": []
+    },
+    "9br": {
+      "name": "War Fork",
+      "kind": "weapon",
+      "type": "spea",
+      "tier": "exceptional",
+      "maxSockets": 5,
+      "unique": [
+        "Soulfeast Tine"
+      ],
+      "set": []
+    },
+    "9bs": {
+      "name": "Battle Sword",
+      "kind": "weapon",
+      "type": "swor",
+      "tier": "exceptional",
+      "maxSockets": 4,
+      "unique": [
+        "Headstriker"
+      ],
+      "set": []
+    },
+    "9bt": {
+      "name": "Tabar",
+      "kind": "weapon",
+      "type": "axe",
+      "tier": "exceptional",
+      "maxSockets": 5,
+      "unique": [
+        "Stormrider"
+      ],
+      "set": []
+    },
+    "9bw": {
+      "name": "Tomb Wand",
+      "kind": "weapon",
+      "type": "wand",
+      "tier": "exceptional",
+      "maxSockets": 2,
+      "unique": [
+        "Arm of King Leoric"
+      ],
+      "set": []
+    },
+    "9cl": {
+      "name": "Cudgel",
+      "kind": "weapon",
+      "type": "club",
+      "tier": "exceptional",
+      "maxSockets": 2,
+      "unique": [
+        "Dark Clan Crusher"
+      ],
+      "set": []
+    },
+    "9cm": {
+      "name": "Dacian Falx",
+      "kind": "weapon",
+      "type": "swor",
+      "tier": "exceptional",
+      "maxSockets": 4,
+      "unique": [
+        "Bing Sz Wang"
+      ],
+      "set": []
+    },
+    "9cr": {
+      "name": "Dimensional Blade",
+      "kind": "weapon",
+      "type": "swor",
+      "tier": "exceptional",
+      "maxSockets": 6,
+      "unique": [
+        "Ginther's Rift"
+      ],
+      "set": []
+    },
+    "9cs": {
+      "name": "Hand Scythe",
+      "kind": "weapon",
+      "type": "h2h2",
+      "tier": "exceptional",
+      "maxSockets": 2,
+      "unique": [],
+      "set": []
+    },
+    "9dg": {
+      "name": "Poignard",
+      "kind": "weapon",
+      "type": "knif",
+      "tier": "exceptional",
+      "maxSockets": 1,
+      "unique": [
+        "Spineripper"
+      ],
+      "set": []
+    },
+    "9di": {
+      "name": "Rondel",
+      "kind": "weapon",
+      "type": "knif",
+      "tier": "exceptional",
+      "maxSockets": 1,
+      "unique": [
+        "Heart Carver"
+      ],
+      "set": []
+    },
+    "9fb": {
+      "name": "Zweihander",
+      "kind": "weapon",
+      "type": "swor",
+      "tier": "exceptional",
+      "maxSockets": 5,
+      "unique": [
+        "Todesfaelle Flamme"
+      ],
+      "set": []
+    },
+    "9fc": {
+      "name": "Tulwar",
+      "kind": "weapon",
+      "type": "swor",
+      "tier": "exceptional",
+      "maxSockets": 2,
+      "unique": [
+        "Blade of Ali Baba"
+      ],
+      "set": []
+    },
+    "9fl": {
+      "name": "Knout",
+      "kind": "weapon",
+      "type": "mace",
+      "tier": "exceptional",
+      "maxSockets": 5,
+      "unique": [
+        "Baezil's Vortex"
+      ],
+      "set": []
+    },
+    "9ga": {
+      "name": "Gothic Axe",
+      "kind": "weapon",
+      "type": "axe",
+      "tier": "exceptional",
+      "maxSockets": 6,
+      "unique": [
+        "Boneslayer Blade"
+      ],
+      "set": []
+    },
+    "9gd": {
+      "name": "Executioner Sword",
+      "kind": "weapon",
+      "type": "swor",
+      "tier": "exceptional",
+      "maxSockets": 6,
+      "unique": [
+        "Swordguard"
+      ],
+      "set": []
+    },
+    "9gi": {
+      "name": "Ancient Axe",
+      "kind": "weapon",
+      "type": "axe",
+      "tier": "exceptional",
+      "maxSockets": 6,
+      "unique": [
+        "The Minataur"
+      ],
+      "set": []
+    },
+    "9gl": {
+      "name": "Spiculum",
+      "kind": "weapon",
+      "type": "jave",
+      "tier": "exceptional",
+      "maxSockets": 0,
+      "unique": [],
+      "set": []
+    },
+    "9gm": {
+      "name": "Martel de Fer",
+      "kind": "weapon",
+      "type": "hamm",
+      "tier": "exceptional",
+      "maxSockets": 6,
+      "unique": [
+        "The Gavel of Pain"
+      ],
+      "set": []
+    },
+    "9gs": {
+      "name": "Tusk Sword",
+      "kind": "weapon",
+      "type": "swor",
+      "tier": "exceptional",
+      "maxSockets": 4,
+      "unique": [
+        "The Vile Husk"
+      ],
+      "set": []
+    },
+    "9gw": {
+      "name": "Grave Wand",
+      "kind": "weapon",
+      "type": "wand",
+      "tier": "exceptional",
+      "maxSockets": 2,
+      "unique": [
+        "Blackhand Key"
+      ],
+      "set": []
+    },
+    "9h9": {
+      "name": "Bec-de-Corbin",
+      "kind": "weapon",
+      "type": "pole",
+      "tier": "exceptional",
+      "maxSockets": 6,
+      "unique": [
+        "Husoldal Evo"
+      ],
+      "set": []
+    },
+    "9ha": {
+      "name": "Hatchet",
+      "kind": "weapon",
+      "type": "axe",
+      "tier": "exceptional",
+      "maxSockets": 2,
+      "unique": [
+        "Coldkill"
+      ],
+      "set": []
+    },
+    "9ja": {
+      "name": "War Javelin",
+      "kind": "weapon",
+      "type": "jave",
+      "tier": "exceptional",
+      "maxSockets": 0,
+      "unique": [],
+      "set": []
+    },
+    "9kr": {
+      "name": "Cinquedeas",
+      "kind": "weapon",
+      "type": "knif",
+      "tier": "exceptional",
+      "maxSockets": 3,
+      "unique": [
+        "Blackbog's Sharp"
+      ],
+      "set": []
+    },
+    "9la": {
+      "name": "Military Axe",
+      "kind": "weapon",
+      "type": "axe",
+      "tier": "exceptional",
+      "maxSockets": 4,
+      "unique": [
+        "Warlord's Trust"
+      ],
+      "set": []
+    },
+    "9ls": {
+      "name": "Rune Sword",
+      "kind": "weapon",
+      "type": "swor",
+      "tier": "exceptional",
+      "maxSockets": 4,
+      "unique": [
+        "Plague Bearer"
+      ],
+      "set": []
+    },
+    "9lw": {
+      "name": "Greater Claws",
+      "kind": "weapon",
+      "type": "h2h2",
+      "tier": "exceptional",
+      "maxSockets": 3,
+      "unique": [],
+      "set": []
+    },
+    "9m9": {
+      "name": "War Club",
+      "kind": "weapon",
+      "type": "hamm",
+      "tier": "exceptional",
+      "maxSockets": 6,
+      "unique": [
+        "Bloodtree Stump"
+      ],
+      "set": []
+    },
+    "9ma": {
+      "name": "Flanged Mace",
+      "kind": "weapon",
+      "type": "mace",
+      "tier": "exceptional",
+      "maxSockets": 2,
+      "unique": [
+        "Sureshrill Frost"
+      ],
+      "set": []
+    },
+    "9mp": {
+      "name": "Crowbill",
+      "kind": "weapon",
+      "type": "axe",
+      "tier": "exceptional",
+      "maxSockets": 6,
+      "unique": [
+        "Pompe's Wrath"
+      ],
+      "set": []
+    },
+    "9mt": {
+      "name": "Jagged Star",
+      "kind": "weapon",
+      "type": "mace",
+      "tier": "exceptional",
+      "maxSockets": 3,
+      "unique": [
+        "Moonfall"
+      ],
+      "set": [
+        "Aldur's Gauntlet"
+      ]
+    },
+    "9p9": {
+      "name": "Lance",
+      "kind": "weapon",
+      "type": "spea",
+      "tier": "exceptional",
+      "maxSockets": 6,
+      "unique": [
+        "Spire of Honor"
+      ],
+      "set": []
+    },
+    "9pa": {
+      "name": "Partizan",
+      "kind": "weapon",
+      "type": "pole",
+      "tier": "exceptional",
+      "maxSockets": 5,
+      "unique": [
+        "Pierre Tombale Couant"
+      ],
+      "set": []
+    },
+    "9pi": {
+      "name": "Great Pilum",
+      "kind": "weapon",
+      "type": "jave",
+      "tier": "exceptional",
+      "maxSockets": 0,
+      "unique": [],
+      "set": []
+    },
+    "9qr": {
+      "name": "Scissors Quhab",
+      "kind": "weapon",
+      "type": "h2h2",
+      "tier": "exceptional",
+      "maxSockets": 3,
+      "unique": [],
+      "set": []
+    },
+    "9qs": {
+      "name": "Holy Water Sprinkler",
+      "kind": "weapon",
+      "type": "scep",
+      "tier": "exceptional",
+      "maxSockets": 3,
+      "unique": [
+        "The Fetid Sprinkler"
+      ],
+      "set": []
+    },
+    "9s8": {
+      "name": "Battle Scythe",
+      "kind": "weapon",
+      "type": "pole",
+      "tier": "exceptional",
+      "maxSockets": 5,
+      "unique": [
+        "Athena's Wrath"
+      ],
+      "set": []
+    },
+    "9s9": {
+      "name": "Simbilan",
+      "kind": "weapon",
+      "type": "jave",
+      "tier": "exceptional",
+      "maxSockets": 0,
+      "unique": [],
+      "set": []
+    },
+    "9sb": {
+      "name": "Shamshir",
+      "kind": "weapon",
+      "type": "swor",
+      "tier": "exceptional",
+      "maxSockets": 2,
+      "unique": [
+        "Hexfire"
+      ],
+      "set": []
+    },
+    "9sc": {
+      "name": "Rune Scepter",
+      "kind": "weapon",
+      "type": "scep",
+      "tier": "exceptional",
+      "maxSockets": 2,
+      "unique": [
+        "Zakarum's Hand"
+      ],
+      "set": []
+    },
+    "9sm": {
+      "name": "Cutlass",
+      "kind": "weapon",
+      "type": "swor",
+      "tier": "exceptional",
+      "maxSockets": 2,
+      "unique": [
+        "Coldsteel Eye"
+      ],
+      "set": []
+    },
+    "9sp": {
+      "name": "Barbed Club",
+      "kind": "weapon",
+      "type": "club",
+      "tier": "exceptional",
+      "maxSockets": 3,
+      "unique": [
+        "Fleshrender"
+      ],
+      "set": []
+    },
+    "9sr": {
+      "name": "War Spear",
+      "kind": "weapon",
+      "type": "spea",
+      "tier": "exceptional",
+      "maxSockets": 3,
+      "unique": [
+        "The Impaler"
+      ],
+      "set": []
+    },
+    "9ss": {
+      "name": "Gladius",
+      "kind": "weapon",
+      "type": "swor",
+      "tier": "exceptional",
+      "maxSockets": 2,
+      "unique": [
+        "Bloodletter"
+      ],
+      "set": []
+    },
+    "9st": {
+      "name": "Yari",
+      "kind": "weapon",
+      "type": "spea",
+      "tier": "exceptional",
+      "maxSockets": 6,
+      "unique": [
+        "Hone Sundan"
+      ],
+      "set": []
+    },
+    "9ta": {
+      "name": "Francisca",
+      "kind": "weapon",
+      "type": "taxe",
+      "tier": "exceptional",
+      "maxSockets": 0,
+      "unique": [
+        "The Scalper"
+      ],
+      "set": []
+    },
+    "9tk": {
+      "name": "Battle Dart",
+      "kind": "weapon",
+      "type": "tkni",
+      "tier": "exceptional",
+      "maxSockets": 0,
+      "unique": [
+        "Deathbit"
+      ],
+      "set": []
+    },
+    "9tr": {
+      "name": "Fuscina",
+      "kind": "weapon",
+      "type": "spea",
+      "tier": "exceptional",
+      "maxSockets": 4,
+      "unique": [
+        "Kelpie Snare"
+      ],
+      "set": []
+    },
+    "9ts": {
+      "name": "Harpoon",
+      "kind": "weapon",
+      "type": "jave",
+      "tier": "exceptional",
+      "maxSockets": 0,
+      "unique": [],
+      "set": []
+    },
+    "9tw": {
+      "name": "Greater Talons",
+      "kind": "weapon",
+      "type": "h2h2",
+      "tier": "exceptional",
+      "maxSockets": 3,
+      "unique": [
+        "Cutthroat1"
+      ],
+      "set": []
+    },
+    "9vo": {
+      "name": "Bill",
+      "kind": "weapon",
+      "type": "pole",
+      "tier": "exceptional",
+      "maxSockets": 4,
+      "unique": [
+        "Blackleach Blade"
+      ],
+      "set": [
+        "Hwanin's Justice"
+      ]
+    },
+    "9wa": {
+      "name": "Naga",
+      "kind": "weapon",
+      "type": "axe",
+      "tier": "exceptional",
+      "maxSockets": 6,
+      "unique": [
+        "Guardian Naga"
+      ],
+      "set": []
+    },
+    "9wb": {
+      "name": "Wrist Spike",
+      "kind": "weapon",
+      "type": "h2h",
+      "tier": "exceptional",
+      "maxSockets": 2,
+      "unique": [],
+      "set": []
+    },
+    "9wc": {
+      "name": "Grim Scythe",
+      "kind": "weapon",
+      "type": "pole",
+      "tier": "exceptional",
+      "maxSockets": 6,
+      "unique": [
+        "Grim's Burning Dead"
+      ],
+      "set": []
+    },
+    "9wd": {
+      "name": "Ancient Sword",
+      "kind": "weapon",
+      "type": "swor",
+      "tier": "exceptional",
+      "maxSockets": 3,
+      "unique": [
+        "The Atlantian"
+      ],
+      "set": []
+    },
+    "9wh": {
+      "name": "Battle Hammer",
+      "kind": "weapon",
+      "type": "hamm",
+      "tier": "exceptional",
+      "maxSockets": 4,
+      "unique": [
+        "Earthshaker"
+      ],
+      "set": []
+    },
+    "9wn": {
+      "name": "Burnt Wand",
+      "kind": "weapon",
+      "type": "wand",
+      "tier": "exceptional",
+      "maxSockets": 1,
+      "unique": [
+        "Suicide Branch"
+      ],
+      "set": []
+    },
+    "9ws": {
+      "name": "Divine Scepter",
+      "kind": "weapon",
+      "type": "scep",
+      "tier": "exceptional",
+      "maxSockets": 5,
+      "unique": [
+        "Hand of Blessed Light"
+      ],
+      "set": []
+    },
+    "9xf": {
+      "name": "Fascia",
+      "kind": "weapon",
+      "type": "h2h",
+      "tier": "exceptional",
+      "maxSockets": 2,
+      "unique": [],
+      "set": []
+    },
+    "9yw": {
+      "name": "Petrified Wand",
+      "kind": "weapon",
+      "type": "wand",
+      "tier": "exceptional",
+      "maxSockets": 2,
+      "unique": [
+        "Carin Shard"
+      ],
+      "set": []
+    },
+    "aar": {
+      "name": "Ancient Armor",
+      "kind": "armor",
+      "type": "tors",
+      "tier": "normal",
+      "maxSockets": 4,
+      "unique": [
+        "Victors Silk"
+      ],
+      "set": [
+        "Milabrega's Robe"
+      ]
+    },
+    "am1": {
+      "name": "Stag Bow",
+      "kind": "weapon",
+      "type": "abow",
+      "tier": "normal",
+      "maxSockets": 5,
+      "unique": [],
+      "set": []
+    },
+    "am2": {
+      "name": "Reflex Bow",
+      "kind": "weapon",
+      "type": "abow",
+      "tier": "normal",
+      "maxSockets": 5,
+      "unique": [],
+      "set": []
+    },
+    "am3": {
+      "name": "Maiden Spear",
+      "kind": "weapon",
+      "type": "aspe",
+      "tier": "normal",
+      "maxSockets": 6,
+      "unique": [],
+      "set": []
+    },
+    "am4": {
+      "name": "Maiden Pike",
+      "kind": "weapon",
+      "type": "aspe",
+      "tier": "normal",
+      "maxSockets": 6,
+      "unique": [],
+      "set": []
+    },
+    "am5": {
+      "name": "Maiden Javelin",
+      "kind": "weapon",
+      "type": "ajav",
+      "tier": "normal",
+      "maxSockets": 0,
+      "unique": [],
+      "set": []
+    },
+    "am6": {
+      "name": "Ashwood Bow",
+      "kind": "weapon",
+      "type": "abow",
+      "tier": "exceptional",
+      "maxSockets": 5,
+      "unique": [],
+      "set": []
+    },
+    "am7": {
+      "name": "Ceremonial Bow",
+      "kind": "weapon",
+      "type": "abow",
+      "tier": "exceptional",
+      "maxSockets": 5,
+      "unique": [
+        "Lycander's Aim"
+      ],
+      "set": []
+    },
+    "am8": {
+      "name": "Ceremonial Spear",
+      "kind": "weapon",
+      "type": "aspe",
+      "tier": "exceptional",
+      "maxSockets": 6,
+      "unique": [],
+      "set": []
+    },
+    "am9": {
+      "name": "Ceremonial Pike",
+      "kind": "weapon",
+      "type": "aspe",
+      "tier": "exceptional",
+      "maxSockets": 6,
+      "unique": [
+        "Lycander's Flank"
+      ],
+      "set": []
+    },
+    "ama": {
+      "name": "Ceremonial Javelin",
+      "kind": "weapon",
+      "type": "ajav",
+      "tier": "exceptional",
+      "maxSockets": 0,
+      "unique": [
+        "Titan's Revenge"
+      ],
+      "set": []
+    },
+    "amb": {
+      "name": "Matriarchal Bow",
+      "kind": "weapon",
+      "type": "abow",
+      "tier": "elite",
+      "maxSockets": 5,
+      "unique": [
+        "Bloodraven's Charge"
+      ],
+      "set": []
+    },
+    "amc": {
+      "name": "Grand Matron Bow",
+      "kind": "weapon",
+      "type": "abow",
+      "tier": "elite",
+      "maxSockets": 5,
+      "unique": [],
+      "set": [
+        "M'avina's Caster"
+      ]
+    },
+    "amd": {
+      "name": "Matriarchal Spear",
+      "kind": "weapon",
+      "type": "aspe",
+      "tier": "elite",
+      "maxSockets": 6,
+      "unique": [
+        "Stoneraven"
+      ],
+      "set": []
+    },
+    "ame": {
+      "name": "Matriarchal Pike",
+      "kind": "weapon",
+      "type": "aspe",
+      "tier": "elite",
+      "maxSockets": 6,
+      "unique": [],
+      "set": []
+    },
+    "amf": {
+      "name": "Matriarchal Javelin",
+      "kind": "weapon",
+      "type": "ajav",
+      "tier": "elite",
+      "maxSockets": 0,
+      "unique": [
+        "Thunderstroke"
+      ],
+      "set": []
+    },
+    "axe": {
+      "name": "Axe",
+      "kind": "weapon",
+      "type": "axe",
+      "tier": "normal",
+      "maxSockets": 4,
+      "unique": [
+        "Deathspade"
+      ],
+      "set": []
+    },
+    "axf": {
+      "name": "Hatchet Hands",
+      "kind": "weapon",
+      "type": "h2h",
+      "tier": "normal",
+      "maxSockets": 2,
+      "unique": [],
+      "set": []
+    },
+    "ba1": {
+      "name": "Jawbone Cap",
+      "kind": "armor",
+      "type": "phlm",
+      "tier": "normal",
+      "maxSockets": 3,
+      "unique": [],
+      "set": []
+    },
+    "ba2": {
+      "name": "Fanged Helm",
+      "kind": "armor",
+      "type": "phlm",
+      "tier": "normal",
+      "maxSockets": 3,
+      "unique": [],
+      "set": []
+    },
+    "ba3": {
+      "name": "Horned Helm",
+      "kind": "armor",
+      "type": "phlm",
+      "tier": "normal",
+      "maxSockets": 3,
+      "unique": [],
+      "set": []
+    },
+    "ba4": {
+      "name": "Assault Helmet",
+      "kind": "armor",
+      "type": "phlm",
+      "tier": "normal",
+      "maxSockets": 3,
+      "unique": [],
+      "set": []
+    },
+    "ba5": {
+      "name": "Avenger Guard",
+      "kind": "armor",
+      "type": "phlm",
+      "tier": "normal",
+      "maxSockets": 3,
+      "unique": [],
+      "set": [
+        "Immortal King's Will"
+      ]
+    },
+    "ba6": {
+      "name": "Jawbone Visor",
+      "kind": "armor",
+      "type": "phlm",
+      "tier": "exceptional",
+      "maxSockets": 3,
+      "unique": [],
+      "set": []
+    },
+    "ba7": {
+      "name": "Lion Helm",
+      "kind": "armor",
+      "type": "phlm",
+      "tier": "exceptional",
+      "maxSockets": 3,
+      "unique": [],
+      "set": []
+    },
+    "ba8": {
+      "name": "Rage Mask",
+      "kind": "armor",
+      "type": "phlm",
+      "tier": "exceptional",
+      "maxSockets": 3,
+      "unique": [],
+      "set": []
+    },
+    "ba9": {
+      "name": "Savage Helmet",
+      "kind": "armor",
+      "type": "phlm",
+      "tier": "exceptional",
+      "maxSockets": 3,
+      "unique": [],
+      "set": []
+    },
+    "baa": {
+      "name": "Slayer Guard",
+      "kind": "armor",
+      "type": "phlm",
+      "tier": "exceptional",
+      "maxSockets": 3,
+      "unique": [
+        "Arreat's Face"
+      ],
+      "set": []
+    },
+    "bab": {
+      "name": "Carnage Helm",
+      "kind": "armor",
+      "type": "phlm",
+      "tier": "elite",
+      "maxSockets": 3,
+      "unique": [],
+      "set": []
+    },
+    "bac": {
+      "name": "Fury Visor",
+      "kind": "armor",
+      "type": "phlm",
+      "tier": "elite",
+      "maxSockets": 3,
+      "unique": [
+        "Wolfhowl"
+      ],
+      "set": []
+    },
+    "bad": {
+      "name": "Destroyer Helm",
+      "kind": "armor",
+      "type": "phlm",
+      "tier": "elite",
+      "maxSockets": 3,
+      "unique": [
+        "Demonhorn's Edge"
+      ],
+      "set": []
+    },
+    "bae": {
+      "name": "Conqueror Crown",
+      "kind": "armor",
+      "type": "phlm",
+      "tier": "elite",
+      "maxSockets": 3,
+      "unique": [
+        "Halaberd's Reign"
+      ],
+      "set": []
+    },
+    "baf": {
+      "name": "Guardian Crown",
+      "kind": "armor",
+      "type": "phlm",
+      "tier": "elite",
+      "maxSockets": 3,
+      "unique": [],
+      "set": []
+    },
+    "bal": {
+      "name": "Balanced Axe",
+      "kind": "weapon",
+      "type": "taxe",
+      "tier": "normal",
+      "maxSockets": 0,
+      "unique": [],
+      "set": []
+    },
+    "bar": {
+      "name": "Bardiche",
+      "kind": "weapon",
+      "type": "pole",
+      "tier": "normal",
+      "maxSockets": 3,
+      "unique": [
+        "Dimoaks Hew"
+      ],
+      "set": []
+    },
+    "bax": {
+      "name": "Broad Axe",
+      "kind": "weapon",
+      "type": "axe",
+      "tier": "normal",
+      "maxSockets": 5,
+      "unique": [
+        "Goreshovel"
+      ],
+      "set": []
+    },
+    "bhm": {
+      "name": "Bone Helm",
+      "kind": "armor",
+      "type": "helm",
+      "tier": "normal",
+      "maxSockets": 2,
+      "unique": [
+        "Wormskull"
+      ],
+      "set": [
+        "Tancred's Skull"
+      ]
+    },
+    "bkf": {
+      "name": "Balanced Knife",
+      "kind": "weapon",
+      "type": "tkni",
+      "tier": "normal",
+      "maxSockets": 0,
+      "unique": [],
+      "set": []
+    },
+    "bld": {
+      "name": "Blade",
+      "kind": "weapon",
+      "type": "knif",
+      "tier": "normal",
+      "maxSockets": 2,
+      "unique": [
+        "Irices Shard"
+      ],
+      "set": []
+    },
+    "brn": {
+      "name": "Brandistock",
+      "kind": "weapon",
+      "type": "spea",
+      "tier": "normal",
+      "maxSockets": 5,
+      "unique": [
+        "Bloodthief"
+      ],
+      "set": []
+    },
+    "brs": {
+      "name": "Breast Plate",
+      "kind": "armor",
+      "type": "tors",
+      "tier": "normal",
+      "maxSockets": 3,
+      "unique": [
+        "Venomsward"
+      ],
+      "set": [
+        "Isenhart's Case"
+      ]
+    },
+    "bsd": {
+      "name": "Broad Sword",
+      "kind": "weapon",
+      "type": "swor",
+      "tier": "normal",
+      "maxSockets": 4,
+      "unique": [
+        "Griswolds Edge"
+      ],
+      "set": [
+        "Isenhart's Lightbrand"
+      ]
+    },
+    "bsh": {
+      "name": "Bone Shield",
+      "kind": "armor",
+      "type": "shie",
+      "tier": "normal",
+      "maxSockets": 2,
+      "unique": [
+        "Wall of the Eyeless"
+      ],
+      "set": []
+    },
+    "bst": {
+      "name": "Battle Staff",
+      "kind": "weapon",
+      "type": "staf",
+      "tier": "normal",
+      "maxSockets": 4,
+      "unique": [
+        "The Salamander"
+      ],
+      "set": [
+        "Cathan's Rule"
+      ]
+    },
+    "bsw": {
+      "name": "Bastard Sword",
+      "kind": "weapon",
+      "type": "swor",
+      "tier": "normal",
+      "maxSockets": 4,
+      "unique": [
+        "Blacktongue"
+      ],
+      "set": []
+    },
+    "btl": {
+      "name": "Blade Talons",
+      "kind": "weapon",
+      "type": "h2h",
+      "tier": "normal",
+      "maxSockets": 3,
+      "unique": [],
+      "set": []
+    },
+    "btx": {
+      "name": "Battle Axe",
+      "kind": "weapon",
+      "type": "axe",
+      "tier": "normal",
+      "maxSockets": 5,
+      "unique": [
+        "The Chieftan"
+      ],
+      "set": []
+    },
+    "buc": {
+      "name": "Buckler",
+      "kind": "armor",
+      "type": "shie",
+      "tier": "normal",
+      "maxSockets": 1,
+      "unique": [
+        "Pelta Lunata"
+      ],
+      "set": [
+        "Hsarus' Iron Fist"
+      ]
+    },
+    "bwn": {
+      "name": "Bone Wand",
+      "kind": "weapon",
+      "type": "wand",
+      "tier": "normal",
+      "maxSockets": 2,
+      "unique": [
+        "Gravenspine"
+      ],
+      "set": [
+        "McAuley's Superstition"
+      ]
+    },
+    "cap": {
+      "name": "Cap",
+      "kind": "armor",
+      "type": "helm",
+      "tier": "normal",
+      "maxSockets": 2,
+      "unique": [
+        "War Bonnet"
+      ],
+      "set": [
+        "Infernal Cranium",
+        "McAuley's Paragon"
+      ]
+    },
+    "cbw": {
+      "name": "Composite Bow",
+      "kind": "weapon",
+      "type": "bow",
+      "tier": "normal",
+      "maxSockets": 4,
+      "unique": [
+        "Piercerib"
+      ],
+      "set": []
+    },
+    "ces": {
+      "name": "Cestus",
+      "kind": "weapon",
+      "type": "h2h",
+      "tier": "normal",
+      "maxSockets": 2,
+      "unique": [],
+      "set": []
+    },
+    "chn": {
+      "name": "Chain Mail",
+      "kind": "armor",
+      "type": "tors",
+      "tier": "normal",
+      "maxSockets": 2,
+      "unique": [
+        "Sparking Mail"
+      ],
+      "set": [
+        "Cathan's Mesh"
+      ]
+    },
+    "ci0": {
+      "name": "Circlet",
+      "kind": "armor",
+      "type": "circ",
+      "tier": "normal",
+      "maxSockets": 2,
+      "unique": [],
+      "set": [
+        "Naj's Circlet"
+      ]
+    },
+    "ci1": {
+      "name": "Coronet",
+      "kind": "armor",
+      "type": "circ",
+      "tier": "normal",
+      "maxSockets": 2,
+      "unique": [],
+      "set": []
+    },
+    "ci2": {
+      "name": "Tiara",
+      "kind": "armor",
+      "type": "circ",
+      "tier": "exceptional",
+      "maxSockets": 3,
+      "unique": [
+        "Kira's Guardian"
+      ],
+      "set": []
+    },
+    "ci3": {
+      "name": "Diadem",
+      "kind": "armor",
+      "type": "circ",
+      "tier": "elite",
+      "maxSockets": 3,
+      "unique": [
+        "Griffon's Eye"
+      ],
+      "set": [
+        "M'avina's True Sight"
+      ]
+    },
+    "clb": {
+      "name": "Club",
+      "kind": "weapon",
+      "type": "club",
+      "tier": "normal",
+      "maxSockets": 2,
+      "unique": [
+        "Felloak"
+      ],
+      "set": []
+    },
+    "clm": {
+      "name": "Claymore",
+      "kind": "weapon",
+      "type": "swor",
+      "tier": "normal",
+      "maxSockets": 4,
+      "unique": [
+        "Soulflay"
+      ],
+      "set": []
+    },
+    "clw": {
+      "name": "Claws",
+      "kind": "weapon",
+      "type": "h2h",
+      "tier": "normal",
+      "maxSockets": 3,
+      "unique": [],
+      "set": []
+    },
+    "crn": {
+      "name": "Crown",
+      "kind": "armor",
+      "type": "helm",
+      "tier": "normal",
+      "maxSockets": 3,
+      "unique": [
+        "Undead Crown"
+      ],
+      "set": [
+        "Iratha's Coil",
+        "Milabrega's Diadem"
+      ]
+    },
+    "crs": {
+      "name": "Crystal Sword",
+      "kind": "weapon",
+      "type": "swor",
+      "tier": "normal",
+      "maxSockets": 6,
+      "unique": [],
+      "set": []
+    },
+    "cst": {
+      "name": "Gnarled Staff",
+      "kind": "weapon",
+      "type": "staf",
+      "tier": "normal",
+      "maxSockets": 4,
+      "unique": [
+        "Lazarus Spire"
+      ],
+      "set": []
+    },
+    "dgr": {
+      "name": "Dagger",
+      "kind": "weapon",
+      "type": "knif",
+      "tier": "normal",
+      "maxSockets": 1,
+      "unique": [
+        "Gull"
+      ],
+      "set": []
+    },
+    "dir": {
+      "name": "Dirk",
+      "kind": "weapon",
+      "type": "knif",
+      "tier": "normal",
+      "maxSockets": 1,
+      "unique": [
+        "The Diggler"
+      ],
+      "set": []
+    },
+    "dr1": {
+      "name": "Wolf Head",
+      "kind": "armor",
+      "type": "pelt",
+      "tier": "normal",
+      "maxSockets": 3,
+      "unique": [],
+      "set": []
+    },
+    "dr2": {
+      "name": "Hawk Helm",
+      "kind": "armor",
+      "type": "pelt",
+      "tier": "normal",
+      "maxSockets": 3,
+      "unique": [],
+      "set": []
+    },
+    "dr3": {
+      "name": "Antlers",
+      "kind": "armor",
+      "type": "pelt",
+      "tier": "normal",
+      "maxSockets": 3,
+      "unique": [],
+      "set": []
+    },
+    "dr4": {
+      "name": "Falcon Mask",
+      "kind": "armor",
+      "type": "pelt",
+      "tier": "normal",
+      "maxSockets": 3,
+      "unique": [],
+      "set": []
+    },
+    "dr5": {
+      "name": "Spirit Mask",
+      "kind": "armor",
+      "type": "pelt",
+      "tier": "normal",
+      "maxSockets": 3,
+      "unique": [],
+      "set": []
+    },
+    "dr6": {
+      "name": "Alpha Helm",
+      "kind": "armor",
+      "type": "pelt",
+      "tier": "exceptional",
+      "maxSockets": 3,
+      "unique": [],
+      "set": []
+    },
+    "dr7": {
+      "name": "Griffon Headdress",
+      "kind": "armor",
+      "type": "pelt",
+      "tier": "exceptional",
+      "maxSockets": 3,
+      "unique": [],
+      "set": []
+    },
+    "dr8": {
+      "name": "Hunter's Guise",
+      "kind": "armor",
+      "type": "pelt",
+      "tier": "exceptional",
+      "maxSockets": 3,
+      "unique": [],
+      "set": [
+        "Aldur's Stony Gaze"
+      ]
+    },
+    "dr9": {
+      "name": "Sacred Feathers",
+      "kind": "armor",
+      "type": "pelt",
+      "tier": "exceptional",
+      "maxSockets": 3,
+      "unique": [],
+      "set": []
+    },
+    "dra": {
+      "name": "Totemic Mask",
+      "kind": "armor",
+      "type": "pelt",
+      "tier": "exceptional",
+      "maxSockets": 3,
+      "unique": [
+        "Jalal's Mane"
+      ],
+      "set": []
+    },
+    "drb": {
+      "name": "Blood Spirit",
+      "kind": "armor",
+      "type": "pelt",
+      "tier": "elite",
+      "maxSockets": 3,
+      "unique": [
+        "Cerebus"
+      ],
+      "set": []
+    },
+    "drc": {
+      "name": "Sun Spirit",
+      "kind": "armor",
+      "type": "pelt",
+      "tier": "elite",
+      "maxSockets": 3,
+      "unique": [],
+      "set": []
+    },
+    "drd": {
+      "name": "Earth Spirit",
+      "kind": "armor",
+      "type": "pelt",
+      "tier": "elite",
+      "maxSockets": 3,
+      "unique": [
+        "Spiritkeeper"
+      ],
+      "set": []
+    },
+    "dre": {
+      "name": "Sky Spirit",
+      "kind": "armor",
+      "type": "pelt",
+      "tier": "elite",
+      "maxSockets": 3,
+      "unique": [
+        "Ravenlore"
+      ],
+      "set": []
+    },
+    "drf": {
+      "name": "Dream Spirit",
+      "kind": "armor",
+      "type": "pelt",
+      "tier": "elite",
+      "maxSockets": 3,
+      "unique": [],
+      "set": []
+    },
+    "fhl": {
+      "name": "Full Helm",
+      "kind": "armor",
+      "type": "helm",
+      "tier": "normal",
+      "maxSockets": 2,
+      "unique": [
+        "Duskdeep"
+      ],
+      "set": [
+        "Isenhart's Horns"
+      ]
+    },
+    "fla": {
+      "name": "Flail",
+      "kind": "weapon",
+      "type": "mace",
+      "tier": "normal",
+      "maxSockets": 5,
+      "unique": [
+        "The Generals Tan Do Li Ga"
+      ],
+      "set": []
+    },
+    "flb": {
+      "name": "Flamberge",
+      "kind": "weapon",
+      "type": "swor",
+      "tier": "normal",
+      "maxSockets": 5,
+      "unique": [
+        "Ripsaw"
+      ],
+      "set": []
+    },
+    "flc": {
+      "name": "Falchion",
+      "kind": "weapon",
+      "type": "swor",
+      "tier": "normal",
+      "maxSockets": 2,
+      "unique": [
+        "Gleamscythe"
+      ],
+      "set": []
+    },
+    "fld": {
+      "name": "Field Plate",
+      "kind": "armor",
+      "type": "tors",
+      "tier": "normal",
+      "maxSockets": 2,
+      "unique": [
+        "Rockfleece"
+      ],
+      "set": []
+    },
+    "ful": {
+      "name": "Full Plate Mail",
+      "kind": "armor",
+      "type": "tors",
+      "tier": "normal",
+      "maxSockets": 4,
+      "unique": [
+        "Goldskin"
+      ],
+      "set": [
+        "Tancred's Spine"
+      ]
+    },
+    "gax": {
+      "name": "Great Axe",
+      "kind": "weapon",
+      "type": "axe",
+      "tier": "normal",
+      "maxSockets": 6,
+      "unique": [
+        "Brainhew"
+      ],
+      "set": []
+    },
+    "ghm": {
+      "name": "Great Helm",
+      "kind": "armor",
+      "type": "helm",
+      "tier": "normal",
+      "maxSockets": 3,
+      "unique": [
+        "Howltusk"
+      ],
+      "set": [
+        "Sigon's Visor"
+      ]
+    },
+    "gis": {
+      "name": "Giant Sword",
+      "kind": "weapon",
+      "type": "swor",
+      "tier": "normal",
+      "maxSockets": 4,
+      "unique": [
+        "Kinemils Awl"
+      ],
+      "set": []
+    },
+    "gix": {
+      "name": "Giant Axe",
+      "kind": "weapon",
+      "type": "axe",
+      "tier": "normal",
+      "maxSockets": 6,
+      "unique": [
+        "The Humongous"
+      ],
+      "set": []
+    },
+    "glv": {
+      "name": "Glaive",
+      "kind": "weapon",
+      "type": "jave",
+      "tier": "normal",
+      "maxSockets": 0,
+      "unique": [],
+      "set": []
+    },
+    "gma": {
+      "name": "Great Maul",
+      "kind": "weapon",
+      "type": "hamm",
+      "tier": "normal",
+      "maxSockets": 6,
+      "unique": [
+        "Steeldriver"
+      ],
+      "set": []
+    },
+    "gpl": {
+      "name": "Strangling Gas Potion",
+      "kind": "weapon",
+      "type": "tpot",
+      "tier": "normal",
+      "maxSockets": 0,
+      "unique": [],
+      "set": []
+    },
+    "gpm": {
+      "name": "Choking Gas Potion",
+      "kind": "weapon",
+      "type": "tpot",
+      "tier": "normal",
+      "maxSockets": 0,
+      "unique": [],
+      "set": []
+    },
+    "gps": {
+      "name": "Rancid Gas Potion",
+      "kind": "weapon",
+      "type": "tpot",
+      "tier": "normal",
+      "maxSockets": 0,
+      "unique": [],
+      "set": []
+    },
+    "gsc": {
+      "name": "Grand Scepter",
+      "kind": "weapon",
+      "type": "scep",
+      "tier": "normal",
+      "maxSockets": 3,
+      "unique": [
+        "Rusthandle"
+      ],
+      "set": [
+        "Civerb's Cudgel"
+      ]
+    },
+    "gsd": {
+      "name": "Great Sword",
+      "kind": "weapon",
+      "type": "swor",
+      "tier": "normal",
+      "maxSockets": 6,
+      "unique": [
+        "The Patriarch"
+      ],
+      "set": []
+    },
+    "gth": {
+      "name": "Gothic Plate",
+      "kind": "armor",
+      "type": "tors",
+      "tier": "normal",
+      "maxSockets": 4,
+      "unique": [
+        "Rattlecage"
+      ],
+      "set": [
+        "Sigon's Shelter"
+      ]
+    },
+    "gts": {
+      "name": "Gothic Shield",
+      "kind": "armor",
+      "type": "shie",
+      "tier": "normal",
+      "maxSockets": 3,
+      "unique": [
+        "The Ward"
+      ],
+      "set": [
+        "Isenhart's Parry"
+      ]
+    },
+    "gwn": {
+      "name": "Grim Wand",
+      "kind": "weapon",
+      "type": "wand",
+      "tier": "normal",
+      "maxSockets": 2,
+      "unique": [
+        "Umes Lament"
+      ],
+      "set": [
+        "Infernal Torch"
+      ]
+    },
+    "hal": {
+      "name": "Halberd",
+      "kind": "weapon",
+      "type": "pole",
+      "tier": "normal",
+      "maxSockets": 6,
+      "unique": [
+        "Woestave"
+      ],
+      "set": []
+    },
+    "hax": {
+      "name": "Hand Axe",
+      "kind": "weapon",
+      "type": "axe",
+      "tier": "normal",
+      "maxSockets": 2,
+      "unique": [
+        "The Gnasher"
+      ],
+      "set": []
+    },
+    "hbl": {
+      "name": "Plated Belt",
+      "kind": "armor",
+      "type": "belt",
+      "tier": "normal",
+      "maxSockets": 0,
+      "unique": [
+        "Bladebuckle"
+      ],
+      "set": [
+        "Sigon's Wrap"
+      ]
+    },
+    "hbt": {
+      "name": "Greaves",
+      "kind": "armor",
+      "type": "boot",
+      "tier": "normal",
+      "maxSockets": 0,
+      "unique": [
+        "Tearhaunch"
+      ],
+      "set": [
+        "Sigon's Sabot"
+      ]
+    },
+    "hbw": {
+      "name": "Hunter's Bow",
+      "kind": "weapon",
+      "type": "bow",
+      "tier": "normal",
+      "maxSockets": 4,
+      "unique": [
+        "Witherstring"
+      ],
+      "set": []
+    },
+    "hgl": {
+      "name": "Gauntlets",
+      "kind": "armor",
+      "type": "glov",
+      "tier": "normal",
+      "maxSockets": 0,
+      "unique": [
+        "Frostburn"
+      ],
+      "set": [
+        "Sigon's Gage"
+      ]
+    },
+    "hla": {
+      "name": "Hard Leather Armor",
+      "kind": "armor",
+      "type": "tors",
+      "tier": "normal",
+      "maxSockets": 2,
+      "unique": [
+        "The Centurion"
+      ],
+      "set": []
+    },
+    "hlm": {
+      "name": "Helm",
+      "kind": "armor",
+      "type": "helm",
+      "tier": "normal",
+      "maxSockets": 2,
+      "unique": [
+        "Coif of Glory"
+      ],
+      "set": [
+        "Berserker's Headgear"
+      ]
+    },
+    "hxb": {
+      "name": "Heavy Crossbow",
+      "kind": "weapon",
+      "type": "xbow",
+      "tier": "normal",
+      "maxSockets": 6,
+      "unique": [
+        "Hellcast"
+      ],
+      "set": []
+    },
+    "jav": {
+      "name": "Javelin",
+      "kind": "weapon",
+      "type": "jave",
+      "tier": "normal",
+      "maxSockets": 0,
+      "unique": [],
+      "set": []
+    },
+    "kit": {
+      "name": "Kite Shield",
+      "kind": "armor",
+      "type": "shie",
+      "tier": "normal",
+      "maxSockets": 3,
+      "unique": [
+        "Steelclash"
+      ],
+      "set": [
+        "Milabrega's Orb"
+      ]
+    },
+    "kri": {
+      "name": "Kris",
+      "kind": "weapon",
+      "type": "knif",
+      "tier": "normal",
+      "maxSockets": 3,
+      "unique": [
+        "The Jade Tan Do"
+      ],
+      "set": []
+    },
+    "ktr": {
+      "name": "Katar",
+      "kind": "weapon",
+      "type": "h2h",
+      "tier": "normal",
+      "maxSockets": 2,
+      "unique": [],
+      "set": []
+    },
+    "lax": {
+      "name": "Large Axe",
+      "kind": "weapon",
+      "type": "axe",
+      "tier": "normal",
+      "maxSockets": 4,
+      "unique": [
+        "Fechmars Axe"
+      ],
+      "set": []
+    },
+    "lbb": {
+      "name": "Long Battle Bow",
+      "kind": "weapon",
+      "type": "bow",
+      "tier": "normal",
+      "maxSockets": 6,
+      "unique": [
+        "Wizendraw"
+      ],
+      "set": [
+        "Vidala's Barb"
+      ]
+    },
+    "lbl": {
+      "name": "Sash",
+      "kind": "armor",
+      "type": "belt",
+      "tier": "normal",
+      "maxSockets": 0,
+      "unique": [
+        "Lenyms Cord"
+      ],
+      "set": [
+        "Death's Guard"
+      ]
+    },
+    "lbt": {
+      "name": "Boots",
+      "kind": "armor",
+      "type": "boot",
+      "tier": "normal",
+      "maxSockets": 0,
+      "unique": [
+        "Hotspur"
+      ],
+      "set": [
+        "Tancred's Hobnails"
+      ]
+    },
+    "lbw": {
+      "name": "Long Bow",
+      "kind": "weapon",
+      "type": "bow",
+      "tier": "normal",
+      "maxSockets": 5,
+      "unique": [
+        "Rimeraven"
+      ],
+      "set": []
+    },
+    "lea": {
+      "name": "Leather Armor",
+      "kind": "armor",
+      "type": "tors",
+      "tier": "normal",
+      "maxSockets": 2,
+      "unique": [
+        "Blinkbats Form"
+      ],
+      "set": [
+        "Vidala's Ambush"
+      ]
+    },
+    "lgl": {
+      "name": "Leather Gloves",
+      "kind": "armor",
+      "type": "glov",
+      "tier": "normal",
+      "maxSockets": 0,
+      "unique": [
+        "The Hand of Broc"
+      ],
+      "set": [
+        "Death's Hand"
+      ]
+    },
+    "lrg": {
+      "name": "Large Shield",
+      "kind": "armor",
+      "type": "shie",
+      "tier": "normal",
+      "maxSockets": 3,
+      "unique": [
+        "Stormguild"
+      ],
+      "set": [
+        "Civerb's Ward"
+      ]
+    },
+    "lsd": {
+      "name": "Long Sword",
+      "kind": "weapon",
+      "type": "swor",
+      "tier": "normal",
+      "maxSockets": 4,
+      "unique": [
+        "Hellplague"
+      ],
+      "set": [
+        "Cleglaw's Tooth"
+      ]
+    },
+    "lst": {
+      "name": "Long Staff",
+      "kind": "weapon",
+      "type": "staf",
+      "tier": "normal",
+      "maxSockets": 3,
+      "unique": [
+        "Serpent Lord"
+      ],
+      "set": []
+    },
+    "ltp": {
+      "name": "Light Plate",
+      "kind": "armor",
+      "type": "tors",
+      "tier": "normal",
+      "maxSockets": 3,
+      "unique": [
+        "Heavenly Garb"
+      ],
+      "set": [
+        "Arcanna's Flesh"
+      ]
+    },
+    "lwb": {
+      "name": "Long War Bow",
+      "kind": "weapon",
+      "type": "bow",
+      "tier": "normal",
+      "maxSockets": 6,
+      "unique": [
+        "Blastbark"
+      ],
+      "set": []
+    },
+    "lxb": {
+      "name": "Light Crossbow",
+      "kind": "weapon",
+      "type": "xbow",
+      "tier": "normal",
+      "maxSockets": 3,
+      "unique": [
+        "Leadcrow"
+      ],
+      "set": []
+    },
+    "mac": {
+      "name": "Mace",
+      "kind": "weapon",
+      "type": "mace",
+      "tier": "normal",
+      "maxSockets": 2,
+      "unique": [
+        "Crushflange"
+      ],
+      "set": []
+    },
+    "mau": {
+      "name": "Maul",
+      "kind": "weapon",
+      "type": "hamm",
+      "tier": "normal",
+      "maxSockets": 6,
+      "unique": [
+        "Bonesob"
+      ],
+      "set": []
+    },
+    "mbl": {
+      "name": "Belt",
+      "kind": "armor",
+      "type": "belt",
+      "tier": "normal",
+      "maxSockets": 0,
+      "unique": [
+        "Nightsmoke"
+      ],
+      "set": [
+        "Hsarus' Iron Stay",
+        "Hwanin's Seal"
+      ]
+    },
+    "mbt": {
+      "name": "Chain Boots",
+      "kind": "armor",
+      "type": "boot",
+      "tier": "normal",
+      "maxSockets": 0,
+      "unique": [
+        "Treads of Cthon"
+      ],
+      "set": [
+        "Hsarus' Iron Heel"
+      ]
+    },
+    "mgl": {
+      "name": "Chain Gloves",
+      "kind": "armor",
+      "type": "glov",
+      "tier": "normal",
+      "maxSockets": 0,
+      "unique": [
+        "Chance Guards"
+      ],
+      "set": [
+        "Cleglaw's Pincers"
+      ]
+    },
+    "mpi": {
+      "name": "Military Pick",
+      "kind": "weapon",
+      "type": "axe",
+      "tier": "normal",
+      "maxSockets": 6,
+      "unique": [
+        "Mindrend"
+      ],
+      "set": [
+        "Tancred's Crowbill"
+      ]
+    },
+    "msk": {
+      "name": "Mask",
+      "kind": "armor",
+      "type": "helm",
+      "tier": "normal",
+      "maxSockets": 3,
+      "unique": [
+        "The Face of Horror"
+      ],
+      "set": [
+        "Cathan's Visage"
+      ]
+    },
+    "mst": {
+      "name": "Morning Star",
+      "kind": "weapon",
+      "type": "mace",
+      "tier": "normal",
+      "maxSockets": 3,
+      "unique": [
+        "Bloodrise"
+      ],
+      "set": []
+    },
+    "mxb": {
+      "name": "Crossbow",
+      "kind": "weapon",
+      "type": "xbow",
+      "tier": "normal",
+      "maxSockets": 4,
+      "unique": [
+        "Ichorsting"
+      ],
+      "set": []
+    },
+    "ne1": {
+      "name": "Preserved Head",
+      "kind": "armor",
+      "type": "head",
+      "tier": "normal",
+      "maxSockets": 2,
+      "unique": [],
+      "set": []
+    },
+    "ne2": {
+      "name": "Zombie Head",
+      "kind": "armor",
+      "type": "head",
+      "tier": "normal",
+      "maxSockets": 2,
+      "unique": [],
+      "set": []
+    },
+    "ne3": {
+      "name": "Unraveller Head",
+      "kind": "armor",
+      "type": "head",
+      "tier": "normal",
+      "maxSockets": 2,
+      "unique": [],
+      "set": []
+    },
+    "ne4": {
+      "name": "Gargoyle Head",
+      "kind": "armor",
+      "type": "head",
+      "tier": "normal",
+      "maxSockets": 2,
+      "unique": [],
+      "set": []
+    },
+    "ne5": {
+      "name": "Demon Head",
+      "kind": "armor",
+      "type": "head",
+      "tier": "normal",
+      "maxSockets": 2,
+      "unique": [],
+      "set": []
+    },
+    "ne6": {
+      "name": "Mummified Trophy",
+      "kind": "armor",
+      "type": "head",
+      "tier": "exceptional",
+      "maxSockets": 2,
+      "unique": [],
+      "set": []
+    },
+    "ne7": {
+      "name": "Fetish Trophy",
+      "kind": "armor",
+      "type": "head",
+      "tier": "exceptional",
+      "maxSockets": 2,
+      "unique": [],
+      "set": []
+    },
+    "ne8": {
+      "name": "Sexton Trophy",
+      "kind": "armor",
+      "type": "head",
+      "tier": "exceptional",
+      "maxSockets": 2,
+      "unique": [],
+      "set": []
+    },
+    "ne9": {
+      "name": "Cantor Trophy",
+      "kind": "armor",
+      "type": "head",
+      "tier": "exceptional",
+      "maxSockets": 2,
+      "unique": [],
+      "set": [
+        "Trang-Oul's Wing"
+      ]
+    },
+    "nea": {
+      "name": "Hierophant Trophy",
+      "kind": "armor",
+      "type": "head",
+      "tier": "exceptional",
+      "maxSockets": 2,
+      "unique": [
+        "Homunculus"
+      ],
+      "set": []
+    },
+    "neb": {
+      "name": "Minion Skull",
+      "kind": "armor",
+      "type": "head",
+      "tier": "elite",
+      "maxSockets": 2,
+      "unique": [],
+      "set": []
+    },
+    "ned": {
+      "name": "Overseer Skull",
+      "kind": "armor",
+      "type": "head",
+      "tier": "elite",
+      "maxSockets": 2,
+      "unique": [],
+      "set": []
+    },
+    "nee": {
+      "name": "Succubus Skull",
+      "kind": "armor",
+      "type": "head",
+      "tier": "elite",
+      "maxSockets": 2,
+      "unique": [
+        "Boneflame"
+      ],
+      "set": []
+    },
+    "nef": {
+      "name": "Bloodlord Skull",
+      "kind": "armor",
+      "type": "head",
+      "tier": "elite",
+      "maxSockets": 2,
+      "unique": [
+        "Darkforge Spawn"
+      ],
+      "set": []
+    },
+    "neg": {
+      "name": "Hellspawn Skull",
+      "kind": "armor",
+      "type": "head",
+      "tier": "elite",
+      "maxSockets": 2,
+      "unique": [],
+      "set": []
+    },
+    "ob1": {
+      "name": "Eagle Orb",
+      "kind": "weapon",
+      "type": "orb",
+      "tier": "normal",
+      "maxSockets": 4,
+      "unique": [],
+      "set": []
+    },
+    "ob2": {
+      "name": "Sacred Globe",
+      "kind": "weapon",
+      "type": "orb",
+      "tier": "normal",
+      "maxSockets": 4,
+      "unique": [],
+      "set": []
+    },
+    "ob3": {
+      "name": "Smoked Sphere",
+      "kind": "weapon",
+      "type": "orb",
+      "tier": "normal",
+      "maxSockets": 4,
+      "unique": [],
+      "set": []
+    },
+    "ob4": {
+      "name": "Clasped Orb",
+      "kind": "weapon",
+      "type": "orb",
+      "tier": "normal",
+      "maxSockets": 4,
+      "unique": [],
+      "set": []
+    },
+    "ob5": {
+      "name": "Jared's Stone",
+      "kind": "weapon",
+      "type": "orb",
+      "tier": "normal",
+      "maxSockets": 4,
+      "unique": [],
+      "set": []
+    },
+    "ob6": {
+      "name": "Glowing Orb",
+      "kind": "weapon",
+      "type": "orb",
+      "tier": "exceptional",
+      "maxSockets": 4,
+      "unique": [],
+      "set": []
+    },
+    "ob7": {
+      "name": "Crystalline Globe",
+      "kind": "weapon",
+      "type": "orb",
+      "tier": "exceptional",
+      "maxSockets": 4,
+      "unique": [],
+      "set": []
+    },
+    "ob8": {
+      "name": "Cloudy Sphere",
+      "kind": "weapon",
+      "type": "orb",
+      "tier": "exceptional",
+      "maxSockets": 4,
+      "unique": [],
+      "set": []
+    },
+    "ob9": {
+      "name": "Sparkling Ball",
+      "kind": "weapon",
+      "type": "orb",
+      "tier": "exceptional",
+      "maxSockets": 4,
+      "unique": [],
+      "set": []
+    },
+    "oba": {
+      "name": "Swirling Crystal",
+      "kind": "weapon",
+      "type": "orb",
+      "tier": "exceptional",
+      "maxSockets": 4,
+      "unique": [
+        "The Oculus"
+      ],
+      "set": [
+        "Tal Rasha's Lidless Eye"
+      ]
+    },
+    "obb": {
+      "name": "Heavenly Stone",
+      "kind": "weapon",
+      "type": "orb",
+      "tier": "elite",
+      "maxSockets": 4,
+      "unique": [],
+      "set": []
+    },
+    "obc": {
+      "name": "Eldritch Orb",
+      "kind": "weapon",
+      "type": "orb",
+      "tier": "elite",
+      "maxSockets": 4,
+      "unique": [
+        "Eschuta's temper"
+      ],
+      "set": []
+    },
+    "obd": {
+      "name": "Demon Heart",
+      "kind": "weapon",
+      "type": "orb",
+      "tier": "elite",
+      "maxSockets": 4,
+      "unique": [],
+      "set": []
+    },
+    "obe": {
+      "name": "Vortex Orb",
+      "kind": "weapon",
+      "type": "orb",
+      "tier": "elite",
+      "maxSockets": 4,
+      "unique": [],
+      "set": []
+    },
+    "obf": {
+      "name": "Dimensional Shard",
+      "kind": "weapon",
+      "type": "orb",
+      "tier": "elite",
+      "maxSockets": 4,
+      "unique": [
+        "Fathom"
+      ],
+      "set": []
+    },
+    "opl": {
+      "name": "Fulminating Potion",
+      "kind": "weapon",
+      "type": "tpot",
+      "tier": "normal",
+      "maxSockets": 0,
+      "unique": [],
+      "set": []
+    },
+    "opm": {
+      "name": "Exploding Potion",
+      "kind": "weapon",
+      "type": "tpot",
+      "tier": "normal",
+      "maxSockets": 0,
+      "unique": [],
+      "set": []
+    },
+    "ops": {
+      "name": "Oil Potion",
+      "kind": "weapon",
+      "type": "tpot",
+      "tier": "normal",
+      "maxSockets": 0,
+      "unique": [],
+      "set": []
+    },
+    "pa1": {
+      "name": "Targe",
+      "kind": "armor",
+      "type": "ashd",
+      "tier": "normal",
+      "maxSockets": 4,
+      "unique": [],
+      "set": []
+    },
+    "pa2": {
+      "name": "Rondache",
+      "kind": "armor",
+      "type": "ashd",
+      "tier": "normal",
+      "maxSockets": 4,
+      "unique": [],
+      "set": []
+    },
+    "pa3": {
+      "name": "Heraldic Shield",
+      "kind": "armor",
+      "type": "ashd",
+      "tier": "normal",
+      "maxSockets": 4,
+      "unique": [],
+      "set": []
+    },
+    "pa4": {
+      "name": "Aerin Shield",
+      "kind": "armor",
+      "type": "ashd",
+      "tier": "normal",
+      "maxSockets": 4,
+      "unique": [],
+      "set": []
+    },
+    "pa5": {
+      "name": "Crown Shield",
+      "kind": "armor",
+      "type": "ashd",
+      "tier": "normal",
+      "maxSockets": 4,
+      "unique": [],
+      "set": []
+    },
+    "pa6": {
+      "name": "Akaran Targe",
+      "kind": "armor",
+      "type": "ashd",
+      "tier": "exceptional",
+      "maxSockets": 4,
+      "unique": [],
+      "set": []
+    },
+    "pa7": {
+      "name": "Akaran Rondache",
+      "kind": "armor",
+      "type": "ashd",
+      "tier": "exceptional",
+      "maxSockets": 4,
+      "unique": [],
+      "set": []
+    },
+    "pa8": {
+      "name": "Protector Shield",
+      "kind": "armor",
+      "type": "ashd",
+      "tier": "exceptional",
+      "maxSockets": 4,
+      "unique": [],
+      "set": []
+    },
+    "pa9": {
+      "name": "Gilded Shield",
+      "kind": "armor",
+      "type": "ashd",
+      "tier": "exceptional",
+      "maxSockets": 4,
+      "unique": [
+        "Herald of Zakarum"
+      ],
+      "set": []
+    },
+    "paa": {
+      "name": "Royal Shield",
+      "kind": "armor",
+      "type": "ashd",
+      "tier": "exceptional",
+      "maxSockets": 4,
+      "unique": [],
+      "set": []
+    },
+    "pab": {
+      "name": "Sacred Targe",
+      "kind": "armor",
+      "type": "ashd",
+      "tier": "elite",
+      "maxSockets": 4,
+      "unique": [],
+      "set": []
+    },
+    "pac": {
+      "name": "Sacred Rondache",
+      "kind": "armor",
+      "type": "ashd",
+      "tier": "elite",
+      "maxSockets": 4,
+      "unique": [
+        "Alma Negra"
+      ],
+      "set": []
+    },
+    "pad": {
+      "name": "Kurast Shield",
+      "kind": "armor",
+      "type": "ashd",
+      "tier": "elite",
+      "maxSockets": 4,
+      "unique": [],
+      "set": []
+    },
+    "pae": {
+      "name": "Zakarum Shield",
+      "kind": "armor",
+      "type": "ashd",
+      "tier": "elite",
+      "maxSockets": 4,
+      "unique": [
+        "Dragonscale"
+      ],
+      "set": []
+    },
+    "paf": {
+      "name": "Vortex Shield",
+      "kind": "armor",
+      "type": "ashd",
+      "tier": "elite",
+      "maxSockets": 4,
+      "unique": [],
+      "set": [
+        "Griswold's Honor"
+      ]
+    },
+    "pax": {
+      "name": "Poleaxe",
+      "kind": "weapon",
+      "type": "pole",
+      "tier": "normal",
+      "maxSockets": 5,
+      "unique": [
+        "The Battlebranch"
+      ],
+      "set": []
+    },
+    "pik": {
+      "name": "Pike",
+      "kind": "weapon",
+      "type": "spea",
+      "tier": "normal",
+      "maxSockets": 6,
+      "unique": [
+        "The Tannr Gorerod"
+      ],
+      "set": []
+    },
+    "pil": {
+      "name": "Pilum",
+      "kind": "weapon",
+      "type": "jave",
+      "tier": "normal",
+      "maxSockets": 0,
+      "unique": [],
+      "set": []
+    },
+    "plt": {
+      "name": "Plate Mail",
+      "kind": "armor",
+      "type": "tors",
+      "tier": "normal",
+      "maxSockets": 2,
+      "unique": [
+        "Boneflesh"
+      ],
+      "set": []
+    },
+    "qui": {
+      "name": "Quilted Armor",
+      "kind": "armor",
+      "type": "tors",
+      "tier": "normal",
+      "maxSockets": 2,
+      "unique": [
+        "Greyform"
+      ],
+      "set": [
+        "Arctic Furs"
+      ]
+    },
+    "rng": {
+      "name": "Ring Mail",
+      "kind": "armor",
+      "type": "tors",
+      "tier": "normal",
+      "maxSockets": 3,
+      "unique": [
+        "Darkglow"
+      ],
+      "set": [
+        "Angelic Mantle"
+      ]
+    },
+    "rxb": {
+      "name": "Repeating Crossbow",
+      "kind": "weapon",
+      "type": "xbow",
+      "tier": "normal",
+      "maxSockets": 5,
+      "unique": [
+        "Doomspittle"
+      ],
+      "set": []
+    },
+    "sbb": {
+      "name": "Short Battle Bow",
+      "kind": "weapon",
+      "type": "bow",
+      "tier": "normal",
+      "maxSockets": 5,
+      "unique": [
+        "Pullspite"
+      ],
+      "set": []
+    },
+    "sbr": {
+      "name": "Sabre",
+      "kind": "weapon",
+      "type": "swor",
+      "tier": "normal",
+      "maxSockets": 2,
+      "unique": [
+        "Krintizs Skewer"
+      ],
+      "set": [
+        "Angelic Sickle"
+      ]
+    },
+    "sbw": {
+      "name": "Short Bow",
+      "kind": "weapon",
+      "type": "bow",
+      "tier": "normal",
+      "maxSockets": 3,
+      "unique": [
+        "Pluckeye"
+      ],
+      "set": []
+    },
+    "scl": {
+      "name": "Scale Mail",
+      "kind": "armor",
+      "type": "tors",
+      "tier": "normal",
+      "maxSockets": 2,
+      "unique": [
+        "Hawkmail"
+      ],
+      "set": []
+    },
+    "scm": {
+      "name": "Scimitar",
+      "kind": "weapon",
+      "type": "swor",
+      "tier": "normal",
+      "maxSockets": 2,
+      "unique": [
+        "Blood Crescent"
+      ],
+      "set": []
+    },
+    "scp": {
+      "name": "Scepter",
+      "kind": "weapon",
+      "type": "scep",
+      "tier": "normal",
+      "maxSockets": 2,
+      "unique": [
+        "Knell Striker"
+      ],
+      "set": []
+    },
+    "scy": {
+      "name": "Scythe",
+      "kind": "weapon",
+      "type": "pole",
+      "tier": "normal",
+      "maxSockets": 5,
+      "unique": [
+        "Soul Harvest"
+      ],
+      "set": []
+    },
+    "skp": {
+      "name": "Skull Cap",
+      "kind": "armor",
+      "type": "helm",
+      "tier": "normal",
+      "maxSockets": 2,
+      "unique": [
+        "Tarnhelm"
+      ],
+      "set": [
+        "Arcanna's Head"
+      ]
+    },
+    "skr": {
+      "name": "Scissors Katar",
+      "kind": "weapon",
+      "type": "h2h",
+      "tier": "normal",
+      "maxSockets": 3,
+      "unique": [],
+      "set": []
+    },
+    "sml": {
+      "name": "Small Shield",
+      "kind": "armor",
+      "type": "shie",
+      "tier": "normal",
+      "maxSockets": 2,
+      "unique": [
+        "Umbral Disk"
+      ],
+      "set": [
+        "Cleglaw's Claw"
+      ]
+    },
+    "spc": {
+      "name": "Spiked Club",
+      "kind": "weapon",
+      "type": "club",
+      "tier": "normal",
+      "maxSockets": 2,
+      "unique": [
+        "Stoutnail"
+      ],
+      "set": []
+    },
+    "spk": {
+      "name": "Spiked Shield",
+      "kind": "armor",
+      "type": "shie",
+      "tier": "normal",
+      "maxSockets": 2,
+      "unique": [
+        "Swordback Hold"
+      ],
+      "set": []
+    },
+    "spl": {
+      "name": "Splint Mail",
+      "kind": "armor",
+      "type": "tors",
+      "tier": "normal",
+      "maxSockets": 2,
+      "unique": [
+        "Iceblink"
+      ],
+      "set": [
+        "Berserker's Hauberk"
+      ]
+    },
+    "spr": {
+      "name": "Spear",
+      "kind": "weapon",
+      "type": "spea",
+      "tier": "normal",
+      "maxSockets": 3,
+      "unique": [
+        "The Dragon Chang"
+      ],
+      "set": []
+    },
+    "spt": {
+      "name": "Spetum",
+      "kind": "weapon",
+      "type": "spea",
+      "tier": "normal",
+      "maxSockets": 6,
+      "unique": [
+        "Lance of Yaggai"
+      ],
+      "set": []
+    },
+    "ssd": {
+      "name": "Short Sword",
+      "kind": "weapon",
+      "type": "swor",
+      "tier": "normal",
+      "maxSockets": 2,
+      "unique": [
+        "Rixots Keen"
+      ],
+      "set": []
+    },
+    "ssp": {
+      "name": "Short Spear",
+      "kind": "weapon",
+      "type": "jave",
+      "tier": "normal",
+      "maxSockets": 0,
+      "unique": [],
+      "set": []
+    },
+    "sst": {
+      "name": "Short Staff",
+      "kind": "weapon",
+      "type": "staf",
+      "tier": "normal",
+      "maxSockets": 2,
+      "unique": [
+        "Bane Ash"
+      ],
+      "set": []
+    },
+    "stu": {
+      "name": "Studded Leather",
+      "kind": "armor",
+      "type": "tors",
+      "tier": "normal",
+      "maxSockets": 2,
+      "unique": [
+        "Twitchthroe"
+      ],
+      "set": [
+        "Cow King's Hide"
+      ]
+    },
+    "swb": {
+      "name": "Short War Bow",
+      "kind": "weapon",
+      "type": "bow",
+      "tier": "normal",
+      "maxSockets": 5,
+      "unique": [
+        "Hellclap"
+      ],
+      "set": [
+        "Arctic Horn"
+      ]
+    },
+    "tax": {
+      "name": "Throwing Axe",
+      "kind": "weapon",
+      "type": "taxe",
+      "tier": "normal",
+      "maxSockets": 0,
+      "unique": [],
+      "set": []
+    },
+    "tbl": {
+      "name": "Heavy Belt",
+      "kind": "armor",
+      "type": "belt",
+      "tier": "normal",
+      "maxSockets": 0,
+      "unique": [
+        "Goldwrap"
+      ],
+      "set": [
+        "Infernal Sign",
+        "Iratha's Cord"
+      ]
+    },
+    "tbt": {
+      "name": "Light Plated Boots",
+      "kind": "armor",
+      "type": "boot",
+      "tier": "normal",
+      "maxSockets": 0,
+      "unique": [
+        "Goblin Toe"
+      ],
+      "set": [
+        "Vidala's Fetlock"
+      ]
+    },
+    "tgl": {
+      "name": "Light Gauntlets",
+      "kind": "armor",
+      "type": "glov",
+      "tier": "normal",
+      "maxSockets": 0,
+      "unique": [
+        "Magefist"
+      ],
+      "set": [
+        "Arctic Mitts",
+        "Iratha's Cuff"
+      ]
+    },
+    "tkf": {
+      "name": "Throwing Knife",
+      "kind": "weapon",
+      "type": "tkni",
+      "tier": "normal",
+      "maxSockets": 0,
+      "unique": [],
+      "set": []
+    },
+    "tow": {
+      "name": "Tower Shield",
+      "kind": "armor",
+      "type": "shie",
+      "tier": "normal",
+      "maxSockets": 3,
+      "unique": [
+        "Bverrit Keep"
+      ],
+      "set": [
+        "Sigon's Guard"
+      ]
+    },
+    "tri": {
+      "name": "Trident",
+      "kind": "weapon",
+      "type": "spea",
+      "tier": "normal",
+      "maxSockets": 4,
+      "unique": [
+        "Razortine"
+      ],
+      "set": []
+    },
+    "tsp": {
+      "name": "Throwing Spear",
+      "kind": "weapon",
+      "type": "jave",
+      "tier": "normal",
+      "maxSockets": 0,
+      "unique": [],
+      "set": []
+    },
+    "uap": {
+      "name": "Shako",
+      "kind": "armor",
+      "type": "helm",
+      "tier": "elite",
+      "maxSockets": 2,
+      "unique": [
+        "Harlequin Crest"
+      ],
+      "set": []
+    },
+    "uar": {
+      "name": "Sacred Armor",
+      "kind": "armor",
+      "type": "tors",
+      "tier": "elite",
+      "maxSockets": 4,
+      "unique": [
+        "Templar's Might",
+        "Tyrael's Might"
+      ],
+      "set": [
+        "Immortal King's Soul Cage"
+      ]
+    },
+    "ucl": {
+      "name": "Loricated Mail",
+      "kind": "armor",
+      "type": "tors",
+      "tier": "elite",
+      "maxSockets": 4,
+      "unique": [],
+      "set": [
+        "Natalya's Shadow"
+      ]
+    },
+    "uea": {
+      "name": "Wyrmhide",
+      "kind": "armor",
+      "type": "tors",
+      "tier": "elite",
+      "maxSockets": 4,
+      "unique": [],
+      "set": []
+    },
+    "uh9": {
+      "name": "Bone Visage",
+      "kind": "armor",
+      "type": "helm",
+      "tier": "elite",
+      "maxSockets": 3,
+      "unique": [
+        "Giantskull"
+      ],
+      "set": [
+        "Trang-Oul's Guise"
+      ]
+    },
+    "uhb": {
+      "name": "Myrmidon Greaves",
+      "kind": "armor",
+      "type": "boot",
+      "tier": "elite",
+      "maxSockets": 0,
+      "unique": [
+        "Shadowdancer"
+      ],
+      "set": []
+    },
+    "uhc": {
+      "name": "Colossus Girdle",
+      "kind": "armor",
+      "type": "belt",
+      "tier": "elite",
+      "maxSockets": 0,
+      "unique": [],
+      "set": []
+    },
+    "uhg": {
+      "name": "Ogre Gauntlets",
+      "kind": "armor",
+      "type": "glov",
+      "tier": "elite",
+      "maxSockets": 0,
+      "unique": [
+        "Steelrend"
+      ],
+      "set": []
+    },
+    "uhl": {
+      "name": "Giant Conch",
+      "kind": "armor",
+      "type": "helm",
+      "tier": "elite",
+      "maxSockets": 2,
+      "unique": [],
+      "set": []
+    },
+    "uhm": {
+      "name": "Spired Helm",
+      "kind": "armor",
+      "type": "helm",
+      "tier": "elite",
+      "maxSockets": 3,
+      "unique": [
+        "Nightwing's Veil",
+        "Veil of Steel"
+      ],
+      "set": [
+        "Ondal's Almighty"
+      ]
+    },
+    "uhn": {
+      "name": "Boneweave",
+      "kind": "armor",
+      "type": "tors",
+      "tier": "elite",
+      "maxSockets": 4,
+      "unique": [],
+      "set": []
+    },
+    "uit": {
+      "name": "Monarch",
+      "kind": "armor",
+      "type": "shie",
+      "tier": "elite",
+      "maxSockets": 4,
+      "unique": [
+        "Stormshield"
+      ],
+      "set": []
+    },
+    "ukp": {
+      "name": "Hydraskull",
+      "kind": "armor",
+      "type": "helm",
+      "tier": "elite",
+      "maxSockets": 2,
+      "unique": [],
+      "set": []
+    },
+    "ula": {
+      "name": "Scarab Husk",
+      "kind": "armor",
+      "type": "tors",
+      "tier": "elite",
+      "maxSockets": 4,
+      "unique": [],
+      "set": []
+    },
+    "ulb": {
+      "name": "Wyrmhide Boots",
+      "kind": "armor",
+      "type": "boot",
+      "tier": "elite",
+      "maxSockets": 0,
+      "unique": [],
+      "set": []
+    },
+    "ulc": {
+      "name": "Spiderweb Sash",
+      "kind": "armor",
+      "type": "belt",
+      "tier": "elite",
+      "maxSockets": 0,
+      "unique": [
+        "Arachnid Mesh"
+      ],
+      "set": []
+    },
+    "uld": {
+      "name": "Kraken Shell",
+      "kind": "armor",
+      "type": "tors",
+      "tier": "elite",
+      "maxSockets": 4,
+      "unique": [
+        "Leviathan"
+      ],
+      "set": [
+        "M'avina's Embrace"
+      ]
+    },
+    "ulg": {
+      "name": "Bramble Mitts",
+      "kind": "armor",
+      "type": "glov",
+      "tier": "elite",
+      "maxSockets": 0,
+      "unique": [],
+      "set": [
+        "Laying of Hands"
+      ]
+    },
+    "ulm": {
+      "name": "Armet",
+      "kind": "armor",
+      "type": "helm",
+      "tier": "elite",
+      "maxSockets": 2,
+      "unique": [
+        "Darkfear",
+        "Steelshade"
+      ],
+      "set": []
+    },
+    "ult": {
+      "name": "Hellforge Plate",
+      "kind": "armor",
+      "type": "tors",
+      "tier": "elite",
+      "maxSockets": 4,
+      "unique": [],
+      "set": [
+        "Naj's Light Plate"
+      ]
+    },
+    "umb": {
+      "name": "Boneweave Boots",
+      "kind": "armor",
+      "type": "boot",
+      "tier": "elite",
+      "maxSockets": 0,
+      "unique": [
+        "Marrowwalk"
+      ],
+      "set": []
+    },
+    "umc": {
+      "name": "Mithril Coil",
+      "kind": "armor",
+      "type": "belt",
+      "tier": "elite",
+      "maxSockets": 0,
+      "unique": [
+        "Verdugo's Hearty Cord"
+      ],
+      "set": [
+        "Credendum"
+      ]
+    },
+    "umg": {
+      "name": "Vambraces",
+      "kind": "armor",
+      "type": "glov",
+      "tier": "elite",
+      "maxSockets": 0,
+      "unique": [
+        "Souldrain"
+      ],
+      "set": []
+    },
+    "uml": {
+      "name": "Luna",
+      "kind": "armor",
+      "type": "shie",
+      "tier": "elite",
+      "maxSockets": 2,
+      "unique": [
+        "Blackoak Shield"
+      ],
+      "set": []
+    },
+    "ung": {
+      "name": "Diamond Mail",
+      "kind": "armor",
+      "type": "tors",
+      "tier": "elite",
+      "maxSockets": 4,
+      "unique": [],
+      "set": []
+    },
+    "uow": {
+      "name": "Aegis",
+      "kind": "armor",
+      "type": "shie",
+      "tier": "elite",
+      "maxSockets": 4,
+      "unique": [
+        "Medusa's Gaze"
+      ],
+      "set": []
+    },
+    "upk": {
+      "name": "Blade Barrier",
+      "kind": "armor",
+      "type": "shie",
+      "tier": "elite",
+      "maxSockets": 3,
+      "unique": [
+        "Spike Thorn"
+      ],
+      "set": []
+    },
+    "upl": {
+      "name": "Balrog Skin",
+      "kind": "armor",
+      "type": "tors",
+      "tier": "elite",
+      "maxSockets": 4,
+      "unique": [
+        "Arkaine's Valor"
+      ],
+      "set": [
+        "Sazabi's Ghost Liberator"
+      ]
+    },
+    "urg": {
+      "name": "Hyperion",
+      "kind": "armor",
+      "type": "shie",
+      "tier": "elite",
+      "maxSockets": 3,
+      "unique": [],
+      "set": []
+    },
+    "urn": {
+      "name": "Corona",
+      "kind": "armor",
+      "type": "helm",
+      "tier": "elite",
+      "maxSockets": 3,
+      "unique": [
+        "Crown of Ages"
+      ],
+      "set": [
+        "Griswold's Valor"
+      ]
+    },
+    "urs": {
+      "name": "Great Hauberk",
+      "kind": "armor",
+      "type": "tors",
+      "tier": "elite",
+      "maxSockets": 4,
+      "unique": [],
+      "set": []
+    },
+    "ush": {
+      "name": "Troll Nest",
+      "kind": "armor",
+      "type": "shie",
+      "tier": "elite",
+      "maxSockets": 3,
+      "unique": [
+        "Headhunter's Glory"
+      ],
+      "set": []
+    },
+    "usk": {
+      "name": "Demonhead",
+      "kind": "armor",
+      "type": "helm",
+      "tier": "elite",
+      "maxSockets": 3,
+      "unique": [
+        "Andariel's Visage"
+      ],
+      "set": []
+    },
+    "utb": {
+      "name": "Mirrored Boots",
+      "kind": "armor",
+      "type": "boot",
+      "tier": "elite",
+      "maxSockets": 0,
+      "unique": [],
+      "set": []
+    },
+    "utc": {
+      "name": "Troll Belt",
+      "kind": "armor",
+      "type": "belt",
+      "tier": "elite",
+      "maxSockets": 0,
+      "unique": [],
+      "set": [
+        "Trang-Oul's Girth"
+      ]
+    },
+    "utg": {
+      "name": "Crusader Gauntlets",
+      "kind": "armor",
+      "type": "glov",
+      "tier": "elite",
+      "maxSockets": 0,
+      "unique": [],
+      "set": []
+    },
+    "uth": {
+      "name": "Lacquered Plate",
+      "kind": "armor",
+      "type": "tors",
+      "tier": "elite",
+      "maxSockets": 4,
+      "unique": [],
+      "set": [
+        "Tal Rasha's Howling Wind"
+      ]
+    },
+    "utp": {
+      "name": "Archon Plate",
+      "kind": "armor",
+      "type": "tors",
+      "tier": "elite",
+      "maxSockets": 4,
+      "unique": [],
+      "set": []
+    },
+    "uts": {
+      "name": "Ward",
+      "kind": "armor",
+      "type": "shie",
+      "tier": "elite",
+      "maxSockets": 4,
+      "unique": [
+        "Spirit Ward"
+      ],
+      "set": [
+        "Heaven's Taebaek"
+      ]
+    },
+    "utu": {
+      "name": "Wire Fleece",
+      "kind": "armor",
+      "type": "tors",
+      "tier": "elite",
+      "maxSockets": 4,
+      "unique": [
+        "The Gladiator's Bane"
+      ],
+      "set": []
+    },
+    "uuc": {
+      "name": "Heater",
+      "kind": "armor",
+      "type": "shie",
+      "tier": "elite",
+      "maxSockets": 2,
+      "unique": [],
+      "set": []
+    },
+    "uui": {
+      "name": "Dusk Shroud",
+      "kind": "armor",
+      "type": "tors",
+      "tier": "elite",
+      "maxSockets": 4,
+      "unique": [
+        "Ormus' Robes"
+      ],
+      "set": [
+        "Spiritual Custodian"
+      ]
+    },
+    "uul": {
+      "name": "Shadow Plate",
+      "kind": "armor",
+      "type": "tors",
+      "tier": "elite",
+      "maxSockets": 4,
+      "unique": [
+        "Steel Carapice"
+      ],
+      "set": [
+        "Aldur's Deception"
+      ]
+    },
+    "uvb": {
+      "name": "Scarabshell Boots",
+      "kind": "armor",
+      "type": "boot",
+      "tier": "elite",
+      "maxSockets": 0,
+      "unique": [
+        "Sandstorm Trek"
+      ],
+      "set": []
+    },
+    "uvc": {
+      "name": "Vampirefang Belt",
+      "kind": "armor",
+      "type": "belt",
+      "tier": "elite",
+      "maxSockets": 0,
+      "unique": [
+        "Nosferatu's Coil"
+      ],
+      "set": []
+    },
+    "uvg": {
+      "name": "Vampirebone Gloves",
+      "kind": "armor",
+      "type": "glov",
+      "tier": "elite",
+      "maxSockets": 0,
+      "unique": [
+        "Dracul's Grasp"
+      ],
+      "set": []
+    },
+    "vbl": {
+      "name": "Light Belt",
+      "kind": "armor",
+      "type": "belt",
+      "tier": "normal",
+      "maxSockets": 0,
+      "unique": [
+        "Snakecord"
+      ],
+      "set": [
+        "Arctic Binding"
+      ]
+    },
+    "vbt": {
+      "name": "Heavy Boots",
+      "kind": "armor",
+      "type": "boot",
+      "tier": "normal",
+      "maxSockets": 0,
+      "unique": [
+        "Gorefoot"
+      ],
+      "set": [
+        "Cow King's Hoofs",
+        "McAuley's Riprap"
+      ]
+    },
+    "vgl": {
+      "name": "Heavy Gloves",
+      "kind": "armor",
+      "type": "glov",
+      "tier": "normal",
+      "maxSockets": 0,
+      "unique": [
+        "Bloodfist"
+      ],
+      "set": [
+        "McAuley's Taboo"
+      ]
+    },
+    "vou": {
+      "name": "Voulge",
+      "kind": "weapon",
+      "type": "pole",
+      "tier": "normal",
+      "maxSockets": 4,
+      "unique": [
+        "Steelgoad"
+      ],
+      "set": []
+    },
+    "wax": {
+      "name": "War Axe",
+      "kind": "weapon",
+      "type": "axe",
+      "tier": "normal",
+      "maxSockets": 6,
+      "unique": [
+        "Rakescar"
+      ],
+      "set": []
+    },
+    "whm": {
+      "name": "War Hammer",
+      "kind": "weapon",
+      "type": "hamm",
+      "tier": "normal",
+      "maxSockets": 4,
+      "unique": [
+        "Ironstone"
+      ],
+      "set": []
+    },
+    "wnd": {
+      "name": "Wand",
+      "kind": "weapon",
+      "type": "wand",
+      "tier": "normal",
+      "maxSockets": 1,
+      "unique": [
+        "Iros Torch"
+      ],
+      "set": []
+    },
+    "wrb": {
+      "name": "Wrist Blade",
+      "kind": "weapon",
+      "type": "h2h",
+      "tier": "normal",
+      "maxSockets": 2,
+      "unique": [],
+      "set": []
+    },
+    "wsc": {
+      "name": "War Scythe",
+      "kind": "weapon",
+      "type": "pole",
+      "tier": "normal",
+      "maxSockets": 6,
+      "unique": [
+        "The Grim Reaper"
+      ],
+      "set": []
+    },
+    "wsd": {
+      "name": "War Sword",
+      "kind": "weapon",
+      "type": "swor",
+      "tier": "normal",
+      "maxSockets": 3,
+      "unique": [
+        "Culwens Point"
+      ],
+      "set": [
+        "Death's Touch"
+      ]
+    },
+    "wsp": {
+      "name": "War Scepter",
+      "kind": "weapon",
+      "type": "scep",
+      "tier": "normal",
+      "maxSockets": 5,
+      "unique": [
+        "Stormeye"
+      ],
+      "set": [
+        "Milabrega's Rod"
+      ]
+    },
+    "wst": {
+      "name": "War Staff",
+      "kind": "weapon",
+      "type": "staf",
+      "tier": "normal",
+      "maxSockets": 6,
+      "unique": [
+        "The Iron Jang Bong"
+      ],
+      "set": [
+        "Arcanna's Deathwand"
+      ]
+    },
+    "xap": {
+      "name": "War Hat",
+      "kind": "armor",
+      "type": "helm",
+      "tier": "exceptional",
+      "maxSockets": 2,
+      "unique": [
+        "Peasent Crown"
+      ],
+      "set": [
+        "Cow King's Horns"
+      ]
+    },
+    "xar": {
+      "name": "Ornate Plate",
+      "kind": "armor",
+      "type": "tors",
+      "tier": "exceptional",
+      "maxSockets": 4,
+      "unique": [
+        "Corpsemourn"
+      ],
+      "set": [
+        "Griswold's Heart"
+      ]
+    },
+    "xcl": {
+      "name": "Tigulated Mail",
+      "kind": "armor",
+      "type": "tors",
+      "tier": "exceptional",
+      "maxSockets": 3,
+      "unique": [
+        "Crow Caw"
+      ],
+      "set": [
+        "Hwanin's Refuge"
+      ]
+    },
+    "xea": {
+      "name": "Serpentskin Armor",
+      "kind": "armor",
+      "type": "tors",
+      "tier": "exceptional",
+      "maxSockets": 2,
+      "unique": [
+        "Skin of the Vipermagi"
+      ],
+      "set": []
+    },
+    "xh9": {
+      "name": "Grim Helm",
+      "kind": "armor",
+      "type": "helm",
+      "tier": "exceptional",
+      "maxSockets": 2,
+      "unique": [
+        "Vampiregaze"
+      ],
+      "set": [
+        "Natalya's Totem"
+      ]
+    },
+    "xhb": {
+      "name": "War Boots",
+      "kind": "armor",
+      "type": "boot",
+      "tier": "exceptional",
+      "maxSockets": 0,
+      "unique": [
+        "Gorerider"
+      ],
+      "set": [
+        "Immortal King's Pillar"
+      ]
+    },
+    "xhg": {
+      "name": "War Gauntlets",
+      "kind": "armor",
+      "type": "glov",
+      "tier": "exceptional",
+      "maxSockets": 0,
+      "unique": [
+        "Hellmouth"
+      ],
+      "set": [
+        "Immortal King's Forge"
+      ]
+    },
+    "xhl": {
+      "name": "Basinet",
+      "kind": "armor",
+      "type": "helm",
+      "tier": "exceptional",
+      "maxSockets": 2,
+      "unique": [
+        "Darksight Helm"
+      ],
+      "set": [
+        "Sazabi's Mental Sheath"
+      ]
+    },
+    "xhm": {
+      "name": "Winged Helm",
+      "kind": "armor",
+      "type": "helm",
+      "tier": "exceptional",
+      "maxSockets": 3,
+      "unique": [
+        "Valkiry Wing"
+      ],
+      "set": [
+        "Guillaume's Face"
+      ]
+    },
+    "xhn": {
+      "name": "Mesh Armor",
+      "kind": "armor",
+      "type": "tors",
+      "tier": "exceptional",
+      "maxSockets": 3,
+      "unique": [
+        "Shaftstop"
+      ],
+      "set": []
+    },
+    "xit": {
+      "name": "Dragon Shield",
+      "kind": "armor",
+      "type": "shie",
+      "tier": "exceptional",
+      "maxSockets": 3,
+      "unique": [
+        "Tiamat's Rebuke"
+      ],
+      "set": []
+    },
+    "xkp": {
+      "name": "Sallet",
+      "kind": "armor",
+      "type": "helm",
+      "tier": "exceptional",
+      "maxSockets": 2,
+      "unique": [
+        "Rockstopper"
+      ],
+      "set": []
+    },
+    "xla": {
+      "name": "Demonhide Armor",
+      "kind": "armor",
+      "type": "tors",
+      "tier": "exceptional",
+      "maxSockets": 2,
+      "unique": [
+        "Skin of the Flayerd One"
+      ],
+      "set": []
+    },
+    "xlb": {
+      "name": "Demonhide Boots",
+      "kind": "armor",
+      "type": "boot",
+      "tier": "exceptional",
+      "maxSockets": 0,
+      "unique": [
+        "Infernostride"
+      ],
+      "set": [
+        "Rite of Passage"
+      ]
+    },
+    "xld": {
+      "name": "Sharktooth Armor",
+      "kind": "armor",
+      "type": "tors",
+      "tier": "exceptional",
+      "maxSockets": 3,
+      "unique": [
+        "Toothrow"
+      ],
+      "set": []
+    },
+    "xlg": {
+      "name": "Demonhide Gloves",
+      "kind": "armor",
+      "type": "glov",
+      "tier": "exceptional",
+      "maxSockets": 0,
+      "unique": [
+        "Venom Grip"
+      ],
+      "set": []
+    },
+    "xlm": {
+      "name": "Casque",
+      "kind": "armor",
+      "type": "helm",
+      "tier": "exceptional",
+      "maxSockets": 2,
+      "unique": [
+        "Stealskull"
+      ],
+      "set": []
+    },
+    "xlt": {
+      "name": "Templar Coat",
+      "kind": "armor",
+      "type": "tors",
+      "tier": "exceptional",
+      "maxSockets": 3,
+      "unique": [
+        "Guardian Angel"
+      ],
+      "set": []
+    },
+    "xmb": {
+      "name": "Mesh Boots",
+      "kind": "armor",
+      "type": "boot",
+      "tier": "exceptional",
+      "maxSockets": 0,
+      "unique": [
+        "Silkweave"
+      ],
+      "set": [
+        "Natalya's Soul"
+      ]
+    },
+    "xmg": {
+      "name": "Heavy Bracers",
+      "kind": "armor",
+      "type": "glov",
+      "tier": "exceptional",
+      "maxSockets": 0,
+      "unique": [
+        "Ghoulhide"
+      ],
+      "set": [
+        "Trang-Oul's Claws"
+      ]
+    },
+    "xml": {
+      "name": "Round Shield",
+      "kind": "armor",
+      "type": "shie",
+      "tier": "exceptional",
+      "maxSockets": 2,
+      "unique": [
+        "Mosers Blessed Circle"
+      ],
+      "set": [
+        "Wihtstan's Guard"
+      ]
+    },
+    "xng": {
+      "name": "Linked Mail",
+      "kind": "armor",
+      "type": "tors",
+      "tier": "exceptional",
+      "maxSockets": 3,
+      "unique": [
+        "Spiritforge"
+      ],
+      "set": []
+    },
+    "xow": {
+      "name": "Pavise",
+      "kind": "armor",
+      "type": "shie",
+      "tier": "exceptional",
+      "maxSockets": 3,
+      "unique": [
+        "Kerke's Sanctuary"
+      ],
+      "set": []
+    },
+    "xpk": {
+      "name": "Barbed Shield",
+      "kind": "armor",
+      "type": "shie",
+      "tier": "exceptional",
+      "maxSockets": 2,
+      "unique": [
+        "Lance Guard"
+      ],
+      "set": []
+    },
+    "xpl": {
+      "name": "Russet Armor",
+      "kind": "armor",
+      "type": "tors",
+      "tier": "exceptional",
+      "maxSockets": 3,
+      "unique": [
+        "Skullder's Ire"
+      ],
+      "set": []
+    },
+    "xrg": {
+      "name": "Scutum",
+      "kind": "armor",
+      "type": "shie",
+      "tier": "exceptional",
+      "maxSockets": 3,
+      "unique": [
+        "Stormchaser"
+      ],
+      "set": []
+    },
+    "xrn": {
+      "name": "Grand Crown",
+      "kind": "armor",
+      "type": "helm",
+      "tier": "exceptional",
+      "maxSockets": 3,
+      "unique": [
+        "Crown of Thieves"
+      ],
+      "set": [
+        "Hwanin's Splendor"
+      ]
+    },
+    "xrs": {
+      "name": "Cuirass",
+      "kind": "armor",
+      "type": "tors",
+      "tier": "exceptional",
+      "maxSockets": 3,
+      "unique": [
+        "Duriel's Shell"
+      ],
+      "set": [
+        "Haemosu's Adament"
+      ]
+    },
+    "xsh": {
+      "name": "Grim Shield",
+      "kind": "armor",
+      "type": "shie",
+      "tier": "exceptional",
+      "maxSockets": 2,
+      "unique": [
+        "Lidless Wall"
+      ],
+      "set": []
+    },
+    "xsk": {
+      "name": "Death Mask",
+      "kind": "armor",
+      "type": "helm",
+      "tier": "exceptional",
+      "maxSockets": 3,
+      "unique": [
+        "Blackhorn's Face"
+      ],
+      "set": [
+        "Tal Rasha's Horadric Crest"
+      ]
+    },
+    "xtb": {
+      "name": "Battle Boots",
+      "kind": "armor",
+      "type": "boot",
+      "tier": "exceptional",
+      "maxSockets": 0,
+      "unique": [
+        "Wartraveler"
+      ],
+      "set": [
+        "Aldur's Advance"
+      ]
+    },
+    "xtg": {
+      "name": "Battle Gauntlets",
+      "kind": "armor",
+      "type": "glov",
+      "tier": "exceptional",
+      "maxSockets": 0,
+      "unique": [
+        "Lavagout"
+      ],
+      "set": [
+        "M'avina's Icy Clutch"
+      ]
+    },
+    "xth": {
+      "name": "Embossed Plate",
+      "kind": "armor",
+      "type": "tors",
+      "tier": "exceptional",
+      "maxSockets": 4,
+      "unique": [
+        "Atma's Wail"
+      ],
+      "set": []
+    },
+    "xtp": {
+      "name": "Mage Plate",
+      "kind": "armor",
+      "type": "tors",
+      "tier": "exceptional",
+      "maxSockets": 3,
+      "unique": [
+        "Que-Hegan's Wisdon"
+      ],
+      "set": []
+    },
+    "xts": {
+      "name": "Ancient Shield",
+      "kind": "armor",
+      "type": "shie",
+      "tier": "exceptional",
+      "maxSockets": 3,
+      "unique": [
+        "Radimant's Sphere"
+      ],
+      "set": []
+    },
+    "xtu": {
+      "name": "Trellised Armor",
+      "kind": "armor",
+      "type": "tors",
+      "tier": "exceptional",
+      "maxSockets": 2,
+      "unique": [
+        "Ironpelt"
+      ],
+      "set": []
+    },
+    "xuc": {
+      "name": "Defender",
+      "kind": "armor",
+      "type": "shie",
+      "tier": "exceptional",
+      "maxSockets": 1,
+      "unique": [
+        "Visceratuant"
+      ],
+      "set": []
+    },
+    "xui": {
+      "name": "Ghost Armor",
+      "kind": "armor",
+      "type": "tors",
+      "tier": "exceptional",
+      "maxSockets": 2,
+      "unique": [
+        "The Spirit Shroud"
+      ],
+      "set": []
+    },
+    "xul": {
+      "name": "Chaos Armor",
+      "kind": "armor",
+      "type": "tors",
+      "tier": "exceptional",
+      "maxSockets": 4,
+      "unique": [
+        "Black Hades"
+      ],
+      "set": [
+        "Trang-Oul's Scales"
+      ]
+    },
+    "xvb": {
+      "name": "Sharkskin Boots",
+      "kind": "armor",
+      "type": "boot",
+      "tier": "exceptional",
+      "maxSockets": 0,
+      "unique": [
+        "Waterwalk"
+      ],
+      "set": []
+    },
+    "xvg": {
+      "name": "Sharkskin Gloves",
+      "kind": "armor",
+      "type": "glov",
+      "tier": "exceptional",
+      "maxSockets": 0,
+      "unique": [
+        "Gravepalm"
+      ],
+      "set": [
+        "Magnus' Skin"
+      ]
+    },
+    "ywn": {
+      "name": "Yew Wand",
+      "kind": "weapon",
+      "type": "wand",
+      "tier": "normal",
+      "maxSockets": 1,
+      "unique": [
+        "Maelstromwrath"
+      ],
+      "set": []
+    },
+    "zhb": {
+      "name": "War Belt",
+      "kind": "armor",
+      "type": "belt",
+      "tier": "exceptional",
+      "maxSockets": 0,
+      "unique": [
+        "Thudergod's Vigor"
+      ],
+      "set": [
+        "Immortal King's Detail"
+      ]
+    },
+    "zlb": {
+      "name": "Demonhide Sash",
+      "kind": "armor",
+      "type": "belt",
+      "tier": "exceptional",
+      "maxSockets": 0,
+      "unique": [
+        "String of Ears"
+      ],
+      "set": []
+    },
+    "zmb": {
+      "name": "Mesh Belt",
+      "kind": "armor",
+      "type": "belt",
+      "tier": "exceptional",
+      "maxSockets": 0,
+      "unique": [
+        "Gloomstrap"
+      ],
+      "set": [
+        "Tal Rasha's Fire-Spun Cloth"
+      ]
+    },
+    "ztb": {
+      "name": "Battle Belt",
+      "kind": "armor",
+      "type": "belt",
+      "tier": "exceptional",
+      "maxSockets": 0,
+      "unique": [
+        "Snowclash"
+      ],
+      "set": [
+        "Wilhelm's Pride"
+      ]
+    },
+    "zvb": {
+      "name": "Sharkskin Belt",
+      "kind": "armor",
+      "type": "belt",
+      "tier": "exceptional",
+      "maxSockets": 0,
+      "unique": [
+        "Razortail"
+      ],
+      "set": [
+        "M'avina's Tenet"
+      ]
+    }
+  }
+}

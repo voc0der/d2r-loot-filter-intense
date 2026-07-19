@@ -11,6 +11,8 @@ const ITEM_NAMES_PATH = 'local/lng/strings/item-names.json';
 const ITEM_NAME_AFFIXES_PATH = 'local/lng/strings/item-nameaffixes.json';
 const BLACK_COLOR_CODE = 'ÿc6';
 const GOLD_LABEL_KEY = 'gld';
+const SUPERIOR_PREFIX_KEYS = ['Hiquality'];
+const HIDE_STYLES = ['ÿc5.', 'ÿc6.'];
 const GOLD_LABELS = {
   dollar: '$',
   neutral: 'G',
@@ -53,33 +55,74 @@ const THROWING_KEYS = [
   'ops', // Fulminating Potion
 ];
 
-// Aggressively filtered endgame equipment bases. This intentionally includes
-// normal/exceptional A2 merc polearms and spears: they can be useful while
-// leveling, but are low priority at endgame. A ground label is ONE string
-// shared by every rarity, so hiding a base also hides its magic/rare/unique/set
-// versions; see the README warning.
+// Aggressively filtered, high-volume endgame equipment bases. Signal-to-noise
+// wins here: useful-but-common progression uniques and sets do not rescue an
+// otherwise low-priority base. A ground label is ONE string shared by every
+// rarity and quality, so hiding a base also hides its superior/socketed/magic/
+// rare/unique/set versions; see the README warning and audited collision list.
 const UNPOPULAR_BASE_KEYS = [
-  // Axes (1H) — Berserker Axe (Grief/BotD) and Ettin Axe (eth Oath) stay visible
+  // Axes (normal) — Double Axe stays visible as a low-requirement 5os Beast base
+  'hax', // Hand Axe
+  'axe', // Axe
+  'mpi', // Military Pick
+  'wax', // War Axe
+  'lax', // Large Axe
+  'bax', // Broad Axe
+  'btx', // Battle Axe
+  'gax', // Great Axe
+  'gix', // Giant Axe
+  // Axes (exceptional)
+  '9ha', // Hatchet
+  '9ax', // Cleaver
+  '92a', // Twin Axe
+  '9mp', // Crowbill
+  '9wa', // Naga
+  '9la', // Military Axe
+  '9ba', // Bearded Axe (hides Spellsteel)
+  '9bt', // Tabar
+  '9ga', // Gothic Axe
+  '9gi', // Ancient Axe
+  // Axes (elite) — Berserker Axe and Ettin Axe stay visible
   '7ha', // Tomahawk
   '7ax', // Small Crescent
   '7mp', // War Spike
-  // Axes (2H)
   '7la', // Feral Axe
   '7ba', // Silver-edged Axe
   '7bt', // Decapitator
   '7ga', // Champion Axe
   '7gi', // Glorious Axe
-  // Clubs / maces / hammers — Scourge (Stormlash), Legendary Mallet
-  // (Schaefer's) and Ogre Maul (IK set) stay visible
+  // Clubs / maces / hammers (normal/exceptional) — Flail stays visible for HOTO
+  'clb', // Club
+  'spc', // Spiked Club
+  'mac', // Mace
+  'mst', // Morning Star
+  'mau', // Maul
+  'whm', // War Hammer
+  'gma', // Great Maul
+  '9cl', // Cudgel
+  '9sp', // Barbed Club
+  '9ma', // Flanged Mace
+  '9mt', // Jagged Star
+  '9fl', // Knout
+  '9m9', // War Club
+  '9wh', // Battle Hammer
+  '9gm', // Martel de Fer
+  // Clubs / maces / hammers (elite) — Scourge, Legendary Mallet, and Ogre Maul stay
   '7cl', // Truncheon
   '7sp', // Tyrant Club (hides Demon Limb — prebuff niche)
-  '7gm', // Thunder Maul
   '7ma', // Reinforced Mace
   '7mt', // Devil Star
-  // Daggers (LoD) — Bone Knife (Wizardspike) stays visible
+  '7gm', // Thunder Maul
+  // Daggers — Dagger (Gull), Bone Knife, and Fanged Knife stay visible
+  'bld', // Blade
+  'dir', // Dirk
+  'kri', // Kris
+  '9dg', // Poignard
+  '9di', // Rondel (hides Heart Carver)
+  '9kr', // Cinquedeas
+  '9bl', // Stiletto
   '7di', // Mithril Point
   '7bl', // Legend Spike (hides Ghostflame)
-  // Fanged Knife stays visible: 3-socket Plague base and Fleshripper collision
   // Assassin claws without staffmods, useful collisions, or 3 sockets
   'ktr', // Katar
   'wrb', // Wrist Blade
@@ -87,15 +130,33 @@ const UNPOPULAR_BASE_KEYS = [
   'ces', // Cestus
   '9wb', // Wrist Spike
   '9xf', // Fascia
-  // Throwing — Winged Knife (Warshrike) stays visible
+  // Throwing weapons — Winged Knife (Warshrike) stays visible
+  'tax', // Throwing Axe
+  'bal', // Balanced Axe
+  'tkf', // Throwing Knife
+  'bkf', // Balanced Knife
+  '9ta', // Francisca
+  '9b8', // Hurlbat
+  '9tk', // Battle Dart
+  '9bk', // War Dart
   '7ta', // Flying Axe
   '7b8', // Winged Axe
   '7tk', // Flying Knife
-  // Javelins (non-Amazon; Matriarchal class javelins are separate codes)
-  '7gl', // Ghost Glaive
+  // Generic javelins — Amazon-class javelins use separate codes and stay visible
+  'jav', // Javelin
+  'pil', // Pilum
+  'ssp', // Short Spear
+  'glv', // Glaive
+  'tsp', // Throwing Spear
+  '9ja', // War Javelin
+  '9pi', // Great Pilum
+  '9s9', // Simbilan
+  '9gl', // Spiculum
+  '9ts', // Harpoon
   '7ja', // Hyperion Javelin
   '7pi', // Stygian Pilum
   '7s7', // Balrog Spear
+  '7gl', // Ghost Glaive
   '7ts', // Winged Harpoon
   // Polearms (normal) — leveling-only A2 merc bases
   'bar', // Bardiche
@@ -125,8 +186,33 @@ const UNPOPULAR_BASE_KEYS = [
   '9br', // War Fork
   '9st', // Yari
   '9p9', // Lance
-  // Amazon-class spears use separate codes and stay visible for player use
-  // Swords — useful A5 mercenary bases, Phase Blade, Colossus Sword and
+  // Swords (normal/exceptional) — Crystal/Broad Sword, Tulwar, and Battle Sword
+  // stay visible for Spirit/CTA, Ali Baba, Headstriker, and Act 5 mercenary use
+  'ssd', // Short Sword
+  'scm', // Scimitar
+  'sbr', // Sabre
+  'flc', // Falchion
+  'lsd', // Long Sword
+  'wsd', // War Sword
+  '2hs', // Two-Handed Sword
+  'clm', // Claymore
+  'gis', // Giant Sword
+  'bsw', // Bastard Sword
+  'flb', // Flamberge
+  'gsd', // Great Sword
+  '9ss', // Gladius
+  '9sm', // Cutlass
+  '9sb', // Shamshir
+  '9cr', // Dimensional Blade
+  '9ls', // Rune Sword
+  '9wd', // Ancient Sword
+  '92h', // Espandon
+  '9cm', // Dacian Falx
+  '9gs', // Tusk Sword
+  '9b9', // Gothic Sword
+  '9fb', // Zweihander
+  '9gd', // Executioner Sword
+  // Swords (elite) — useful Act 5 merc bases, Phase Blade, Colossus Sword, and
   // Colossus Blade stay visible
   '7sm', // Ataghan
   '7ss', // Falcata
@@ -134,13 +220,96 @@ const UNPOPULAR_BASE_KEYS = [
   '7fc', // Hydra Edge
   '7cm', // Highland Blade
   '7b7', // Champion Sword
-  // Bows (normal) — low-priority leveling base
+  // Bows — Short Bow (Edge) and the Witchwild String base stay visible
+  'sbb', // Short Battle Bow
+  'hbw', // Hunter's Bow
+  'lbw', // Long Bow
+  'cbw', // Composite Bow
+  'lbb', // Long Battle Bow
   'swb', // Short War Bow (hides Hellclap and Arctic Horn)
-  // Crossbows — all elite crossbows
+  'lwb', // Long War Bow
+  '8sb', // Edge Bow
+  '8hb', // Razor Bow
+  '8lb', // Cedar Bow (hides Kuko Shakaku)
+  '8cb', // Double Bow
+  '8l8', // Large Siege Bow
+  '8sw', // Rune Bow
+  '8lw', // Gothic Bow (hides Goldstrike Arch)
+  // Crossbows — Ballista (Buriza) and Chu-Ko-Nu (Demon Machine) stay visible
+  'lxb', // Light Crossbow
+  'mxb', // Crossbow
+  'hxb', // Heavy Crossbow
+  'rxb', // Repeating Crossbow
+  '8lx', // Arbalest
+  '8mx', // Siege Crossbow (hides Pus Spitter)
   '6lx', // Pellet Bow
   '6mx', // Gorgon Crossbow
   '6hx', // Colossus Crossbow
   '6rx', // Demon Crossbow
+  // Gloves — common labels whose notable collisions are accepted casualties
+  'lgl', // Leather Gloves
+  'vgl', // Heavy Gloves (hides Bloodfist and magic Blood-craft bases)
+  'xlg', // Demonhide Gloves
+  'xvg', // Sharkskin Gloves
+  'xtg', // Battle Gauntlets
+  'xhg', // War Gauntlets
+  'utg', // Crusader Gauntlets
+  // Boots
+  'vbt', // Heavy Boots
+  'mbt', // Chain Boots
+  'hbt', // Greaves
+  // Belts
+  'lbl', // Sash
+  'vbl', // Light Belt
+  'mbl', // Belt
+  'hbl', // Plated Belt
+  'uhc', // Colossus Girdle
+  // Generic helms — Guillaume's Face, Vampire Gaze, Tal's helm, Crown of
+  // Thieves, Shako, Andariel's Visage, Nightwing, CoA, and Bone Visage stay
+  'cap', // Cap
+  'skp', // Skull Cap
+  'hlm', // Helm
+  'fhl', // Full Helm
+  'ghm', // Great Helm
+  'crn', // Crown
+  'msk', // Mask
+  'bhm', // Bone Helm
+  'xap', // War Hat
+  'xkp', // Sallet
+  'xlm', // Casque
+  'xhl', // Basinet
+  'ukp', // Hydraskull
+  'ulm', // Armet
+  'uhl', // Giant Conch
+  // Body armor (normal) — low-strength 3os Breast Plate stays visible
+  'qui', // Quilted Armor
+  'lea', // Leather Armor
+  'hla', // Hard Leather Armor
+  'stu', // Studded Leather
+  'rng', // Ring Mail
+  'scl', // Scale Mail
+  'chn', // Chain Mail
+  'spl', // Splint Mail
+  'plt', // Plate Mail
+  'fld', // Field Plate
+  'gth', // Gothic Plate
+  'ltp', // Light Plate
+  'ful', // Full Plate Mail
+  'aar', // Ancient Armor
+  // Body armor (exceptional) — Mage Plate and bases for Vipermagi, Shaftstop,
+  // Duriel's Shell, Skullder's Ire, and Guardian Angel stay visible
+  'xui', // Ghost Armor
+  'xla', // Demonhide Armor
+  'xtu', // Trellised Armor
+  'xng', // Linked Mail
+  'xcl', // Tigulated Mail
+  'xld', // Sharktooth Armor
+  'xth', // Embossed Plate
+  'xul', // Chaos Armor (hides Trang-Oul's Scales)
+  'xar', // Ornate Plate
+  // Reported high-volume class-base exception. This intentionally sacrifices
+  // Aldur's Stony Gaze and potentially valuable 3os Druid staffmod bases.
+  'dr8', // Hunter's Guise
   // Generic shields (normal)
   'buc', // Buckler (hides Pelta Lunata and Hsarus' Iron Fist)
   'sml', // Small Shield (hides Umbral Disk and Cleglaw's Claw)
@@ -242,6 +411,7 @@ function entryHasBlackLabel(entry, replacement) {
 function updateStringFile(
   path,
   keysToHide,
+  keysToRemove,
   gemRenames,
   goldLabel,
   changedKeys,
@@ -270,12 +440,19 @@ function updateStringFile(
       : hideString;
 
     // Write every locale field, not just enUS, so this works on non-English
-    // clients too. Explicit hiding wins, followed by inherited black labels,
-    // then Gem Crunch and the compact Gold suffix.
+    // clients too. Explicit hiding wins, then explicit fragment removal,
+    // inherited black labels, Gem Crunch, and the compact Gold suffix.
     if (keysToHide[entry.Key] === true) {
       for (const field in entry) {
         if (field !== 'id' && field !== 'Key') {
           entry[field] = hideString;
+        }
+      }
+      changedKeys[entry.Key] = true;
+    } else if (keysToRemove[entry.Key] === true) {
+      for (const field in entry) {
+        if (field !== 'id' && field !== 'Key') {
+          entry[field] = '';
         }
       }
       changedKeys[entry.Key] = true;
@@ -318,15 +495,19 @@ const hideGroups = [
 
 const gemCrunchEnabled = config.gemCrunch === true;
 const blackLabelsToDotsEnabled = config.blackLabelsToDots === true;
+const removeSuperiorPrefixEnabled = config.removeSuperiorPrefix === true;
 const goldLabel = Object.prototype.hasOwnProperty.call(GOLD_LABELS, config.goldLabel)
   ? GOLD_LABELS[config.goldLabel]
   : null;
-const hideString = config.hideStyle;
+const hideString = HIDE_STYLES.indexOf(config.hideStyle) !== -1
+  ? config.hideStyle
+  : HIDE_STYLES[0];
 
 if (
   hideGroups.length === 0
   && !gemCrunchEnabled
   && !blackLabelsToDotsEnabled
+  && !removeSuperiorPrefixEnabled
   && goldLabel === null
 ) {
   console.log('No filter groups enabled — nothing to do.');
@@ -353,17 +534,36 @@ if (
 
   const changedKeys = {};
   const blackLabelChanges = { count: 0, keys: {} };
-  updateStringFile(
-    ITEM_NAMES_PATH,
-    keysToHide,
-    gemRenames,
-    goldLabel,
-    changedKeys,
-    hideString,
-    blackLabelsToDotsEnabled,
-    blackLabelChanges,
-  );
-  if (gemCrunchEnabled || blackLabelsToDotsEnabled || goldLabel !== null) {
+  const superiorPrefixKeysToRemove = {};
+  if (removeSuperiorPrefixEnabled) {
+    SUPERIOR_PREFIX_KEYS.forEach((key) => {
+      superiorPrefixKeysToRemove[key] = true;
+    });
+  }
+  if (
+    hideGroups.length > 0
+    || gemCrunchEnabled
+    || blackLabelsToDotsEnabled
+    || goldLabel !== null
+  ) {
+    updateStringFile(
+      ITEM_NAMES_PATH,
+      keysToHide,
+      {},
+      gemRenames,
+      goldLabel,
+      changedKeys,
+      hideString,
+      blackLabelsToDotsEnabled,
+      blackLabelChanges,
+    );
+  }
+  if (
+    gemCrunchEnabled
+    || blackLabelsToDotsEnabled
+    || removeSuperiorPrefixEnabled
+    || goldLabel !== null
+  ) {
     // Regular Diamond/Emerald/Ruby/Sapphire are stored here instead of in
     // item-names.json. Processing the full rename map keeps this resilient if
     // Blizzard moves any other gem strings between the two files. This is also
@@ -371,6 +571,7 @@ if (
     updateStringFile(
       ITEM_NAME_AFFIXES_PATH,
       {},
+      superiorPrefixKeysToRemove,
       gemRenames,
       goldLabel,
       changedKeys,
@@ -386,6 +587,13 @@ if (
       name: 'Black Labels to Dots',
       verb: 'replaced',
       count: blackLabelChanges.count,
+    });
+  }
+  if (removeSuperiorPrefixEnabled) {
+    reportGroups.push({
+      name: 'Remove Superior Prefix',
+      verb: 'removed',
+      keys: SUPERIOR_PREFIX_KEYS,
     });
   }
   if (gemCrunchEnabled) {

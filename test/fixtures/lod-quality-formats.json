@@ -1,0 +1,11 @@
+{
+  "source": {
+    "d2dataCommit": "bb26870f321c05479df88119285f26b76c4cec32",
+    "key": "HiqualityFormat"
+  },
+  "formats": {
+    "enUS": "%0 %1",
+    "deDE": "a0n1:%0 %1",
+    "frFR": "a0n1:%1 %0"
+  }
+}
