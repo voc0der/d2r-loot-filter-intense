@@ -126,13 +126,19 @@ const UNPOPULAR_BASE_KEYS = [
   '9bl', // Stiletto
   '7di', // Mithril Point
   '7bl', // Legend Spike (hides Ghostflame)
-  // Assassin claws without staffmods, useful collisions, or 3 sockets
+  // Assassin claws — every normal claw and the 2-socket exceptionals go.
+  // The 3-socket exceptionals (Greater Talons for Bartuc's and premier
+  // Chaos/Fury bases) and every elite claw stay visible for staffmods.
   'ktr', // Katar
   'wrb', // Wrist Blade
   'axf', // Hatchet Hands
   'ces', // Cestus
+  'clw', // Claws
+  'btl', // Blade Talons
+  'skr', // Scissors Katar
   '9wb', // Wrist Spike
   '9xf', // Fascia
+  '9cs', // Hand Scythe
   // Throwing weapons — Winged Knife (Warshrike) stays visible
   'tax', // Throwing Axe
   'bal', // Balanced Axe
@@ -145,7 +151,7 @@ const UNPOPULAR_BASE_KEYS = [
   '7ta', // Flying Axe
   '7b8', // Winged Axe
   '7tk', // Flying Knife
-  // Generic javelins — Amazon-class javelins use separate codes and stay visible
+  // Generic javelins — Amazon-class javelins use separate codes (below)
   'jav', // Javelin
   'pil', // Pilum
   'ssp', // Short Spear
@@ -161,6 +167,18 @@ const UNPOPULAR_BASE_KEYS = [
   '7s7', // Balrog Spear
   '7gl', // Ghost Glaive
   '7ts', // Winged Harpoon
+  // Amazon weapons (normal/exceptional) — Ceremonial Javelin (Titan's Revenge)
+  // and every elite Amazon base (Matriarchal/Grand Matron for Faith, M'avina's,
+  // Thunderstroke and magic +3 javelin bases) stay visible
+  'am1', // Stag Bow
+  'am2', // Reflex Bow
+  'am3', // Maiden Spear
+  'am4', // Maiden Pike
+  'am5', // Maiden Javelin
+  'am6', // Ashwood Bow
+  'am7', // Ceremonial Bow (hides Lycander's Aim)
+  'am8', // Ceremonial Spear
+  'am9', // Ceremonial Pike (hides Lycander's Flank)
   // Polearms (normal) — leveling-only A2 merc bases
   'bar', // Bardiche
   'vou', // Voulge
@@ -249,22 +267,72 @@ const UNPOPULAR_BASE_KEYS = [
   '6mx', // Gorgon Crossbow
   '6hx', // Colossus Crossbow
   '6rx', // Demon Crossbow
-  // Gloves — common labels whose notable collisions are accepted casualties
+  // Scepters (normal/exceptional) — elite scepters (Heaven's Light, The
+  // Redeemer, Astreon's Caduceus) stay visible; the hidden uniques and sets
+  // here are leveling-tier
+  'scp', // Scepter (hides Knell Striker)
+  'gsc', // Grand Scepter (hides Rusthandle)
+  'wsp', // War Scepter (hides Stormeye and Milabrega's Rod)
+  '9sc', // Rune Scepter (hides Zakarum's Hand)
+  '9qs', // Holy Water Sprinkler (hides The Fetid Sprinkler)
+  '9ws', // Divine Scepter (hides Hand of Blessed Light)
+  // Wands (normal/exceptional) — elite wands (Boneshade, Death's Web) stay
+  // visible; White is shopped from vendors, not picked off the ground
+  'wnd', // Wand
+  'ywn', // Yew Wand
+  'bwn', // Bone Wand
+  'gwn', // Grim Wand
+  '9wn', // Burnt Wand (hides Suicide Branch)
+  '9yw', // Petrified Wand
+  '9bw', // Tomb Wand (hides Arm of King Leoric)
+  '9gw', // Grave Wand
+  // Staves (normal/exceptional) — elite staves (Ondal's Wisdom, Mang Song's,
+  // Naj's Puzzler) stay visible; Ribcracker is the one notable casualty
+  'sst', // Short Staff
+  'lst', // Long Staff
+  'cst', // Gnarled Staff
+  'bst', // Battle Staff
+  'wst', // War Staff
+  '8ss', // Jo Staff (hides Razorswitch)
+  '8ls', // Quarterstaff (hides Ribcracker)
+  '8cs', // Cedar Staff
+  '8bs', // Gothic Staff
+  '8ws', // Rune Staff
+  // Sorceress orbs (normal/exceptional) — Swirling Crystal (The Oculus and
+  // Tal Rasha's) and every elite orb (Eschuta's, Death's Fathom) stay visible
+  'ob1', // Eagle Orb
+  'ob2', // Sacred Globe
+  'ob3', // Smoked Sphere
+  'ob4', // Clasped Orb
+  'ob5', // Jared's Stone
+  'ob6', // Glowing Orb
+  'ob7', // Crystalline Globe
+  'ob8', // Cloudy Sphere
+  'ob9', // Sparkling Ball
+  // Gloves — common labels whose notable collisions are accepted casualties;
+  // Chain Gloves (Chance Guards) and Light Gauntlets (Magefist) stay visible
   'lgl', // Leather Gloves
   'vgl', // Heavy Gloves (hides Bloodfist and magic Blood-craft bases)
+  'hgl', // Gauntlets (hides Frostburn)
   'xlg', // Demonhide Gloves
   'xvg', // Sharkskin Gloves
   'xtg', // Battle Gauntlets
   'xhg', // War Gauntlets
   'utg', // Crusader Gauntlets
-  // Boots
+  // Boots — every normal boot goes; exceptional and elite boots stay visible
+  // for War Traveler, Gore Rider, Waterwalk, Sandstorm Trek and valuable rares
+  'lbt', // Boots (hides Hotspur)
   'vbt', // Heavy Boots
   'mbt', // Chain Boots
+  'tbt', // Light Plated Boots (hides Goblin Toe)
   'hbt', // Greaves
-  // Belts
+  // Belts — every normal belt goes; exceptional and elite belts stay visible
+  // for String of Ears, Razortail, Snowclash, Thundergod's, Tal Rasha's,
+  // Arachnid Mesh, Verdungo's and Nosferatu's
   'lbl', // Sash
   'vbl', // Light Belt
   'mbl', // Belt
+  'tbl', // Heavy Belt (hides Goldwrap and Iratha's Cord)
   'hbl', // Plated Belt
   'uhc', // Colossus Girdle
   // Generic helms — Guillaume's Face, Vampire Gaze, Tal's helm, Crown of
@@ -284,6 +352,17 @@ const UNPOPULAR_BASE_KEYS = [
   'ukp', // Hydraskull
   'ulm', // Armet
   'uhl', // Giant Conch
+  // Barbarian helms (normal/exceptional) — Slayer Guard (Arreat's Face) and
+  // every elite Barbarian helm stay visible for staffmods
+  'ba1', // Jawbone Cap
+  'ba2', // Fanged Helm
+  'ba3', // Horned Helm
+  'ba4', // Assault Helmet
+  'ba5', // Avenger Guard (hides Immortal King's Will)
+  'ba6', // Jawbone Visor
+  'ba7', // Lion Helm
+  'ba8', // Rage Mask
+  'ba9', // Savage Helmet
   // Body armor (normal) — low-strength 3os Breast Plate stays visible
   'qui', // Quilted Armor
   'lea', // Leather Armor
@@ -310,9 +389,29 @@ const UNPOPULAR_BASE_KEYS = [
   'xth', // Embossed Plate
   'xul', // Chaos Armor (hides Trang-Oul's Scales)
   'xar', // Ornate Plate
-  // Reported high-volume class-base exception. This intentionally sacrifices
-  // Aldur's Stony Gaze and potentially valuable 3os Druid staffmod bases.
-  'dr8', // Hunter's Guise
+  // Druid pelts (normal/exceptional) — Totemic Mask (Jalal's Mane) and every
+  // elite pelt stay visible for staffmods; hiding dr8 also sacrifices Aldur's
+  // Stony Gaze and potentially valuable 3os Druid staffmod bases
+  'dr1', // Wolf Head
+  'dr2', // Hawk Helm
+  'dr3', // Antlers
+  'dr4', // Falcon Mask
+  'dr5', // Spirit Mask
+  'dr6', // Alpha Helm
+  'dr7', // Griffon Headdress
+  'dr8', // Hunter's Guise (hides Aldur's Stony Gaze)
+  'dr9', // Sacred Feathers
+  // Necromancer heads (normal/exceptional) — Hierophant Trophy (Homunculus)
+  // and every elite head stay visible for staffmods
+  'ne1', // Preserved Head
+  'ne2', // Zombie Head
+  'ne3', // Unraveller Head
+  'ne4', // Gargoyle Head
+  'ne5', // Demon Head
+  'ne6', // Mummified Trophy
+  'ne7', // Fetish Trophy
+  'ne8', // Sexton Trophy
+  'ne9', // Cantor Trophy (hides Trang-Oul's Wing)
   // Generic shields (normal)
   'buc', // Buckler (hides Pelta Lunata and Hsarus' Iron Fist)
   'sml', // Small Shield (hides Umbral Disk and Cleglaw's Claw)

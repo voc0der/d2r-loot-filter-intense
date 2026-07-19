@@ -2,7 +2,7 @@
 
 # Audited Hide Unpopular Bases policy
 
-This generated table is the authoritative list of all **247** hidden equipment base strings.
+This generated table is the authoritative list of all **323** hidden equipment base strings.
 It targets the **Diablo II: Resurrected — Lord of Destruction** ruleset and is pinned to d2data commit `bb26870f321c05479df88119285f26b76c4cec32`.
 
 The filter is quality-blind: every listed code hides ordinary, superior, socketed, magic, rare, unique and set labels on that base. Named unique/set collisions from the pinned LoD data appear below. Staffmods, crafting uses and other runtime tradeoffs are documented in the README and policy fixture.
@@ -14,6 +14,15 @@ The filter is quality-blind: every listed code hides ordinary, superior, sockete
 - `msk` Mask: The Face of Horror; Cathan's Visage; 3-socket Mask runeword bases
 - `xul` Chaos Armor: Black Hades; Trang-Oul's Scales
 - `dr8` Hunter's Guise: Aldur's Stony Gaze; 3-socket Druid staffmod bases
+- `tbl` Heavy Belt: Goldwrap; Iratha's Cord; Infernal Sign
+- `tbt` Light Plated Boots: Goblin Toe
+- `hgl` Gauntlets: Frostburn; Sigon's Gage
+- `8ls` Quarterstaff: Ribcracker
+- `9wn` Burnt Wand: Suicide Branch
+- `9bw` Tomb Wand: Arm of King Leoric
+- `ba5` Avenger Guard: Immortal King's Will
+- `am7` Ceremonial Bow: Lycander's Aim
+- `am9` Ceremonial Pike: Lycander's Flank
 
 ## Axes (27)
 
@@ -86,7 +95,7 @@ The filter is quality-blind: every listed code hides ordinary, superior, sockete
 | `7di` | Mithril Point | elite | 1 | — |
 | `7bl` | Legend Spike | elite | 2 | Unique: Ghostflame |
 
-## Assassin claws (6)
+## Assassin claws (10)
 
 | Code | Base | Tier | Max sockets | Named unique/set collisions intentionally hidden |
 | --- | --- | --- | ---: | --- |
@@ -94,8 +103,12 @@ The filter is quality-blind: every listed code hides ordinary, superior, sockete
 | `wrb` | Wrist Blade | normal | 2 | — |
 | `axf` | Hatchet Hands | normal | 2 | — |
 | `ces` | Cestus | normal | 2 | — |
+| `clw` | Claws | normal | 3 | — |
+| `btl` | Blade Talons | normal | 3 | — |
+| `skr` | Scissors Katar | normal | 3 | — |
 | `9wb` | Wrist Spike | exceptional | 2 | — |
 | `9xf` | Fascia | exceptional | 2 | — |
+| `9cs` | Hand Scythe | exceptional | 2 | — |
 
 ## Throwing weapons (11)
 
@@ -132,6 +145,20 @@ The filter is quality-blind: every listed code hides ordinary, superior, sockete
 | `7s7` | Balrog Spear | elite | 0 | Unique: Demon's Arch |
 | `7gl` | Ghost Glaive | elite | 0 | Unique: Wraithflight |
 | `7ts` | Winged Harpoon | elite | 0 | Unique: Gargoyle's Bite |
+
+## Amazon weapons (9)
+
+| Code | Base | Tier | Max sockets | Named unique/set collisions intentionally hidden |
+| --- | --- | --- | ---: | --- |
+| `am1` | Stag Bow | normal | 5 | — |
+| `am2` | Reflex Bow | normal | 5 | — |
+| `am3` | Maiden Spear | normal | 6 | — |
+| `am4` | Maiden Pike | normal | 6 | — |
+| `am5` | Maiden Javelin | normal | 0 | — |
+| `am6` | Ashwood Bow | exceptional | 5 | — |
+| `am7` | Ceremonial Bow | exceptional | 5 | Unique: Lycander's Aim |
+| `am8` | Ceremonial Spear | exceptional | 6 | — |
+| `am9` | Ceremonial Pike | exceptional | 6 | Unique: Lycander's Flank |
 
 ## Polearms (13)
 
@@ -235,33 +262,90 @@ The filter is quality-blind: every listed code hides ordinary, superior, sockete
 | `6hx` | Colossus Crossbow | elite | 6 | Unique: Hellrack |
 | `6rx` | Demon Crossbow | elite | 5 | Unique: Gutsiphon |
 
-## Gloves (7)
+## Scepters (6)
+
+| Code | Base | Tier | Max sockets | Named unique/set collisions intentionally hidden |
+| --- | --- | --- | ---: | --- |
+| `scp` | Scepter | normal | 2 | Unique: Knell Striker |
+| `gsc` | Grand Scepter | normal | 3 | Unique: Rusthandle; Set: Civerb's Cudgel |
+| `wsp` | War Scepter | normal | 5 | Unique: Stormeye; Set: Milabrega's Rod |
+| `9sc` | Rune Scepter | exceptional | 2 | Unique: Zakarum's Hand |
+| `9qs` | Holy Water Sprinkler | exceptional | 3 | Unique: The Fetid Sprinkler |
+| `9ws` | Divine Scepter | exceptional | 5 | Unique: Hand of Blessed Light |
+
+## Wands (8)
+
+| Code | Base | Tier | Max sockets | Named unique/set collisions intentionally hidden |
+| --- | --- | --- | ---: | --- |
+| `wnd` | Wand | normal | 1 | Unique: Iros Torch |
+| `ywn` | Yew Wand | normal | 1 | Unique: Maelstromwrath |
+| `bwn` | Bone Wand | normal | 2 | Unique: Gravenspine; Set: McAuley's Superstition |
+| `gwn` | Grim Wand | normal | 2 | Unique: Umes Lament; Set: Infernal Torch |
+| `9wn` | Burnt Wand | exceptional | 1 | Unique: Suicide Branch |
+| `9yw` | Petrified Wand | exceptional | 2 | Unique: Carin Shard |
+| `9bw` | Tomb Wand | exceptional | 2 | Unique: Arm of King Leoric |
+| `9gw` | Grave Wand | exceptional | 2 | Unique: Blackhand Key |
+
+## Staves (10)
+
+| Code | Base | Tier | Max sockets | Named unique/set collisions intentionally hidden |
+| --- | --- | --- | ---: | --- |
+| `sst` | Short Staff | normal | 2 | Unique: Bane Ash |
+| `lst` | Long Staff | normal | 3 | Unique: Serpent Lord |
+| `cst` | Gnarled Staff | normal | 4 | Unique: Lazarus Spire |
+| `bst` | Battle Staff | normal | 4 | Unique: The Salamander; Set: Cathan's Rule |
+| `wst` | War Staff | normal | 6 | Unique: The Iron Jang Bong; Set: Arcanna's Deathwand |
+| `8ss` | Jo Staff | exceptional | 2 | Unique: Razorswitch |
+| `8ls` | Quarterstaff | exceptional | 3 | Unique: Ribcracker |
+| `8cs` | Cedar Staff | exceptional | 4 | Unique: Chromatic Ire |
+| `8bs` | Gothic Staff | exceptional | 4 | Unique: Warpspear |
+| `8ws` | Rune Staff | exceptional | 6 | Unique: Skullcollector |
+
+## Sorceress orbs (9)
+
+| Code | Base | Tier | Max sockets | Named unique/set collisions intentionally hidden |
+| --- | --- | --- | ---: | --- |
+| `ob1` | Eagle Orb | normal | 4 | — |
+| `ob2` | Sacred Globe | normal | 4 | — |
+| `ob3` | Smoked Sphere | normal | 4 | — |
+| `ob4` | Clasped Orb | normal | 4 | — |
+| `ob5` | Jared's Stone | normal | 4 | — |
+| `ob6` | Glowing Orb | exceptional | 4 | — |
+| `ob7` | Crystalline Globe | exceptional | 4 | — |
+| `ob8` | Cloudy Sphere | exceptional | 4 | — |
+| `ob9` | Sparkling Ball | exceptional | 4 | — |
+
+## Gloves (8)
 
 | Code | Base | Tier | Max sockets | Named unique/set collisions intentionally hidden |
 | --- | --- | --- | ---: | --- |
 | `lgl` | Leather Gloves | normal | 0 | Unique: The Hand of Broc; Set: Death's Hand |
 | `vgl` | Heavy Gloves | normal | 0 | Unique: Bloodfist; Set: McAuley's Taboo |
+| `hgl` | Gauntlets | normal | 0 | Unique: Frostburn; Set: Sigon's Gage |
 | `xlg` | Demonhide Gloves | exceptional | 0 | Unique: Venom Grip |
 | `xvg` | Sharkskin Gloves | exceptional | 0 | Unique: Gravepalm; Set: Magnus' Skin |
 | `xtg` | Battle Gauntlets | exceptional | 0 | Unique: Lavagout; Set: M'avina's Icy Clutch |
 | `xhg` | War Gauntlets | exceptional | 0 | Unique: Hellmouth; Set: Immortal King's Forge |
 | `utg` | Crusader Gauntlets | elite | 0 | — |
 
-## Boots (3)
+## Boots (5)
 
 | Code | Base | Tier | Max sockets | Named unique/set collisions intentionally hidden |
 | --- | --- | --- | ---: | --- |
+| `lbt` | Boots | normal | 0 | Unique: Hotspur; Set: Tancred's Hobnails |
 | `vbt` | Heavy Boots | normal | 0 | Unique: Gorefoot; Set: Cow King's Hoofs, McAuley's Riprap |
 | `mbt` | Chain Boots | normal | 0 | Unique: Treads of Cthon; Set: Hsarus' Iron Heel |
+| `tbt` | Light Plated Boots | normal | 0 | Unique: Goblin Toe; Set: Vidala's Fetlock |
 | `hbt` | Greaves | normal | 0 | Unique: Tearhaunch; Set: Sigon's Sabot |
 
-## Belts (5)
+## Belts (6)
 
 | Code | Base | Tier | Max sockets | Named unique/set collisions intentionally hidden |
 | --- | --- | --- | ---: | --- |
 | `lbl` | Sash | normal | 0 | Unique: Lenyms Cord; Set: Death's Guard |
 | `vbl` | Light Belt | normal | 0 | Unique: Snakecord; Set: Arctic Binding |
 | `mbl` | Belt | normal | 0 | Unique: Nightsmoke; Set: Hsarus' Iron Stay, Hwanin's Seal |
+| `tbl` | Heavy Belt | normal | 0 | Unique: Goldwrap; Set: Infernal Sign, Iratha's Cord |
 | `hbl` | Plated Belt | normal | 0 | Unique: Bladebuckle; Set: Sigon's Wrap |
 | `uhc` | Colossus Girdle | elite | 0 | — |
 
@@ -284,6 +368,20 @@ The filter is quality-blind: every listed code hides ordinary, superior, sockete
 | `ukp` | Hydraskull | elite | 2 | — |
 | `ulm` | Armet | elite | 2 | Unique: Darkfear, Steelshade |
 | `uhl` | Giant Conch | elite | 2 | — |
+
+## Barbarian helms (9)
+
+| Code | Base | Tier | Max sockets | Named unique/set collisions intentionally hidden |
+| --- | --- | --- | ---: | --- |
+| `ba1` | Jawbone Cap | normal | 3 | — |
+| `ba2` | Fanged Helm | normal | 3 | — |
+| `ba3` | Horned Helm | normal | 3 | — |
+| `ba4` | Assault Helmet | normal | 3 | — |
+| `ba5` | Avenger Guard | normal | 3 | Set: Immortal King's Will |
+| `ba6` | Jawbone Visor | exceptional | 3 | — |
+| `ba7` | Lion Helm | exceptional | 3 | — |
+| `ba8` | Rage Mask | exceptional | 3 | — |
+| `ba9` | Savage Helmet | exceptional | 3 | — |
 
 ## Body armor (23)
 
@@ -313,11 +411,33 @@ The filter is quality-blind: every listed code hides ordinary, superior, sockete
 | `xul` | Chaos Armor | exceptional | 4 | Unique: Black Hades; Set: Trang-Oul's Scales |
 | `xar` | Ornate Plate | exceptional | 4 | Unique: Corpsemourn; Set: Griswold's Heart |
 
-## Druid pelts (1)
+## Druid pelts (9)
 
 | Code | Base | Tier | Max sockets | Named unique/set collisions intentionally hidden |
 | --- | --- | --- | ---: | --- |
+| `dr1` | Wolf Head | normal | 3 | — |
+| `dr2` | Hawk Helm | normal | 3 | — |
+| `dr3` | Antlers | normal | 3 | — |
+| `dr4` | Falcon Mask | normal | 3 | — |
+| `dr5` | Spirit Mask | normal | 3 | — |
+| `dr6` | Alpha Helm | exceptional | 3 | — |
+| `dr7` | Griffon Headdress | exceptional | 3 | — |
 | `dr8` | Hunter's Guise | exceptional | 3 | Set: Aldur's Stony Gaze |
+| `dr9` | Sacred Feathers | exceptional | 3 | — |
+
+## Necromancer heads (9)
+
+| Code | Base | Tier | Max sockets | Named unique/set collisions intentionally hidden |
+| --- | --- | --- | ---: | --- |
+| `ne1` | Preserved Head | normal | 2 | — |
+| `ne2` | Zombie Head | normal | 2 | — |
+| `ne3` | Unraveller Head | normal | 2 | — |
+| `ne4` | Gargoyle Head | normal | 2 | — |
+| `ne5` | Demon Head | normal | 2 | — |
+| `ne6` | Mummified Trophy | exceptional | 2 | — |
+| `ne7` | Fetish Trophy | exceptional | 2 | — |
+| `ne8` | Sexton Trophy | exceptional | 2 | — |
+| `ne9` | Cantor Trophy | exceptional | 2 | Set: Trang-Oul's Wing |
 
 ## Generic shields (17)
 
@@ -360,13 +480,16 @@ The filter is quality-blind: every listed code hides ordinary, superior, sockete
 ## Explicit keeps tested by the suite
 
 - **utilityWeapons:** `2ax` Double Axe, `sbw` Short Bow, `dgr` Dagger, `fla` Flail, `crs` Crystal Sword, `bsd` Broad Sword, `9bs` Battle Sword, `9fc` Tulwar, `8s8` Short Siege Bow, `8hx` Ballista, `8rx` Chu-Ko-Nu
+- **assassinClawKeeps:** `9ar` Quhab, `9lw` Greater Claws, `9tw` Greater Talons, `9qr` Scissors Quhab, `7ar` Suwayyah, `7cs` Battle Cestus, `7lw` Feral Claws, `7qr` Scissors Suwayyah, `7tw` Runic Talons, `7wb` Wrist Sword, `7xf` War Fist
+- **amazonWeaponKeeps:** `ama` Ceremonial Javelin, `amb` Matriarchal Bow, `amc` Grand Matron Bow, `amd` Matriarchal Spear, `ame` Matriarchal Pike, `amf` Matriarchal Javelin
+- **eliteScepterWandStaff:** `7sc` Mighty Scepter, `7qs` Seraph Rod, `7ws` Caduceus, `7wn` Polished Wand, `7yw` Ghost Wand, `7bw` Lich Wand, `7gw` Unearthed Wand, `6ss` Walking Stick, `6ls` Stalagmite, `6cs` Elder Staff, `6bs` Shillelagh, `6ws` Archon Staff
 - **eliteMercPolearms:** `7vo` Colossus Voulge, `7s8` Thresher, `7pa` Cryptic Axe, `7h7` Great Poleaxe, `7wc` Giant Thresher
 - **act5AndEliteSwords:** `7bs` Conquest Sword, `72h` Legend Sword, `7gs` Balrog Blade, `7wd` Mythical Sword, `7ls` Cryptic Sword, `7cr` Phase Blade, `7fb` Colossus Sword, `7gd` Colossus Blade
-- **armor:** `brs` Breast Plate, `xtp` Mage Plate, `xea` Serpentskin Armor, `xhn` Mesh Armor, `xrs` Cuirass, `xpl` Russet Armor, `xlt` Templar Coat, `xhm` Winged Helm, `xrn` Grand Crown, `xsk` Death Mask, `xh9` Grim Helm, `uap` Shako, `usk` Demonhead, `uhm` Spired Helm, `uh9` Bone Visage, `urn` Corona, `uth` Lacquered Plate, `uar` Sacred Armor
-- **otherDruidPelts:** `dr1` Wolf Head, `dr2` Hawk Helm, `dr3` Antlers, `dr4` Falcon Mask, `dr5` Spirit Mask, `dr6` Alpha Helm, `dr7` Griffon Headdress, `dr9` Sacred Feathers, `dra` Totemic Mask, `drb` Blood Spirit, `drc` Sun Spirit, `drd` Earth Spirit, `dre` Sky Spirit, `drf` Dream Spirit
-- **barbarianHelms:** `ba1` Jawbone Cap, `ba2` Fanged Helm, `ba3` Horned Helm, `ba4` Assault Helmet, `ba5` Avenger Guard, `ba6` Jawbone Visor, `ba7` Lion Helm, `ba8` Rage Mask, `ba9` Savage Helmet, `baa` Slayer Guard, `bab` Carnage Helm, `bac` Fury Visor, `bad` Destroyer Helm, `bae` Conqueror Crown, `baf` Guardian Crown
-- **necromancerHeads:** `ne1` Preserved Head, `ne2` Zombie Head, `ne3` Unraveller Head, `ne4` Gargoyle Head, `ne5` Demon Head, `ne6` Mummified Trophy, `ne7` Fetish Trophy, `ne8` Sexton Trophy, `ne9` Cantor Trophy, `nea` Hierophant Trophy, `neb` Minion Skull, `ned` Overseer Skull, `nee` Succubus Skull, `nef` Bloodlord Skull, `neg` Hellspawn Skull
-- **sorceressOrbs:** `ob1` Eagle Orb, `ob2` Sacred Globe, `ob3` Smoked Sphere, `ob4` Clasped Orb, `ob5` Jared's Stone, `ob6` Glowing Orb, `ob7` Crystalline Globe, `ob8` Cloudy Sphere, `ob9` Sparkling Ball, `oba` Swirling Crystal, `obb` Heavenly Stone, `obc` Eldritch Orb, `obd` Demon Heart, `obe` Vortex Orb, `obf` Dimensional Shard
+- **armor:** `brs` Breast Plate, `xtp` Mage Plate, `xea` Serpentskin Armor, `xhn` Mesh Armor, `xrs` Cuirass, `xpl` Russet Armor, `xlt` Templar Coat, `xhm` Winged Helm, `xrn` Grand Crown, `xsk` Death Mask, `xh9` Grim Helm, `uap` Shako, `usk` Demonhead, `uhm` Spired Helm, `uh9` Bone Visage, `urn` Corona, `uth` Lacquered Plate, `uar` Sacred Armor, `mgl` Chain Gloves, `tgl` Light Gauntlets
+- **druidPeltKeeps:** `dra` Totemic Mask, `drb` Blood Spirit, `drc` Sun Spirit, `drd` Earth Spirit, `dre` Sky Spirit, `drf` Dream Spirit
+- **barbarianHelmKeeps:** `baa` Slayer Guard, `bab` Carnage Helm, `bac` Fury Visor, `bad` Destroyer Helm, `bae` Conqueror Crown, `baf` Guardian Crown
+- **necromancerHeadKeeps:** `nea` Hierophant Trophy, `neb` Minion Skull, `ned` Overseer Skull, `nee` Succubus Skull, `nef` Bloodlord Skull, `neg` Hellspawn Skull
+- **sorceressOrbKeeps:** `oba` Swirling Crystal, `obb` Heavenly Stone, `obc` Eldritch Orb, `obd` Demon Heart, `obe` Vortex Orb, `obf` Dimensional Shard
 - **circlets:** `ci0` Circlet, `ci1` Coronet, `ci2` Tiara, `ci3` Diadem
 - **talRasha:** `xsk` Death Mask, `zmb` Mesh Belt, `oba` Swirling Crystal, `uth` Lacquered Plate
 - **rareSetBases:** `uar` Sacred Armor, `urn` Corona, `paf` Vortex Shield, `ci3` Diadem

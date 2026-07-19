@@ -102,7 +102,7 @@ test('missing string keys are skipped with a precise warning', () => {
   assert.ok(result.logs.includes('Hide Ammo: hid 1 of 2 item names.'));
 });
 
-test('Hide Unpopular Bases rewrites all 247 audited keys across locales', () => {
+test('Hide Unpopular Bases rewrites all 323 audited keys across locales', () => {
   const entries = [
     ...hiddenKeys.map((key, index) => localeEntry(key, `Hidden ${key}`, { id: index + 1 })),
     ...keepKeys.map((key, index) => localeEntry(key, `Keep ${key}`, { id: 1000 + index })),
@@ -130,7 +130,7 @@ test('Hide Unpopular Bases rewrites all 247 audited keys across locales', () => 
   assert.deepEqual(result.reads, [ITEM_NAMES_PATH]);
   assert.deepEqual(result.writes, [ITEM_NAMES_PATH]);
   assert.deepEqual(result.warnings, []);
-  assert.ok(result.logs.includes('Hide Unpopular Bases: hid 247 of 247 item names.'));
+  assert.ok(result.logs.includes('Hide Unpopular Bases: hid 323 of 323 item names.'));
 });
 
 test('legacy or malformed hide styles safely fall back to the gray dot', () => {

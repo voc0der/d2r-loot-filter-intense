@@ -25,7 +25,7 @@ function flattenConfig(nodes) {
 
 test('the production base policy exactly matches the audited LoD fixture', () => {
   assert.deepEqual(productionKeys, canonicalHidden);
-  assert.equal(productionKeys.length, 247);
+  assert.equal(productionKeys.length, 323);
   assert.equal(new Set(productionKeys).size, productionKeys.length);
   assert.match(policy.source.ruleset, /Lord of Destruction/);
   assert.match(policy.source.note, /Pre-Reign-of-the-Warlock/);
@@ -36,20 +36,27 @@ test('the production base policy exactly matches the audited LoD fixture', () =>
       axes: 27,
       clubsMacesHammers: 20,
       daggers: 9,
-      assassinClaws: 6,
+      assassinClaws: 10,
       throwingWeapons: 11,
       genericJavelins: 15,
+      amazonWeapons: 9,
       polearms: 13,
       spears: 10,
       swords: 30,
       bows: 14,
       crossbows: 10,
-      gloves: 7,
-      boots: 3,
-      belts: 5,
+      scepters: 6,
+      wands: 8,
+      staves: 10,
+      sorceressOrbs: 9,
+      gloves: 8,
+      boots: 5,
+      belts: 6,
       genericHelms: 15,
+      barbarianHelms: 9,
       bodyArmor: 23,
-      druidPelts: 1,
+      druidPelts: 9,
+      necromancerHeads: 9,
       genericShields: 17,
       paladinShields: 11,
     },
@@ -80,7 +87,8 @@ test('every policy code resolves in the independent pinned LoD base catalog', ()
 
   const weaponGroups = [
     'axes', 'clubsMacesHammers', 'daggers', 'assassinClaws', 'throwingWeapons',
-    'genericJavelins', 'polearms', 'spears', 'swords', 'bows', 'crossbows',
+    'genericJavelins', 'amazonWeapons', 'polearms', 'spears', 'swords', 'bows',
+    'crossbows', 'scepters', 'wands', 'staves', 'sorceressOrbs',
   ];
   weaponGroups.flatMap((group) => policy.hiddenGroups[group]).forEach((code) => {
     assert.equal(catalog[code].kind, 'weapon', `${code} must be a weapon`);
@@ -129,7 +137,8 @@ test('reported clutter is hidden and audited endgame exceptions stay visible', (
 
 test('important policy tradeoffs are recorded instead of silently masked', () => {
   assert.deepEqual(Object.keys(policy.notableAcceptedCollisions).sort(), [
-    '9ba', 'dr8', 'msk', 'vgl', 'xul',
+    '8ls', '9ba', '9bw', '9wn', 'am7', 'am9', 'ba5',
+    'dr8', 'hgl', 'msk', 'tbl', 'tbt', 'vgl', 'xul',
   ]);
   Object.keys(policy.notableAcceptedCollisions).forEach((code) => {
     assert.equal(productionKeys.includes(code), true);
@@ -139,7 +148,7 @@ test('important policy tradeoffs are recorded instead of silently masked', () =>
   const hiddenWithCollisions = productionKeys.filter((code) => (
     catalog[code].unique.length > 0 || catalog[code].set.length > 0
   ));
-  assert.equal(hiddenWithCollisions.length, 199);
+  assert.equal(hiddenWithCollisions.length, 231);
   assert.deepEqual(hiddenWithCollisions, policy.acceptedHiddenCollisionCodes);
   policy.acceptedHiddenCollisionCodes.forEach((code) => {
     assert.ok(
@@ -217,8 +226,8 @@ test('published descriptions use the exact audited base count', () => {
   const files = ['mod.json', 'README.md', 'docs/NEXUS.md'];
   files.forEach((relativePath) => {
     const contents = fs.readFileSync(path.join(ROOT, relativePath), 'utf8');
-    assert.match(contents, /247 (?:aggressively filtered|low-priority)/, relativePath);
-    assert.doesNotMatch(contents, /91 (?:aggressively filtered|low-priority)/, relativePath);
+    assert.match(contents, /323 (?:aggressively filtered|low-priority)/, relativePath);
+    assert.doesNotMatch(contents, /247 (?:aggressively filtered|low-priority)/, relativePath);
   });
 });
 
@@ -232,6 +241,10 @@ test('documentation retains the dangerous runtime and collision warnings', () =>
     'Bloodfist',
     "Aldur's Stony Gaze",
     "Trang-Oul's Scales",
+    'Goldwrap',
+    'Ribcracker',
+    "Arreat's Face",
+    "Titan's Revenge",
     'shared by every rarity and quality',
   ].forEach((warning) => assert.ok(readme.includes(warning), warning));
 });

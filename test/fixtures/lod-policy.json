@@ -72,8 +72,12 @@
       "wrb",
       "axf",
       "ces",
+      "clw",
+      "btl",
+      "skr",
       "9wb",
-      "9xf"
+      "9xf",
+      "9cs"
     ],
     "throwingWeapons": [
       "tax",
@@ -104,6 +108,17 @@
       "7s7",
       "7gl",
       "7ts"
+    ],
+    "amazonWeapons": [
+      "am1",
+      "am2",
+      "am3",
+      "am4",
+      "am5",
+      "am6",
+      "am7",
+      "am8",
+      "am9"
     ],
     "polearms": [
       "bar",
@@ -192,9 +207,51 @@
       "6hx",
       "6rx"
     ],
+    "scepters": [
+      "scp",
+      "gsc",
+      "wsp",
+      "9sc",
+      "9qs",
+      "9ws"
+    ],
+    "wands": [
+      "wnd",
+      "ywn",
+      "bwn",
+      "gwn",
+      "9wn",
+      "9yw",
+      "9bw",
+      "9gw"
+    ],
+    "staves": [
+      "sst",
+      "lst",
+      "cst",
+      "bst",
+      "wst",
+      "8ss",
+      "8ls",
+      "8cs",
+      "8bs",
+      "8ws"
+    ],
+    "sorceressOrbs": [
+      "ob1",
+      "ob2",
+      "ob3",
+      "ob4",
+      "ob5",
+      "ob6",
+      "ob7",
+      "ob8",
+      "ob9"
+    ],
     "gloves": [
       "lgl",
       "vgl",
+      "hgl",
       "xlg",
       "xvg",
       "xtg",
@@ -202,14 +259,17 @@
       "utg"
     ],
     "boots": [
+      "lbt",
       "vbt",
       "mbt",
+      "tbt",
       "hbt"
     ],
     "belts": [
       "lbl",
       "vbl",
       "mbl",
+      "tbl",
       "hbl",
       "uhc"
     ],
@@ -229,6 +289,17 @@
       "ukp",
       "ulm",
       "uhl"
+    ],
+    "barbarianHelms": [
+      "ba1",
+      "ba2",
+      "ba3",
+      "ba4",
+      "ba5",
+      "ba6",
+      "ba7",
+      "ba8",
+      "ba9"
     ],
     "bodyArmor": [
       "qui",
@@ -256,7 +327,26 @@
       "xar"
     ],
     "druidPelts": [
-      "dr8"
+      "dr1",
+      "dr2",
+      "dr3",
+      "dr4",
+      "dr5",
+      "dr6",
+      "dr7",
+      "dr8",
+      "dr9"
+    ],
+    "necromancerHeads": [
+      "ne1",
+      "ne2",
+      "ne3",
+      "ne4",
+      "ne5",
+      "ne6",
+      "ne7",
+      "ne8",
+      "ne9"
     ],
     "genericShields": [
       "buc",
@@ -299,7 +389,12 @@
     "vgl",
     "msk",
     "xul",
-    "dr8"
+    "dr8",
+    "tbl",
+    "clw",
+    "9qs",
+    "am9",
+    "ba3"
   ],
   "mustStayVisible": {
     "utilityWeapons": [
@@ -314,6 +409,41 @@
       "8s8",
       "8hx",
       "8rx"
+    ],
+    "assassinClawKeeps": [
+      "9ar",
+      "9lw",
+      "9tw",
+      "9qr",
+      "7ar",
+      "7cs",
+      "7lw",
+      "7qr",
+      "7tw",
+      "7wb",
+      "7xf"
+    ],
+    "amazonWeaponKeeps": [
+      "ama",
+      "amb",
+      "amc",
+      "amd",
+      "ame",
+      "amf"
+    ],
+    "eliteScepterWandStaff": [
+      "7sc",
+      "7qs",
+      "7ws",
+      "7wn",
+      "7yw",
+      "7bw",
+      "7gw",
+      "6ss",
+      "6ls",
+      "6cs",
+      "6bs",
+      "6ws"
     ],
     "eliteMercPolearms": [
       "7vo",
@@ -350,17 +480,11 @@
       "uh9",
       "urn",
       "uth",
-      "uar"
+      "uar",
+      "mgl",
+      "tgl"
     ],
-    "otherDruidPelts": [
-      "dr1",
-      "dr2",
-      "dr3",
-      "dr4",
-      "dr5",
-      "dr6",
-      "dr7",
-      "dr9",
+    "druidPeltKeeps": [
       "dra",
       "drb",
       "drc",
@@ -368,16 +492,7 @@
       "dre",
       "drf"
     ],
-    "barbarianHelms": [
-      "ba1",
-      "ba2",
-      "ba3",
-      "ba4",
-      "ba5",
-      "ba6",
-      "ba7",
-      "ba8",
-      "ba9",
+    "barbarianHelmKeeps": [
       "baa",
       "bab",
       "bac",
@@ -385,16 +500,7 @@
       "bae",
       "baf"
     ],
-    "necromancerHeads": [
-      "ne1",
-      "ne2",
-      "ne3",
-      "ne4",
-      "ne5",
-      "ne6",
-      "ne7",
-      "ne8",
-      "ne9",
+    "necromancerHeadKeeps": [
       "nea",
       "neb",
       "ned",
@@ -402,16 +508,7 @@
       "nef",
       "neg"
     ],
-    "sorceressOrbs": [
-      "ob1",
-      "ob2",
-      "ob3",
-      "ob4",
-      "ob5",
-      "ob6",
-      "ob7",
-      "ob8",
-      "ob9",
+    "sorceressOrbKeeps": [
       "oba",
       "obb",
       "obc",
@@ -499,6 +596,8 @@
     "7s7",
     "7gl",
     "7ts",
+    "am7",
+    "am9",
     "bar",
     "vou",
     "scy",
@@ -571,18 +670,46 @@
     "8mx",
     "6hx",
     "6rx",
+    "scp",
+    "gsc",
+    "wsp",
+    "9sc",
+    "9qs",
+    "9ws",
+    "wnd",
+    "ywn",
+    "bwn",
+    "gwn",
+    "9wn",
+    "9yw",
+    "9bw",
+    "9gw",
+    "sst",
+    "lst",
+    "cst",
+    "bst",
+    "wst",
+    "8ss",
+    "8ls",
+    "8cs",
+    "8bs",
+    "8ws",
     "lgl",
     "vgl",
+    "hgl",
     "xlg",
     "xvg",
     "xtg",
     "xhg",
+    "lbt",
     "vbt",
     "mbt",
+    "tbt",
     "hbt",
     "lbl",
     "vbl",
     "mbl",
+    "tbl",
     "hbl",
     "cap",
     "skp",
@@ -597,6 +724,7 @@
     "xlm",
     "xhl",
     "ulm",
+    "ba5",
     "qui",
     "lea",
     "hla",
@@ -621,6 +749,7 @@
     "xul",
     "xar",
     "dr8",
+    "ne9",
     "buc",
     "sml",
     "lrg",
@@ -661,6 +790,36 @@
     "dr8": [
       "Aldur's Stony Gaze",
       "3-socket Druid staffmod bases"
+    ],
+    "tbl": [
+      "Goldwrap",
+      "Iratha's Cord",
+      "Infernal Sign"
+    ],
+    "tbt": [
+      "Goblin Toe"
+    ],
+    "hgl": [
+      "Frostburn",
+      "Sigon's Gage"
+    ],
+    "8ls": [
+      "Ribcracker"
+    ],
+    "9wn": [
+      "Suicide Branch"
+    ],
+    "9bw": [
+      "Arm of King Leoric"
+    ],
+    "ba5": [
+      "Immortal King's Will"
+    ],
+    "am7": [
+      "Lycander's Aim"
+    ],
+    "am9": [
+      "Lycander's Flank"
     ]
   }
 }

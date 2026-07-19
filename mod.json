@@ -1,9 +1,9 @@
 {
   "name": "D2R Loot Filter — Intense",
-  "description": "A D2R Lord of Destruction loot-filter overlay. Hides trash drops and 247 aggressively filtered equipment bases including high-volume normal/exceptional weapons and armor; can mark superior bases in red; converts inherited black labels to dots; crunches gem names; and compacts Gold pile labels. Reign of the Warlock content is intentionally excluded. Display strings only — drops are unchanged.",
+  "description": "A D2R Lord of Destruction loot-filter overlay. Hides trash drops and 323 aggressively filtered equipment bases including high-volume normal/exceptional weapons, armor and class items; can mark superior bases in red; converts inherited black labels to dots; crunches gem names; and compacts Gold pile labels. Reign of the Warlock content is intentionally excluded. Display strings only — drops are unchanged.",
   "author": "voc0der",
   "website": "https://github.com/voc0der/d2r-loot-filter-intense",
-  "version": "0.3.8",
+  "version": "0.4.0",
   "config": [
     {
       "type": "section",
@@ -44,7 +44,7 @@
           "type": "checkbox",
           "id": "hideUnpopularBases",
           "name": "Hide Unpopular Bases",
-          "description": "Aggressively hide 247 high-volume LoD endgame bases: most normal/exceptional generic weapons, common low-tier armor, weak shields, lower Paladin shields, and selected weak elite alternatives. Important utility, mercenary, Tal Rasha, rare-set, and runeword bases stay visible. ENDGAME WARNING: hides ALL rarities and qualities, including documented unique/set/staffmod collisions.",
+          "description": "Aggressively hide 323 high-volume LoD endgame bases: most normal/exceptional generic weapons, common low-tier armor, weak shields, lower Paladin shields, selected weak elite alternatives, and normal/exceptional class items (Amazon weapons, claws, Barbarian helms, Druid pelts, Necromancer heads, Sorceress orbs, scepters, wands, staves) below their audited keeps. Important utility, mercenary, Tal Rasha, rare-set, and runeword bases stay visible. ENDGAME WARNING: hides ALL rarities and qualities, including documented unique/set/staffmod collisions.",
           "defaultValue": false
         },
         {
