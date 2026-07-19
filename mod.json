@@ -1,9 +1,9 @@
 {
   "name": "D2R Loot Filter — Intense",
-  "description": "A D2R Lord of Destruction loot-filter overlay. Hides trash drops and 247 aggressively filtered equipment bases including high-volume normal/exceptional weapons and armor; converts inherited black labels to dots; crunches gem names; and compacts Gold pile labels. Reign of the Warlock content is intentionally excluded. Display strings only — drops are unchanged.",
+  "description": "A D2R Lord of Destruction loot-filter overlay. Hides trash drops and 247 aggressively filtered equipment bases including high-volume normal/exceptional weapons and armor; can mark superior bases in red; converts inherited black labels to dots; crunches gem names; and compacts Gold pile labels. Reign of the Warlock content is intentionally excluded. Display strings only — drops are unchanged.",
   "author": "voc0der",
   "website": "https://github.com/voc0der/d2r-loot-filter-intense",
-  "version": "0.3.7",
+  "version": "0.3.8",
   "config": [
     {
       "type": "section",
@@ -45,6 +45,13 @@
           "id": "hideUnpopularBases",
           "name": "Hide Unpopular Bases",
           "description": "Aggressively hide 247 high-volume LoD endgame bases: most normal/exceptional generic weapons, common low-tier armor, weak shields, lower Paladin shields, and selected weak elite alternatives. Important utility, mercenary, Tal Rasha, rare-set, and runeword bases stay visible. ENDGAME WARNING: hides ALL rarities and qualities, including documented unique/set/staffmod collisions.",
+          "defaultValue": false
+        },
+        {
+          "type": "checkbox",
+          "id": "redSuperiorItems",
+          "name": "Red Superior Items",
+          "description": "Replace the shared Superior/Sup word with an inline red color, so useful superior bases display as a red base name with no quality word. Socketed and ethereal superior bases are red too. Hidden bases keep the selected dot color because their later inline dot color wins.",
           "defaultValue": false
         },
         {

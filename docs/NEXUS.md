@@ -29,7 +29,7 @@ perk — free accounts get routed through the website.)
 **Description (BBCode):**
 
 ```
-A tiny D2RMM mod for the [b]Lord of Destruction ruleset[/b] that hides trash drops with a barely-visible dot, optionally crunches gem names into compact colored tier labels, and can shorten Gold pile labels. Reign of the Warlock content is intentionally excluded. Works standalone or stacked [b]after[/b] another D2RMM loot filter (later mods win). All filters are off by default.
+A tiny D2RMM mod for the [b]Lord of Destruction ruleset[/b] that hides trash drops with a barely-visible dot, can mark superior bases in red, optionally crunches gem names into compact colored tier labels, and can shorten Gold pile labels. Reign of the Warlock content is intentionally excluded. Works standalone or stacked [b]after[/b] another D2RMM loot filter (later mods win). All filters are off by default.
 
 [list]
 [*][b]100% Rejuv Only[/b] — hides every potion that is not a Full Rejuvenation Potion (healing, mana, small rejuvs, thawing/antidote/stamina)
@@ -37,6 +37,7 @@ A tiny D2RMM mod for the [b]Lord of Destruction ruleset[/b] that hides trash dro
 [*][b]Hide Large Charms[/b] — hides the Large Charm base label; warning: this includes an unidentified Hellfire Torch because it shares the same base string (an identified Torch remains visible)
 [*][b]Hide Throwing Potions[/b] — all gas and oil potions
 [*][b]Hide Unpopular Bases[/b] — 247 aggressively filtered LoD endgame bases: most normal/exceptional generic weapons, common low-tier armor, weak shields, lower Paladin shields and selected weak elite alternatives; important utility, mercenary, Tal Rasha, rare-set and runeword bases stay visible
+[*][b]Red Superior Items[/b] — removes the Superior/Sup word and makes useful superior base names red; socketed/ethereal superior bases are red, while hidden bases remain only the selected gray or black dot
 [*][b]Black Labels to Dots[/b] — converts direct labels whose final inline color is #000/black (ÿc6) into the selected tiny dot; inferior-prefix labels retain a black appended base name unless that base is also hidden
 [*][b]Gem Crunch[/b] — renames all 35 gems by tier: 1Topaz, 2Topaz, 3Topaz, 4Topaz, PTopaz; recognizes standard gem-type colors inside multi-color labels from an earlier filter
 [*][b]Compact Gold Label[/b] — changes the Gold suffix to $, neutral G, or nothing; displays as 1234 $, 1234 G, or 1234

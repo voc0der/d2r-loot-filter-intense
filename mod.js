@@ -9,8 +9,12 @@
 
 const ITEM_NAMES_PATH = 'local/lng/strings/item-names.json';
 const ITEM_NAME_AFFIXES_PATH = 'local/lng/strings/item-nameaffixes.json';
+const UI_PATH = 'local/lng/strings/ui.json';
+const RED_COLOR_CODE = 'ÿc1';
 const BLACK_COLOR_CODE = 'ÿc6';
 const GOLD_LABEL_KEY = 'gld';
+const SUPERIOR_PREFIX_KEY = 'Hiquality';
+const SUPERIOR_FORMAT_KEY = 'HiqualityFormat';
 const HIDE_STYLES = ['ÿc5.', 'ÿc6.'];
 const GOLD_LABELS = {
   dollar: '$',
@@ -410,6 +414,7 @@ function entryHasBlackLabel(entry, replacement) {
 function updateStringFile(
   path,
   keysToHide,
+  stringOverrides,
   gemRenames,
   goldLabel,
   changedKeys,
@@ -438,12 +443,19 @@ function updateStringFile(
       : hideString;
 
     // Write every locale field, not just enUS, so this works on non-English
-    // clients too. Explicit hiding wins, followed by inherited black labels,
-    // Gem Crunch, and the compact Gold suffix.
+    // clients too. Explicit hiding wins, followed by explicit overrides,
+    // inherited black labels, Gem Crunch, and the compact Gold suffix.
     if (keysToHide[entry.Key] === true) {
       for (const field in entry) {
         if (field !== 'id' && field !== 'Key') {
           entry[field] = hideString;
+        }
+      }
+      changedKeys[entry.Key] = true;
+    } else if (Object.prototype.hasOwnProperty.call(stringOverrides, entry.Key)) {
+      for (const field in entry) {
+        if (field !== 'id' && field !== 'Key') {
+          entry[field] = stringOverrides[entry.Key];
         }
       }
       changedKeys[entry.Key] = true;
@@ -476,6 +488,43 @@ function updateStringFile(
   D2RMM.writeJson(path, entries);
 }
 
+function superiorColorFormat(value) {
+  if (typeof value !== 'string') {
+    return '%0%1';
+  }
+
+  // Some locales prefix their adjective/noun grammar directive before a colon.
+  // Preserve that directive, but always place the invisible color fragment
+  // immediately before the base so prefix- and suffix-order locales agree.
+  const colon = value.indexOf(':');
+  const grammar = colon === -1 ? '' : value.slice(0, colon + 1);
+  return `${grammar}%0%1`;
+}
+
+function updateSuperiorFormatFile(changedKeys) {
+  const entries = D2RMM.readJson(UI_PATH);
+
+  if (!Array.isArray(entries)) {
+    console.warn(`${UI_PATH} did not parse as an array — skipping, no changes written.`);
+    return;
+  }
+
+  entries.forEach((entry) => {
+    if (entry == null || entry.Key !== SUPERIOR_FORMAT_KEY) {
+      return;
+    }
+
+    for (const field in entry) {
+      if (field !== 'id' && field !== 'Key') {
+        entry[field] = superiorColorFormat(entry[field]);
+      }
+    }
+    changedKeys[entry.Key] = true;
+  });
+
+  D2RMM.writeJson(UI_PATH, entries);
+}
+
 const hideGroups = [
   { name: '100% Rejuv Only', enabled: config.rejuvOnly, keys: REJUV_ONLY_KEYS },
   { name: 'Hide Ammo', enabled: config.hideAmmo, keys: AMMO_KEYS },
@@ -486,6 +535,7 @@ const hideGroups = [
 
 const gemCrunchEnabled = config.gemCrunch === true;
 const blackLabelsToDotsEnabled = config.blackLabelsToDots === true;
+const redSuperiorItemsEnabled = config.redSuperiorItems === true;
 const goldLabel = Object.prototype.hasOwnProperty.call(GOLD_LABELS, config.goldLabel)
   ? GOLD_LABELS[config.goldLabel]
   : null;
@@ -497,6 +547,7 @@ if (
   hideGroups.length === 0
   && !gemCrunchEnabled
   && !blackLabelsToDotsEnabled
+  && !redSuperiorItemsEnabled
   && goldLabel === null
 ) {
   console.log('No filter groups enabled — nothing to do.');
@@ -523,6 +574,10 @@ if (
 
   const changedKeys = {};
   const blackLabelChanges = { count: 0, keys: {} };
+  const stringOverrides = {};
+  if (redSuperiorItemsEnabled) {
+    stringOverrides[SUPERIOR_PREFIX_KEY] = RED_COLOR_CODE;
+  }
   if (
     hideGroups.length > 0
     || gemCrunchEnabled
@@ -532,6 +587,7 @@ if (
     updateStringFile(
       ITEM_NAMES_PATH,
       keysToHide,
+      {},
       gemRenames,
       goldLabel,
       changedKeys,
@@ -543,6 +599,7 @@ if (
   if (
     gemCrunchEnabled
     || blackLabelsToDotsEnabled
+    || redSuperiorItemsEnabled
     || goldLabel !== null
   ) {
     // Regular Diamond/Emerald/Ruby/Sapphire are stored here instead of in
@@ -552,6 +609,7 @@ if (
     updateStringFile(
       ITEM_NAME_AFFIXES_PATH,
       {},
+      stringOverrides,
       gemRenames,
       goldLabel,
       changedKeys,
@@ -560,6 +618,9 @@ if (
       blackLabelChanges,
     );
   }
+  if (redSuperiorItemsEnabled) {
+    updateSuperiorFormatFile(changedKeys);
+  }
 
   const reportGroups = hideGroups.map((group) => ({ name: group.name, verb: 'hid', keys: group.keys }));
   if (blackLabelsToDotsEnabled) {
@@ -567,6 +628,14 @@ if (
       name: 'Black Labels to Dots',
       verb: 'replaced',
       count: blackLabelChanges.count,
+    });
+  }
+  if (redSuperiorItemsEnabled) {
+    reportGroups.push({
+      name: 'Red Superior Items',
+      verb: 'recolored',
+      keys: [SUPERIOR_PREFIX_KEY, SUPERIOR_FORMAT_KEY],
+      unit: 'strings',
     });
   }
   if (gemCrunchEnabled) {
@@ -594,8 +663,9 @@ if (
       }
     });
     totalChanged += changed;
-    console.log(`${group.name}: ${group.verb} ${changed} of ${group.keys.length} item names.`);
+    const unit = group.unit === undefined ? 'item names' : group.unit;
+    console.log(`${group.name}: ${group.verb} ${changed} of ${group.keys.length} ${unit}.`);
   });
 
-  console.log(`Done: ${totalChanged} item name(s) changed in total.`);
+  console.log(`Done: ${totalChanged} string(s) changed in total.`);
 }

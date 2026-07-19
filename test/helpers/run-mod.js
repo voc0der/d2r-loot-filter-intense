@@ -7,6 +7,7 @@ const MOD_SOURCE = fs.readFileSync(path.join(ROOT, 'mod.js'), 'utf8');
 const MOD_MANIFEST = JSON.parse(fs.readFileSync(path.join(ROOT, 'mod.json'), 'utf8'));
 const ITEM_NAMES_PATH = 'local/lng/strings/item-names.json';
 const ITEM_NAME_AFFIXES_PATH = 'local/lng/strings/item-nameaffixes.json';
+const UI_PATH = 'local/lng/strings/ui.json';
 
 function clone(value) {
   return JSON.parse(JSON.stringify(value));
@@ -42,6 +43,7 @@ function runMod(configOverrides = {}, inputFiles = {}) {
   const files = {
     [ITEM_NAMES_PATH]: [],
     [ITEM_NAME_AFFIXES_PATH]: [],
+    [UI_PATH]: [],
     ...clone(inputFiles),
   };
   const reads = [];
@@ -75,6 +77,10 @@ function runMod(configOverrides = {}, inputFiles = {}) {
   const constants = JSON.parse(vm.runInContext(`JSON.stringify({
     ITEM_NAMES_PATH,
     ITEM_NAME_AFFIXES_PATH,
+    UI_PATH,
+    RED_COLOR_CODE,
+    SUPERIOR_PREFIX_KEY,
+    SUPERIOR_FORMAT_KEY,
     HIDE_STYLES,
     GOLD_LABELS,
     REJUV_ONLY_KEYS,
@@ -100,6 +106,7 @@ function runMod(configOverrides = {}, inputFiles = {}) {
 module.exports = {
   ITEM_NAMES_PATH,
   ITEM_NAME_AFFIXES_PATH,
+  UI_PATH,
   MOD_MANIFEST,
   ROOT,
   collectDefaults,

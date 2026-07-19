@@ -1,6 +1,6 @@
 # D2R Loot Filter — Intense
 
-A tiny [D2RMM](https://www.nexusmods.com/diablo2resurrected/mods/169) mod for Diablo II: Resurrected's **Lord of Destruction ruleset** that hides trash drops with a barely-visible dot, crunches gem names into compact tier labels, and can shorten Gold pile labels.
+A tiny [D2RMM](https://www.nexusmods.com/diablo2resurrected/mods/169) mod for Diablo II: Resurrected's **Lord of Destruction ruleset** that hides trash drops with a barely-visible dot, can mark superior bases in red, crunches gem names into compact tier labels, and can shorten Gold pile labels.
 
 > **Ruleset:** This mod targets Lord of Destruction content. Reign of the Warlock items, runewords, classes and mechanics are intentionally excluded from its filtering decisions.
 
@@ -19,6 +19,7 @@ All filters are **off by default** — turn on the ones you want in D2RMM's conf
 | **Hide Large Charms** | The Large Charm base label. **This includes unidentified Hellfire Torch drops; read the warning below.** Small and Grand Charms stay visible. |
 | **Hide Throwing Potions** | Rancid/Choking/Strangling Gas Potions and Oil/Exploding/Fulminating Potions. |
 | **Hide Unpopular Bases** | 247 aggressively filtered LoD endgame bases: most normal/exceptional generic weapons, high-volume low-tier armor, weak shields, lower Paladin shields, and selected weak elite alternatives. Important utility, mercenary, Tal Rasha, rare-set and runeword bases stay visible. **Read the warning below before enabling.** |
+| **Red Superior Items** | Removes the shared `Superior`/`Sup` word and makes the base name red instead. Socketed and ethereal superior bases are red; a hidden base remains only the selected gray or black dot. |
 | **Black Labels to Dots** | Converts direct labels whose final active inline color is D2's `#000`/black code (`ÿc6`) into the selected tiny dot. Composed inferior-quality labels have an engine limitation explained below. This mod must load later. |
 | **Gem Crunch** | All 35 gems get compact, colored tier labels: `1Topaz`, `2Topaz`, `3Topaz`, `4Topaz`, `PTopaz`. Standard gem-type colors from an earlier filter are recognized inside multi-color labels. |
 | **Compact Gold Label** | Replaces the word after a ground-pile amount with `$`, neutral `G`, or nothing: `1234 $`, `1234 G`, or `1234`. |
@@ -35,6 +36,14 @@ A dot is used instead of an empty string because an empty name renders as an ugl
 The current ChrisTitusTech filter instead uses terminal black on the four **inferior-quality prefix fragments** (Low Quality, Damaged, Cracked and Crude). D2 appends the shared base name afterward at runtime. Intense replaces that prefix with a dot and retains terminal black so the appended base does not become bright, but a string-only prefix cannot erase the appended text conditionally. For example, the composed value is effectively `ÿc5.ÿc6Short War Bow`: a gray dot followed by a black base name. If **Hide Unpopular Bases** also includes that base, every rarity of the base is replaced independently; Short War Bow is now included for this reason and because it is a low-priority LoD endgame base. An inferior Short War Bow can consequently render as two tiny dots (one prefix and one base), but the black name itself is gone.
 
 > **Hide Large Charms warning:** On unidentified drops, D2R uses the same `cm2` base string for ordinary Large Charms and the unique **Hellfire Torch**. Enabling this option therefore turns an unidentified Torch ground label into the selected tiny dot. Once identified, the Torch uses its separate name and remains visible. Small Charms (`cm1`) and Grand Charms (`cm3`) are not changed.
+
+## Red Superior Items
+
+D2R normally composes the shared `Superior` quality fragment with the base name. This option replaces that visible word with the red inline color code and normalizes the quality formatter in every locale, so `Superior Mage Plate` becomes a red `Mage Plate` with no quality word or extra gap.
+
+The color order also handles the noisy bases cleanly. A socketed or ethereal superior base starts with D2R's runtime gray but the later inline red wins, so a useful superior socketed Mage Plate is still red. A hidden base carries its own still-later color code: `ÿc1ÿc5.` ends as the selected gray dot, while `ÿc1ÿc6.` ends as the selected black dot. There is no visible red fragment and no `Superior` word on the hidden label.
+
+If an earlier D2RMM filter embeds another inline color directly inside a visible base name, that base's later color wins over red. Intense cannot strip such a base color only for superior drops without also changing the same base string for non-superior items. Put Intense last as usual, and leave desirable base names uncolored in the earlier filter if you want red to be the superior marker.
 
 ## Gem Crunch
 
@@ -68,7 +77,7 @@ The broad weapon pass hides nearly every normal/exceptional generic weapon, plus
 
 The armor pass filters common normal/exceptional body armor and generic helms unless a base has an important endgame use or collision. Breast Plate and Mage Plate remain for low-strength Enigma; Serpentskin Armor, Mesh Armor, Cuirass, Russet Armor and Templar Coat remain for Vipermagi, Shaftstop, Duriel's Shell, Skullder's Ire and Guardian Angel. Every elite body armor stays visible for player or ethereal mercenary runewords. Tal Rasha's Lacquered Plate, Death Mask, Mesh Belt and Swirling Crystal stay visible, as does the rare Immortal King Sacred Armor. Common non-elite set pieces do not protect an otherwise noisy base.
 
-Heavy Gloves are an explicit aggressive tradeoff: hiding `vgl` removes the base text, but also hides unidentified Bloodfist, magic Heavy Gloves used for Blood crafting, and potentially valuable rares. `Superior` is a separately composed shared fragment, so Superior Heavy Gloves render as `Superior .`; preserving that prefix also keeps desirable drops readable as, for example, `Superior Mage Plate`. Hunter's Guise is another explicit volume-driven exception; hiding `dr8` also masks Aldur's Stony Gaze and rare three-socket Druid staffmod bases. The other Druid pelts, every Barbarian helm, every Sorceress orb and every Necromancer head remain visible because their staffmods can outweigh the base tier.
+Heavy Gloves are an explicit aggressive tradeoff: hiding `vgl` removes the base text, but also hides unidentified Bloodfist, magic Heavy Gloves used for Blood crafting, and potentially valuable rares. With the normal quality text, Superior Heavy Gloves render as `Superior .`; **Red Superior Items** instead removes that word, leaves only the selected dot for the hidden base, and marks desirable superior drops as a red base name such as `Mage Plate`. Hunter's Guise is another explicit volume-driven exception; hiding `dr8` also masks Aldur's Stony Gaze and rare three-socket Druid staffmod bases. The other Druid pelts, every Barbarian helm, every Sorceress orb and every Necromancer head remain visible because their staffmods can outweigh the base tier.
 
 The strict shield policy remains: normal generic shields, weak exceptional/elite alternatives, lower Paladin shields, Kurast Shield and Zakarum Shield are filtered. Sacred Targe, Sacred Rondache and Vortex Shield stay as desirable elite Paladin bases; Gilded Shield stays for Herald of Zakarum. Defender, Round Shield, Pavise, Grim Shield, Monarch, Hyperion and Troll Nest also stay for useful runeword/unique collisions.
 
@@ -80,7 +89,7 @@ See the [full generated code/name/collision table](https://github.com/voc0der/d2
 
 Display-string mods are **rarity-blind**. An unidentified magic, rare, unique or set item on the ground shows its *base name* — the exact same string a white drop uses — and the engine picks the color per drop. There is no data-driven hook to rename or hide a label for one rarity only, which is why no D2RMM loot filter (including the big community ones) offers "hide blues" / "hide rares". Rules like *"hide all magic items except jewels"* can't be built this way; the closest approximation is hiding whole bases you never want at any rarity (the **Hide Unpopular Bases** option above). Jewels, by the way, are never touched by this mod, so they always stay visible.
 
-`Superior` is a shared quality prefix, and socketed gray is runtime state. Neither carries the base code needed to express rules such as “hide only Superior Heavy Gloves” or “hide only a socketed Hunter's Guise.” The mod deliberately preserves `Superior` globally so worthwhile superior bases keep their full labels; when a base itself is hidden, LoD may therefore compose a label such as `Superior .`. **Black Labels to Dots** cannot infer either runtime state. The aggressive list hides the entire Heavy Gloves, Mask, Chaos Armor and Hunter's Guise base strings, with the false negatives documented above.
+`Superior` is a shared quality fragment, and socketed gray is runtime state. Neither carries the base code needed to express rules such as “hide only Superior Heavy Gloves” or “hide only a socketed Hunter's Guise.” By default the mod preserves `Superior`, so a hidden superior base may compose as `Superior .`. **Red Superior Items** offers the useful global alternative: remove the word, encode superior quality as red, and let each hidden base's later dot color override it. **Black Labels to Dots** still cannot infer socketed state by itself. The aggressive list hides the entire Heavy Gloves, Mask, Chaos Armor and Hunter's Guise base strings, with the false negatives documented above.
 
 Ethereal status is also a runtime property, not part of an item's base-name string. This overlay therefore cannot hide only ethereal boots, gloves or belts while continuing to show their non-ethereal versions; rewriting those base names would also hide every non-eth drop and unidentified unique on the same bases. A global ethereal color from another mod is applied at render time, so **Black Labels to Dots** cannot detect it either. LoD's display-string data provides no conditional hook for that rule; a runtime-aware filtering system would be required. Keep unique exceptions in mind — ethereal Sandstorm Trek is desirable because it repairs its own durability.
 
@@ -106,15 +115,15 @@ _Before/after screenshots coming soon._
 ## Troubleshooting — "items are still labeled the old way"
 
 1. **Re-install after every config change.** Toggling checkboxes does nothing until you click **Install Mods** again.
-2. **Read D2RMM's install log.** This mod prints one line per enabled group, e.g. `Hide Ammo: hid 2 of 2 item names.`, `Black Labels to Dots: replaced 4 black string entries.`, `Gem Crunch: renamed 35 of 35 item names.`, or `Compact Gold Label: renamed 1 of 1 item names.` A warning means a key wasn't found in the current game data.
-3. **Check the output actually contains the change.** Open `mods\D2RMM\D2RMM.mpq\data\local\lng\strings\item-names.json` and search for `"aqv"` (hidden ammo) or `"gcy"` (Chipped Topaz). Hidden ammo should be a tiny `ÿc5.` dot and Chipped Topaz should end in `1Topaz`. The four regular Diamond/Emerald/Ruby/Sapphire entries and Gold's `"gld"` suffix are instead in `item-nameaffixes.json`. If the output is correct but the game still shows the old label, the game isn't loading D2RMM's output (next two points).
+2. **Read D2RMM's install log.** This mod prints one line per enabled group, e.g. `Hide Ammo: hid 2 of 2 item names.`, `Red Superior Items: recolored 2 of 2 strings.`, `Black Labels to Dots: replaced 4 black string entries.`, `Gem Crunch: renamed 35 of 35 item names.`, or `Compact Gold Label: renamed 1 of 1 item names.` A warning means a key wasn't found in the current game data.
+3. **Check the output actually contains the change.** Open `mods\D2RMM\D2RMM.mpq\data\local\lng\strings\item-names.json` and search for `"aqv"` (hidden ammo) or `"gcy"` (Chipped Topaz). Hidden ammo should be a tiny `ÿc5.` dot and Chipped Topaz should end in `1Topaz`. The four regular Diamond/Emerald/Ruby/Sapphire entries, Gold's `"gld"` suffix, and the red `"Hiquality"` fragment are in `item-nameaffixes.json`; the matching `"HiqualityFormat"` is in `ui.json`. If the output is correct but the game still shows the old label, the game isn't loading D2RMM's output (next two points).
 4. **Launch with `-mod D2RMM -txt`** — use D2RMM's own Launch Game button to be sure. Launching through Battle.net loads vanilla data.
 5. **Don't combine with MPQ-based filters** (like ChrisTitusTech's) — only one `-mod` loads at a time; whichever argument you launch with wins and the other filter is ignored entirely.
 6. **Order matters within D2RMM**: if another enabled mod rewrites item names and sits *after* this one, its names win. Put this mod last.
 
 ## Safety
 
-This mod only changes **display strings** (`item-names.json` and `item-nameaffixes.json`). It does not touch drop rates, game logic, or anything server-side, and it is battle.net-safe in the same way as other D2RMM display mods. What drops is unchanged — only the labels are hidden or renamed.
+This mod only changes **display strings** (`item-names.json`, `item-nameaffixes.json`, and the superior formatter in `ui.json`). It does not touch drop rates, game logic, or anything server-side, and it is battle.net-safe in the same way as other D2RMM display mods. What drops is unchanged — only the labels are hidden, renamed, or recolored.
 
 ## Extending
 

@@ -176,6 +176,7 @@ test('configuration defaults and option values are internally valid', () => {
     hideLargeCharms: false,
     hideThrowing: false,
     hideUnpopularBases: false,
+    redSuperiorItems: false,
     blackLabelsToDots: false,
     gemCrunch: false,
     hideStyle: 'ÿc5.',
@@ -201,6 +202,9 @@ test('small hide groups and gem tiers retain their canonical contracts', () => {
   assert.deepEqual(constants.AMMO_KEYS, ['aqv', 'cqv']);
   assert.deepEqual(constants.LARGE_CHARM_KEYS, ['cm2']);
   assert.deepEqual(constants.THROWING_KEYS, ['gpl', 'gpm', 'gps', 'opl', 'opm', 'ops']);
+  assert.equal(constants.RED_COLOR_CODE, 'ÿc1');
+  assert.equal(constants.SUPERIOR_PREFIX_KEY, 'Hiquality');
+  assert.equal(constants.SUPERIOR_FORMAT_KEY, 'HiqualityFormat');
   assert.deepEqual(constants.GEM_TIER_LABELS, ['1', '2', '3', '4', 'P']);
 
   const gemCodes = constants.GEM_CRUNCH.flatMap((gem) => gem.codes);
@@ -223,6 +227,7 @@ test('documentation retains the dangerous runtime and collision warnings', () =>
   [
     'Superior Heavy Gloves',
     'Superior Mage Plate',
+    'Red Superior Items',
     "socketed Hunter's Guise",
     'Bloodfist',
     "Aldur's Stony Gaze",

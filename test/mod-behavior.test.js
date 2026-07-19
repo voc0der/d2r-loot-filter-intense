@@ -6,6 +6,7 @@ const policy = require('./fixtures/lod-policy.json');
 const {
   ITEM_NAMES_PATH,
   ITEM_NAME_AFFIXES_PATH,
+  UI_PATH,
   localeEntry,
   runMod,
 } = require('./helpers/run-mod');
@@ -20,6 +21,11 @@ function entryByKey(entries, key) {
 function applyQualityFormat(format, prefix, base) {
   const visibleFormat = format.includes(':') ? format.slice(format.indexOf(':') + 1) : format;
   return visibleFormat.replace('%0', prefix).replace('%1', base);
+}
+
+function terminalInlineColor(value) {
+  const matches = String(value).match(/ÿc./g);
+  return matches === null ? null : matches[matches.length - 1];
 }
 
 test('all options off performs no file reads or writes', () => {
@@ -179,6 +185,58 @@ test('Hide Unpopular Bases preserves Superior while composing hidden bases as Su
   assert.equal(applyQualityFormat(qualityFormats.formats.enUS, prefix.enUS, visibleBase.enUS), 'Superior Mage Plate');
   assert.deepEqual(result.reads, [ITEM_NAMES_PATH]);
   assert.deepEqual(result.writes, [ITEM_NAMES_PATH]);
+});
+
+test('Red Superior Items colors useful and socketed bases while hidden dots override it', () => {
+  for (const hideStyle of ['ÿc5.', 'ÿc6.']) {
+    const superior = localeEntry('Hiquality', 'Superior');
+    const superiorFormat = localeEntry('HiqualityFormat', qualityFormats.formats.enUS, {
+      deDE: qualityFormats.formats.deDE,
+      frFR: qualityFormats.formats.frFR,
+    });
+    const result = runMod(
+      { hideUnpopularBases: true, redSuperiorItems: true, hideStyle },
+      {
+        [ITEM_NAMES_PATH]: [
+          ...hiddenKeys.map((key) => localeEntry(key, key)),
+          localeEntry('xtp', 'Mage Plate'),
+        ],
+        [ITEM_NAME_AFFIXES_PATH]: [superior],
+        [UI_PATH]: [superiorFormat],
+      },
+    );
+
+    const prefix = entryByKey(result.files[ITEM_NAME_AFFIXES_PATH], 'Hiquality');
+    const format = entryByKey(result.files[UI_PATH], 'HiqualityFormat');
+    const hiddenBase = entryByKey(result.files[ITEM_NAMES_PATH], 'vgl');
+    const visibleBase = entryByKey(result.files[ITEM_NAMES_PATH], 'xtp');
+
+    assert.deepEqual(
+      { enUS: format.enUS, deDE: format.deDE, frFR: format.frFR },
+      { enUS: '%0%1', deDE: 'a0n1:%0%1', frFR: 'a0n1:%0%1' },
+    );
+    ['enUS', 'deDE', 'frFR'].forEach((locale) => {
+      assert.equal(prefix[locale], 'ÿc1');
+      assert.equal(hiddenBase[locale], hideStyle);
+
+      const visibleLabel = applyQualityFormat(format[locale], prefix[locale], visibleBase[locale]);
+      const hiddenLabel = applyQualityFormat(format[locale], prefix[locale], hiddenBase[locale]);
+      assert.equal(visibleLabel, `ÿc1${visibleBase[locale]}`);
+      assert.equal(hiddenLabel, `ÿc1${hideStyle}`);
+      assert.equal(terminalInlineColor(visibleLabel), 'ÿc1');
+      assert.equal(terminalInlineColor(`ÿc5${visibleLabel}`), 'ÿc1');
+      assert.equal(terminalInlineColor(hiddenLabel), hideStyle.slice(0, 3));
+    });
+
+    assert.equal(
+      terminalInlineColor(applyQualityFormat(format.enUS, prefix.enUS, 'ÿc3Mage Plate')),
+      'ÿc3',
+    );
+    assert.deepEqual(result.reads, [ITEM_NAMES_PATH, ITEM_NAME_AFFIXES_PATH, UI_PATH]);
+    assert.deepEqual(result.writes, [ITEM_NAMES_PATH, ITEM_NAME_AFFIXES_PATH, UI_PATH]);
+    assert.deepEqual(result.warnings, []);
+    assert.ok(result.logs.includes('Red Superior Items: recolored 2 of 2 strings.'));
+  }
 });
 
 test('socketed gray is runtime state and Black Labels to Dots cannot infer it', () => {
