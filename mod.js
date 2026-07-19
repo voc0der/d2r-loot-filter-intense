@@ -11,7 +11,6 @@ const ITEM_NAMES_PATH = 'local/lng/strings/item-names.json';
 const ITEM_NAME_AFFIXES_PATH = 'local/lng/strings/item-nameaffixes.json';
 const BLACK_COLOR_CODE = 'ÿc6';
 const GOLD_LABEL_KEY = 'gld';
-const SUPERIOR_PREFIX_KEYS = ['Hiquality'];
 const HIDE_STYLES = ['ÿc5.', 'ÿc6.'];
 const GOLD_LABELS = {
   dollar: '$',
@@ -411,7 +410,6 @@ function entryHasBlackLabel(entry, replacement) {
 function updateStringFile(
   path,
   keysToHide,
-  keysToRemove,
   gemRenames,
   goldLabel,
   changedKeys,
@@ -440,19 +438,12 @@ function updateStringFile(
       : hideString;
 
     // Write every locale field, not just enUS, so this works on non-English
-    // clients too. Explicit hiding wins, then explicit fragment removal,
-    // inherited black labels, Gem Crunch, and the compact Gold suffix.
+    // clients too. Explicit hiding wins, followed by inherited black labels,
+    // Gem Crunch, and the compact Gold suffix.
     if (keysToHide[entry.Key] === true) {
       for (const field in entry) {
         if (field !== 'id' && field !== 'Key') {
           entry[field] = hideString;
-        }
-      }
-      changedKeys[entry.Key] = true;
-    } else if (keysToRemove[entry.Key] === true) {
-      for (const field in entry) {
-        if (field !== 'id' && field !== 'Key') {
-          entry[field] = '';
         }
       }
       changedKeys[entry.Key] = true;
@@ -495,7 +486,6 @@ const hideGroups = [
 
 const gemCrunchEnabled = config.gemCrunch === true;
 const blackLabelsToDotsEnabled = config.blackLabelsToDots === true;
-const removeSuperiorPrefixEnabled = config.removeSuperiorPrefix === true;
 const goldLabel = Object.prototype.hasOwnProperty.call(GOLD_LABELS, config.goldLabel)
   ? GOLD_LABELS[config.goldLabel]
   : null;
@@ -507,7 +497,6 @@ if (
   hideGroups.length === 0
   && !gemCrunchEnabled
   && !blackLabelsToDotsEnabled
-  && !removeSuperiorPrefixEnabled
   && goldLabel === null
 ) {
   console.log('No filter groups enabled — nothing to do.');
@@ -534,12 +523,6 @@ if (
 
   const changedKeys = {};
   const blackLabelChanges = { count: 0, keys: {} };
-  const superiorPrefixKeysToRemove = {};
-  if (removeSuperiorPrefixEnabled) {
-    SUPERIOR_PREFIX_KEYS.forEach((key) => {
-      superiorPrefixKeysToRemove[key] = true;
-    });
-  }
   if (
     hideGroups.length > 0
     || gemCrunchEnabled
@@ -549,7 +532,6 @@ if (
     updateStringFile(
       ITEM_NAMES_PATH,
       keysToHide,
-      {},
       gemRenames,
       goldLabel,
       changedKeys,
@@ -561,7 +543,6 @@ if (
   if (
     gemCrunchEnabled
     || blackLabelsToDotsEnabled
-    || removeSuperiorPrefixEnabled
     || goldLabel !== null
   ) {
     // Regular Diamond/Emerald/Ruby/Sapphire are stored here instead of in
@@ -571,7 +552,6 @@ if (
     updateStringFile(
       ITEM_NAME_AFFIXES_PATH,
       {},
-      superiorPrefixKeysToRemove,
       gemRenames,
       goldLabel,
       changedKeys,
@@ -587,13 +567,6 @@ if (
       name: 'Black Labels to Dots',
       verb: 'replaced',
       count: blackLabelChanges.count,
-    });
-  }
-  if (removeSuperiorPrefixEnabled) {
-    reportGroups.push({
-      name: 'Remove Superior Prefix',
-      verb: 'removed',
-      keys: SUPERIOR_PREFIX_KEYS,
     });
   }
   if (gemCrunchEnabled) {

@@ -141,45 +141,44 @@ test('legacy or malformed hide styles safely fall back to the gray dot', () => {
   assert.equal(entryByKey(result.files[ITEM_NAMES_PATH], 'cqv').enUS, 'ÿc5.');
 });
 
-test('Remove Superior Prefix strips only the shared quality fragment', () => {
+test('a saved legacy removeSuperiorPrefix value is ignored', () => {
+  const superior = localeEntry('Hiquality', 'Superior');
   const result = runMod(
     { removeSuperiorPrefix: true },
-    {
-      [ITEM_NAMES_PATH]: [localeEntry('vgl', 'Heavy Gloves')],
-      [ITEM_NAME_AFFIXES_PATH]: [
-        localeEntry('Hiquality', 'Superior'),
-        localeEntry('Crude', 'Crude'),
-      ],
-    },
+    { [ITEM_NAME_AFFIXES_PATH]: [superior] },
   );
-  const superior = entryByKey(result.files[ITEM_NAME_AFFIXES_PATH], 'Hiquality');
-  assert.equal(superior.enUS, '');
-  assert.equal(superior.deDE, '');
-  assert.equal(superior.frFR, '');
-  assert.equal(entryByKey(result.files[ITEM_NAME_AFFIXES_PATH], 'Crude').enUS, 'Crude');
-  assert.deepEqual(result.reads, [ITEM_NAME_AFFIXES_PATH]);
-  assert.deepEqual(result.writes, [ITEM_NAME_AFFIXES_PATH]);
-  assert.ok(result.logs.includes('Remove Superior Prefix: removed 1 of 1 item names.'));
+
+  assert.deepEqual(entryByKey(result.files[ITEM_NAME_AFFIXES_PATH], 'Hiquality'), superior);
+  assert.deepEqual(result.reads, []);
+  assert.deepEqual(result.writes, []);
+  assert.deepEqual(result.logs, ['No filter groups enabled — nothing to do.']);
 });
 
-test('Superior Heavy Gloves composes to only the dot when both options are enabled', () => {
+test('Hide Unpopular Bases preserves Superior while composing hidden bases as Superior dots', () => {
+  const superior = localeEntry('Hiquality', 'Superior');
   const result = runMod(
-    { hideUnpopularBases: true, removeSuperiorPrefix: true },
+    { hideUnpopularBases: true },
     {
-      [ITEM_NAMES_PATH]: hiddenKeys.map((key) => localeEntry(key, key)),
-      [ITEM_NAME_AFFIXES_PATH]: [localeEntry('Hiquality', 'Superior')],
+      [ITEM_NAMES_PATH]: [
+        ...hiddenKeys.map((key) => localeEntry(key, key)),
+        localeEntry('xtp', 'Mage Plate'),
+      ],
+      [ITEM_NAME_AFFIXES_PATH]: [superior],
     },
   );
+
   const prefix = entryByKey(result.files[ITEM_NAME_AFFIXES_PATH], 'Hiquality');
-  const base = entryByKey(result.files[ITEM_NAMES_PATH], 'vgl');
+  const hiddenBase = entryByKey(result.files[ITEM_NAMES_PATH], 'vgl');
+  const visibleBase = entryByKey(result.files[ITEM_NAMES_PATH], 'xtp');
   ['enUS', 'deDE', 'frFR'].forEach((locale) => {
-    assert.equal(prefix[locale], '');
-    assert.equal(base[locale], 'ÿc5.');
-    assert.equal(
-      applyQualityFormat(qualityFormats.formats[locale], prefix[locale], base[locale]).trim(),
-      'ÿc5.',
-    );
+    assert.equal(prefix[locale], superior[locale]);
+    assert.equal(hiddenBase[locale], 'ÿc5.');
   });
+  assert.equal(visibleBase.enUS, 'Mage Plate');
+  assert.equal(applyQualityFormat(qualityFormats.formats.enUS, prefix.enUS, hiddenBase.enUS), 'Superior ÿc5.');
+  assert.equal(applyQualityFormat(qualityFormats.formats.enUS, prefix.enUS, visibleBase.enUS), 'Superior Mage Plate');
+  assert.deepEqual(result.reads, [ITEM_NAMES_PATH]);
+  assert.deepEqual(result.writes, [ITEM_NAMES_PATH]);
 });
 
 test('socketed gray is runtime state and Black Labels to Dots cannot infer it', () => {

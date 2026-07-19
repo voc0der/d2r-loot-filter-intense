@@ -75,7 +75,6 @@ function runMod(configOverrides = {}, inputFiles = {}) {
   const constants = JSON.parse(vm.runInContext(`JSON.stringify({
     ITEM_NAMES_PATH,
     ITEM_NAME_AFFIXES_PATH,
-    SUPERIOR_PREFIX_KEYS,
     HIDE_STYLES,
     GOLD_LABELS,
     REJUV_ONLY_KEYS,
