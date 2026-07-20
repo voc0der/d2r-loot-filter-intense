@@ -2,19 +2,22 @@
  * D2R Loot Filter — Intense
  *
  * Hides trash drops with a tiny-dot label, optionally crunches gem names into
- * compact tier labels, and can shorten Gold pile labels. Runs after any base
- * loot filter in D2RMM load order: readJson sees earlier output, so writing the
- * same Key overrides it. Targets D2R's Lord of Destruction ruleset.
+ * compact tier labels, can shorten Gold pile labels, and can mute the repeated
+ * Slain Monsters Rest in Peace sound. Runs after any base loot filter in D2RMM
+ * load order: D2RMM reads earlier output, so this mod's changes win. Targets
+ * D2R's Lord of Destruction ruleset.
  */
 
 const ITEM_NAMES_PATH = 'local/lng/strings/item-names.json';
 const ITEM_NAME_AFFIXES_PATH = 'local/lng/strings/item-nameaffixes.json';
 const UI_PATH = 'local/lng/strings/ui.json';
+const STATES_PATH = 'global/excel/states.txt';
 const RED_COLOR_CODE = 'ÿc1';
 const BLACK_COLOR_CODE = 'ÿc6';
 const GOLD_LABEL_KEY = 'gld';
 const SUPERIOR_PREFIX_KEY = 'Hiquality';
 const SUPERIOR_FORMAT_KEY = 'HiqualityFormat';
+const REST_IN_PEACE_STATE = 'restinpeace';
 const HIDE_STYLES = ['ÿc5.', 'ÿc6.'];
 const GOLD_LABELS = {
   dollar: '$',
@@ -624,6 +627,32 @@ function updateSuperiorFormatFile(changedKeys) {
   D2RMM.writeJson(UI_PATH, entries);
 }
 
+function muteRestInPeaceSound() {
+  const states = D2RMM.readTsv(STATES_PATH);
+
+  if (states == null || !Array.isArray(states.rows)) {
+    console.warn(`${STATES_PATH} did not parse with a rows array — skipping, no changes written.`);
+    return false;
+  }
+
+  const restInPeace = states.rows.find((row) => (
+    row != null && row.state === REST_IN_PEACE_STATE
+  ));
+  if (restInPeace === undefined) {
+    console.warn(
+      `Mute Rest in Peace Sound: state "${REST_IN_PEACE_STATE}" not found in states.txt — skipped.`,
+    );
+    return false;
+  }
+
+  // The state's setfunc and redemption missile create the red soul animation.
+  // Clearing only onsound preserves that animation, the corpse-blocking state,
+  // and the separate "redeemed" state used by the Paladin's Redemption skill.
+  restInPeace.onsound = '';
+  D2RMM.writeTsv(STATES_PATH, states);
+  return true;
+}
+
 const hideGroups = [
   { name: '100% Rejuv Only', enabled: config.rejuvOnly, keys: REJUV_ONLY_KEYS },
   { name: 'Hide Ammo', enabled: config.hideAmmo, keys: AMMO_KEYS },
@@ -635,6 +664,7 @@ const hideGroups = [
 const gemCrunchEnabled = config.gemCrunch === true;
 const blackLabelsToDotsEnabled = config.blackLabelsToDots === true;
 const redSuperiorItemsEnabled = config.redSuperiorItems === true;
+const muteRestInPeaceSoundEnabled = config.muteRestInPeaceSound === true;
 const goldLabel = Object.prototype.hasOwnProperty.call(GOLD_LABELS, config.goldLabel)
   ? GOLD_LABELS[config.goldLabel]
   : null;
@@ -647,9 +677,10 @@ if (
   && !gemCrunchEnabled
   && !blackLabelsToDotsEnabled
   && !redSuperiorItemsEnabled
+  && !muteRestInPeaceSoundEnabled
   && goldLabel === null
 ) {
-  console.log('No filter groups enabled — nothing to do.');
+  console.log('No options enabled — nothing to do.');
 } else {
   // Combined key maps from all enabled groups so item-names.json is read and
   // written exactly once no matter how many groups are on.
@@ -720,6 +751,9 @@ if (
   if (redSuperiorItemsEnabled) {
     updateSuperiorFormatFile(changedKeys);
   }
+  const restInPeaceSoundMuted = muteRestInPeaceSoundEnabled
+    ? muteRestInPeaceSound()
+    : false;
 
   const reportGroups = hideGroups.map((group) => ({ name: group.name, verb: 'hid', keys: group.keys }));
   if (blackLabelsToDotsEnabled) {
@@ -766,5 +800,11 @@ if (
     console.log(`${group.name}: ${group.verb} ${changed} of ${group.keys.length} ${unit}.`);
   });
 
-  console.log(`Done: ${totalChanged} string(s) changed in total.`);
+  if (muteRestInPeaceSoundEnabled) {
+    const changed = restInPeaceSoundMuted ? 1 : 0;
+    totalChanged += changed;
+    console.log(`Mute Rest in Peace Sound: muted ${changed} of 1 state sounds.`);
+  }
+
+  console.log(`Done: ${totalChanged} change(s) made in total.`);
 }

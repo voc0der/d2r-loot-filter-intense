@@ -24,12 +24,12 @@ perk — free accounts get routed through the website.)
 ## Suggested page content
 
 **Name:** D2R Loot Filter — Intense
-**Summary:** A Lord of Destruction loot-filter overlay that hides trash drops with a tiny dot, crunches gem names, and shortens Gold pile labels. Works standalone or stacked after another D2RMM filter.
+**Summary:** A Lord of Destruction loot-filter overlay with options to hide trash drops behind a tiny dot, crunch gem names, shorten Gold labels, and mute the repetitive Rest in Peace kill sound.
 
 **Description (BBCode):**
 
 ```
-A tiny D2RMM mod for the [b]Lord of Destruction ruleset[/b] that hides trash drops with a barely-visible dot, can mark superior bases in red, optionally crunches gem names into compact colored tier labels, and can shorten Gold pile labels. Reign of the Warlock content is intentionally excluded. Works standalone or stacked [b]after[/b] another D2RMM loot filter (later mods win). All filters are off by default.
+A tiny D2RMM mod for the [b]Lord of Destruction ruleset[/b] with options to hide trash drops behind a barely-visible dot, mark superior bases in red, crunch gem names into compact colored tier labels, shorten Gold pile labels, and mute the repetitive Slain Monsters Rest in Peace kill sound. Reign of the Warlock content is intentionally excluded. Works standalone or stacked [b]after[/b] another D2RMM loot filter (later mods win). All optional features are off by default.
 
 [list]
 [*][b]100% Rejuv Only[/b] — hides every potion that is not a Full Rejuvenation Potion (healing, mana, small rejuvs, thawing/antidote/stamina)
@@ -41,9 +41,10 @@ A tiny D2RMM mod for the [b]Lord of Destruction ruleset[/b] that hides trash dro
 [*][b]Black Labels to Dots[/b] — converts direct labels whose final inline color is #000/black (ÿc6) into the selected tiny dot; inferior-prefix labels retain a black appended base name unless that base is also hidden
 [*][b]Gem Crunch[/b] — renames all 35 gems by tier: 1Topaz, 2Topaz, 3Topaz, 4Topaz, PTopaz; recognizes standard gem-type colors inside multi-color labels from an earlier filter
 [*][b]Compact Gold Label[/b] — changes the Gold suffix to $, neutral G, or nothing; displays as 1234 $, 1234 G, or 1234
+[*][b]Mute Rest in Peace Sound[/b] — silences the per-kill SMRIP/Redemption-like chime from Nature's Peace, Tyrael's Might and Lawbringer while keeping the visual effect and corpse-suppression mechanic; the Paladin Redemption skill is not muted
 [/list]
 
-Hidden labels become a gray or near-invisible black dot (selectable). Display strings only — drops are unchanged, works in every client language. See the README for the Large Charm/Hellfire Torch warning, the audited shield/class-base keeps and unique collisions, Black Labels compatibility details, Gem Crunch's four shared-affix strings, and the ethereal-item limitation.
+Hidden labels become a gray or near-invisible black dot (selectable), and all string changes work in every client language. The optional sound mute clears only the client-side SMRIP sound reference; drops, visuals, corpse suppression, other game mechanics, and Paladin Redemption audio are unchanged. See the README for the Large Charm/Hellfire Torch warning, the audited shield/class-base keeps and unique collisions, Black Labels compatibility details, Gem Crunch's four shared-affix strings, and the ethereal-item limitation.
 
 Source, full base list and docs: [url=https://github.com/voc0der/d2r-loot-filter-intense]GitHub[/url]
 ```

@@ -188,6 +188,7 @@ test('configuration defaults and option values are internally valid', () => {
     redSuperiorItems: false,
     blackLabelsToDots: false,
     gemCrunch: false,
+    muteRestInPeaceSound: false,
     hideStyle: 'ÿc5.',
     goldLabel: 'unchanged',
   });

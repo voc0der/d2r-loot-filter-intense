@@ -1,9 +1,9 @@
 {
   "name": "D2R Loot Filter — Intense",
-  "description": "A D2R Lord of Destruction loot-filter overlay. Hides trash drops and 323 aggressively filtered equipment bases including high-volume normal/exceptional weapons, armor and class items; can mark superior bases in red; converts inherited black labels to dots; crunches gem names; and compacts Gold pile labels. Reign of the Warlock content is intentionally excluded. Display strings only — drops are unchanged.",
+  "description": "A D2R Lord of Destruction loot-filter overlay. Hides trash drops and 323 aggressively filtered equipment bases including high-volume normal/exceptional weapons, armor and class items; can mark superior bases in red; converts inherited black labels to dots; crunches gem names; compacts Gold pile labels; and can mute the Slain Monsters Rest in Peace corpse chime without removing its animation. Reign of the Warlock content is intentionally excluded. Drops and mechanics are unchanged.",
   "author": "voc0der",
   "website": "https://github.com/voc0der/d2r-loot-filter-intense",
-  "version": "0.4.0",
+  "version": "0.4.1",
   "config": [
     {
       "type": "section",
@@ -66,6 +66,21 @@
           "id": "gemCrunch",
           "name": "Gem Crunch",
           "description": "Rename every gem to a compact colored tier label: 1 = Chipped, 2 = Flawed, 3 = regular, 4 = Flawless, P = Perfect (for example, 1Topaz and PTopaz). Recognizes standard gem-type colors in multi-color labels from an earlier filter; otherwise preserves its first inline color. See the README for the shared-affix caveat.",
+          "defaultValue": false
+        }
+      ]
+    },
+    {
+      "type": "section",
+      "id": "audio",
+      "name": "Audio",
+      "defaultExpanded": true,
+      "children": [
+        {
+          "type": "checkbox",
+          "id": "muteRestInPeaceSound",
+          "name": "Mute Rest in Peace Sound",
+          "description": "Silence the repeated corpse chime from Slain Monsters Rest in Peace while keeping its red soul animation and corpse-blocking effect. Applies to Nature's Peace, Tyrael's Might, Lawbringer, and any other source of the modifier. Does not mute the Paladin's Redemption skill.",
           "defaultValue": false
         }
       ]

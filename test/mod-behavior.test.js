@@ -7,6 +7,7 @@ const {
   ITEM_NAMES_PATH,
   ITEM_NAME_AFFIXES_PATH,
   UI_PATH,
+  STATES_PATH,
   localeEntry,
   runMod,
 } = require('./helpers/run-mod');
@@ -32,7 +33,95 @@ test('all options off performs no file reads or writes', () => {
   const result = runMod();
   assert.deepEqual(result.reads, []);
   assert.deepEqual(result.writes, []);
-  assert.deepEqual(result.logs, ['No filter groups enabled — nothing to do.']);
+  assert.deepEqual(result.logs, ['No options enabled — nothing to do.']);
+});
+
+test('Mute Rest in Peace Sound clears only restinpeace onsound', () => {
+  const states = {
+    headers: ['state', 'udead', 'notondead', 'onsound', 'skill', 'missile', 'setfunc'],
+    rows: [
+      {
+        state: 'restinpeace',
+        udead: '1',
+        notondead: '1',
+        onsound: 'paladin_redeemed_soul',
+        missile: 'redemption',
+        setfunc: '17',
+      },
+      {
+        state: 'redeemed',
+        udead: '1',
+        onsound: 'paladin_redeemed_soul',
+        skill: 'redemption',
+        setfunc: '10',
+      },
+      {
+        state: 'unrelated',
+        onsound: 'other_sound',
+        missile: 'unrelated',
+        setfunc: '3',
+      },
+    ],
+  };
+  const result = runMod(
+    { muteRestInPeaceSound: true },
+    { [STATES_PATH]: states },
+  );
+
+  assert.deepEqual(result.files[STATES_PATH], {
+    headers: states.headers,
+    rows: [
+      { ...states.rows[0], onsound: '' },
+      states.rows[1],
+      states.rows[2],
+    ],
+  });
+  assert.equal(result.files[STATES_PATH].rows[0].missile, 'redemption');
+  assert.equal(result.files[STATES_PATH].rows[0].setfunc, '17');
+  assert.deepEqual(result.files[STATES_PATH].rows[1], states.rows[1]);
+  assert.deepEqual(result.reads, [STATES_PATH]);
+  assert.deepEqual(result.writes, [STATES_PATH]);
+  assert.deepEqual(result.warnings, []);
+  assert.ok(result.logs.includes('Mute Rest in Peace Sound: muted 1 of 1 state sounds.'));
+});
+
+test('Mute Rest in Peace Sound skips malformed states data without writing', () => {
+  const malformedStates = { rows: null };
+  const result = runMod(
+    { muteRestInPeaceSound: true },
+    { [STATES_PATH]: malformedStates },
+  );
+
+  assert.deepEqual(result.files[STATES_PATH], malformedStates);
+  assert.deepEqual(result.reads, [STATES_PATH]);
+  assert.deepEqual(result.writes, []);
+  assert.deepEqual(result.warnings, [
+    `${STATES_PATH} did not parse with a rows array — skipping, no changes written.`,
+  ]);
+});
+
+test('Mute Rest in Peace Sound warns when restinpeace is missing', () => {
+  const states = {
+    rows: [
+      {
+        state: 'redeemed',
+        onsound: 'paladin_redeemed_soul',
+        skill: 'redemption',
+        setfunc: '10',
+      },
+    ],
+  };
+  const result = runMod(
+    { muteRestInPeaceSound: true },
+    { [STATES_PATH]: states },
+  );
+
+  assert.deepEqual(result.files[STATES_PATH], states);
+  assert.deepEqual(result.reads, [STATES_PATH]);
+  assert.deepEqual(result.writes, []);
+  assert.deepEqual(result.warnings, [
+    'Mute Rest in Peace Sound: state "restinpeace" not found in states.txt — skipped.',
+  ]);
 });
 
 test('each simple hide group changes exactly its configured keys', async (t) => {
@@ -157,7 +246,7 @@ test('a saved legacy removeSuperiorPrefix value is ignored', () => {
   assert.deepEqual(entryByKey(result.files[ITEM_NAME_AFFIXES_PATH], 'Hiquality'), superior);
   assert.deepEqual(result.reads, []);
   assert.deepEqual(result.writes, []);
-  assert.deepEqual(result.logs, ['No filter groups enabled — nothing to do.']);
+  assert.deepEqual(result.logs, ['No options enabled — nothing to do.']);
 });
 
 test('Hide Unpopular Bases preserves Superior while composing hidden bases as Superior dots', () => {
