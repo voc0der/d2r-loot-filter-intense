@@ -8,7 +8,7 @@ const MOD_MANIFEST = JSON.parse(fs.readFileSync(path.join(ROOT, 'mod.json'), 'ut
 const ITEM_NAMES_PATH = 'local/lng/strings/item-names.json';
 const ITEM_NAME_AFFIXES_PATH = 'local/lng/strings/item-nameaffixes.json';
 const UI_PATH = 'local/lng/strings/ui.json';
-const STATES_PATH = 'global/excel/states.txt';
+const STATES_PATH = 'global/excel/base/states.txt';
 
 function clone(value) {
   return JSON.parse(JSON.stringify(value));

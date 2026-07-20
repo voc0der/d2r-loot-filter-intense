@@ -11,7 +11,8 @@
 const ITEM_NAMES_PATH = 'local/lng/strings/item-names.json';
 const ITEM_NAME_AFFIXES_PATH = 'local/lng/strings/item-nameaffixes.json';
 const UI_PATH = 'local/lng/strings/ui.json';
-const STATES_PATH = 'global/excel/states.txt';
+// Current game data keeps LoD tables under excel/base; excel/states.txt is RotW.
+const STATES_PATH = 'global/excel/base/states.txt';
 const RED_COLOR_CODE = 'ÿc1';
 const BLACK_COLOR_CODE = 'ÿc6';
 const GOLD_LABEL_KEY = 'gld';

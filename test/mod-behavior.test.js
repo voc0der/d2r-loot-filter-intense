@@ -36,6 +36,35 @@ test('all options off performs no file reads or writes', () => {
   assert.deepEqual(result.logs, ['No options enabled — nothing to do.']);
 });
 
+test('Mute Rest in Peace Sound targets LoD and leaves the RotW state table untouched', () => {
+  const rotwStatesPath = 'global/excel/states.txt';
+  const lodStates = {
+    rows: [
+      { state: 'restinpeace', onsound: 'paladin_redeemed_soul' },
+      { state: 'redeemed', onsound: 'paladin_redeemed_soul' },
+    ],
+  };
+  const rotwStates = {
+    rows: [
+      { state: 'restinpeace', onsound: 'paladin_redeemed_soul' },
+      { state: 'redeemed', onsound: 'paladin_redeemed_soul' },
+    ],
+  };
+  const result = runMod(
+    { muteRestInPeaceSound: true },
+    { [STATES_PATH]: lodStates, [rotwStatesPath]: rotwStates },
+  );
+
+  assert.equal(STATES_PATH, 'global/excel/base/states.txt');
+  assert.deepEqual(result.files[STATES_PATH].rows, [
+    { ...lodStates.rows[0], onsound: '' },
+    { ...lodStates.rows[1], onsound: '' },
+  ]);
+  assert.deepEqual(result.files[rotwStatesPath], rotwStates);
+  assert.deepEqual(result.reads, [STATES_PATH]);
+  assert.deepEqual(result.writes, [STATES_PATH]);
+});
+
 test('Mute Rest in Peace Sound clears both shared corpse-chime state references', () => {
   const states = {
     headers: ['state', 'udead', 'notondead', 'onsound', 'skill', 'missile', 'setfunc'],
