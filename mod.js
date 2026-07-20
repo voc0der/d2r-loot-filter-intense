@@ -17,7 +17,7 @@ const BLACK_COLOR_CODE = 'ÿc6';
 const GOLD_LABEL_KEY = 'gld';
 const SUPERIOR_PREFIX_KEY = 'Hiquality';
 const SUPERIOR_FORMAT_KEY = 'HiqualityFormat';
-const REST_IN_PEACE_STATE = 'restinpeace';
+const REST_IN_PEACE_SOUND_STATES = ['restinpeace', 'redeemed'];
 const HIDE_STYLES = ['ÿc5.', 'ÿc6.'];
 const GOLD_LABELS = {
   dollar: '$',
@@ -618,25 +618,29 @@ function muteRestInPeaceSound() {
 
   if (states == null || !Array.isArray(states.rows)) {
     console.warn(`${STATES_PATH} did not parse with a rows array — skipping, no changes written.`);
-    return false;
+    return 0;
   }
 
-  const restInPeace = states.rows.find((row) => (
-    row != null && row.state === REST_IN_PEACE_STATE
-  ));
-  if (restInPeace === undefined) {
-    console.warn(
-      `Mute Rest in Peace Sound: state "${REST_IN_PEACE_STATE}" not found in states.txt — skipped.`,
-    );
-    return false;
-  }
+  let changed = 0;
+  REST_IN_PEACE_SOUND_STATES.forEach((stateName) => {
+    const state = states.rows.find((row) => (
+      row != null && row.state === stateName
+    ));
+    if (state === undefined) {
+      console.warn(
+        `Mute Rest in Peace Sound: state "${stateName}" not found in states.txt — skipped.`,
+      );
+      return;
+    }
 
-  // The state's setfunc and redemption missile create the red soul animation.
-  // Clearing only onsound preserves that animation, the corpse-blocking state,
-  // and the separate "redeemed" state used by the Paladin's Redemption skill.
-  restInPeace.onsound = '';
-  D2RMM.writeTsv(STATES_PATH, states);
-  return true;
+    state.onsound = '';
+    changed += 1;
+  });
+
+  if (changed > 0) {
+    D2RMM.writeTsv(STATES_PATH, states);
+  }
+  return changed;
 }
 
 const hideGroups = [
@@ -737,9 +741,9 @@ if (
   if (redSuperiorItemsEnabled) {
     updateSuperiorFormatFile(changedKeys);
   }
-  const restInPeaceSoundMuted = muteRestInPeaceSoundEnabled
+  const restInPeaceSoundsMuted = muteRestInPeaceSoundEnabled
     ? muteRestInPeaceSound()
-    : false;
+    : 0;
 
   const reportGroups = hideGroups.map((group) => ({ name: group.name, verb: 'hid', keys: group.keys }));
   if (blackLabelsToDotsEnabled) {
@@ -787,9 +791,10 @@ if (
   });
 
   if (muteRestInPeaceSoundEnabled) {
-    const changed = restInPeaceSoundMuted ? 1 : 0;
-    totalChanged += changed;
-    console.log(`Mute Rest in Peace Sound: muted ${changed} of 1 state sounds.`);
+    totalChanged += restInPeaceSoundsMuted;
+    console.log(
+      `Mute Rest in Peace Sound: muted ${restInPeaceSoundsMuted} of ${REST_IN_PEACE_SOUND_STATES.length} state sound references.`,
+    );
   }
 
   console.log(`Done: ${totalChanged} change(s) made in total.`);

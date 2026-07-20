@@ -41,10 +41,10 @@ A tiny D2RMM mod for the [b]Lord of Destruction ruleset[/b] with options to hide
 [*][b]Black Labels to Dots[/b] — converts direct labels whose final inline color is #000/black (ÿc6) into the selected tiny dot; inferior-prefix labels retain a black appended base name unless that base is also hidden
 [*][b]Gem Crunch[/b] — renames all 35 gems by tier: 1Topaz, 2Topaz, 3Topaz, 4Topaz, PTopaz; recognizes standard gem-type colors inside multi-color labels from an earlier filter
 [*][b]Compact Gold Label[/b] — changes the Gold suffix to $, neutral G, or nothing; displays as 1234 $, 1234 G, or 1234
-[*][b]Mute Rest in Peace Sound[/b] — silences the per-kill SMRIP/Redemption-like chime from Nature's Peace, Tyrael's Might and Lawbringer while keeping the visual effect and corpse-suppression mechanic; the Paladin Redemption skill is not muted
+[*][b]Mute Rest in Peace Sound[/b] — silences the per-kill SMRIP chime from Nature's Peace, Tyrael's Might and Lawbringer while keeping the visual effect and corpse-suppression mechanic; also silences Paladin Redemption's shared per-corpse soul chime while preserving its separate aura sound and mechanics
 [/list]
 
-Hidden labels become a gray or near-invisible black dot (selectable), and all string changes work in every client language. The optional sound mute clears only the client-side SMRIP sound reference; drops, visuals, corpse suppression, other game mechanics, and Paladin Redemption audio are unchanged. See the README for the Large Charm/Hellfire Torch warning, the audited shield/class-base keeps and unique collisions, Black Labels compatibility details, Gem Crunch's four shared-affix strings, and the ethereal-item limitation.
+Hidden labels become a gray or near-invisible black dot (selectable), and all string changes work in every client language. The optional sound mute clears the shared client-side corpse-chime reference on both relevant states; drops, visuals, corpse suppression, Redemption recovery, its separate aura sound, and other game mechanics are unchanged. See the README for the Large Charm/Hellfire Torch warning, the audited shield/class-base keeps and unique collisions, Black Labels compatibility details, Gem Crunch's four shared-affix strings, and the ethereal-item limitation.
 
 Source, full base list and docs: [url=https://github.com/voc0der/d2r-loot-filter-intense]GitHub[/url]
 ```

@@ -23,7 +23,7 @@ All optional features are **off by default** — turn on the ones you want in D2
 | **Black Labels to Dots** | Converts direct labels whose final active inline color is D2's `#000`/black code (`ÿc6`) into the selected tiny dot. Composed inferior-quality labels have an engine limitation explained below. This mod must load later. |
 | **Gem Crunch** | All 35 gems get compact, colored tier labels: `1Topaz`, `2Topaz`, `3Topaz`, `4Topaz`, `PTopaz`. Standard gem-type colors from an earlier filter are recognized inside multi-color labels. |
 | **Compact Gold Label** | Replaces the word after a ground-pile amount with `$`, neutral `G`, or nothing: `1234 $`, `1234 G`, or `1234`. |
-| **Mute Rest in Peace Sound** | Silences the per-kill Slain Monsters Rest in Peace (SMRIP) chime from Nature's Peace, Tyrael's Might, and Lawbringer. The visual effect and corpse-suppression mechanic remain unchanged, and the Paladin Redemption skill is not muted. |
+| **Mute Rest in Peace Sound** | Silences the per-kill Slain Monsters Rest in Peace (SMRIP) chime from Nature's Peace, Tyrael's Might, and Lawbringer. The visual effect and corpse-suppression mechanic remain unchanged. It also silences Paladin Redemption's shared per-corpse soul chime, while preserving the separate aura sound and mechanics. |
 
 Hidden items are not removed from the game — their name label is renamed to a tiny dot so they no longer clutter your screen on Alt. You can pick the dot style:
 
@@ -72,7 +72,7 @@ Sigma is not included: `Σ` means summation rather than currency, and its render
 
 Nature's Peace, Tyrael's Might, and Lawbringer all grant Slain Monsters Rest in Peace (SMRIP), which plays a Redemption-like chime for each affected kill. Enabling this option suppresses that SMRIP sound while preserving the on-death animation and the mechanic that prevents the slain monster's corpse from being used.
 
-The mute is limited to the SMRIP kill sound. It does not mute the Paladin Redemption skill or its audio.
+The live client can emit this shared corpse chime through either the `restinpeace` or `redeemed` state, so the option clears the sound reference on both. Paladin Redemption's separate aura sound remains, but its per-corpse soul chime is therefore muted too. The skill's life/mana recovery and corpse consumption are unchanged.
 
 ## Hide Unpopular Bases — what's on the list
 
@@ -128,15 +128,15 @@ _Before/after screenshots coming soon._
 ## Troubleshooting — "items are still labeled the old way"
 
 1. **Re-install after every config change.** Toggling checkboxes does nothing until you click **Install Mods** again.
-2. **Read D2RMM's install log.** This mod prints one line per enabled option, e.g. `Hide Ammo: hid 2 of 2 item names.`, `Red Superior Items: recolored 2 of 2 strings.`, `Black Labels to Dots: replaced 4 black string entries.`, `Gem Crunch: renamed 35 of 35 item names.`, `Compact Gold Label: renamed 1 of 1 item names.`, or `Mute Rest in Peace Sound: muted 1 of 1 state sounds.` A warning means an expected key or state wasn't found in the current game data.
-3. **Check the output actually contains the change.** Open `mods\D2RMM\D2RMM.mpq\data\local\lng\strings\item-names.json` and search for `"aqv"` (hidden ammo) or `"gcy"` (Chipped Topaz). Hidden ammo should be a tiny `ÿc5.` dot and Chipped Topaz should end in `1Topaz`. The four regular Diamond/Emerald/Ruby/Sapphire entries, Gold's `"gld"` suffix, and the red `"Hiquality"` fragment are in `item-nameaffixes.json`; the matching `"HiqualityFormat"` is in `ui.json`. For the sound option, open `data\global\excel\states.txt`: the `restinpeace` row's `onsound` field should be empty, while its `missile` remains `redemption`. If the output is correct but the game still shows the old label or sound, the game isn't loading D2RMM's output (next two points).
+2. **Read D2RMM's install log.** This mod prints one line per enabled option, e.g. `Hide Ammo: hid 2 of 2 item names.`, `Red Superior Items: recolored 2 of 2 strings.`, `Black Labels to Dots: replaced 4 black string entries.`, `Gem Crunch: renamed 35 of 35 item names.`, `Compact Gold Label: renamed 1 of 1 item names.`, or `Mute Rest in Peace Sound: muted 2 of 2 state sound references.` A warning means an expected key or state wasn't found in the current game data.
+3. **Check the output actually contains the change.** Open `mods\D2RMM\D2RMM.mpq\data\local\lng\strings\item-names.json` and search for `"aqv"` (hidden ammo) or `"gcy"` (Chipped Topaz). Hidden ammo should be a tiny `ÿc5.` dot and Chipped Topaz should end in `1Topaz`. The four regular Diamond/Emerald/Ruby/Sapphire entries, Gold's `"gld"` suffix, and the red `"Hiquality"` fragment are in `item-nameaffixes.json`; the matching `"HiqualityFormat"` is in `ui.json`. For the sound option, open `data\global\excel\states.txt`: both the `restinpeace` and `redeemed` rows' `onsound` fields should be empty, while their `missile`/`skill` fields remain unchanged. If the output is correct but the game still shows the old label or sound, the game isn't loading D2RMM's output (next two points).
 4. **Launch with `-mod D2RMM -txt`** — use D2RMM's own Launch Game button to be sure. Launching through Battle.net loads vanilla data.
 5. **Don't combine with MPQ-based filters** (like ChrisTitusTech's) — only one `-mod` loads at a time; whichever argument you launch with wins and the other filter is ignored entirely.
 6. **Order matters within D2RMM**: if another enabled mod rewrites the same item strings or state data and sits *after* this one, its changes win. Put this mod last.
 
 ## Safety
 
-The loot-filter features only change **display strings** (`item-names.json`, `item-nameaffixes.json`, and the superior formatter in `ui.json`). The optional **Mute Rest in Peace Sound** feature additionally clears one client-side sound reference on the SMRIP state. It does not touch drop rates, game logic, corpse-suppression behavior, or anything server-side. What drops and how SMRIP works are unchanged — only labels and, when explicitly enabled, that sound are altered.
+The loot-filter features only change **display strings** (`item-names.json`, `item-nameaffixes.json`, and the superior formatter in `ui.json`). The optional **Mute Rest in Peace Sound** feature additionally clears the shared corpse-chime reference on the `restinpeace` and `redeemed` states. It does not touch drop rates, game logic, corpse-suppression behavior, Redemption recovery, or anything server-side. What drops and how those mechanics work are unchanged — only labels and, when explicitly enabled, that sound are altered.
 
 ## Extending
 

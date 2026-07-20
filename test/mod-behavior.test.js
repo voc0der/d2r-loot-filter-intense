@@ -36,7 +36,7 @@ test('all options off performs no file reads or writes', () => {
   assert.deepEqual(result.logs, ['No options enabled — nothing to do.']);
 });
 
-test('Mute Rest in Peace Sound clears only restinpeace onsound', () => {
+test('Mute Rest in Peace Sound clears both shared corpse-chime state references', () => {
   const states = {
     headers: ['state', 'udead', 'notondead', 'onsound', 'skill', 'missile', 'setfunc'],
     rows: [
@@ -56,6 +56,11 @@ test('Mute Rest in Peace Sound clears only restinpeace onsound', () => {
         setfunc: '10',
       },
       {
+        state: 'redemption',
+        aura: '1',
+        onsound: 'paladin_aura_redemption',
+      },
+      {
         state: 'unrelated',
         onsound: 'other_sound',
         missile: 'unrelated',
@@ -72,17 +77,21 @@ test('Mute Rest in Peace Sound clears only restinpeace onsound', () => {
     headers: states.headers,
     rows: [
       { ...states.rows[0], onsound: '' },
-      states.rows[1],
+      { ...states.rows[1], onsound: '' },
       states.rows[2],
+      states.rows[3],
     ],
   });
   assert.equal(result.files[STATES_PATH].rows[0].missile, 'redemption');
   assert.equal(result.files[STATES_PATH].rows[0].setfunc, '17');
-  assert.deepEqual(result.files[STATES_PATH].rows[1], states.rows[1]);
+  assert.equal(result.files[STATES_PATH].rows[1].skill, 'redemption');
+  assert.deepEqual(result.files[STATES_PATH].rows[2], states.rows[2]);
   assert.deepEqual(result.reads, [STATES_PATH]);
   assert.deepEqual(result.writes, [STATES_PATH]);
   assert.deepEqual(result.warnings, []);
-  assert.ok(result.logs.includes('Mute Rest in Peace Sound: muted 1 of 1 state sounds.'));
+  assert.ok(result.logs.includes(
+    'Mute Rest in Peace Sound: muted 2 of 2 state sound references.',
+  ));
 });
 
 test('Mute Rest in Peace Sound skips malformed states data without writing', () => {
@@ -116,9 +125,9 @@ test('Mute Rest in Peace Sound warns when restinpeace is missing', () => {
     { [STATES_PATH]: states },
   );
 
-  assert.deepEqual(result.files[STATES_PATH], states);
+  assert.equal(result.files[STATES_PATH].rows[0].onsound, '');
   assert.deepEqual(result.reads, [STATES_PATH]);
-  assert.deepEqual(result.writes, []);
+  assert.deepEqual(result.writes, [STATES_PATH]);
   assert.deepEqual(result.warnings, [
     'Mute Rest in Peace Sound: state "restinpeace" not found in states.txt — skipped.',
   ]);
