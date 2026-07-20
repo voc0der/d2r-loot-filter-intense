@@ -312,23 +312,9 @@ const UNPOPULAR_BASE_KEYS = [
   'ob7', // Crystalline Globe
   'ob8', // Cloudy Sphere
   'ob9', // Sparkling Ball
-  // Gloves — common labels whose notable collisions are accepted casualties;
-  // Chain Gloves (Chance Guards) and Light Gauntlets (Magefist) stay visible
-  'lgl', // Leather Gloves
-  'vgl', // Heavy Gloves (hides Bloodfist and magic Blood-craft bases)
-  'hgl', // Gauntlets (hides Frostburn)
-  'xlg', // Demonhide Gloves
-  'xvg', // Sharkskin Gloves
-  'xtg', // Battle Gauntlets
-  'xhg', // War Gauntlets
-  'utg', // Crusader Gauntlets
-  // Boots — every normal boot goes; exceptional and elite boots stay visible
-  // for War Traveler, Gore Rider, Waterwalk, Sandstorm Trek and valuable rares
-  'lbt', // Boots (hides Hotspur)
-  'vbt', // Heavy Boots
-  'mbt', // Chain Boots
-  'tbt', // Light Plated Boots (hides Goblin Toe)
-  'hbt', // Greaves
+  // Gloves and boots — every tier stays visible because rare rolls can be
+  // valuable. Base-name strings are quality-blind, so keeping rares requires
+  // keeping ordinary, magic, set, and unique drops on the same bases too.
   // Belts — every normal belt goes; exceptional and elite belts stay visible
   // for String of Ears, Razortail, Snowclash, Thundergod's, Tal Rasha's,
   // Arachnid Mesh, Verdungo's and Nosferatu's

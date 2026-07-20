@@ -25,7 +25,7 @@ function flattenConfig(nodes) {
 
 test('the production base policy exactly matches the audited LoD fixture', () => {
   assert.deepEqual(productionKeys, canonicalHidden);
-  assert.equal(productionKeys.length, 323);
+  assert.equal(productionKeys.length, 310);
   assert.equal(new Set(productionKeys).size, productionKeys.length);
   assert.match(policy.source.ruleset, /Lord of Destruction/);
   assert.match(policy.source.note, /Pre-Reign-of-the-Warlock/);
@@ -49,8 +49,6 @@ test('the production base policy exactly matches the audited LoD fixture', () =>
       wands: 8,
       staves: 10,
       sorceressOrbs: 9,
-      gloves: 8,
-      boots: 5,
       belts: 6,
       genericHelms: 15,
       barbarianHelms: 9,
@@ -135,10 +133,24 @@ test('reported clutter is hidden and audited endgame exceptions stay visible', (
   });
 });
 
+test('every glove and boot stays visible while the belt policy is unchanged', () => {
+  const hidden = new Set(productionKeys);
+  const gloveAndBootCodes = Object.entries(catalog)
+    .filter(([, item]) => item.type === 'glov' || item.type === 'boot')
+    .map(([code]) => code)
+    .sort();
+
+  assert.deepEqual([...policy.mustStayVisible.glovesAndBoots].sort(), gloveAndBootCodes);
+  gloveAndBootCodes.forEach((code) => {
+    assert.equal(hidden.has(code), false, `${code} gloves/boots must stay visible for rare rolls`);
+  });
+  assert.deepEqual(policy.hiddenGroups.belts, ['lbl', 'vbl', 'mbl', 'tbl', 'hbl', 'uhc']);
+});
+
 test('important policy tradeoffs are recorded instead of silently masked', () => {
   assert.deepEqual(Object.keys(policy.notableAcceptedCollisions).sort(), [
     '8ls', '9ba', '9bw', '9wn', 'am7', 'am9', 'ba5',
-    'dr8', 'hgl', 'msk', 'tbl', 'tbt', 'vgl', 'xul',
+    'dr8', 'msk', 'tbl', 'xul',
   ]);
   Object.keys(policy.notableAcceptedCollisions).forEach((code) => {
     assert.equal(productionKeys.includes(code), true);
@@ -148,7 +160,7 @@ test('important policy tradeoffs are recorded instead of silently masked', () =>
   const hiddenWithCollisions = productionKeys.filter((code) => (
     catalog[code].unique.length > 0 || catalog[code].set.length > 0
   ));
-  assert.equal(hiddenWithCollisions.length, 231);
+  assert.equal(hiddenWithCollisions.length, 219);
   assert.deepEqual(hiddenWithCollisions, policy.acceptedHiddenCollisionCodes);
   policy.acceptedHiddenCollisionCodes.forEach((code) => {
     assert.ok(
@@ -227,7 +239,7 @@ test('published descriptions use the exact audited base count', () => {
   const files = ['mod.json', 'README.md', 'docs/NEXUS.md'];
   files.forEach((relativePath) => {
     const contents = fs.readFileSync(path.join(ROOT, relativePath), 'utf8');
-    assert.match(contents, /323 (?:aggressively filtered|low-priority)/, relativePath);
+    assert.match(contents, /310 (?:aggressively filtered|low-priority)/, relativePath);
     assert.doesNotMatch(contents, /247 (?:aggressively filtered|low-priority)/, relativePath);
   });
 });
@@ -235,7 +247,7 @@ test('published descriptions use the exact audited base count', () => {
 test('documentation retains the dangerous runtime and collision warnings', () => {
   const readme = fs.readFileSync(path.join(ROOT, 'README.md'), 'utf8');
   [
-    'Superior Heavy Gloves',
+    'Every glove and boot stays visible',
     'Superior Mage Plate',
     'Red Superior Items',
     "socketed Hunter's Guise",

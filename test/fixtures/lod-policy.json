@@ -248,23 +248,6 @@
       "ob8",
       "ob9"
     ],
-    "gloves": [
-      "lgl",
-      "vgl",
-      "hgl",
-      "xlg",
-      "xvg",
-      "xtg",
-      "xhg",
-      "utg"
-    ],
-    "boots": [
-      "lbt",
-      "vbt",
-      "mbt",
-      "tbt",
-      "hbt"
-    ],
     "belts": [
       "lbl",
       "vbl",
@@ -386,7 +369,6 @@
     "mpi",
     "9ba",
     "9s9",
-    "vgl",
     "msk",
     "xul",
     "dr8",
@@ -480,9 +462,39 @@
       "uh9",
       "urn",
       "uth",
-      "uar",
+      "uar"
+    ],
+    "glovesAndBoots": [
+      "lgl",
+      "vgl",
       "mgl",
-      "tgl"
+      "tgl",
+      "hgl",
+      "xlg",
+      "xvg",
+      "xmg",
+      "xtg",
+      "xhg",
+      "ulg",
+      "uvg",
+      "umg",
+      "utg",
+      "uhg",
+      "lbt",
+      "vbt",
+      "mbt",
+      "tbt",
+      "hbt",
+      "xlb",
+      "xvb",
+      "xmb",
+      "xtb",
+      "xhb",
+      "ulb",
+      "uvb",
+      "umb",
+      "utb",
+      "uhb"
     ],
     "druidPeltKeeps": [
       "dra",
@@ -694,18 +706,6 @@
     "8cs",
     "8bs",
     "8ws",
-    "lgl",
-    "vgl",
-    "hgl",
-    "xlg",
-    "xvg",
-    "xtg",
-    "xhg",
-    "lbt",
-    "vbt",
-    "mbt",
-    "tbt",
-    "hbt",
     "lbl",
     "vbl",
     "mbl",
@@ -772,12 +772,6 @@
     "9ba": [
       "Spellsteel"
     ],
-    "vgl": [
-      "Bloodfist",
-      "Sander's Taboo",
-      "magic Blood-craft bases",
-      "rare Heavy Gloves"
-    ],
     "msk": [
       "The Face of Horror",
       "Cathan's Visage",
@@ -795,13 +789,6 @@
       "Goldwrap",
       "Iratha's Cord",
       "Infernal Sign"
-    ],
-    "tbt": [
-      "Goblin Toe"
-    ],
-    "hgl": [
-      "Frostburn",
-      "Sigon's Gage"
     ],
     "8ls": [
       "Ribcracker"

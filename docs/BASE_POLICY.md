@@ -2,7 +2,7 @@
 
 # Audited Hide Unpopular Bases policy
 
-This generated table is the authoritative list of all **323** hidden equipment base strings.
+This generated table is the authoritative list of all **310** hidden equipment base strings.
 It targets the **Diablo II: Resurrected — Lord of Destruction** ruleset and is pinned to d2data commit `bb26870f321c05479df88119285f26b76c4cec32`.
 
 The filter is quality-blind: every listed code hides ordinary, superior, socketed, magic, rare, unique and set labels on that base. Named unique/set collisions from the pinned LoD data appear below. Staffmods, crafting uses and other runtime tradeoffs are documented in the README and policy fixture.
@@ -10,13 +10,10 @@ The filter is quality-blind: every listed code hides ordinary, superior, sockete
 ## Headline accepted tradeoffs
 
 - `9ba` Bearded Axe: Spellsteel
-- `vgl` Heavy Gloves: Bloodfist; Sander's Taboo; magic Blood-craft bases; rare Heavy Gloves
 - `msk` Mask: The Face of Horror; Cathan's Visage; 3-socket Mask runeword bases
 - `xul` Chaos Armor: Black Hades; Trang-Oul's Scales
 - `dr8` Hunter's Guise: Aldur's Stony Gaze; 3-socket Druid staffmod bases
 - `tbl` Heavy Belt: Goldwrap; Iratha's Cord; Infernal Sign
-- `tbt` Light Plated Boots: Goblin Toe
-- `hgl` Gauntlets: Frostburn; Sigon's Gage
 - `8ls` Quarterstaff: Ribcracker
 - `9wn` Burnt Wand: Suicide Branch
 - `9bw` Tomb Wand: Arm of King Leoric
@@ -315,29 +312,6 @@ The filter is quality-blind: every listed code hides ordinary, superior, sockete
 | `ob8` | Cloudy Sphere | exceptional | 4 | — |
 | `ob9` | Sparkling Ball | exceptional | 4 | — |
 
-## Gloves (8)
-
-| Code | Base | Tier | Max sockets | Named unique/set collisions intentionally hidden |
-| --- | --- | --- | ---: | --- |
-| `lgl` | Leather Gloves | normal | 0 | Unique: The Hand of Broc; Set: Death's Hand |
-| `vgl` | Heavy Gloves | normal | 0 | Unique: Bloodfist; Set: McAuley's Taboo |
-| `hgl` | Gauntlets | normal | 0 | Unique: Frostburn; Set: Sigon's Gage |
-| `xlg` | Demonhide Gloves | exceptional | 0 | Unique: Venom Grip |
-| `xvg` | Sharkskin Gloves | exceptional | 0 | Unique: Gravepalm; Set: Magnus' Skin |
-| `xtg` | Battle Gauntlets | exceptional | 0 | Unique: Lavagout; Set: M'avina's Icy Clutch |
-| `xhg` | War Gauntlets | exceptional | 0 | Unique: Hellmouth; Set: Immortal King's Forge |
-| `utg` | Crusader Gauntlets | elite | 0 | — |
-
-## Boots (5)
-
-| Code | Base | Tier | Max sockets | Named unique/set collisions intentionally hidden |
-| --- | --- | --- | ---: | --- |
-| `lbt` | Boots | normal | 0 | Unique: Hotspur; Set: Tancred's Hobnails |
-| `vbt` | Heavy Boots | normal | 0 | Unique: Gorefoot; Set: Cow King's Hoofs, McAuley's Riprap |
-| `mbt` | Chain Boots | normal | 0 | Unique: Treads of Cthon; Set: Hsarus' Iron Heel |
-| `tbt` | Light Plated Boots | normal | 0 | Unique: Goblin Toe; Set: Vidala's Fetlock |
-| `hbt` | Greaves | normal | 0 | Unique: Tearhaunch; Set: Sigon's Sabot |
-
 ## Belts (6)
 
 | Code | Base | Tier | Max sockets | Named unique/set collisions intentionally hidden |
@@ -485,7 +459,8 @@ The filter is quality-blind: every listed code hides ordinary, superior, sockete
 - **eliteScepterWandStaff:** `7sc` Mighty Scepter, `7qs` Seraph Rod, `7ws` Caduceus, `7wn` Polished Wand, `7yw` Ghost Wand, `7bw` Lich Wand, `7gw` Unearthed Wand, `6ss` Walking Stick, `6ls` Stalagmite, `6cs` Elder Staff, `6bs` Shillelagh, `6ws` Archon Staff
 - **eliteMercPolearms:** `7vo` Colossus Voulge, `7s8` Thresher, `7pa` Cryptic Axe, `7h7` Great Poleaxe, `7wc` Giant Thresher
 - **act5AndEliteSwords:** `7bs` Conquest Sword, `72h` Legend Sword, `7gs` Balrog Blade, `7wd` Mythical Sword, `7ls` Cryptic Sword, `7cr` Phase Blade, `7fb` Colossus Sword, `7gd` Colossus Blade
-- **armor:** `brs` Breast Plate, `xtp` Mage Plate, `xea` Serpentskin Armor, `xhn` Mesh Armor, `xrs` Cuirass, `xpl` Russet Armor, `xlt` Templar Coat, `xhm` Winged Helm, `xrn` Grand Crown, `xsk` Death Mask, `xh9` Grim Helm, `uap` Shako, `usk` Demonhead, `uhm` Spired Helm, `uh9` Bone Visage, `urn` Corona, `uth` Lacquered Plate, `uar` Sacred Armor, `mgl` Chain Gloves, `tgl` Light Gauntlets
+- **armor:** `brs` Breast Plate, `xtp` Mage Plate, `xea` Serpentskin Armor, `xhn` Mesh Armor, `xrs` Cuirass, `xpl` Russet Armor, `xlt` Templar Coat, `xhm` Winged Helm, `xrn` Grand Crown, `xsk` Death Mask, `xh9` Grim Helm, `uap` Shako, `usk` Demonhead, `uhm` Spired Helm, `uh9` Bone Visage, `urn` Corona, `uth` Lacquered Plate, `uar` Sacred Armor
+- **glovesAndBoots:** `lgl` Leather Gloves, `vgl` Heavy Gloves, `mgl` Chain Gloves, `tgl` Light Gauntlets, `hgl` Gauntlets, `xlg` Demonhide Gloves, `xvg` Sharkskin Gloves, `xmg` Heavy Bracers, `xtg` Battle Gauntlets, `xhg` War Gauntlets, `ulg` Bramble Mitts, `uvg` Vampirebone Gloves, `umg` Vambraces, `utg` Crusader Gauntlets, `uhg` Ogre Gauntlets, `lbt` Boots, `vbt` Heavy Boots, `mbt` Chain Boots, `tbt` Light Plated Boots, `hbt` Greaves, `xlb` Demonhide Boots, `xvb` Sharkskin Boots, `xmb` Mesh Boots, `xtb` Battle Boots, `xhb` War Boots, `ulb` Wyrmhide Boots, `uvb` Scarabshell Boots, `umb` Boneweave Boots, `utb` Mirrored Boots, `uhb` Myrmidon Greaves
 - **druidPeltKeeps:** `dra` Totemic Mask, `drb` Blood Spirit, `drc` Sun Spirit, `drd` Earth Spirit, `dre` Sky Spirit, `drf` Dream Spirit
 - **barbarianHelmKeeps:** `baa` Slayer Guard, `bab` Carnage Helm, `bac` Fury Visor, `bad` Destroyer Helm, `bae` Conqueror Crown, `baf` Guardian Crown
 - **necromancerHeadKeeps:** `nea` Hierophant Trophy, `neb` Minion Skull, `ned` Overseer Skull, `nee` Succubus Skull, `nef` Bloodlord Skull, `neg` Hellspawn Skull

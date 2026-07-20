@@ -191,7 +191,7 @@ test('missing string keys are skipped with a precise warning', () => {
   assert.ok(result.logs.includes('Hide Ammo: hid 1 of 2 item names.'));
 });
 
-test('Hide Unpopular Bases rewrites all 323 audited keys across locales', () => {
+test('Hide Unpopular Bases rewrites all 310 audited keys across locales', () => {
   const entries = [
     ...hiddenKeys.map((key, index) => localeEntry(key, `Hidden ${key}`, { id: index + 1 })),
     ...keepKeys.map((key, index) => localeEntry(key, `Keep ${key}`, { id: 1000 + index })),
@@ -219,7 +219,7 @@ test('Hide Unpopular Bases rewrites all 323 audited keys across locales', () => 
   assert.deepEqual(result.reads, [ITEM_NAMES_PATH]);
   assert.deepEqual(result.writes, [ITEM_NAMES_PATH]);
   assert.deepEqual(result.warnings, []);
-  assert.ok(result.logs.includes('Hide Unpopular Bases: hid 323 of 323 item names.'));
+  assert.ok(result.logs.includes('Hide Unpopular Bases: hid 310 of 310 item names.'));
 });
 
 test('legacy or malformed hide styles safely fall back to the gray dot', () => {
@@ -263,7 +263,7 @@ test('Hide Unpopular Bases preserves Superior while composing hidden bases as Su
   );
 
   const prefix = entryByKey(result.files[ITEM_NAME_AFFIXES_PATH], 'Hiquality');
-  const hiddenBase = entryByKey(result.files[ITEM_NAMES_PATH], 'vgl');
+  const hiddenBase = entryByKey(result.files[ITEM_NAMES_PATH], 'msk');
   const visibleBase = entryByKey(result.files[ITEM_NAMES_PATH], 'xtp');
   ['enUS', 'deDE', 'frFR'].forEach((locale) => {
     assert.equal(prefix[locale], superior[locale]);
@@ -297,7 +297,7 @@ test('Red Superior Items colors useful and socketed bases while hidden dots over
 
     const prefix = entryByKey(result.files[ITEM_NAME_AFFIXES_PATH], 'Hiquality');
     const format = entryByKey(result.files[UI_PATH], 'HiqualityFormat');
-    const hiddenBase = entryByKey(result.files[ITEM_NAMES_PATH], 'vgl');
+    const hiddenBase = entryByKey(result.files[ITEM_NAMES_PATH], 'msk');
     const visibleBase = entryByKey(result.files[ITEM_NAMES_PATH], 'xtp');
 
     assert.deepEqual(
