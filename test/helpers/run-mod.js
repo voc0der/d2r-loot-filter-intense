@@ -98,6 +98,7 @@ function runMod(configOverrides = {}, inputFiles = {}) {
     LARGE_CHARM_KEYS,
     THROWING_KEYS,
     UNPOPULAR_BASE_KEYS,
+    GOOD_BUT_COMMON_KEYS,
     GEM_TIER_LABELS,
     GEM_CRUNCH,
   })`, context));

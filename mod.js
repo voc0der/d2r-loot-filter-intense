@@ -1,8 +1,10 @@
 /**
  * D2R Loot Filter — Intense
  *
- * Hides trash drops with a tiny-dot label, optionally crunches gem names into
- * compact tier labels, can shorten Gold pile labels, and can mute the repeated
+ * Hides trash drops with a tiny-dot label, can additionally hide good-but-common
+ * runeword shells that endgame characters no longer stop for, optionally
+ * crunches gem names into compact tier labels, can shorten Gold pile labels,
+ * and can mute the repeated
  * Slain Monsters Rest in Peace sound. Runs after any base loot filter in D2RMM
  * load order: D2RMM reads earlier output, so this mod's changes win. Targets
  * D2R's Lord of Destruction ruleset.
@@ -68,7 +70,7 @@ const THROWING_KEYS = [
 // rarity and quality, so hiding a base also hides its superior/socketed/magic/
 // rare/unique/set versions; see the README warning and audited collision list.
 const UNPOPULAR_BASE_KEYS = [
-  // Axes (normal) — Double Axe stays visible as a low-requirement 5os Beast base
+  // Axes (normal) — Double Axe is a Hide Good but Common base, not hidden here
   'hax', // Hand Axe
   'axe', // Axe
   'mpi', // Military Pick
@@ -353,7 +355,7 @@ const UNPOPULAR_BASE_KEYS = [
   'ba7', // Lion Helm
   'ba8', // Rage Mask
   'ba9', // Savage Helmet
-  // Body armor (normal) — low-strength 3os Breast Plate stays visible
+  // Body armor (normal) — Breast Plate is a Hide Good but Common base, not hidden here
   'qui', // Quilted Armor
   'lea', // Leather Armor
   'hla', // Hard Leather Armor
@@ -436,6 +438,32 @@ const UNPOPULAR_BASE_KEYS = [
   // Paladin shields (elite) — Sacred Targe/Rondache and Vortex stay visible
   'pad', // Kurast Shield
   'pae', // Zakarum Shield (hides Dragonscale)
+];
+
+// Bases that are genuinely good but so common that an endgame character has
+// already banked every roll worth owning. Hide Unpopular Bases deliberately
+// keeps these as cheap runeword shells and leveling uniques; this group is the
+// second, stricter pass for players who no longer stop for any of them. Bases
+// still worth inspecting for a roll — Mage Plate for a low-strength Enigma,
+// circlets for rare mods — stay out of this list on purpose. Quality-blind like
+// every other group: hiding a base hides its superior/socketed/magic/rare/
+// unique/set labels too.
+const GOOD_BUT_COMMON_KEYS = [
+  // Weapons — cheap runeword shells and leveling-tier unique bases
+  '2ax', // Double Axe (5os Beast shell; hides Bladebone and Berserker's Hatchet)
+  'sbw', // Short Bow (Edge shell; hides Pluckeye)
+  'dgr', // Dagger (hides Gull)
+  'fla', // Flail (HOTO/CTA/Black shell; hides The General's Tan Do Li Ga)
+  'crs', // Crystal Sword (Spirit/CTA shell)
+  'bsd', // Broad Sword (Spirit/CTA shell; hides Griswold's Edge and Isenhart's Lightbrand)
+  '9bs', // Battle Sword (hides Headstriker)
+  '9fc', // Tulwar (hides Blade of Ali Baba)
+  '8s8', // Short Siege Bow (hides Whichwild String)
+  '8hx', // Ballista (hides Buriza-Do Kyanon)
+  '8rx', // Chu-Ko-Nu (hides Demon Machine)
+  // Body armor — Mage Plate stays visible; a superior 3os Mage Plate is still
+  // the premier low-strength Enigma base for any class
+  'brs', // Breast Plate (budget 3os Enigma shell; hides Venomsward and Isenhart's Case)
 ];
 
 // Gem Crunch: compact tiered gem labels — Chipped -> 1, Flawed -> 2,
@@ -650,6 +678,7 @@ const hideGroups = [
   { name: 'Hide Large Charms', enabled: config.hideLargeCharms, keys: LARGE_CHARM_KEYS },
   { name: 'Hide Throwing Potions', enabled: config.hideThrowing, keys: THROWING_KEYS },
   { name: 'Hide Unpopular Bases', enabled: config.hideUnpopularBases, keys: UNPOPULAR_BASE_KEYS },
+  { name: 'Hide Good but Common', enabled: config.hideGoodButCommon, keys: GOOD_BUT_COMMON_KEYS },
 ].filter((group) => group.enabled);
 
 const gemCrunchEnabled = config.gemCrunch === true;

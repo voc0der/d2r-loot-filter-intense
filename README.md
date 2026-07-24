@@ -19,6 +19,7 @@ All optional features are **off by default** — turn on the ones you want in D2
 | **Hide Large Charms** | The Large Charm base label. **This includes unidentified Hellfire Torch drops; read the warning below.** Small and Grand Charms stay visible. |
 | **Hide Throwing Potions** | Rancid/Choking/Strangling Gas Potions and Oil/Exploding/Fulminating Potions. |
 | **Hide Unpopular Bases** | 310 aggressively filtered LoD endgame bases: most normal/exceptional generic weapons, high-volume low-tier armor, weak shields, lower Paladin shields, selected weak elite alternatives, and the normal/exceptional class-item bases (Amazon weapons, Assassin claws, Barbarian helms, Druid pelts, Necromancer heads, Sorceress orbs, scepters, wands and staves) below their audited keeps. Every glove and boot stays visible for potentially valuable rare rolls; belt filtering is unchanged. Important utility, mercenary, Tal Rasha, rare-set and runeword bases stay visible. **Read the warning below before enabling.** |
+| **Hide Good but Common** | A stricter second pass over 12 bases that **Hide Unpopular Bases deliberately keeps**: the cheap runeword shells (Double Axe, Flail, Crystal Sword, Broad Sword, Short Bow, Breast Plate) and the leveling-tier unique bases (Dagger, Tulwar, Battle Sword, Short Siege Bow, Ballista, Chu-Ko-Nu). They are genuinely good, just so common that an endgame character already banked every roll worth owning. Mage Plate and circlets stay visible. |
 | **Red Superior Items** | Removes the shared `Superior`/`Sup` word and makes the base name red instead. Socketed and ethereal superior bases are red; a hidden base remains only the selected gray or black dot. |
 | **Black Labels to Dots** | Converts direct labels whose final active inline color is D2's `#000`/black code (`ÿc6`) into the selected tiny dot. Composed inferior-quality labels have an engine limitation explained below. This mod must load later. |
 | **Gem Crunch** | All 35 gems get compact, colored tier labels: `1Topaz`, `2Topaz`, `3Topaz`, `4Topaz`, `PTopaz`. Standard gem-type colors from an earlier filter are recognized inside multi-color labels. |
@@ -80,11 +81,11 @@ A ground label is **one string per base, shared by every rarity and quality** �
 
 This is intentionally an **endgame signal-to-noise filter**, not a claim that every hidden base is literally unusable. A common base must be worth stopping for often enough to justify all of its ordinary labels. Niche or progression collisions do not rescue it. That is why Chaos Armor is hidden despite Trang-Oul's Scales, Bearded Axe despite Spellsteel, and Mask despite being able to take three sockets.
 
-The broad weapon pass hides nearly every normal/exceptional generic weapon, plus selected weak elite alternatives. Eleven deliberate low-tier exceptions remain: Double Axe (low-requirement five-socket Beast), Short Bow (Edge), Dagger (Gull), Flail (HOTO/CTA/Black), Crystal and Broad Sword (Spirit/CTA), Tulwar (Blade of Ali Baba), Battle Sword (Headstriker/Act 5 mercenary), Short Siege Bow (Witchwild String), Ballista (Buriza) and Chu-Ko-Nu (Demon Machine). Every popular elite Act 2 mercenary polearm and the useful Act 5 mercenary sword bases remain visible.
+The broad weapon pass hides nearly every normal/exceptional generic weapon, plus selected weak elite alternatives. Eleven deliberate low-tier exceptions remain visible here — Double Axe (low-requirement five-socket Beast), Short Bow (Edge), Dagger (Gull), Flail (HOTO/CTA/Black), Crystal and Broad Sword (Spirit/CTA), Tulwar (Blade of Ali Baba), Battle Sword (Headstriker/Act 5 mercenary), Short Siege Bow (Witchwild String), Ballista (Buriza) and Chu-Ko-Nu (Demon Machine) — and the separate **Hide Good but Common** option below hides all eleven if you no longer stop for them. Every popular elite Act 2 mercenary polearm and the useful Act 5 mercenary sword bases remain visible.
 
 The class-weapon pass hides every normal and exceptional Amazon bow, spear and javelin except Ceremonial Javelin (an unidentified Titan's Revenge), and all normal/exceptional scepters, wands and staves — Ribcracker, Suicide Branch, Arm of King Leoric and both Lycander's items are accepted casualties, all of them recorded in the policy table. Elite class weapons (Matriarchal and Grand Matron bows, Heaven's Light and Astreon's scepter bases, Boneshade and Death's Web wand bases, Ondal's and Mang Song's staff bases) remain visible.
 
-The armor pass filters common normal/exceptional body armor and generic helms unless a base has an important endgame use or collision. Breast Plate and Mage Plate remain for low-strength Enigma; Serpentskin Armor, Mesh Armor, Cuirass, Russet Armor and Templar Coat remain for Vipermagi, Shaftstop, Duriel's Shell, Skullder's Ire and Guardian Angel. Every elite body armor stays visible for player or ethereal mercenary runewords. Tal Rasha's Lacquered Plate, Death Mask, Mesh Belt and Swirling Crystal stay visible, as does the rare Immortal King Sacred Armor. Common non-elite set pieces do not protect an otherwise noisy base.
+The armor pass filters common normal/exceptional body armor and generic helms unless a base has an important endgame use or collision. Breast Plate and Mage Plate remain for low-strength Enigma — Breast Plate is picked up by **Hide Good but Common**, Mage Plate is not; Serpentskin Armor, Mesh Armor, Cuirass, Russet Armor and Templar Coat remain for Vipermagi, Shaftstop, Duriel's Shell, Skullder's Ire and Guardian Angel. Every elite body armor stays visible for player or ethereal mercenary runewords. Tal Rasha's Lacquered Plate, Death Mask, Mesh Belt and Swirling Crystal stay visible, as does the rare Immortal King Sacred Armor. Common non-elite set pieces do not protect an otherwise noisy base.
 
 Every glove and boot stays visible because rare rolls on any of those bases can be valuable. Since base-name strings are quality-blind, this necessarily restores ordinary, magic, set, and unique drops on those bases too, including Heavy Gloves, Gauntlets, Bloodfist, Frostburn, and Goblin Toe. Belt filtering is unchanged: every normal belt and Colossus Girdle remain hidden, including Heavy Belt despite Goldwrap, while the other exceptional and elite belts remain visible for String of Ears, Razortail, Thundergod's Vigor, Arachnid Mesh, and Verdungo's.
 
@@ -97,6 +98,31 @@ The strict shield policy remains: normal generic shields, weak exceptional/elite
 Every normal Assassin claw and the two-socket exceptional claws (Wrist Spike, Fascia, Hand Scythe) are filtered; none of them carries a unique or set. The three-socket exceptional claws (Quhab, Greater Claws, Greater Talons for Bartuc's Cut-Throat, Scissors Quhab) and every elite claw stay visible as Chaos/Fury runeword bases and staffmod carriers. If you disagree with an accepted tradeoff, delete its line from `UNPOPULAR_BASE_KEYS` in [mod.js](mod.js) and reinstall.
 
 See the [full generated code/name/collision table](https://github.com/voc0der/d2r-loot-filter-intense/blob/main/docs/BASE_POLICY.md) for all 310 hidden bases, every named unique/set collision accepted by the policy, and the explicit keep lists. The test suite regenerates that table from pinned LoD data and fails if the implementation, catalog, collision decisions or documentation drift apart.
+
+## Hide Good but Common
+
+**Hide Unpopular Bases** answers "is this base any good?". **Hide Good but Common** answers a different question: "is this base so common that I already have every roll of it I will ever want?"
+
+That second question is why Double Axe and Breast Plate stay on your screen with the main filter on. Both are genuinely good — a five-socket Double Axe is the low-requirement Beast shell, a three-socket Breast Plate is the low-strength Enigma shell — but every trading endgame character already has as many as they need. Enable this option and all 12 drop to a dot:
+
+| Code | Base | Tier | Max sockets | Kept by the main filter for | Collisions this also hides |
+| --- | --- | --- | ---: | --- | --- |
+| `2ax` | Double Axe | normal | 5 | Beast | Bladebone; Berserker's Hatchet |
+| `sbw` | Short Bow | normal | 3 | Edge | Pluckeye |
+| `dgr` | Dagger | normal | 1 | Gull | Gull |
+| `fla` | Flail | normal | 5 | HOTO / CTA / Black | The General's Tan Do Li Ga |
+| `crs` | Crystal Sword | normal | 6 | Spirit / CTA | — |
+| `bsd` | Broad Sword | normal | 4 | Spirit / CTA | Griswold's Edge; Isenhart's Lightbrand |
+| `9bs` | Battle Sword | exceptional | 4 | Headstriker / Act 5 mercenary | Headstriker |
+| `9fc` | Tulwar | exceptional | 2 | Blade of Ali Baba | Blade of Ali Baba |
+| `8s8` | Short Siege Bow | exceptional | 5 | Whichwild String | Whichwild String |
+| `8hx` | Ballista | exceptional | 6 | Buriza | Buriza-Do Kyanon |
+| `8rx` | Chu-Ko-Nu | exceptional | 5 | Demon Machine | Demon Machine |
+| `brs` | Breast Plate | normal | 3 | Enigma | Venomsward; Isenhart's Case |
+
+**Mage Plate is deliberately excluded**, and so are all four circlets. The dividing line is not tier or rarity — it is whether a *good roll* on that base is still worth stopping for. A superior 15% enhanced defense three-socket Mage Plate is a premier Enigma base for any class, and a rare circlet can roll anything, so those keep their labels. Nobody needs a fourth five-socket Flail.
+
+The option is independent of **Hide Unpopular Bases**: the two lists never overlap, each reports its own count, and you can run either one alone. The test suite enforces the split.
 
 ## Limitations — runtime rarity, quality, sockets and ethereal status
 

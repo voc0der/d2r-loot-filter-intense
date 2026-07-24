@@ -1,9 +1,9 @@
 {
   "name": "D2R Loot Filter — Intense",
-  "description": "A D2R Lord of Destruction loot-filter overlay. Hides trash drops and 310 aggressively filtered equipment bases including high-volume normal/exceptional weapons, armor and class items, while keeping all gloves and boots visible for rare rolls; can mark superior bases in red; converts inherited black labels to dots; crunches gem names; compacts Gold pile labels; and can mute the Slain Monsters Rest in Peace corpse chime without removing its animation. Reign of the Warlock content is intentionally excluded. Drops and mechanics are unchanged.",
+  "description": "A D2R Lord of Destruction loot-filter overlay. Hides trash drops and 310 aggressively filtered equipment bases including high-volume normal/exceptional weapons, armor and class items, while keeping all gloves and boots visible for rare rolls; optionally hides a further 12 good-but-common runeword shells and leveling unique bases; can mark superior bases in red; converts inherited black labels to dots; crunches gem names; compacts Gold pile labels; and can mute the Slain Monsters Rest in Peace corpse chime without removing its animation. Reign of the Warlock content is intentionally excluded. Drops and mechanics are unchanged.",
   "author": "voc0der",
   "website": "https://github.com/voc0der/d2r-loot-filter-intense",
-  "version": "0.4.4",
+  "version": "0.5.0",
   "config": [
     {
       "type": "section",
@@ -45,6 +45,13 @@
           "id": "hideUnpopularBases",
           "name": "Hide Unpopular Bases",
           "description": "Aggressively hide 310 high-volume LoD endgame bases: most normal/exceptional generic weapons, common low-tier armor, weak shields, lower Paladin shields, selected weak elite alternatives, and normal/exceptional class items (Amazon weapons, claws, Barbarian helms, Druid pelts, Necromancer heads, Sorceress orbs, scepters, wands, staves) below their audited keeps. All gloves and boots stay visible for rare rolls; belt filtering is unchanged. Important utility, mercenary, Tal Rasha, rare-set, and runeword bases stay visible. ENDGAME WARNING: hides ALL rarities and qualities, including documented unique/set/staffmod collisions.",
+          "defaultValue": false
+        },
+        {
+          "type": "checkbox",
+          "id": "hideGoodButCommon",
+          "name": "Hide Good but Common",
+          "description": "Hide 12 bases that are genuinely good but so common that an endgame character has already banked every roll worth owning: the cheap runeword shells (Double Axe, Flail, Crystal Sword, Broad Sword, Short Bow, Breast Plate) and the leveling-tier unique bases (Dagger, Tulwar, Battle Sword, Short Siege Bow, Ballista, Chu-Ko-Nu). Stacks with Hide Unpopular Bases, which deliberately keeps these. Mage Plate and circlets stay visible because a good roll on those is still worth inspecting. Quality-blind like every hide group.",
           "defaultValue": false
         },
         {

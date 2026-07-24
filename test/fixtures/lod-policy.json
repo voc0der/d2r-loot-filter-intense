@@ -378,20 +378,21 @@
     "am9",
     "ba3"
   ],
+  "goodButCommon": [
+    "2ax",
+    "sbw",
+    "dgr",
+    "fla",
+    "crs",
+    "bsd",
+    "9bs",
+    "9fc",
+    "8s8",
+    "8hx",
+    "8rx",
+    "brs"
+  ],
   "mustStayVisible": {
-    "utilityWeapons": [
-      "2ax",
-      "sbw",
-      "dgr",
-      "fla",
-      "crs",
-      "bsd",
-      "9bs",
-      "9fc",
-      "8s8",
-      "8hx",
-      "8rx"
-    ],
     "assassinClawKeeps": [
       "9ar",
       "9lw",
@@ -445,7 +446,6 @@
       "7gd"
     ],
     "armor": [
-      "brs",
       "xtp",
       "xea",
       "xhn",

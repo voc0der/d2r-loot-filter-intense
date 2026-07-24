@@ -260,6 +260,51 @@ test('Hide Unpopular Bases rewrites all 310 audited keys across locales', () => 
   assert.ok(result.logs.includes('Hide Unpopular Bases: hid 310 of 310 item names.'));
 });
 
+test('Hide Good but Common hides its 12 bases independently of the unpopular pass', () => {
+  const result = runMod(
+    { hideGoodButCommon: true },
+    {
+      [ITEM_NAMES_PATH]: [
+        ...policy.goodButCommon.map((key) => localeEntry(key, `Common ${key}`)),
+        localeEntry('xtp', 'Mage Plate'),
+        localeEntry('hax', 'Hand Axe'),
+      ],
+    },
+  );
+  const output = result.files[ITEM_NAMES_PATH];
+
+  policy.goodButCommon.forEach((key) => {
+    const entry = entryByKey(output, key);
+    assert.equal(entry.enUS, 'ÿc5.');
+    assert.equal(entry.deDE, 'ÿc5.');
+    assert.equal(entry.frFR, 'ÿc5.');
+  });
+  // Mage Plate is the headline exclusion; an unpopular base is untouched while
+  // only this group is on.
+  assert.equal(entryByKey(output, 'xtp').enUS, 'Mage Plate');
+  assert.equal(entryByKey(output, 'hax').enUS, 'Hand Axe');
+  assert.deepEqual(result.warnings, []);
+  assert.ok(result.logs.includes('Hide Good but Common: hid 12 of 12 item names.'));
+});
+
+test('both base passes stack into a single read/write of item-names.json', () => {
+  const keys = [...hiddenKeys, ...policy.goodButCommon];
+  const result = runMod(
+    { hideUnpopularBases: true, hideGoodButCommon: true },
+    { [ITEM_NAMES_PATH]: keys.map((key) => localeEntry(key, key)) },
+  );
+
+  keys.forEach((key) => {
+    assert.equal(entryByKey(result.files[ITEM_NAMES_PATH], key).enUS, 'ÿc5.');
+  });
+  assert.deepEqual(result.reads, [ITEM_NAMES_PATH]);
+  assert.deepEqual(result.writes, [ITEM_NAMES_PATH]);
+  assert.deepEqual(result.warnings, []);
+  assert.ok(result.logs.includes('Hide Unpopular Bases: hid 310 of 310 item names.'));
+  assert.ok(result.logs.includes('Hide Good but Common: hid 12 of 12 item names.'));
+  assert.ok(result.logs.includes('Done: 322 change(s) made in total.'));
+});
+
 test('legacy or malformed hide styles safely fall back to the gray dot', () => {
   const result = runMod(
     { hideAmmo: true, hideStyle: undefined },

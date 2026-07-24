@@ -15,6 +15,7 @@ const {
 const canonicalHidden = Object.values(policy.hiddenGroups).flat();
 const canonicalKeeps = Object.values(policy.mustStayVisible).flat();
 const productionKeys = runMod().constants.UNPOPULAR_BASE_KEYS;
+const goodButCommonKeys = runMod().constants.GOOD_BUT_COMMON_KEYS;
 const catalog = catalogFixture.items;
 
 function flattenConfig(nodes) {
@@ -77,7 +78,7 @@ test('every policy code resolves in the independent pinned LoD base catalog', ()
     item.unique.forEach((name) => assert.equal(typeof name, 'string'));
     item.set.forEach((name) => assert.equal(typeof name, 'string'));
   });
-  [...productionKeys, ...canonicalKeeps].forEach((code) => {
+  [...productionKeys, ...canonicalKeeps, ...goodButCommonKeys].forEach((code) => {
     assert.ok(catalog[code], `${code} must exist in the pinned LoD catalog`);
     assert.ok(catalog[code].name, `${code} must have a localized base name`);
     assert.ok(['weapon', 'armor'].includes(catalog[code].kind));
@@ -130,6 +131,33 @@ test('reported clutter is hidden and audited endgame exceptions stay visible', (
   });
   canonicalKeeps.forEach((code) => {
     assert.equal(hidden.has(code), false, `${code} is an explicit keep`);
+  });
+});
+
+test('Hide Good but Common is a separate, non-overlapping second pass', () => {
+  assert.deepEqual(goodButCommonKeys, policy.goodButCommon);
+  assert.equal(goodButCommonKeys.length, 12);
+  assert.equal(new Set(goodButCommonKeys).size, goodButCommonKeys.length);
+
+  // The two hide lists must stay disjoint so each group's report count is real.
+  const hidden = new Set(productionKeys);
+  goodButCommonKeys.forEach((code) => {
+    assert.equal(hidden.has(code), false, `${code} must not also be an unpopular base`);
+    assert.ok(catalog[code], `${code} must exist in the pinned LoD catalog`);
+    assert.ok(['normal', 'exceptional'].includes(catalog[code].tier), `${code} must be a common tier`);
+  });
+
+  // Every one of these was an explicit Hide Unpopular Bases keep, so the keep
+  // list must no longer claim them.
+  const keeps = new Set(canonicalKeeps);
+  goodButCommonKeys.forEach((code) => {
+    assert.equal(keeps.has(code), false, `${code} moved to Hide Good but Common`);
+  });
+
+  // Bases still worth inspecting for a roll are deliberately excluded.
+  ['xtp', 'ci0', 'ci1', 'ci2', 'ci3'].forEach((code) => {
+    assert.equal(goodButCommonKeys.includes(code), false, `${code} stays visible for good rolls`);
+    assert.equal(hidden.has(code), false, `${code} stays visible for good rolls`);
   });
 });
 
@@ -197,6 +225,7 @@ test('configuration defaults and option values are internally valid', () => {
     hideLargeCharms: false,
     hideThrowing: false,
     hideUnpopularBases: false,
+    hideGoodButCommon: false,
     redSuperiorItems: false,
     blackLabelsToDots: false,
     gemCrunch: false,

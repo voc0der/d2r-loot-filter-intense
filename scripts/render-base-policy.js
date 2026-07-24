@@ -80,6 +80,20 @@ function render() {
     });
   });
 
+  lines.push(
+    '',
+    `## Hide Good but Common — separate opt-in pass (${policy.goodButCommon.length})`,
+    '',
+    'These bases are **not** part of the list above. Hide Unpopular Bases keeps them as cheap runeword shells and leveling unique bases; the separate **Hide Good but Common** option hides them for endgame characters who no longer stop for any of them. Mage Plate and circlets are deliberately excluded — a good roll on those is still worth inspecting.',
+    '',
+    '| Code | Base | Tier | Max sockets | Named unique/set collisions intentionally hidden |',
+    '| --- | --- | --- | ---: | --- |',
+  );
+  policy.goodButCommon.forEach((code) => {
+    const item = catalog[code];
+    lines.push(`| \`${code}\` | ${escapeCell(item.name)} | ${item.tier} | ${item.maxSockets} | ${escapeCell(collisionLabel(item))} |`);
+  });
+
   lines.push('', '## Explicit keeps tested by the suite', '');
   Object.entries(policy.mustStayVisible).forEach(([group, codes]) => {
     const labels = codes.map((code) => `\`${code}\` ${catalog[code].name}`);
