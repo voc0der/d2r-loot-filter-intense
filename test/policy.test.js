@@ -136,7 +136,7 @@ test('reported clutter is hidden and audited endgame exceptions stay visible', (
 
 test('Hide Good but Common is a separate, non-overlapping second pass', () => {
   assert.deepEqual(goodButCommonKeys, policy.goodButCommon);
-  assert.equal(goodButCommonKeys.length, 12);
+  assert.equal(goodButCommonKeys.length, 13);
   assert.equal(new Set(goodButCommonKeys).size, goodButCommonKeys.length);
 
   // The two hide lists must stay disjoint so each group's report count is real.
@@ -155,7 +155,7 @@ test('Hide Good but Common is a separate, non-overlapping second pass', () => {
   });
 
   // Bases still worth inspecting for a roll are deliberately excluded.
-  ['xtp', 'ci0', 'ci1', 'ci2', 'ci3'].forEach((code) => {
+  ['ci0', 'ci1', 'ci2', 'ci3'].forEach((code) => {
     assert.equal(goodButCommonKeys.includes(code), false, `${code} stays visible for good rolls`);
     assert.equal(hidden.has(code), false, `${code} stays visible for good rolls`);
   });
@@ -277,7 +277,7 @@ test('documentation retains the dangerous runtime and collision warnings', () =>
   const readme = fs.readFileSync(path.join(ROOT, 'README.md'), 'utf8');
   [
     'Every glove and boot stays visible',
-    'Superior Mage Plate',
+    'Superior Archon Plate',
     'Red Superior Items',
     "socketed Hunter's Guise",
     'Bloodfist',

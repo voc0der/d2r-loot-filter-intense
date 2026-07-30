@@ -260,13 +260,13 @@ test('Hide Unpopular Bases rewrites all 310 audited keys across locales', () => 
   assert.ok(result.logs.includes('Hide Unpopular Bases: hid 310 of 310 item names.'));
 });
 
-test('Hide Good but Common hides its 12 bases independently of the unpopular pass', () => {
+test('Hide Good but Common hides its 13 bases independently of the unpopular pass', () => {
   const result = runMod(
     { hideGoodButCommon: true },
     {
       [ITEM_NAMES_PATH]: [
         ...policy.goodButCommon.map((key) => localeEntry(key, `Common ${key}`)),
-        localeEntry('xtp', 'Mage Plate'),
+        localeEntry('utp', 'Archon Plate'),
         localeEntry('hax', 'Hand Axe'),
       ],
     },
@@ -279,12 +279,12 @@ test('Hide Good but Common hides its 12 bases independently of the unpopular pas
     assert.equal(entry.deDE, 'ÿc5.');
     assert.equal(entry.frFR, 'ÿc5.');
   });
-  // Mage Plate is the headline exclusion; an unpopular base is untouched while
-  // only this group is on.
-  assert.equal(entryByKey(output, 'xtp').enUS, 'Mage Plate');
+  // Elite Archon Plate is the Enigma base still worth stopping for; an unpopular
+  // base is untouched while only this group is on.
+  assert.equal(entryByKey(output, 'utp').enUS, 'Archon Plate');
   assert.equal(entryByKey(output, 'hax').enUS, 'Hand Axe');
   assert.deepEqual(result.warnings, []);
-  assert.ok(result.logs.includes('Hide Good but Common: hid 12 of 12 item names.'));
+  assert.ok(result.logs.includes('Hide Good but Common: hid 13 of 13 item names.'));
 });
 
 test('both base passes stack into a single read/write of item-names.json', () => {
@@ -301,8 +301,8 @@ test('both base passes stack into a single read/write of item-names.json', () =>
   assert.deepEqual(result.writes, [ITEM_NAMES_PATH]);
   assert.deepEqual(result.warnings, []);
   assert.ok(result.logs.includes('Hide Unpopular Bases: hid 310 of 310 item names.'));
-  assert.ok(result.logs.includes('Hide Good but Common: hid 12 of 12 item names.'));
-  assert.ok(result.logs.includes('Done: 322 change(s) made in total.'));
+  assert.ok(result.logs.includes('Hide Good but Common: hid 13 of 13 item names.'));
+  assert.ok(result.logs.includes('Done: 323 change(s) made in total.'));
 });
 
 test('legacy or malformed hide styles safely fall back to the gray dot', () => {
@@ -339,7 +339,7 @@ test('Hide Unpopular Bases preserves Superior while composing hidden bases as Su
     {
       [ITEM_NAMES_PATH]: [
         ...hiddenKeys.map((key) => localeEntry(key, key)),
-        localeEntry('xtp', 'Mage Plate'),
+        localeEntry('utp', 'Archon Plate'),
       ],
       [ITEM_NAME_AFFIXES_PATH]: [superior],
     },
@@ -347,14 +347,14 @@ test('Hide Unpopular Bases preserves Superior while composing hidden bases as Su
 
   const prefix = entryByKey(result.files[ITEM_NAME_AFFIXES_PATH], 'Hiquality');
   const hiddenBase = entryByKey(result.files[ITEM_NAMES_PATH], 'msk');
-  const visibleBase = entryByKey(result.files[ITEM_NAMES_PATH], 'xtp');
+  const visibleBase = entryByKey(result.files[ITEM_NAMES_PATH], 'utp');
   ['enUS', 'deDE', 'frFR'].forEach((locale) => {
     assert.equal(prefix[locale], superior[locale]);
     assert.equal(hiddenBase[locale], 'ÿc5.');
   });
-  assert.equal(visibleBase.enUS, 'Mage Plate');
+  assert.equal(visibleBase.enUS, 'Archon Plate');
   assert.equal(applyQualityFormat(qualityFormats.formats.enUS, prefix.enUS, hiddenBase.enUS), 'Superior ÿc5.');
-  assert.equal(applyQualityFormat(qualityFormats.formats.enUS, prefix.enUS, visibleBase.enUS), 'Superior Mage Plate');
+  assert.equal(applyQualityFormat(qualityFormats.formats.enUS, prefix.enUS, visibleBase.enUS), 'Superior Archon Plate');
   assert.deepEqual(result.reads, [ITEM_NAMES_PATH]);
   assert.deepEqual(result.writes, [ITEM_NAMES_PATH]);
 });
@@ -371,7 +371,7 @@ test('Red Superior Items colors useful and socketed bases while hidden dots over
       {
         [ITEM_NAMES_PATH]: [
           ...hiddenKeys.map((key) => localeEntry(key, key)),
-          localeEntry('xtp', 'Mage Plate'),
+          localeEntry('utp', 'Archon Plate'),
         ],
         [ITEM_NAME_AFFIXES_PATH]: [superior],
         [UI_PATH]: [superiorFormat],
@@ -381,7 +381,7 @@ test('Red Superior Items colors useful and socketed bases while hidden dots over
     const prefix = entryByKey(result.files[ITEM_NAME_AFFIXES_PATH], 'Hiquality');
     const format = entryByKey(result.files[UI_PATH], 'HiqualityFormat');
     const hiddenBase = entryByKey(result.files[ITEM_NAMES_PATH], 'msk');
-    const visibleBase = entryByKey(result.files[ITEM_NAMES_PATH], 'xtp');
+    const visibleBase = entryByKey(result.files[ITEM_NAMES_PATH], 'utp');
 
     assert.deepEqual(
       { enUS: format.enUS, deDE: format.deDE, frFR: format.frFR },
@@ -401,7 +401,7 @@ test('Red Superior Items colors useful and socketed bases while hidden dots over
     });
 
     assert.equal(
-      terminalInlineColor(applyQualityFormat(format.enUS, prefix.enUS, 'ÿc3Mage Plate')),
+      terminalInlineColor(applyQualityFormat(format.enUS, prefix.enUS, 'ÿc3Archon Plate')),
       'ÿc3',
     );
     assert.deepEqual(result.reads, [ITEM_NAMES_PATH, ITEM_NAME_AFFIXES_PATH, UI_PATH]);

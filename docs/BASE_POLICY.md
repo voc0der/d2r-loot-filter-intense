@@ -451,9 +451,9 @@ The filter is quality-blind: every listed code hides ordinary, superior, sockete
 | `pad` | Kurast Shield | elite | 4 | — |
 | `pae` | Zakarum Shield | elite | 4 | Unique: Dragonscale |
 
-## Hide Good but Common — separate opt-in pass (12)
+## Hide Good but Common — separate opt-in pass (13)
 
-These bases are **not** part of the list above. Hide Unpopular Bases keeps them as cheap runeword shells and leveling unique bases; the separate **Hide Good but Common** option hides them for endgame characters who no longer stop for any of them. Mage Plate and circlets are deliberately excluded — a good roll on those is still worth inspecting.
+These bases are **not** part of the list above. Hide Unpopular Bases keeps them as cheap runeword shells and leveling unique bases; the separate **Hide Good but Common** option hides them for endgame characters who no longer stop for any of them. The four circlets are deliberately excluded — a rare roll on those is still worth inspecting.
 
 | Code | Base | Tier | Max sockets | Named unique/set collisions intentionally hidden |
 | --- | --- | --- | ---: | --- |
@@ -469,6 +469,7 @@ These bases are **not** part of the list above. Hide Unpopular Bases keeps them 
 | `8hx` | Ballista | exceptional | 6 | Unique: Buriza-Do Kyanon |
 | `8rx` | Chu-Ko-Nu | exceptional | 5 | Unique: Demon Machine |
 | `brs` | Breast Plate | normal | 3 | Unique: Venomsward; Set: Isenhart's Case |
+| `xtp` | Mage Plate | exceptional | 3 | Unique: Que-Hegan's Wisdon |
 
 ## Explicit keeps tested by the suite
 
@@ -477,7 +478,7 @@ These bases are **not** part of the list above. Hide Unpopular Bases keeps them 
 - **eliteScepterWandStaff:** `7sc` Mighty Scepter, `7qs` Seraph Rod, `7ws` Caduceus, `7wn` Polished Wand, `7yw` Ghost Wand, `7bw` Lich Wand, `7gw` Unearthed Wand, `6ss` Walking Stick, `6ls` Stalagmite, `6cs` Elder Staff, `6bs` Shillelagh, `6ws` Archon Staff
 - **eliteMercPolearms:** `7vo` Colossus Voulge, `7s8` Thresher, `7pa` Cryptic Axe, `7h7` Great Poleaxe, `7wc` Giant Thresher
 - **act5AndEliteSwords:** `7bs` Conquest Sword, `72h` Legend Sword, `7gs` Balrog Blade, `7wd` Mythical Sword, `7ls` Cryptic Sword, `7cr` Phase Blade, `7fb` Colossus Sword, `7gd` Colossus Blade
-- **armor:** `xtp` Mage Plate, `xea` Serpentskin Armor, `xhn` Mesh Armor, `xrs` Cuirass, `xpl` Russet Armor, `xlt` Templar Coat, `xhm` Winged Helm, `xrn` Grand Crown, `xsk` Death Mask, `xh9` Grim Helm, `uap` Shako, `usk` Demonhead, `uhm` Spired Helm, `uh9` Bone Visage, `urn` Corona, `uth` Lacquered Plate, `uar` Sacred Armor
+- **armor:** `xea` Serpentskin Armor, `xhn` Mesh Armor, `xrs` Cuirass, `xpl` Russet Armor, `xlt` Templar Coat, `xhm` Winged Helm, `xrn` Grand Crown, `xsk` Death Mask, `xh9` Grim Helm, `uap` Shako, `usk` Demonhead, `uhm` Spired Helm, `uh9` Bone Visage, `urn` Corona, `uth` Lacquered Plate, `uar` Sacred Armor
 - **glovesAndBoots:** `lgl` Leather Gloves, `vgl` Heavy Gloves, `mgl` Chain Gloves, `tgl` Light Gauntlets, `hgl` Gauntlets, `xlg` Demonhide Gloves, `xvg` Sharkskin Gloves, `xmg` Heavy Bracers, `xtg` Battle Gauntlets, `xhg` War Gauntlets, `ulg` Bramble Mitts, `uvg` Vampirebone Gloves, `umg` Vambraces, `utg` Crusader Gauntlets, `uhg` Ogre Gauntlets, `lbt` Boots, `vbt` Heavy Boots, `mbt` Chain Boots, `tbt` Light Plated Boots, `hbt` Greaves, `xlb` Demonhide Boots, `xvb` Sharkskin Boots, `xmb` Mesh Boots, `xtb` Battle Boots, `xhb` War Boots, `ulb` Wyrmhide Boots, `uvb` Scarabshell Boots, `umb` Boneweave Boots, `utb` Mirrored Boots, `uhb` Myrmidon Greaves
 - **druidPeltKeeps:** `dra` Totemic Mask, `drb` Blood Spirit, `drc` Sun Spirit, `drd` Earth Spirit, `dre` Sky Spirit, `drf` Dream Spirit
 - **barbarianHelmKeeps:** `baa` Slayer Guard, `bab` Carnage Helm, `bac` Fury Visor, `bad` Destroyer Helm, `bae` Conqueror Crown, `baf` Guardian Crown

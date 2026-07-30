@@ -370,8 +370,9 @@ const UNPOPULAR_BASE_KEYS = [
   'ltp', // Light Plate
   'ful', // Full Plate Mail
   'aar', // Ancient Armor
-  // Body armor (exceptional) — Mage Plate and bases for Vipermagi, Shaftstop,
-  // Duriel's Shell, Skullder's Ire, and Guardian Angel stay visible
+  // Body armor (exceptional) — Mage Plate is a Hide Good but Common base, not
+  // hidden here; bases for Vipermagi, Shaftstop, Duriel's Shell, Skullder's Ire,
+  // and Guardian Angel stay visible
   'xui', // Ghost Armor
   'xla', // Demonhide Armor
   'xtu', // Trellised Armor
@@ -444,10 +445,9 @@ const UNPOPULAR_BASE_KEYS = [
 // already banked every roll worth owning. Hide Unpopular Bases deliberately
 // keeps these as cheap runeword shells and leveling uniques; this group is the
 // second, stricter pass for players who no longer stop for any of them. Bases
-// still worth inspecting for a roll — Mage Plate for a low-strength Enigma,
-// circlets for rare mods — stay out of this list on purpose. Quality-blind like
-// every other group: hiding a base hides its superior/socketed/magic/rare/
-// unique/set labels too.
+// still worth inspecting for a roll — the four circlets, which can roll any rare
+// mod — stay out of this list on purpose. Quality-blind like every other group:
+// hiding a base hides its superior/socketed/magic/rare/unique/set labels too.
 const GOOD_BUT_COMMON_KEYS = [
   // Weapons — cheap runeword shells and leveling-tier unique bases
   '2ax', // Double Axe (5os Beast shell; hides Bladebone and Berserker's Hatchet)
@@ -461,9 +461,10 @@ const GOOD_BUT_COMMON_KEYS = [
   '8s8', // Short Siege Bow (hides Whichwild String)
   '8hx', // Ballista (hides Buriza-Do Kyanon)
   '8rx', // Chu-Ko-Nu (hides Demon Machine)
-  // Body armor — Mage Plate stays visible; a superior 3os Mage Plate is still
-  // the premier low-strength Enigma base for any class
+  // Body armor — the low-strength Enigma shells; elite Archon Plate stays
+  // visible for the roll actually worth stopping for
   'brs', // Breast Plate (budget 3os Enigma shell; hides Venomsward and Isenhart's Case)
+  'xtp', // Mage Plate (3os Enigma shell; hides Que-Hegan's Wisdom)
 ];
 
 // Gem Crunch: compact tiered gem labels — Chipped -> 1, Flawed -> 2,

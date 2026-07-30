@@ -84,7 +84,7 @@ function render() {
     '',
     `## Hide Good but Common — separate opt-in pass (${policy.goodButCommon.length})`,
     '',
-    'These bases are **not** part of the list above. Hide Unpopular Bases keeps them as cheap runeword shells and leveling unique bases; the separate **Hide Good but Common** option hides them for endgame characters who no longer stop for any of them. Mage Plate and circlets are deliberately excluded — a good roll on those is still worth inspecting.',
+    'These bases are **not** part of the list above. Hide Unpopular Bases keeps them as cheap runeword shells and leveling unique bases; the separate **Hide Good but Common** option hides them for endgame characters who no longer stop for any of them. The four circlets are deliberately excluded — a rare roll on those is still worth inspecting.',
     '',
     '| Code | Base | Tier | Max sockets | Named unique/set collisions intentionally hidden |',
     '| --- | --- | --- | ---: | --- |',

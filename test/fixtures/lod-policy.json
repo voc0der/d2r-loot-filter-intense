@@ -390,7 +390,8 @@
     "8s8",
     "8hx",
     "8rx",
-    "brs"
+    "brs",
+    "xtp"
   ],
   "mustStayVisible": {
     "assassinClawKeeps": [
@@ -446,7 +447,6 @@
       "7gd"
     ],
     "armor": [
-      "xtp",
       "xea",
       "xhn",
       "xrs",
