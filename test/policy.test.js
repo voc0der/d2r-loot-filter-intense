@@ -26,7 +26,7 @@ function flattenConfig(nodes) {
 
 test('the production base policy exactly matches the audited LoD fixture', () => {
   assert.deepEqual(productionKeys, canonicalHidden);
-  assert.equal(productionKeys.length, 310);
+  assert.equal(productionKeys.length, 321);
   assert.equal(new Set(productionKeys).size, productionKeys.length);
   assert.match(policy.source.ruleset, /Lord of Destruction/);
   assert.match(policy.source.note, /Pre-Reign-of-the-Warlock/);
@@ -40,11 +40,11 @@ test('the production base policy exactly matches the audited LoD fixture', () =>
       assassinClaws: 10,
       throwingWeapons: 11,
       genericJavelins: 15,
-      amazonWeapons: 9,
+      amazonWeapons: 12,
       polearms: 13,
-      spears: 10,
+      spears: 12,
       swords: 30,
-      bows: 14,
+      bows: 20,
       crossbows: 10,
       scepters: 6,
       wands: 8,
@@ -177,8 +177,8 @@ test('every glove and boot stays visible while the belt policy is unchanged', ()
 
 test('important policy tradeoffs are recorded instead of silently masked', () => {
   assert.deepEqual(Object.keys(policy.notableAcceptedCollisions).sort(), [
-    '8ls', '9ba', '9bw', '9wn', 'am7', 'am9', 'ba5',
-    'dr8', 'msk', 'tbl', 'xul',
+    '6sw', '7p7', '7sr', '8ls', '9ba', '9bw', '9wn', 'am7',
+    'am9', 'amb', 'amd', 'ba5', 'dr8', 'msk', 'tbl', 'xul',
   ]);
   Object.keys(policy.notableAcceptedCollisions).forEach((code) => {
     assert.equal(productionKeys.includes(code), true);
@@ -188,7 +188,7 @@ test('important policy tradeoffs are recorded instead of silently masked', () =>
   const hiddenWithCollisions = productionKeys.filter((code) => (
     catalog[code].unique.length > 0 || catalog[code].set.length > 0
   ));
-  assert.equal(hiddenWithCollisions.length, 219);
+  assert.equal(hiddenWithCollisions.length, 224);
   assert.deepEqual(hiddenWithCollisions, policy.acceptedHiddenCollisionCodes);
   policy.acceptedHiddenCollisionCodes.forEach((code) => {
     assert.ok(
@@ -268,8 +268,8 @@ test('published descriptions use the exact audited base count', () => {
   const files = ['mod.json', 'README.md', 'docs/NEXUS.md'];
   files.forEach((relativePath) => {
     const contents = fs.readFileSync(path.join(ROOT, relativePath), 'utf8');
-    assert.match(contents, /310 (?:aggressively filtered|low-priority)/, relativePath);
-    assert.doesNotMatch(contents, /247 (?:aggressively filtered|low-priority)/, relativePath);
+    assert.match(contents, /321 (?:aggressively filtered|low-priority)/, relativePath);
+    assert.doesNotMatch(contents, /310 (?:aggressively filtered|low-priority)/, relativePath);
   });
 });
 
@@ -282,6 +282,8 @@ test('documentation retains the dangerous runtime and collision warnings', () =>
     "socketed Hunter's Guise",
     'Bloodfist',
     "Aldur's Stony Gaze",
+    'Stoneraven',
+    'Hydra Bow',
     "Trang-Oul's Scales",
     'Goldwrap',
     'Ribcracker',

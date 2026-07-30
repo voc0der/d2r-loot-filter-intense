@@ -229,7 +229,7 @@ test('missing string keys are skipped with a precise warning', () => {
   assert.ok(result.logs.includes('Hide Ammo: hid 1 of 2 item names.'));
 });
 
-test('Hide Unpopular Bases rewrites all 310 audited keys across locales', () => {
+test('Hide Unpopular Bases rewrites all 321 audited keys across locales', () => {
   const entries = [
     ...hiddenKeys.map((key, index) => localeEntry(key, `Hidden ${key}`, { id: index + 1 })),
     ...keepKeys.map((key, index) => localeEntry(key, `Keep ${key}`, { id: 1000 + index })),
@@ -257,7 +257,7 @@ test('Hide Unpopular Bases rewrites all 310 audited keys across locales', () => 
   assert.deepEqual(result.reads, [ITEM_NAMES_PATH]);
   assert.deepEqual(result.writes, [ITEM_NAMES_PATH]);
   assert.deepEqual(result.warnings, []);
-  assert.ok(result.logs.includes('Hide Unpopular Bases: hid 310 of 310 item names.'));
+  assert.ok(result.logs.includes('Hide Unpopular Bases: hid 321 of 321 item names.'));
 });
 
 test('Hide Good but Common hides its 13 bases independently of the unpopular pass', () => {
@@ -300,9 +300,9 @@ test('both base passes stack into a single read/write of item-names.json', () =>
   assert.deepEqual(result.reads, [ITEM_NAMES_PATH]);
   assert.deepEqual(result.writes, [ITEM_NAMES_PATH]);
   assert.deepEqual(result.warnings, []);
-  assert.ok(result.logs.includes('Hide Unpopular Bases: hid 310 of 310 item names.'));
+  assert.ok(result.logs.includes('Hide Unpopular Bases: hid 321 of 321 item names.'));
   assert.ok(result.logs.includes('Hide Good but Common: hid 13 of 13 item names.'));
-  assert.ok(result.logs.includes('Done: 323 change(s) made in total.'));
+  assert.ok(result.logs.includes('Done: 334 change(s) made in total.'));
 });
 
 test('legacy or malformed hide styles safely fall back to the gray dot', () => {

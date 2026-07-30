@@ -2,7 +2,7 @@
 
 # Audited Hide Unpopular Bases policy
 
-This generated table is the authoritative list of all **310** hidden equipment base strings.
+This generated table is the authoritative list of all **321** hidden equipment base strings.
 It targets the **Diablo II: Resurrected — Lord of Destruction** ruleset and is pinned to d2data commit `bb26870f321c05479df88119285f26b76c4cec32`.
 
 The filter is quality-blind: every listed code hides ordinary, superior, socketed, magic, rare, unique and set labels on that base. Named unique/set collisions from the pinned LoD data appear below. Staffmods, crafting uses and other runtime tradeoffs are documented in the README and policy fixture.
@@ -20,6 +20,11 @@ The filter is quality-blind: every listed code hides ordinary, superior, sockete
 - `ba5` Avenger Guard: Immortal King's Will
 - `am7` Ceremonial Bow: Lycander's Aim
 - `am9` Ceremonial Pike: Lycander's Flank
+- `amb` Matriarchal Bow: Bloodraven's Charge
+- `amd` Matriarchal Spear: Stoneraven
+- `7sr` Hyperion Spear: Arioc's Needle
+- `7p7` War Pike: Steelpillar
+- `6sw` Ward Bow: Widowmaker
 
 ## Axes (27)
 
@@ -143,7 +148,7 @@ The filter is quality-blind: every listed code hides ordinary, superior, sockete
 | `7gl` | Ghost Glaive | elite | 0 | Unique: Wraithflight |
 | `7ts` | Winged Harpoon | elite | 0 | Unique: Gargoyle's Bite |
 
-## Amazon weapons (9)
+## Amazon weapons (12)
 
 | Code | Base | Tier | Max sockets | Named unique/set collisions intentionally hidden |
 | --- | --- | --- | ---: | --- |
@@ -156,6 +161,9 @@ The filter is quality-blind: every listed code hides ordinary, superior, sockete
 | `am7` | Ceremonial Bow | exceptional | 5 | Unique: Lycander's Aim |
 | `am8` | Ceremonial Spear | exceptional | 6 | — |
 | `am9` | Ceremonial Pike | exceptional | 6 | Unique: Lycander's Flank |
+| `amb` | Matriarchal Bow | elite | 5 | Unique: Bloodraven's Charge |
+| `amd` | Matriarchal Spear | elite | 6 | Unique: Stoneraven |
+| `ame` | Matriarchal Pike | elite | 6 | — |
 
 ## Polearms (13)
 
@@ -175,7 +183,7 @@ The filter is quality-blind: every listed code hides ordinary, superior, sockete
 | `9wc` | Grim Scythe | exceptional | 6 | Unique: Grim's Burning Dead |
 | `7o7` | Ogre Axe | elite | 3 | Unique: Bonehew |
 
-## Spears (10)
+## Spears (12)
 
 | Code | Base | Tier | Max sockets | Named unique/set collisions intentionally hidden |
 | --- | --- | --- | ---: | --- |
@@ -189,6 +197,8 @@ The filter is quality-blind: every listed code hides ordinary, superior, sockete
 | `9br` | War Fork | exceptional | 5 | Unique: Soulfeast Tine |
 | `9st` | Yari | exceptional | 6 | Unique: Hone Sundan |
 | `9p9` | Lance | exceptional | 6 | Unique: Spire of Honor |
+| `7sr` | Hyperion Spear | elite | 3 | Unique: Arioc's Needle |
+| `7p7` | War Pike | elite | 6 | Unique: Steelpillar |
 
 ## Swords (30)
 
@@ -225,7 +235,7 @@ The filter is quality-blind: every listed code hides ordinary, superior, sockete
 | `7cm` | Highland Blade | elite | 4 | — |
 | `7b7` | Champion Sword | elite | 4 | Unique: Doombringer |
 
-## Bows (14)
+## Bows (20)
 
 | Code | Base | Tier | Max sockets | Named unique/set collisions intentionally hidden |
 | --- | --- | --- | ---: | --- |
@@ -243,6 +253,12 @@ The filter is quality-blind: every listed code hides ordinary, superior, sockete
 | `8l8` | Large Siege Bow | exceptional | 6 | Unique: Cliffkiller |
 | `8sw` | Rune Bow | exceptional | 5 | Unique: Magewrath |
 | `8lw` | Gothic Bow | exceptional | 6 | Unique: Godstrike Arch |
+| `6sb` | Spider Bow | elite | 3 | — |
+| `6cb` | Great Bow | elite | 4 | — |
+| `6hb` | Blade Bow | elite | 4 | — |
+| `6s7` | Diamond Bow | elite | 5 | — |
+| `6lb` | Shadow Bow | elite | 5 | — |
+| `6sw` | Ward Bow | elite | 5 | Unique: Widowmaker |
 
 ## Crossbows (10)
 
@@ -474,7 +490,7 @@ These bases are **not** part of the list above. Hide Unpopular Bases keeps them 
 ## Explicit keeps tested by the suite
 
 - **assassinClawKeeps:** `9ar` Quhab, `9lw` Greater Claws, `9tw` Greater Talons, `9qr` Scissors Quhab, `7ar` Suwayyah, `7cs` Battle Cestus, `7lw` Feral Claws, `7qr` Scissors Suwayyah, `7tw` Runic Talons, `7wb` Wrist Sword, `7xf` War Fist
-- **amazonWeaponKeeps:** `ama` Ceremonial Javelin, `amb` Matriarchal Bow, `amc` Grand Matron Bow, `amd` Matriarchal Spear, `ame` Matriarchal Pike, `amf` Matriarchal Javelin
+- **amazonWeaponKeeps:** `ama` Ceremonial Javelin, `amc` Grand Matron Bow, `amf` Matriarchal Javelin
 - **eliteScepterWandStaff:** `7sc` Mighty Scepter, `7qs` Seraph Rod, `7ws` Caduceus, `7wn` Polished Wand, `7yw` Ghost Wand, `7bw` Lich Wand, `7gw` Unearthed Wand, `6ss` Walking Stick, `6ls` Stalagmite, `6cs` Elder Staff, `6bs` Shillelagh, `6ws` Archon Staff
 - **eliteMercPolearms:** `7vo` Colossus Voulge, `7s8` Thresher, `7pa` Cryptic Axe, `7h7` Great Poleaxe, `7wc` Giant Thresher
 - **act5AndEliteSwords:** `7bs` Conquest Sword, `72h` Legend Sword, `7gs` Balrog Blade, `7wd` Mythical Sword, `7ls` Cryptic Sword, `7cr` Phase Blade, `7fb` Colossus Sword, `7gd` Colossus Blade
@@ -487,3 +503,5 @@ These bases are **not** part of the list above. Hide Unpopular Bases keeps them 
 - **circlets:** `ci0` Circlet, `ci1` Coronet, `ci2` Tiara, `ci3` Diadem
 - **talRasha:** `xsk` Death Mask, `zmb` Mesh Belt, `oba` Swirling Crystal, `uth` Lacquered Plate
 - **rareSetBases:** `uar` Sacred Armor, `urn` Corona, `paf` Vortex Shield, `ci3` Diadem
+- **eliteBowKeeps:** `6l7` Crusader Bow, `6lw` Hydra Bow
+- **eliteSpearKeeps:** `7tr` Stygian Pike, `7br` Mancatcher, `7st` Ghost Spear

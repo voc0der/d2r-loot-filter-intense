@@ -173,9 +173,11 @@ const UNPOPULAR_BASE_KEYS = [
   '7s7', // Balrog Spear
   '7gl', // Ghost Glaive
   '7ts', // Winged Harpoon
-  // Amazon weapons (normal/exceptional) — Ceremonial Javelin (Titan's Revenge)
-  // and every elite Amazon base (Matriarchal/Grand Matron for Faith, M'avina's,
-  // Thunderstroke and magic +3 javelin bases) stay visible
+  // Amazon weapons — every Amazon base is class-locked, so no mercenary can ever
+  // use one. The javelin line keeps Ceremonial Javelin (Titan's Revenge) and
+  // Matriarchal Javelin (Thunderstroke) for javazons; Grand Matron Bow stays as
+  // the Faith/M'avina's base. The whole spear/pike line goes: no endgame
+  // character farms with Fend or Impale.
   'am1', // Stag Bow
   'am2', // Reflex Bow
   'am3', // Maiden Spear
@@ -185,6 +187,9 @@ const UNPOPULAR_BASE_KEYS = [
   'am7', // Ceremonial Bow (hides Lycander's Aim)
   'am8', // Ceremonial Spear
   'am9', // Ceremonial Pike (hides Lycander's Flank)
+  'amb', // Matriarchal Bow (hides Bloodraven's Charge)
+  'amd', // Matriarchal Spear (hides Stoneraven)
+  'ame', // Matriarchal Pike (slowest +20 speed; carries no unique or set at all)
   // Polearms (normal) — leveling-only A2 merc bases
   'bar', // Bardiche
   'vou', // Voulge
@@ -213,6 +218,10 @@ const UNPOPULAR_BASE_KEYS = [
   '9br', // War Fork
   '9st', // Yari
   '9p9', // Lance
+  // Spears (elite) — Stygian Pike, Mancatcher and Ghost Spear stay visible as
+  // Act 2 mercenary bases
+  '7sr', // Hyperion Spear (caps at 3 sockets, so it can never hold Insight; hides Arioc's Needle)
+  '7p7', // War Pike (slowest +20 speed, like the hidden Pike and Lance; hides Steelpillar)
   // Swords (normal/exceptional) — Crystal/Broad Sword, Tulwar, and Battle Sword
   // stay visible for Spirit/CTA, Ali Baba, Headstriker, and Act 5 mercenary use
   'ssd', // Short Sword
@@ -262,6 +271,14 @@ const UNPOPULAR_BASE_KEYS = [
   '8l8', // Large Siege Bow
   '8sw', // Rune Bow
   '8lw', // Gothic Bow (hides Goldstrike Arch)
+  // Bows (elite) — Hydra Bow (Windforce) and Crusader Bow (Eaglehorn) stay
+  // visible as the six-socket Rogue mercenary Faith bases
+  '6sb', // Spider Bow (caps at 3 sockets, so it can never hold Faith)
+  '6cb', // Great Bow
+  '6hb', // Blade Bow
+  '6s7', // Diamond Bow
+  '6lb', // Shadow Bow
+  '6sw', // Ward Bow (hides Widowmaker)
   // Crossbows — Ballista (Buriza) and Chu-Ko-Nu (Demon Machine) stay visible
   'lxb', // Light Crossbow
   'mxb', // Crossbow
