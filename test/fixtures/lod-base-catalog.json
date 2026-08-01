@@ -16,6 +16,7 @@
       "kind": "weapon",
       "type": "axe",
       "tier": "normal",
+      "handed": "one",
       "maxSockets": 5,
       "unique": [
         "Bladebone"
@@ -29,6 +30,7 @@
       "kind": "weapon",
       "type": "swor",
       "tier": "normal",
+      "handed": "oneOrTwo",
       "maxSockets": 3,
       "unique": [
         "Shadowfang"
@@ -40,6 +42,7 @@
       "kind": "weapon",
       "type": "staf",
       "tier": "elite",
+      "handed": "two",
       "maxSockets": 4,
       "unique": [],
       "set": []
@@ -49,6 +52,7 @@
       "kind": "weapon",
       "type": "bow",
       "tier": "elite",
+      "handed": "two",
       "maxSockets": 4,
       "unique": [],
       "set": []
@@ -58,6 +62,7 @@
       "kind": "weapon",
       "type": "staf",
       "tier": "elite",
+      "handed": "two",
       "maxSockets": 4,
       "unique": [
         "Ondal's Wisdom"
@@ -71,6 +76,7 @@
       "kind": "weapon",
       "type": "bow",
       "tier": "elite",
+      "handed": "two",
       "maxSockets": 4,
       "unique": [],
       "set": []
@@ -80,6 +86,7 @@
       "kind": "weapon",
       "type": "xbow",
       "tier": "elite",
+      "handed": "two",
       "maxSockets": 6,
       "unique": [
         "Hellrack"
@@ -91,6 +98,7 @@
       "kind": "weapon",
       "type": "bow",
       "tier": "elite",
+      "handed": "two",
       "maxSockets": 6,
       "unique": [
         "Eaglehorn"
@@ -102,6 +110,7 @@
       "kind": "weapon",
       "type": "bow",
       "tier": "elite",
+      "handed": "two",
       "maxSockets": 5,
       "unique": [],
       "set": []
@@ -111,6 +120,7 @@
       "kind": "weapon",
       "type": "staf",
       "tier": "elite",
+      "handed": "two",
       "maxSockets": 3,
       "unique": [],
       "set": []
@@ -120,6 +130,7 @@
       "kind": "weapon",
       "type": "bow",
       "tier": "elite",
+      "handed": "two",
       "maxSockets": 6,
       "unique": [
         "Windforce"
@@ -131,6 +142,7 @@
       "kind": "weapon",
       "type": "xbow",
       "tier": "elite",
+      "handed": "two",
       "maxSockets": 3,
       "unique": [],
       "set": []
@@ -140,6 +152,7 @@
       "kind": "weapon",
       "type": "xbow",
       "tier": "elite",
+      "handed": "two",
       "maxSockets": 4,
       "unique": [],
       "set": []
@@ -149,6 +162,7 @@
       "kind": "weapon",
       "type": "xbow",
       "tier": "elite",
+      "handed": "two",
       "maxSockets": 5,
       "unique": [
         "Gutsiphon"
@@ -160,6 +174,7 @@
       "kind": "weapon",
       "type": "bow",
       "tier": "elite",
+      "handed": "two",
       "maxSockets": 5,
       "unique": [],
       "set": []
@@ -169,6 +184,7 @@
       "kind": "weapon",
       "type": "bow",
       "tier": "elite",
+      "handed": "two",
       "maxSockets": 3,
       "unique": [],
       "set": []
@@ -178,6 +194,7 @@
       "kind": "weapon",
       "type": "staf",
       "tier": "elite",
+      "handed": "two",
       "maxSockets": 2,
       "unique": [],
       "set": []
@@ -187,6 +204,7 @@
       "kind": "weapon",
       "type": "bow",
       "tier": "elite",
+      "handed": "two",
       "maxSockets": 5,
       "unique": [
         "Widowmaker"
@@ -198,6 +216,7 @@
       "kind": "weapon",
       "type": "staf",
       "tier": "elite",
+      "handed": "two",
       "maxSockets": 6,
       "unique": [
         "Mang Song's Lesson"
@@ -209,6 +228,7 @@
       "kind": "weapon",
       "type": "axe",
       "tier": "elite",
+      "handed": "one",
       "maxSockets": 5,
       "unique": [
         "Runemaster"
@@ -220,6 +240,7 @@
       "kind": "weapon",
       "type": "swor",
       "tier": "elite",
+      "handed": "oneOrTwo",
       "maxSockets": 3,
       "unique": [],
       "set": []
@@ -229,6 +250,7 @@
       "kind": "weapon",
       "type": "h2h2",
       "tier": "elite",
+      "handed": "one",
       "maxSockets": 3,
       "unique": [],
       "set": []
@@ -238,6 +260,7 @@
       "kind": "weapon",
       "type": "axe",
       "tier": "elite",
+      "handed": "one",
       "maxSockets": 4,
       "unique": [],
       "set": []
@@ -247,6 +270,7 @@
       "kind": "weapon",
       "type": "swor",
       "tier": "elite",
+      "handed": "oneOrTwo",
       "maxSockets": 4,
       "unique": [
         "Doombringer"
@@ -258,6 +282,7 @@
       "kind": "weapon",
       "type": "taxe",
       "tier": "elite",
+      "handed": "one",
       "maxSockets": 0,
       "unique": [
         "Lacerator"
@@ -269,6 +294,7 @@
       "kind": "weapon",
       "type": "axe",
       "tier": "elite",
+      "handed": "two",
       "maxSockets": 5,
       "unique": [
         "Ethereal Edge"
@@ -280,6 +306,7 @@
       "kind": "weapon",
       "type": "tkni",
       "tier": "elite",
+      "handed": "one",
       "maxSockets": 0,
       "unique": [
         "Warshrike"
@@ -291,6 +318,7 @@
       "kind": "weapon",
       "type": "knif",
       "tier": "elite",
+      "handed": "one",
       "maxSockets": 2,
       "unique": [
         "Ghostflame"
@@ -302,6 +330,7 @@
       "kind": "weapon",
       "type": "spea",
       "tier": "elite",
+      "handed": "two",
       "maxSockets": 5,
       "unique": [
         "Viperfork"
@@ -313,6 +342,7 @@
       "kind": "weapon",
       "type": "swor",
       "tier": "elite",
+      "handed": "one",
       "maxSockets": 4,
       "unique": [],
       "set": []
@@ -322,6 +352,7 @@
       "kind": "weapon",
       "type": "axe",
       "tier": "elite",
+      "handed": "two",
       "maxSockets": 5,
       "unique": [
         "Hellslayer"
@@ -333,6 +364,7 @@
       "kind": "weapon",
       "type": "wand",
       "tier": "elite",
+      "handed": "one",
       "maxSockets": 2,
       "unique": [
         "Boneshade"
@@ -344,6 +376,7 @@
       "kind": "weapon",
       "type": "club",
       "tier": "elite",
+      "handed": "one",
       "maxSockets": 2,
       "unique": [
         "Nord's Tenderizer"
@@ -355,6 +388,7 @@
       "kind": "weapon",
       "type": "swor",
       "tier": "elite",
+      "handed": "oneOrTwo",
       "maxSockets": 4,
       "unique": [],
       "set": []
@@ -364,6 +398,7 @@
       "kind": "weapon",
       "type": "swor",
       "tier": "elite",
+      "handed": "one",
       "maxSockets": 6,
       "unique": [
         "Azurewrath",
@@ -376,6 +411,7 @@
       "kind": "weapon",
       "type": "h2h2",
       "tier": "elite",
+      "handed": "one",
       "maxSockets": 2,
       "unique": [
         "Shadowkiller"
@@ -387,6 +423,7 @@
       "kind": "weapon",
       "type": "knif",
       "tier": "elite",
+      "handed": "one",
       "maxSockets": 1,
       "unique": [
         "Wizardspike"
@@ -398,6 +435,7 @@
       "kind": "weapon",
       "type": "knif",
       "tier": "elite",
+      "handed": "one",
       "maxSockets": 1,
       "unique": [],
       "set": []
@@ -407,6 +445,7 @@
       "kind": "weapon",
       "type": "swor",
       "tier": "elite",
+      "handed": "oneOrTwo",
       "maxSockets": 5,
       "unique": [],
       "set": []
@@ -416,6 +455,7 @@
       "kind": "weapon",
       "type": "swor",
       "tier": "elite",
+      "handed": "one",
       "maxSockets": 2,
       "unique": [],
       "set": []
@@ -425,6 +465,7 @@
       "kind": "weapon",
       "type": "mace",
       "tier": "elite",
+      "handed": "one",
       "maxSockets": 5,
       "unique": [
         "Horizon's Tornado",
@@ -437,6 +478,7 @@
       "kind": "weapon",
       "type": "axe",
       "tier": "elite",
+      "handed": "two",
       "maxSockets": 6,
       "unique": [
         "Messerschmidt's Reaver"
@@ -448,6 +490,7 @@
       "kind": "weapon",
       "type": "swor",
       "tier": "elite",
+      "handed": "oneOrTwo",
       "maxSockets": 6,
       "unique": [
         "The Grandfather"
@@ -461,6 +504,7 @@
       "kind": "weapon",
       "type": "axe",
       "tier": "elite",
+      "handed": "two",
       "maxSockets": 6,
       "unique": [
         "Executioner's Justice"
@@ -472,6 +516,7 @@
       "kind": "weapon",
       "type": "jave",
       "tier": "elite",
+      "handed": "one",
       "maxSockets": 0,
       "unique": [
         "Wraithflight"
@@ -483,6 +528,7 @@
       "kind": "weapon",
       "type": "hamm",
       "tier": "elite",
+      "handed": "two",
       "maxSockets": 6,
       "unique": [
         "Earthshifter",
@@ -495,6 +541,7 @@
       "kind": "weapon",
       "type": "swor",
       "tier": "elite",
+      "handed": "oneOrTwo",
       "maxSockets": 4,
       "unique": [
         "Flamebellow"
@@ -506,6 +553,7 @@
       "kind": "weapon",
       "type": "wand",
       "tier": "elite",
+      "handed": "one",
       "maxSockets": 2,
       "unique": [
         "Deaths's Web"
@@ -517,6 +565,7 @@
       "kind": "weapon",
       "type": "pole",
       "tier": "elite",
+      "handed": "two",
       "maxSockets": 6,
       "unique": [],
       "set": []
@@ -526,6 +575,7 @@
       "kind": "weapon",
       "type": "axe",
       "tier": "elite",
+      "handed": "one",
       "maxSockets": 2,
       "unique": [
         "Razoredge"
@@ -537,6 +587,7 @@
       "kind": "weapon",
       "type": "jave",
       "tier": "elite",
+      "handed": "one",
       "maxSockets": 0,
       "unique": [],
       "set": []
@@ -546,6 +597,7 @@
       "kind": "weapon",
       "type": "knif",
       "tier": "elite",
+      "handed": "one",
       "maxSockets": 3,
       "unique": [
         "Fleshripper"
@@ -557,6 +609,7 @@
       "kind": "weapon",
       "type": "axe",
       "tier": "elite",
+      "handed": "two",
       "maxSockets": 4,
       "unique": [],
       "set": []
@@ -566,6 +619,7 @@
       "kind": "weapon",
       "type": "swor",
       "tier": "elite",
+      "handed": "one",
       "maxSockets": 4,
       "unique": [
         "Frostwind"
@@ -579,6 +633,7 @@
       "kind": "weapon",
       "type": "h2h2",
       "tier": "elite",
+      "handed": "one",
       "maxSockets": 3,
       "unique": [
         "Firelizard's Talons"
@@ -590,6 +645,7 @@
       "kind": "weapon",
       "type": "hamm",
       "tier": "elite",
+      "handed": "two",
       "maxSockets": 6,
       "unique": [
         "Windhammer"
@@ -603,6 +659,7 @@
       "kind": "weapon",
       "type": "mace",
       "tier": "elite",
+      "handed": "one",
       "maxSockets": 2,
       "unique": [],
       "set": [
@@ -614,6 +671,7 @@
       "kind": "weapon",
       "type": "axe",
       "tier": "elite",
+      "handed": "one",
       "maxSockets": 6,
       "unique": [
         "Cranebeak"
@@ -625,6 +683,7 @@
       "kind": "weapon",
       "type": "mace",
       "tier": "elite",
+      "handed": "one",
       "maxSockets": 3,
       "unique": [
         "Baranar's Star"
@@ -636,6 +695,7 @@
       "kind": "weapon",
       "type": "pole",
       "tier": "elite",
+      "handed": "two",
       "maxSockets": 3,
       "unique": [
         "Bonehew"
@@ -647,6 +707,7 @@
       "kind": "weapon",
       "type": "spea",
       "tier": "elite",
+      "handed": "two",
       "maxSockets": 6,
       "unique": [
         "Steelpillar"
@@ -658,6 +719,7 @@
       "kind": "weapon",
       "type": "pole",
       "tier": "elite",
+      "handed": "two",
       "maxSockets": 5,
       "unique": [
         "Tomb Reaver"
@@ -669,6 +731,7 @@
       "kind": "weapon",
       "type": "jave",
       "tier": "elite",
+      "handed": "one",
       "maxSockets": 0,
       "unique": [],
       "set": []
@@ -678,6 +741,7 @@
       "kind": "weapon",
       "type": "h2h2",
       "tier": "elite",
+      "handed": "one",
       "maxSockets": 3,
       "unique": [],
       "set": [
@@ -689,6 +753,7 @@
       "kind": "weapon",
       "type": "scep",
       "tier": "elite",
+      "handed": "one",
       "maxSockets": 3,
       "unique": [],
       "set": []
@@ -698,6 +763,7 @@
       "kind": "weapon",
       "type": "jave",
       "tier": "elite",
+      "handed": "one",
       "maxSockets": 0,
       "unique": [
         "Demon's Arch"
@@ -709,6 +775,7 @@
       "kind": "weapon",
       "type": "pole",
       "tier": "elite",
+      "handed": "two",
       "maxSockets": 5,
       "unique": [
         "The Reaper's Toll"
@@ -720,6 +787,7 @@
       "kind": "weapon",
       "type": "swor",
       "tier": "elite",
+      "handed": "one",
       "maxSockets": 2,
       "unique": [
         "Bloodmoon"
@@ -731,6 +799,7 @@
       "kind": "weapon",
       "type": "scep",
       "tier": "elite",
+      "handed": "one",
       "maxSockets": 2,
       "unique": [
         "Heaven's Light",
@@ -743,6 +812,7 @@
       "kind": "weapon",
       "type": "swor",
       "tier": "elite",
+      "handed": "one",
       "maxSockets": 2,
       "unique": [
         "Djinnslayer"
@@ -754,6 +824,7 @@
       "kind": "weapon",
       "type": "club",
       "tier": "elite",
+      "handed": "one",
       "maxSockets": 3,
       "unique": [
         "Demonlimb"
@@ -765,6 +836,7 @@
       "kind": "weapon",
       "type": "spea",
       "tier": "elite",
+      "handed": "two",
       "maxSockets": 3,
       "unique": [
         "Arioc's Needle"
@@ -776,6 +848,7 @@
       "kind": "weapon",
       "type": "swor",
       "tier": "elite",
+      "handed": "one",
       "maxSockets": 2,
       "unique": [],
       "set": []
@@ -785,6 +858,7 @@
       "kind": "weapon",
       "type": "spea",
       "tier": "elite",
+      "handed": "two",
       "maxSockets": 6,
       "unique": [],
       "set": []
@@ -794,6 +868,7 @@
       "kind": "weapon",
       "type": "taxe",
       "tier": "elite",
+      "handed": "one",
       "maxSockets": 0,
       "unique": [
         "Gimmershred"
@@ -805,6 +880,7 @@
       "kind": "weapon",
       "type": "tkni",
       "tier": "elite",
+      "handed": "one",
       "maxSockets": 0,
       "unique": [],
       "set": []
@@ -814,6 +890,7 @@
       "kind": "weapon",
       "type": "spea",
       "tier": "elite",
+      "handed": "two",
       "maxSockets": 4,
       "unique": [],
       "set": []
@@ -823,6 +900,7 @@
       "kind": "weapon",
       "type": "jave",
       "tier": "elite",
+      "handed": "one",
       "maxSockets": 0,
       "unique": [
         "Gargoyle's Bite"
@@ -834,6 +912,7 @@
       "kind": "weapon",
       "type": "h2h2",
       "tier": "elite",
+      "handed": "one",
       "maxSockets": 3,
       "unique": [],
       "set": []
@@ -843,6 +922,7 @@
       "kind": "weapon",
       "type": "pole",
       "tier": "elite",
+      "handed": "two",
       "maxSockets": 4,
       "unique": [],
       "set": []
@@ -852,6 +932,7 @@
       "kind": "weapon",
       "type": "axe",
       "tier": "elite",
+      "handed": "one",
       "maxSockets": 6,
       "unique": [
         "Deathcleaver"
@@ -863,6 +944,7 @@
       "kind": "weapon",
       "type": "h2h2",
       "tier": "elite",
+      "handed": "one",
       "maxSockets": 3,
       "unique": [
         "Jadetalon"
@@ -874,6 +956,7 @@
       "kind": "weapon",
       "type": "pole",
       "tier": "elite",
+      "handed": "two",
       "maxSockets": 6,
       "unique": [
         "Stormspire"
@@ -885,6 +968,7 @@
       "kind": "weapon",
       "type": "swor",
       "tier": "elite",
+      "handed": "one",
       "maxSockets": 3,
       "unique": [],
       "set": [
@@ -896,6 +980,7 @@
       "kind": "weapon",
       "type": "hamm",
       "tier": "elite",
+      "handed": "one",
       "maxSockets": 4,
       "unique": [
         "Schaefer's Hammer",
@@ -908,6 +993,7 @@
       "kind": "weapon",
       "type": "wand",
       "tier": "elite",
+      "handed": "one",
       "maxSockets": 2,
       "unique": [],
       "set": []
@@ -917,6 +1003,7 @@
       "kind": "weapon",
       "type": "scep",
       "tier": "elite",
+      "handed": "one",
       "maxSockets": 5,
       "unique": [
         "Ironward"
@@ -930,6 +1017,7 @@
       "kind": "weapon",
       "type": "h2h2",
       "tier": "elite",
+      "handed": "one",
       "maxSockets": 2,
       "unique": [],
       "set": []
@@ -939,6 +1027,7 @@
       "kind": "weapon",
       "type": "wand",
       "tier": "elite",
+      "handed": "one",
       "maxSockets": 2,
       "unique": [],
       "set": []
@@ -948,6 +1037,7 @@
       "kind": "weapon",
       "type": "staf",
       "tier": "exceptional",
+      "handed": "two",
       "maxSockets": 4,
       "unique": [
         "Warpspear"
@@ -959,6 +1049,7 @@
       "kind": "weapon",
       "type": "bow",
       "tier": "exceptional",
+      "handed": "two",
       "maxSockets": 4,
       "unique": [
         "Endlesshail"
@@ -970,6 +1061,7 @@
       "kind": "weapon",
       "type": "staf",
       "tier": "exceptional",
+      "handed": "two",
       "maxSockets": 4,
       "unique": [
         "Chromatic Ire"
@@ -981,6 +1073,7 @@
       "kind": "weapon",
       "type": "bow",
       "tier": "exceptional",
+      "handed": "two",
       "maxSockets": 4,
       "unique": [
         "Riphook"
@@ -992,6 +1085,7 @@
       "kind": "weapon",
       "type": "xbow",
       "tier": "exceptional",
+      "handed": "two",
       "maxSockets": 6,
       "unique": [
         "Buriza-Do Kyanon"
@@ -1003,6 +1097,7 @@
       "kind": "weapon",
       "type": "bow",
       "tier": "exceptional",
+      "handed": "two",
       "maxSockets": 6,
       "unique": [
         "Cliffkiller"
@@ -1014,6 +1109,7 @@
       "kind": "weapon",
       "type": "bow",
       "tier": "exceptional",
+      "handed": "two",
       "maxSockets": 5,
       "unique": [
         "Kuko Shakaku"
@@ -1025,6 +1121,7 @@
       "kind": "weapon",
       "type": "staf",
       "tier": "exceptional",
+      "handed": "two",
       "maxSockets": 3,
       "unique": [
         "Ribcracker"
@@ -1036,6 +1133,7 @@
       "kind": "weapon",
       "type": "bow",
       "tier": "exceptional",
+      "handed": "two",
       "maxSockets": 6,
       "unique": [
         "Godstrike Arch"
@@ -1047,6 +1145,7 @@
       "kind": "weapon",
       "type": "xbow",
       "tier": "exceptional",
+      "handed": "two",
       "maxSockets": 3,
       "unique": [
         "Langer Briser"
@@ -1058,6 +1157,7 @@
       "kind": "weapon",
       "type": "xbow",
       "tier": "exceptional",
+      "handed": "two",
       "maxSockets": 4,
       "unique": [
         "Pus Spiter"
@@ -1069,6 +1169,7 @@
       "kind": "weapon",
       "type": "xbow",
       "tier": "exceptional",
+      "handed": "two",
       "maxSockets": 5,
       "unique": [
         "Demon Machine"
@@ -1080,6 +1181,7 @@
       "kind": "weapon",
       "type": "bow",
       "tier": "exceptional",
+      "handed": "two",
       "maxSockets": 5,
       "unique": [
         "Whichwild String"
@@ -1091,6 +1193,7 @@
       "kind": "weapon",
       "type": "bow",
       "tier": "exceptional",
+      "handed": "two",
       "maxSockets": 3,
       "unique": [
         "Skystrike"
@@ -1102,6 +1205,7 @@
       "kind": "weapon",
       "type": "staf",
       "tier": "exceptional",
+      "handed": "two",
       "maxSockets": 2,
       "unique": [
         "Razorswitch"
@@ -1113,6 +1217,7 @@
       "kind": "weapon",
       "type": "bow",
       "tier": "exceptional",
+      "handed": "two",
       "maxSockets": 5,
       "unique": [
         "Magewrath"
@@ -1124,6 +1229,7 @@
       "kind": "weapon",
       "type": "staf",
       "tier": "exceptional",
+      "handed": "two",
       "maxSockets": 6,
       "unique": [
         "Skullcollector"
@@ -1135,6 +1241,7 @@
       "kind": "weapon",
       "type": "axe",
       "tier": "exceptional",
+      "handed": "one",
       "maxSockets": 5,
       "unique": [
         "Islestrike"
@@ -1146,6 +1253,7 @@
       "kind": "weapon",
       "type": "swor",
       "tier": "exceptional",
+      "handed": "oneOrTwo",
       "maxSockets": 3,
       "unique": [
         "Crainte Vomir"
@@ -1157,6 +1265,7 @@
       "kind": "weapon",
       "type": "h2h",
       "tier": "exceptional",
+      "handed": "one",
       "maxSockets": 3,
       "unique": [],
       "set": []
@@ -1166,6 +1275,7 @@
       "kind": "weapon",
       "type": "axe",
       "tier": "exceptional",
+      "handed": "one",
       "maxSockets": 4,
       "unique": [
         "Butcher's Pupil"
@@ -1177,6 +1287,7 @@
       "kind": "weapon",
       "type": "pole",
       "tier": "exceptional",
+      "handed": "two",
       "maxSockets": 3,
       "unique": [
         "The Meat Scraper"
@@ -1188,6 +1299,7 @@
       "kind": "weapon",
       "type": "taxe",
       "tier": "exceptional",
+      "handed": "one",
       "maxSockets": 0,
       "unique": [],
       "set": []
@@ -1197,6 +1309,7 @@
       "kind": "weapon",
       "type": "swor",
       "tier": "exceptional",
+      "handed": "oneOrTwo",
       "maxSockets": 4,
       "unique": [
         "Cloudcrack"
@@ -1208,6 +1321,7 @@
       "kind": "weapon",
       "type": "axe",
       "tier": "exceptional",
+      "handed": "two",
       "maxSockets": 5,
       "unique": [
         "Spellsteel"
@@ -1219,6 +1333,7 @@
       "kind": "weapon",
       "type": "tkni",
       "tier": "exceptional",
+      "handed": "one",
       "maxSockets": 0,
       "unique": [],
       "set": []
@@ -1228,6 +1343,7 @@
       "kind": "weapon",
       "type": "knif",
       "tier": "exceptional",
+      "handed": "one",
       "maxSockets": 2,
       "unique": [
         "Stormspike"
@@ -1239,6 +1355,7 @@
       "kind": "weapon",
       "type": "spea",
       "tier": "exceptional",
+      "handed": "two",
       "maxSockets": 5,
       "unique": [
         "Soulfeast Tine"
@@ -1250,6 +1367,7 @@
       "kind": "weapon",
       "type": "swor",
       "tier": "exceptional",
+      "handed": "one",
       "maxSockets": 4,
       "unique": [
         "Headstriker"
@@ -1261,6 +1379,7 @@
       "kind": "weapon",
       "type": "axe",
       "tier": "exceptional",
+      "handed": "two",
       "maxSockets": 5,
       "unique": [
         "Stormrider"
@@ -1272,6 +1391,7 @@
       "kind": "weapon",
       "type": "wand",
       "tier": "exceptional",
+      "handed": "one",
       "maxSockets": 2,
       "unique": [
         "Arm of King Leoric"
@@ -1283,6 +1403,7 @@
       "kind": "weapon",
       "type": "club",
       "tier": "exceptional",
+      "handed": "one",
       "maxSockets": 2,
       "unique": [
         "Dark Clan Crusher"
@@ -1294,6 +1415,7 @@
       "kind": "weapon",
       "type": "swor",
       "tier": "exceptional",
+      "handed": "oneOrTwo",
       "maxSockets": 4,
       "unique": [
         "Bing Sz Wang"
@@ -1305,6 +1427,7 @@
       "kind": "weapon",
       "type": "swor",
       "tier": "exceptional",
+      "handed": "one",
       "maxSockets": 6,
       "unique": [
         "Ginther's Rift"
@@ -1316,6 +1439,7 @@
       "kind": "weapon",
       "type": "h2h2",
       "tier": "exceptional",
+      "handed": "one",
       "maxSockets": 2,
       "unique": [],
       "set": []
@@ -1325,6 +1449,7 @@
       "kind": "weapon",
       "type": "knif",
       "tier": "exceptional",
+      "handed": "one",
       "maxSockets": 1,
       "unique": [
         "Spineripper"
@@ -1336,6 +1461,7 @@
       "kind": "weapon",
       "type": "knif",
       "tier": "exceptional",
+      "handed": "one",
       "maxSockets": 1,
       "unique": [
         "Heart Carver"
@@ -1347,6 +1473,7 @@
       "kind": "weapon",
       "type": "swor",
       "tier": "exceptional",
+      "handed": "oneOrTwo",
       "maxSockets": 5,
       "unique": [
         "Todesfaelle Flamme"
@@ -1358,6 +1485,7 @@
       "kind": "weapon",
       "type": "swor",
       "tier": "exceptional",
+      "handed": "one",
       "maxSockets": 2,
       "unique": [
         "Blade of Ali Baba"
@@ -1369,6 +1497,7 @@
       "kind": "weapon",
       "type": "mace",
       "tier": "exceptional",
+      "handed": "one",
       "maxSockets": 5,
       "unique": [
         "Baezil's Vortex"
@@ -1380,6 +1509,7 @@
       "kind": "weapon",
       "type": "axe",
       "tier": "exceptional",
+      "handed": "two",
       "maxSockets": 6,
       "unique": [
         "Boneslayer Blade"
@@ -1391,6 +1521,7 @@
       "kind": "weapon",
       "type": "swor",
       "tier": "exceptional",
+      "handed": "oneOrTwo",
       "maxSockets": 6,
       "unique": [
         "Swordguard"
@@ -1402,6 +1533,7 @@
       "kind": "weapon",
       "type": "axe",
       "tier": "exceptional",
+      "handed": "two",
       "maxSockets": 6,
       "unique": [
         "The Minataur"
@@ -1413,6 +1545,7 @@
       "kind": "weapon",
       "type": "jave",
       "tier": "exceptional",
+      "handed": "one",
       "maxSockets": 0,
       "unique": [],
       "set": []
@@ -1422,6 +1555,7 @@
       "kind": "weapon",
       "type": "hamm",
       "tier": "exceptional",
+      "handed": "two",
       "maxSockets": 6,
       "unique": [
         "The Gavel of Pain"
@@ -1433,6 +1567,7 @@
       "kind": "weapon",
       "type": "swor",
       "tier": "exceptional",
+      "handed": "oneOrTwo",
       "maxSockets": 4,
       "unique": [
         "The Vile Husk"
@@ -1444,6 +1579,7 @@
       "kind": "weapon",
       "type": "wand",
       "tier": "exceptional",
+      "handed": "one",
       "maxSockets": 2,
       "unique": [
         "Blackhand Key"
@@ -1455,6 +1591,7 @@
       "kind": "weapon",
       "type": "pole",
       "tier": "exceptional",
+      "handed": "two",
       "maxSockets": 6,
       "unique": [
         "Husoldal Evo"
@@ -1466,6 +1603,7 @@
       "kind": "weapon",
       "type": "axe",
       "tier": "exceptional",
+      "handed": "one",
       "maxSockets": 2,
       "unique": [
         "Coldkill"
@@ -1477,6 +1615,7 @@
       "kind": "weapon",
       "type": "jave",
       "tier": "exceptional",
+      "handed": "one",
       "maxSockets": 0,
       "unique": [],
       "set": []
@@ -1486,6 +1625,7 @@
       "kind": "weapon",
       "type": "knif",
       "tier": "exceptional",
+      "handed": "one",
       "maxSockets": 3,
       "unique": [
         "Blackbog's Sharp"
@@ -1497,6 +1637,7 @@
       "kind": "weapon",
       "type": "axe",
       "tier": "exceptional",
+      "handed": "two",
       "maxSockets": 4,
       "unique": [
         "Warlord's Trust"
@@ -1508,6 +1649,7 @@
       "kind": "weapon",
       "type": "swor",
       "tier": "exceptional",
+      "handed": "one",
       "maxSockets": 4,
       "unique": [
         "Plague Bearer"
@@ -1519,6 +1661,7 @@
       "kind": "weapon",
       "type": "h2h2",
       "tier": "exceptional",
+      "handed": "one",
       "maxSockets": 3,
       "unique": [],
       "set": []
@@ -1528,6 +1671,7 @@
       "kind": "weapon",
       "type": "hamm",
       "tier": "exceptional",
+      "handed": "two",
       "maxSockets": 6,
       "unique": [
         "Bloodtree Stump"
@@ -1539,6 +1683,7 @@
       "kind": "weapon",
       "type": "mace",
       "tier": "exceptional",
+      "handed": "one",
       "maxSockets": 2,
       "unique": [
         "Sureshrill Frost"
@@ -1550,6 +1695,7 @@
       "kind": "weapon",
       "type": "axe",
       "tier": "exceptional",
+      "handed": "one",
       "maxSockets": 6,
       "unique": [
         "Pompe's Wrath"
@@ -1561,6 +1707,7 @@
       "kind": "weapon",
       "type": "mace",
       "tier": "exceptional",
+      "handed": "one",
       "maxSockets": 3,
       "unique": [
         "Moonfall"
@@ -1574,6 +1721,7 @@
       "kind": "weapon",
       "type": "spea",
       "tier": "exceptional",
+      "handed": "two",
       "maxSockets": 6,
       "unique": [
         "Spire of Honor"
@@ -1585,6 +1733,7 @@
       "kind": "weapon",
       "type": "pole",
       "tier": "exceptional",
+      "handed": "two",
       "maxSockets": 5,
       "unique": [
         "Pierre Tombale Couant"
@@ -1596,6 +1745,7 @@
       "kind": "weapon",
       "type": "jave",
       "tier": "exceptional",
+      "handed": "one",
       "maxSockets": 0,
       "unique": [],
       "set": []
@@ -1605,6 +1755,7 @@
       "kind": "weapon",
       "type": "h2h2",
       "tier": "exceptional",
+      "handed": "one",
       "maxSockets": 3,
       "unique": [],
       "set": []
@@ -1614,6 +1765,7 @@
       "kind": "weapon",
       "type": "scep",
       "tier": "exceptional",
+      "handed": "one",
       "maxSockets": 3,
       "unique": [
         "The Fetid Sprinkler"
@@ -1625,6 +1777,7 @@
       "kind": "weapon",
       "type": "pole",
       "tier": "exceptional",
+      "handed": "two",
       "maxSockets": 5,
       "unique": [
         "Athena's Wrath"
@@ -1636,6 +1789,7 @@
       "kind": "weapon",
       "type": "jave",
       "tier": "exceptional",
+      "handed": "one",
       "maxSockets": 0,
       "unique": [],
       "set": []
@@ -1645,6 +1799,7 @@
       "kind": "weapon",
       "type": "swor",
       "tier": "exceptional",
+      "handed": "one",
       "maxSockets": 2,
       "unique": [
         "Hexfire"
@@ -1656,6 +1811,7 @@
       "kind": "weapon",
       "type": "scep",
       "tier": "exceptional",
+      "handed": "one",
       "maxSockets": 2,
       "unique": [
         "Zakarum's Hand"
@@ -1667,6 +1823,7 @@
       "kind": "weapon",
       "type": "swor",
       "tier": "exceptional",
+      "handed": "one",
       "maxSockets": 2,
       "unique": [
         "Coldsteel Eye"
@@ -1678,6 +1835,7 @@
       "kind": "weapon",
       "type": "club",
       "tier": "exceptional",
+      "handed": "one",
       "maxSockets": 3,
       "unique": [
         "Fleshrender"
@@ -1689,6 +1847,7 @@
       "kind": "weapon",
       "type": "spea",
       "tier": "exceptional",
+      "handed": "two",
       "maxSockets": 3,
       "unique": [
         "The Impaler"
@@ -1700,6 +1859,7 @@
       "kind": "weapon",
       "type": "swor",
       "tier": "exceptional",
+      "handed": "one",
       "maxSockets": 2,
       "unique": [
         "Bloodletter"
@@ -1711,6 +1871,7 @@
       "kind": "weapon",
       "type": "spea",
       "tier": "exceptional",
+      "handed": "two",
       "maxSockets": 6,
       "unique": [
         "Hone Sundan"
@@ -1722,6 +1883,7 @@
       "kind": "weapon",
       "type": "taxe",
       "tier": "exceptional",
+      "handed": "one",
       "maxSockets": 0,
       "unique": [
         "The Scalper"
@@ -1733,6 +1895,7 @@
       "kind": "weapon",
       "type": "tkni",
       "tier": "exceptional",
+      "handed": "one",
       "maxSockets": 0,
       "unique": [
         "Deathbit"
@@ -1744,6 +1907,7 @@
       "kind": "weapon",
       "type": "spea",
       "tier": "exceptional",
+      "handed": "two",
       "maxSockets": 4,
       "unique": [
         "Kelpie Snare"
@@ -1755,6 +1919,7 @@
       "kind": "weapon",
       "type": "jave",
       "tier": "exceptional",
+      "handed": "one",
       "maxSockets": 0,
       "unique": [],
       "set": []
@@ -1764,6 +1929,7 @@
       "kind": "weapon",
       "type": "h2h2",
       "tier": "exceptional",
+      "handed": "one",
       "maxSockets": 3,
       "unique": [
         "Cutthroat1"
@@ -1775,6 +1941,7 @@
       "kind": "weapon",
       "type": "pole",
       "tier": "exceptional",
+      "handed": "two",
       "maxSockets": 4,
       "unique": [
         "Blackleach Blade"
@@ -1788,6 +1955,7 @@
       "kind": "weapon",
       "type": "axe",
       "tier": "exceptional",
+      "handed": "one",
       "maxSockets": 6,
       "unique": [
         "Guardian Naga"
@@ -1799,6 +1967,7 @@
       "kind": "weapon",
       "type": "h2h",
       "tier": "exceptional",
+      "handed": "one",
       "maxSockets": 2,
       "unique": [],
       "set": []
@@ -1808,6 +1977,7 @@
       "kind": "weapon",
       "type": "pole",
       "tier": "exceptional",
+      "handed": "two",
       "maxSockets": 6,
       "unique": [
         "Grim's Burning Dead"
@@ -1819,6 +1989,7 @@
       "kind": "weapon",
       "type": "swor",
       "tier": "exceptional",
+      "handed": "one",
       "maxSockets": 3,
       "unique": [
         "The Atlantian"
@@ -1830,6 +2001,7 @@
       "kind": "weapon",
       "type": "hamm",
       "tier": "exceptional",
+      "handed": "one",
       "maxSockets": 4,
       "unique": [
         "Earthshaker"
@@ -1841,6 +2013,7 @@
       "kind": "weapon",
       "type": "wand",
       "tier": "exceptional",
+      "handed": "one",
       "maxSockets": 1,
       "unique": [
         "Suicide Branch"
@@ -1852,6 +2025,7 @@
       "kind": "weapon",
       "type": "scep",
       "tier": "exceptional",
+      "handed": "one",
       "maxSockets": 5,
       "unique": [
         "Hand of Blessed Light"
@@ -1863,6 +2037,7 @@
       "kind": "weapon",
       "type": "h2h",
       "tier": "exceptional",
+      "handed": "one",
       "maxSockets": 2,
       "unique": [],
       "set": []
@@ -1872,6 +2047,7 @@
       "kind": "weapon",
       "type": "wand",
       "tier": "exceptional",
+      "handed": "one",
       "maxSockets": 2,
       "unique": [
         "Carin Shard"
@@ -1896,6 +2072,7 @@
       "kind": "weapon",
       "type": "abow",
       "tier": "normal",
+      "handed": "two",
       "maxSockets": 5,
       "unique": [],
       "set": []
@@ -1905,6 +2082,7 @@
       "kind": "weapon",
       "type": "abow",
       "tier": "normal",
+      "handed": "two",
       "maxSockets": 5,
       "unique": [],
       "set": []
@@ -1914,6 +2092,7 @@
       "kind": "weapon",
       "type": "aspe",
       "tier": "normal",
+      "handed": "two",
       "maxSockets": 6,
       "unique": [],
       "set": []
@@ -1923,6 +2102,7 @@
       "kind": "weapon",
       "type": "aspe",
       "tier": "normal",
+      "handed": "two",
       "maxSockets": 6,
       "unique": [],
       "set": []
@@ -1932,6 +2112,7 @@
       "kind": "weapon",
       "type": "ajav",
       "tier": "normal",
+      "handed": "one",
       "maxSockets": 0,
       "unique": [],
       "set": []
@@ -1941,6 +2122,7 @@
       "kind": "weapon",
       "type": "abow",
       "tier": "exceptional",
+      "handed": "two",
       "maxSockets": 5,
       "unique": [],
       "set": []
@@ -1950,6 +2132,7 @@
       "kind": "weapon",
       "type": "abow",
       "tier": "exceptional",
+      "handed": "two",
       "maxSockets": 5,
       "unique": [
         "Lycander's Aim"
@@ -1961,6 +2144,7 @@
       "kind": "weapon",
       "type": "aspe",
       "tier": "exceptional",
+      "handed": "two",
       "maxSockets": 6,
       "unique": [],
       "set": []
@@ -1970,6 +2154,7 @@
       "kind": "weapon",
       "type": "aspe",
       "tier": "exceptional",
+      "handed": "two",
       "maxSockets": 6,
       "unique": [
         "Lycander's Flank"
@@ -1981,6 +2166,7 @@
       "kind": "weapon",
       "type": "ajav",
       "tier": "exceptional",
+      "handed": "one",
       "maxSockets": 0,
       "unique": [
         "Titan's Revenge"
@@ -1992,6 +2178,7 @@
       "kind": "weapon",
       "type": "abow",
       "tier": "elite",
+      "handed": "two",
       "maxSockets": 5,
       "unique": [
         "Bloodraven's Charge"
@@ -2003,6 +2190,7 @@
       "kind": "weapon",
       "type": "abow",
       "tier": "elite",
+      "handed": "two",
       "maxSockets": 5,
       "unique": [],
       "set": [
@@ -2014,6 +2202,7 @@
       "kind": "weapon",
       "type": "aspe",
       "tier": "elite",
+      "handed": "two",
       "maxSockets": 6,
       "unique": [
         "Stoneraven"
@@ -2025,6 +2214,7 @@
       "kind": "weapon",
       "type": "aspe",
       "tier": "elite",
+      "handed": "two",
       "maxSockets": 6,
       "unique": [],
       "set": []
@@ -2034,6 +2224,7 @@
       "kind": "weapon",
       "type": "ajav",
       "tier": "elite",
+      "handed": "one",
       "maxSockets": 0,
       "unique": [
         "Thunderstroke"
@@ -2045,6 +2236,7 @@
       "kind": "weapon",
       "type": "axe",
       "tier": "normal",
+      "handed": "one",
       "maxSockets": 4,
       "unique": [
         "Deathspade"
@@ -2056,6 +2248,7 @@
       "kind": "weapon",
       "type": "h2h",
       "tier": "normal",
+      "handed": "one",
       "maxSockets": 2,
       "unique": [],
       "set": []
@@ -2210,6 +2403,7 @@
       "kind": "weapon",
       "type": "taxe",
       "tier": "normal",
+      "handed": "one",
       "maxSockets": 0,
       "unique": [],
       "set": []
@@ -2219,6 +2413,7 @@
       "kind": "weapon",
       "type": "pole",
       "tier": "normal",
+      "handed": "two",
       "maxSockets": 3,
       "unique": [
         "Dimoaks Hew"
@@ -2230,6 +2425,7 @@
       "kind": "weapon",
       "type": "axe",
       "tier": "normal",
+      "handed": "two",
       "maxSockets": 5,
       "unique": [
         "Goreshovel"
@@ -2254,6 +2450,7 @@
       "kind": "weapon",
       "type": "tkni",
       "tier": "normal",
+      "handed": "one",
       "maxSockets": 0,
       "unique": [],
       "set": []
@@ -2263,6 +2460,7 @@
       "kind": "weapon",
       "type": "knif",
       "tier": "normal",
+      "handed": "one",
       "maxSockets": 2,
       "unique": [
         "Irices Shard"
@@ -2274,6 +2472,7 @@
       "kind": "weapon",
       "type": "spea",
       "tier": "normal",
+      "handed": "two",
       "maxSockets": 5,
       "unique": [
         "Bloodthief"
@@ -2298,6 +2497,7 @@
       "kind": "weapon",
       "type": "swor",
       "tier": "normal",
+      "handed": "one",
       "maxSockets": 4,
       "unique": [
         "Griswolds Edge"
@@ -2322,6 +2522,7 @@
       "kind": "weapon",
       "type": "staf",
       "tier": "normal",
+      "handed": "two",
       "maxSockets": 4,
       "unique": [
         "The Salamander"
@@ -2335,6 +2536,7 @@
       "kind": "weapon",
       "type": "swor",
       "tier": "normal",
+      "handed": "oneOrTwo",
       "maxSockets": 4,
       "unique": [
         "Blacktongue"
@@ -2346,6 +2548,7 @@
       "kind": "weapon",
       "type": "h2h",
       "tier": "normal",
+      "handed": "one",
       "maxSockets": 3,
       "unique": [],
       "set": []
@@ -2355,6 +2558,7 @@
       "kind": "weapon",
       "type": "axe",
       "tier": "normal",
+      "handed": "two",
       "maxSockets": 5,
       "unique": [
         "The Chieftan"
@@ -2379,6 +2583,7 @@
       "kind": "weapon",
       "type": "wand",
       "tier": "normal",
+      "handed": "one",
       "maxSockets": 2,
       "unique": [
         "Gravenspine"
@@ -2406,6 +2611,7 @@
       "kind": "weapon",
       "type": "bow",
       "tier": "normal",
+      "handed": "two",
       "maxSockets": 4,
       "unique": [
         "Piercerib"
@@ -2417,6 +2623,7 @@
       "kind": "weapon",
       "type": "h2h",
       "tier": "normal",
+      "handed": "one",
       "maxSockets": 2,
       "unique": [],
       "set": []
@@ -2483,6 +2690,7 @@
       "kind": "weapon",
       "type": "club",
       "tier": "normal",
+      "handed": "one",
       "maxSockets": 2,
       "unique": [
         "Felloak"
@@ -2494,6 +2702,7 @@
       "kind": "weapon",
       "type": "swor",
       "tier": "normal",
+      "handed": "oneOrTwo",
       "maxSockets": 4,
       "unique": [
         "Soulflay"
@@ -2505,6 +2714,7 @@
       "kind": "weapon",
       "type": "h2h",
       "tier": "normal",
+      "handed": "one",
       "maxSockets": 3,
       "unique": [],
       "set": []
@@ -2528,6 +2738,7 @@
       "kind": "weapon",
       "type": "swor",
       "tier": "normal",
+      "handed": "one",
       "maxSockets": 6,
       "unique": [],
       "set": []
@@ -2537,6 +2748,7 @@
       "kind": "weapon",
       "type": "staf",
       "tier": "normal",
+      "handed": "two",
       "maxSockets": 4,
       "unique": [
         "Lazarus Spire"
@@ -2548,6 +2760,7 @@
       "kind": "weapon",
       "type": "knif",
       "tier": "normal",
+      "handed": "one",
       "maxSockets": 1,
       "unique": [
         "Gull"
@@ -2559,6 +2772,7 @@
       "kind": "weapon",
       "type": "knif",
       "tier": "normal",
+      "handed": "one",
       "maxSockets": 1,
       "unique": [
         "The Diggler"
@@ -2728,6 +2942,7 @@
       "kind": "weapon",
       "type": "mace",
       "tier": "normal",
+      "handed": "one",
       "maxSockets": 5,
       "unique": [
         "The Generals Tan Do Li Ga"
@@ -2739,6 +2954,7 @@
       "kind": "weapon",
       "type": "swor",
       "tier": "normal",
+      "handed": "oneOrTwo",
       "maxSockets": 5,
       "unique": [
         "Ripsaw"
@@ -2750,6 +2966,7 @@
       "kind": "weapon",
       "type": "swor",
       "tier": "normal",
+      "handed": "one",
       "maxSockets": 2,
       "unique": [
         "Gleamscythe"
@@ -2785,6 +3002,7 @@
       "kind": "weapon",
       "type": "axe",
       "tier": "normal",
+      "handed": "two",
       "maxSockets": 6,
       "unique": [
         "Brainhew"
@@ -2809,6 +3027,7 @@
       "kind": "weapon",
       "type": "swor",
       "tier": "normal",
+      "handed": "oneOrTwo",
       "maxSockets": 4,
       "unique": [
         "Kinemils Awl"
@@ -2820,6 +3039,7 @@
       "kind": "weapon",
       "type": "axe",
       "tier": "normal",
+      "handed": "two",
       "maxSockets": 6,
       "unique": [
         "The Humongous"
@@ -2831,6 +3051,7 @@
       "kind": "weapon",
       "type": "jave",
       "tier": "normal",
+      "handed": "one",
       "maxSockets": 0,
       "unique": [],
       "set": []
@@ -2840,6 +3061,7 @@
       "kind": "weapon",
       "type": "hamm",
       "tier": "normal",
+      "handed": "two",
       "maxSockets": 6,
       "unique": [
         "Steeldriver"
@@ -2851,6 +3073,7 @@
       "kind": "weapon",
       "type": "tpot",
       "tier": "normal",
+      "handed": "one",
       "maxSockets": 0,
       "unique": [],
       "set": []
@@ -2860,6 +3083,7 @@
       "kind": "weapon",
       "type": "tpot",
       "tier": "normal",
+      "handed": "one",
       "maxSockets": 0,
       "unique": [],
       "set": []
@@ -2869,6 +3093,7 @@
       "kind": "weapon",
       "type": "tpot",
       "tier": "normal",
+      "handed": "one",
       "maxSockets": 0,
       "unique": [],
       "set": []
@@ -2878,6 +3103,7 @@
       "kind": "weapon",
       "type": "scep",
       "tier": "normal",
+      "handed": "one",
       "maxSockets": 3,
       "unique": [
         "Rusthandle"
@@ -2891,6 +3117,7 @@
       "kind": "weapon",
       "type": "swor",
       "tier": "normal",
+      "handed": "oneOrTwo",
       "maxSockets": 6,
       "unique": [
         "The Patriarch"
@@ -2928,6 +3155,7 @@
       "kind": "weapon",
       "type": "wand",
       "tier": "normal",
+      "handed": "one",
       "maxSockets": 2,
       "unique": [
         "Umes Lament"
@@ -2941,6 +3169,7 @@
       "kind": "weapon",
       "type": "pole",
       "tier": "normal",
+      "handed": "two",
       "maxSockets": 6,
       "unique": [
         "Woestave"
@@ -2952,6 +3181,7 @@
       "kind": "weapon",
       "type": "axe",
       "tier": "normal",
+      "handed": "one",
       "maxSockets": 2,
       "unique": [
         "The Gnasher"
@@ -2989,6 +3219,7 @@
       "kind": "weapon",
       "type": "bow",
       "tier": "normal",
+      "handed": "two",
       "maxSockets": 4,
       "unique": [
         "Witherstring"
@@ -3037,6 +3268,7 @@
       "kind": "weapon",
       "type": "xbow",
       "tier": "normal",
+      "handed": "two",
       "maxSockets": 6,
       "unique": [
         "Hellcast"
@@ -3048,6 +3280,7 @@
       "kind": "weapon",
       "type": "jave",
       "tier": "normal",
+      "handed": "one",
       "maxSockets": 0,
       "unique": [],
       "set": []
@@ -3070,6 +3303,7 @@
       "kind": "weapon",
       "type": "knif",
       "tier": "normal",
+      "handed": "one",
       "maxSockets": 3,
       "unique": [
         "The Jade Tan Do"
@@ -3081,6 +3315,7 @@
       "kind": "weapon",
       "type": "h2h",
       "tier": "normal",
+      "handed": "one",
       "maxSockets": 2,
       "unique": [],
       "set": []
@@ -3090,6 +3325,7 @@
       "kind": "weapon",
       "type": "axe",
       "tier": "normal",
+      "handed": "two",
       "maxSockets": 4,
       "unique": [
         "Fechmars Axe"
@@ -3101,6 +3337,7 @@
       "kind": "weapon",
       "type": "bow",
       "tier": "normal",
+      "handed": "two",
       "maxSockets": 6,
       "unique": [
         "Wizendraw"
@@ -3140,6 +3377,7 @@
       "kind": "weapon",
       "type": "bow",
       "tier": "normal",
+      "handed": "two",
       "maxSockets": 5,
       "unique": [
         "Rimeraven"
@@ -3190,6 +3428,7 @@
       "kind": "weapon",
       "type": "swor",
       "tier": "normal",
+      "handed": "one",
       "maxSockets": 4,
       "unique": [
         "Hellplague"
@@ -3203,6 +3442,7 @@
       "kind": "weapon",
       "type": "staf",
       "tier": "normal",
+      "handed": "two",
       "maxSockets": 3,
       "unique": [
         "Serpent Lord"
@@ -3227,6 +3467,7 @@
       "kind": "weapon",
       "type": "bow",
       "tier": "normal",
+      "handed": "two",
       "maxSockets": 6,
       "unique": [
         "Blastbark"
@@ -3238,6 +3479,7 @@
       "kind": "weapon",
       "type": "xbow",
       "tier": "normal",
+      "handed": "two",
       "maxSockets": 3,
       "unique": [
         "Leadcrow"
@@ -3249,6 +3491,7 @@
       "kind": "weapon",
       "type": "mace",
       "tier": "normal",
+      "handed": "one",
       "maxSockets": 2,
       "unique": [
         "Crushflange"
@@ -3260,6 +3503,7 @@
       "kind": "weapon",
       "type": "hamm",
       "tier": "normal",
+      "handed": "two",
       "maxSockets": 6,
       "unique": [
         "Bonesob"
@@ -3311,6 +3555,7 @@
       "kind": "weapon",
       "type": "axe",
       "tier": "normal",
+      "handed": "one",
       "maxSockets": 6,
       "unique": [
         "Mindrend"
@@ -3337,6 +3582,7 @@
       "kind": "weapon",
       "type": "mace",
       "tier": "normal",
+      "handed": "one",
       "maxSockets": 3,
       "unique": [
         "Bloodrise"
@@ -3348,6 +3594,7 @@
       "kind": "weapon",
       "type": "xbow",
       "tier": "normal",
+      "handed": "two",
       "maxSockets": 4,
       "unique": [
         "Ichorsting"
@@ -3502,6 +3749,7 @@
       "kind": "weapon",
       "type": "orb",
       "tier": "normal",
+      "handed": "one",
       "maxSockets": 4,
       "unique": [],
       "set": []
@@ -3511,6 +3759,7 @@
       "kind": "weapon",
       "type": "orb",
       "tier": "normal",
+      "handed": "one",
       "maxSockets": 4,
       "unique": [],
       "set": []
@@ -3520,6 +3769,7 @@
       "kind": "weapon",
       "type": "orb",
       "tier": "normal",
+      "handed": "one",
       "maxSockets": 4,
       "unique": [],
       "set": []
@@ -3529,6 +3779,7 @@
       "kind": "weapon",
       "type": "orb",
       "tier": "normal",
+      "handed": "one",
       "maxSockets": 4,
       "unique": [],
       "set": []
@@ -3538,6 +3789,7 @@
       "kind": "weapon",
       "type": "orb",
       "tier": "normal",
+      "handed": "one",
       "maxSockets": 4,
       "unique": [],
       "set": []
@@ -3547,6 +3799,7 @@
       "kind": "weapon",
       "type": "orb",
       "tier": "exceptional",
+      "handed": "one",
       "maxSockets": 4,
       "unique": [],
       "set": []
@@ -3556,6 +3809,7 @@
       "kind": "weapon",
       "type": "orb",
       "tier": "exceptional",
+      "handed": "one",
       "maxSockets": 4,
       "unique": [],
       "set": []
@@ -3565,6 +3819,7 @@
       "kind": "weapon",
       "type": "orb",
       "tier": "exceptional",
+      "handed": "one",
       "maxSockets": 4,
       "unique": [],
       "set": []
@@ -3574,6 +3829,7 @@
       "kind": "weapon",
       "type": "orb",
       "tier": "exceptional",
+      "handed": "one",
       "maxSockets": 4,
       "unique": [],
       "set": []
@@ -3583,6 +3839,7 @@
       "kind": "weapon",
       "type": "orb",
       "tier": "exceptional",
+      "handed": "one",
       "maxSockets": 4,
       "unique": [
         "The Oculus"
@@ -3596,6 +3853,7 @@
       "kind": "weapon",
       "type": "orb",
       "tier": "elite",
+      "handed": "one",
       "maxSockets": 4,
       "unique": [],
       "set": []
@@ -3605,6 +3863,7 @@
       "kind": "weapon",
       "type": "orb",
       "tier": "elite",
+      "handed": "one",
       "maxSockets": 4,
       "unique": [
         "Eschuta's temper"
@@ -3616,6 +3875,7 @@
       "kind": "weapon",
       "type": "orb",
       "tier": "elite",
+      "handed": "one",
       "maxSockets": 4,
       "unique": [],
       "set": []
@@ -3625,6 +3885,7 @@
       "kind": "weapon",
       "type": "orb",
       "tier": "elite",
+      "handed": "one",
       "maxSockets": 4,
       "unique": [],
       "set": []
@@ -3634,6 +3895,7 @@
       "kind": "weapon",
       "type": "orb",
       "tier": "elite",
+      "handed": "one",
       "maxSockets": 4,
       "unique": [
         "Fathom"
@@ -3645,6 +3907,7 @@
       "kind": "weapon",
       "type": "tpot",
       "tier": "normal",
+      "handed": "one",
       "maxSockets": 0,
       "unique": [],
       "set": []
@@ -3654,6 +3917,7 @@
       "kind": "weapon",
       "type": "tpot",
       "tier": "normal",
+      "handed": "one",
       "maxSockets": 0,
       "unique": [],
       "set": []
@@ -3663,6 +3927,7 @@
       "kind": "weapon",
       "type": "tpot",
       "tier": "normal",
+      "handed": "one",
       "maxSockets": 0,
       "unique": [],
       "set": []
@@ -3815,6 +4080,7 @@
       "kind": "weapon",
       "type": "pole",
       "tier": "normal",
+      "handed": "two",
       "maxSockets": 5,
       "unique": [
         "The Battlebranch"
@@ -3826,6 +4092,7 @@
       "kind": "weapon",
       "type": "spea",
       "tier": "normal",
+      "handed": "two",
       "maxSockets": 6,
       "unique": [
         "The Tannr Gorerod"
@@ -3837,6 +4104,7 @@
       "kind": "weapon",
       "type": "jave",
       "tier": "normal",
+      "handed": "one",
       "maxSockets": 0,
       "unique": [],
       "set": []
@@ -3883,6 +4151,7 @@
       "kind": "weapon",
       "type": "xbow",
       "tier": "normal",
+      "handed": "two",
       "maxSockets": 5,
       "unique": [
         "Doomspittle"
@@ -3894,6 +4163,7 @@
       "kind": "weapon",
       "type": "bow",
       "tier": "normal",
+      "handed": "two",
       "maxSockets": 5,
       "unique": [
         "Pullspite"
@@ -3905,6 +4175,7 @@
       "kind": "weapon",
       "type": "swor",
       "tier": "normal",
+      "handed": "one",
       "maxSockets": 2,
       "unique": [
         "Krintizs Skewer"
@@ -3918,6 +4189,7 @@
       "kind": "weapon",
       "type": "bow",
       "tier": "normal",
+      "handed": "two",
       "maxSockets": 3,
       "unique": [
         "Pluckeye"
@@ -3940,6 +4212,7 @@
       "kind": "weapon",
       "type": "swor",
       "tier": "normal",
+      "handed": "one",
       "maxSockets": 2,
       "unique": [
         "Blood Crescent"
@@ -3951,6 +4224,7 @@
       "kind": "weapon",
       "type": "scep",
       "tier": "normal",
+      "handed": "one",
       "maxSockets": 2,
       "unique": [
         "Knell Striker"
@@ -3962,6 +4236,7 @@
       "kind": "weapon",
       "type": "pole",
       "tier": "normal",
+      "handed": "two",
       "maxSockets": 5,
       "unique": [
         "Soul Harvest"
@@ -3986,6 +4261,7 @@
       "kind": "weapon",
       "type": "h2h",
       "tier": "normal",
+      "handed": "one",
       "maxSockets": 3,
       "unique": [],
       "set": []
@@ -4008,6 +4284,7 @@
       "kind": "weapon",
       "type": "club",
       "tier": "normal",
+      "handed": "one",
       "maxSockets": 2,
       "unique": [
         "Stoutnail"
@@ -4043,6 +4320,7 @@
       "kind": "weapon",
       "type": "spea",
       "tier": "normal",
+      "handed": "two",
       "maxSockets": 3,
       "unique": [
         "The Dragon Chang"
@@ -4054,6 +4332,7 @@
       "kind": "weapon",
       "type": "spea",
       "tier": "normal",
+      "handed": "two",
       "maxSockets": 6,
       "unique": [
         "Lance of Yaggai"
@@ -4065,6 +4344,7 @@
       "kind": "weapon",
       "type": "swor",
       "tier": "normal",
+      "handed": "one",
       "maxSockets": 2,
       "unique": [
         "Rixots Keen"
@@ -4076,6 +4356,7 @@
       "kind": "weapon",
       "type": "jave",
       "tier": "normal",
+      "handed": "one",
       "maxSockets": 0,
       "unique": [],
       "set": []
@@ -4085,6 +4366,7 @@
       "kind": "weapon",
       "type": "staf",
       "tier": "normal",
+      "handed": "two",
       "maxSockets": 2,
       "unique": [
         "Bane Ash"
@@ -4109,6 +4391,7 @@
       "kind": "weapon",
       "type": "bow",
       "tier": "normal",
+      "handed": "two",
       "maxSockets": 5,
       "unique": [
         "Hellclap"
@@ -4122,6 +4405,7 @@
       "kind": "weapon",
       "type": "taxe",
       "tier": "normal",
+      "handed": "one",
       "maxSockets": 0,
       "unique": [],
       "set": []
@@ -4172,6 +4456,7 @@
       "kind": "weapon",
       "type": "tkni",
       "tier": "normal",
+      "handed": "one",
       "maxSockets": 0,
       "unique": [],
       "set": []
@@ -4194,6 +4479,7 @@
       "kind": "weapon",
       "type": "spea",
       "tier": "normal",
+      "handed": "two",
       "maxSockets": 4,
       "unique": [
         "Razortine"
@@ -4205,6 +4491,7 @@
       "kind": "weapon",
       "type": "jave",
       "tier": "normal",
+      "handed": "one",
       "maxSockets": 0,
       "unique": [],
       "set": []
@@ -4755,6 +5042,7 @@
       "kind": "weapon",
       "type": "pole",
       "tier": "normal",
+      "handed": "two",
       "maxSockets": 4,
       "unique": [
         "Steelgoad"
@@ -4766,6 +5054,7 @@
       "kind": "weapon",
       "type": "axe",
       "tier": "normal",
+      "handed": "one",
       "maxSockets": 6,
       "unique": [
         "Rakescar"
@@ -4777,6 +5066,7 @@
       "kind": "weapon",
       "type": "hamm",
       "tier": "normal",
+      "handed": "one",
       "maxSockets": 4,
       "unique": [
         "Ironstone"
@@ -4788,6 +5078,7 @@
       "kind": "weapon",
       "type": "wand",
       "tier": "normal",
+      "handed": "one",
       "maxSockets": 1,
       "unique": [
         "Iros Torch"
@@ -4799,6 +5090,7 @@
       "kind": "weapon",
       "type": "h2h",
       "tier": "normal",
+      "handed": "one",
       "maxSockets": 2,
       "unique": [],
       "set": []
@@ -4808,6 +5100,7 @@
       "kind": "weapon",
       "type": "pole",
       "tier": "normal",
+      "handed": "two",
       "maxSockets": 6,
       "unique": [
         "The Grim Reaper"
@@ -4819,6 +5112,7 @@
       "kind": "weapon",
       "type": "swor",
       "tier": "normal",
+      "handed": "one",
       "maxSockets": 3,
       "unique": [
         "Culwens Point"
@@ -4832,6 +5126,7 @@
       "kind": "weapon",
       "type": "scep",
       "tier": "normal",
+      "handed": "one",
       "maxSockets": 5,
       "unique": [
         "Stormeye"
@@ -4845,6 +5140,7 @@
       "kind": "weapon",
       "type": "staf",
       "tier": "normal",
+      "handed": "two",
       "maxSockets": 6,
       "unique": [
         "The Iron Jang Bong"
@@ -5347,6 +5643,7 @@
       "kind": "weapon",
       "type": "wand",
       "tier": "normal",
+      "handed": "one",
       "maxSockets": 1,
       "unique": [
         "Maelstromwrath"

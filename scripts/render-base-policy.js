@@ -30,6 +30,13 @@ const GROUP_TITLES = {
   paladinShields: 'Paladin shields',
 };
 
+const TWO_HANDED_KEEP_TITLES = {
+  rangedBowsAndCrossbows: 'Bows and crossbows — ranged, and the Rogue mercenary\'s only weapon',
+  mercenaryPolearmsAndSpears: 'Polearms and spears — Act 2 mercenary Insight/Infinity/Reaper\'s Toll bases',
+  barbarianAxesAndMauls: 'Two-handed axes and mauls — Barbarian mastery plus Battle Orders',
+  barbarianVersatileSwords: 'Versatile swords — one-handed for a Barbarian, and Act 5 mercenary bases',
+};
+
 function escapeCell(value) {
   return String(value).replaceAll('|', '\\|').replaceAll('\n', ' ');
 }
@@ -92,6 +99,32 @@ function render() {
   policy.goodButCommon.forEach((code) => {
     const item = catalog[code];
     lines.push(`| \`${code}\` | ${escapeCell(item.name)} | ${item.tier} | ${item.maxSockets} | ${escapeCell(collisionLabel(item))} |`);
+  });
+
+  const dangerousTwoHanded = Object.values(policy.twoHandedDanger).flat();
+  const keptTwoHanded = Object.values(policy.twoHandedKept).flat();
+  lines.push(
+    '',
+    `## Hide Dangerous 2H Bases — separate opt-in pass (${dangerousTwoHanded.length})`,
+    '',
+    'A two-handed weapon costs the shield slot outright: no block, no shield resists, no Spirit/Sanctuary/Spirit Ward. This pass hides only the two-handed bases whose sole realistic player use is a build Hardcore cannot justify. It is **self-contained** — it overlaps Hide Unpopular Bases on purpose, so enabling it alone still hides every base listed here.',
+    '',
+    '| Code | Base | Tier | Max sockets | Named unique/set collisions intentionally hidden |',
+    '| --- | --- | --- | ---: | --- |',
+  );
+  dangerousTwoHanded.forEach((code) => {
+    const item = catalog[code];
+    lines.push(`| \`${code}\` | ${escapeCell(item.name)} | ${item.tier} | ${item.maxSockets} | ${escapeCell(collisionLabel(item))} |`);
+  });
+  lines.push(
+    '',
+    `### Two-handed bases this pass deliberately keeps (${keptTwoHanded.length})`,
+    '',
+    `Every other two-handed base in the pinned data is audited and kept **by this pass**; Hide Unpopular Bases still hides some of them on its own signal-to-noise grounds. \`${policy.questStavesNeverHidden.join('`, `')}\` (Horadric Staff, Staff of Kings) are quest items rather than spawnable bases and are never touched by any group.`,
+    '',
+  );
+  Object.entries(policy.twoHandedKept).forEach(([group, codes]) => {
+    lines.push(`- **${TWO_HANDED_KEEP_TITLES[group]} (${codes.length}):** ${codes.map((code) => `\`${code}\` ${catalog[code].name}`).join(', ')}`);
   });
 
   lines.push('', '## Explicit keeps tested by the suite', '');

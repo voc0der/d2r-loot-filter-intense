@@ -99,6 +99,7 @@ function runMod(configOverrides = {}, inputFiles = {}) {
     THROWING_KEYS,
     UNPOPULAR_BASE_KEYS,
     GOOD_BUT_COMMON_KEYS,
+    DANGEROUS_TWO_HANDED_KEYS,
     GEM_TIER_LABELS,
     GEM_CRUNCH,
   })`, context));

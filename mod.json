@@ -1,9 +1,9 @@
 {
   "name": "D2R Loot Filter — Intense",
-  "description": "A D2R Lord of Destruction loot-filter overlay. Hides trash drops and 321 aggressively filtered equipment bases including high-volume normal/exceptional weapons, armor and class items, weak elite bows and spears, and the whole Amazon spear line, while keeping all gloves and boots visible for rare rolls; optionally hides a further 13 good-but-common runeword shells and leveling unique bases; can mark superior bases in red; converts inherited black labels to dots; crunches gem names; compacts Gold pile labels; and can mute the Slain Monsters Rest in Peace corpse chime without removing its animation. Reign of the Warlock content is intentionally excluded. Drops and mechanics are unchanged.",
+  "description": "A D2R Lord of Destruction loot-filter overlay. Hides trash drops and 321 aggressively filtered equipment bases including high-volume normal/exceptional weapons, armor and class items, weak elite bows and spears, and the whole Amazon spear line, while keeping all gloves and boots visible for rare rolls; optionally hides a further 13 good-but-common runeword shells and leveling unique bases, or the 21 two-handed staves and Amazon spears that only sell shieldless builds Hardcore cannot justify; can mark superior bases in red; converts inherited black labels to dots; crunches gem names; compacts Gold pile labels; and can mute the Slain Monsters Rest in Peace corpse chime without removing its animation. Reign of the Warlock content is intentionally excluded. Drops and mechanics are unchanged.",
   "author": "voc0der",
   "website": "https://github.com/voc0der/d2r-loot-filter-intense",
-  "version": "0.6.0",
+  "version": "0.7.0",
   "config": [
     {
       "type": "section",
@@ -52,6 +52,13 @@
           "id": "hideGoodButCommon",
           "name": "Hide Good but Common",
           "description": "Hide 13 bases that are genuinely good but so common that an endgame character has already banked every roll worth owning: the cheap runeword shells (Double Axe, Flail, Crystal Sword, Broad Sword, Short Bow, Breast Plate, Mage Plate) and the leveling-tier unique bases (Dagger, Tulwar, Battle Sword, Short Siege Bow, Ballista, Chu-Ko-Nu). Stacks with Hide Unpopular Bases, which deliberately keeps these. The four circlets stay visible because a rare roll on those is still worth inspecting. Quality-blind like every hide group.",
+          "defaultValue": false
+        },
+        {
+          "type": "checkbox",
+          "id": "hideDangerousTwoHanded",
+          "name": "Hide Dangerous 2H Bases",
+          "description": "Hide the 21 two-handed bases whose only real player use is a build Hardcore cannot justify: all 15 spawnable staves (every staffmod on a staff is a Sorceress skill, so the line only sells a shieldless caster) and all 6 Amazon spears and pikes (class-locked Fend/Impale melee that no mercenary can ever hold). Two-handed bases that are NOT hidden: every bow and crossbow (ranged, and the Rogue mercenary's), every mercenary polearm and spear (Insight and Infinity keep you alive), and every two-handed Barbarian axe, maul and sword (mastery, Battle Orders, and 1or2handed swords are one-handed for a Barbarian). Self-contained and intentionally overlaps the two lists above, so it works with them off. Quest staves are never touched. Quality-blind: this also hides Mang Song's Lesson, Ondal's Wisdom, Naj's Puzzler, Ribcracker and Stoneraven.",
           "defaultValue": false
         },
         {

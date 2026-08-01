@@ -487,6 +487,43 @@ These bases are **not** part of the list above. Hide Unpopular Bases keeps them 
 | `brs` | Breast Plate | normal | 3 | Unique: Venomsward; Set: Isenhart's Case |
 | `xtp` | Mage Plate | exceptional | 3 | Unique: Que-Hegan's Wisdon |
 
+## Hide Dangerous 2H Bases — separate opt-in pass (21)
+
+A two-handed weapon costs the shield slot outright: no block, no shield resists, no Spirit/Sanctuary/Spirit Ward. This pass hides only the two-handed bases whose sole realistic player use is a build Hardcore cannot justify. It is **self-contained** — it overlaps Hide Unpopular Bases on purpose, so enabling it alone still hides every base listed here.
+
+| Code | Base | Tier | Max sockets | Named unique/set collisions intentionally hidden |
+| --- | --- | --- | ---: | --- |
+| `sst` | Short Staff | normal | 2 | Unique: Bane Ash |
+| `lst` | Long Staff | normal | 3 | Unique: Serpent Lord |
+| `cst` | Gnarled Staff | normal | 4 | Unique: Lazarus Spire |
+| `bst` | Battle Staff | normal | 4 | Unique: The Salamander; Set: Cathan's Rule |
+| `wst` | War Staff | normal | 6 | Unique: The Iron Jang Bong; Set: Arcanna's Deathwand |
+| `8ss` | Jo Staff | exceptional | 2 | Unique: Razorswitch |
+| `8ls` | Quarterstaff | exceptional | 3 | Unique: Ribcracker |
+| `8cs` | Cedar Staff | exceptional | 4 | Unique: Chromatic Ire |
+| `8bs` | Gothic Staff | exceptional | 4 | Unique: Warpspear |
+| `8ws` | Rune Staff | exceptional | 6 | Unique: Skullcollector |
+| `6ss` | Walking Stick | elite | 2 | — |
+| `6ls` | Stalagmite | elite | 3 | — |
+| `6cs` | Elder Staff | elite | 4 | Unique: Ondal's Wisdom; Set: Naj's Puzzler |
+| `6bs` | Shillelagh | elite | 4 | — |
+| `6ws` | Archon Staff | elite | 6 | Unique: Mang Song's Lesson |
+| `am3` | Maiden Spear | normal | 6 | — |
+| `am4` | Maiden Pike | normal | 6 | — |
+| `am8` | Ceremonial Spear | exceptional | 6 | — |
+| `am9` | Ceremonial Pike | exceptional | 6 | Unique: Lycander's Flank |
+| `amd` | Matriarchal Spear | elite | 6 | Unique: Stoneraven |
+| `ame` | Matriarchal Pike | elite | 6 | — |
+
+### Two-handed bases this pass deliberately keeps (114)
+
+Every other two-handed base in the pinned data is audited and kept **by this pass**; Hide Unpopular Bases still hides some of them on its own signal-to-noise grounds. `hst`, `msf` (Horadric Staff, Staff of Kings) are quest items rather than spawnable bases and are never touched by any group.
+
+- **Bows and crossbows — ranged, and the Rogue mercenary's only weapon (42):** `6cb` Great Bow, `6hb` Blade Bow, `6hx` Colossus Crossbow, `6l7` Crusader Bow, `6lb` Shadow Bow, `6lw` Hydra Bow, `6lx` Pellet Bow, `6mx` Gorgon Crossbow, `6rx` Demon Crossbow, `6s7` Diamond Bow, `6sb` Spider Bow, `6sw` Ward Bow, `8cb` Double Bow, `8hb` Razor Bow, `8hx` Ballista, `8l8` Large Siege Bow, `8lb` Cedar Bow, `8lw` Gothic Bow, `8lx` Arbalest, `8mx` Siege Crossbow, `8rx` Chu-Ko-Nu, `8s8` Short Siege Bow, `8sb` Edge Bow, `8sw` Rune Bow, `am1` Stag Bow, `am2` Reflex Bow, `am6` Ashwood Bow, `am7` Ceremonial Bow, `amb` Matriarchal Bow, `amc` Grand Matron Bow, `cbw` Composite Bow, `hbw` Hunter's Bow, `hxb` Heavy Crossbow, `lbb` Long Battle Bow, `lbw` Long Bow, `lwb` Long War Bow, `lxb` Light Crossbow, `mxb` Crossbow, `rxb` Repeating Crossbow, `sbb` Short Battle Bow, `sbw` Short Bow, `swb` Short War Bow
+- **Polearms and spears — Act 2 mercenary Insight/Infinity/Reaper's Toll bases (33):** `7br` Mancatcher, `7h7` Great Poleaxe, `7o7` Ogre Axe, `7p7` War Pike, `7pa` Cryptic Axe, `7s8` Thresher, `7sr` Hyperion Spear, `7st` Ghost Spear, `7tr` Stygian Pike, `7vo` Colossus Voulge, `7wc` Giant Thresher, `9b7` Lochaber Axe, `9br` War Fork, `9h9` Bec-de-Corbin, `9p9` Lance, `9pa` Partizan, `9s8` Battle Scythe, `9sr` War Spear, `9st` Yari, `9tr` Fuscina, `9vo` Bill, `9wc` Grim Scythe, `bar` Bardiche, `brn` Brandistock, `hal` Halberd, `pax` Poleaxe, `pik` Pike, `scy` Scythe, `spr` Spear, `spt` Spetum, `tri` Trident, `vou` Voulge, `wsc` War Scythe
+- **Two-handed axes and mauls — Barbarian mastery plus Battle Orders (21):** `7ba` Silver-edged Axe, `7bt` Decapitator, `7ga` Champion Axe, `7gi` Glorious Axe, `7gm` Thunder Maul, `7la` Feral Axe, `7m7` Ogre Maul, `9ba` Bearded Axe, `9bt` Tabar, `9ga` Gothic Axe, `9gi` Ancient Axe, `9gm` Martel de Fer, `9la` Military Axe, `9m9` War Club, `bax` Broad Axe, `btx` Battle Axe, `gax` Great Axe, `gix` Giant Axe, `gma` Great Maul, `lax` Large Axe, `mau` Maul
+- **Versatile swords — one-handed for a Barbarian, and Act 5 mercenary bases (18):** `2hs` Two-Handed Sword, `72h` Legend Sword, `7b7` Champion Sword, `7cm` Highland Blade, `7fb` Colossus Sword, `7gd` Colossus Blade, `7gs` Balrog Blade, `92h` Espandon, `9b9` Gothic Sword, `9cm` Dacian Falx, `9fb` Zweihander, `9gd` Executioner Sword, `9gs` Tusk Sword, `bsw` Bastard Sword, `clm` Claymore, `flb` Flamberge, `gis` Giant Sword, `gsd` Great Sword
+
 ## Explicit keeps tested by the suite
 
 - **assassinClawKeeps:** `9ar` Quhab, `9lw` Greater Claws, `9tw` Greater Talons, `9qr` Scissors Quhab, `7ar` Suwayyah, `7cs` Battle Cestus, `7lw` Feral Claws, `7qr` Scissors Suwayyah, `7tw` Runic Talons, `7wb` Wrist Sword, `7xf` War Fist

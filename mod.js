@@ -2,7 +2,8 @@
  * D2R Loot Filter — Intense
  *
  * Hides trash drops with a tiny-dot label, can additionally hide good-but-common
- * runeword shells that endgame characters no longer stop for, optionally
+ * runeword shells that endgame characters no longer stop for and the two-handed
+ * bases that only sell shieldless builds Hardcore cannot justify, optionally
  * crunches gem names into compact tier labels, can shorten Gold pile labels,
  * and can mute the repeated
  * Slain Monsters Rest in Peace sound. Runs after any base loot filter in D2RMM
@@ -484,6 +485,49 @@ const GOOD_BUT_COMMON_KEYS = [
   'xtp', // Mage Plate (3os Enigma shell; hides Que-Hegan's Wisdom)
 ];
 
+// Two-handed bases whose only realistic player use is a build that Hardcore
+// cannot justify. A two-handed weapon costs the shield slot outright: no block,
+// no shield resists, no Spirit/Sanctuary/Spirit Ward. That trade is fine on a
+// Barbarian (weapon mastery, Battle Orders, and 1or2handed swords are simply
+// one-handed for the class), fine at range (a bowazon and a Rogue mercenary
+// never wanted a shield), and fine on a mercenary polearm or spear — Insight
+// and Infinity are what keep a Hardcore character alive. It is not fine on a
+// caster staff or a class-locked melee spear, which is all this group hides.
+//
+// This group is deliberately SELF-CONTAINED and therefore overlaps the two
+// lists above: enabling it alone hides every dangerous two-handed base, whether
+// or not Hide Unpopular Bases is also on. Quality-blind like every hide group.
+const DANGEROUS_TWO_HANDED_KEYS = [
+  // Staves — every staffmod on a staff is a Sorceress skill, so the entire line
+  // exists to sell a shieldless caster. No mercenary can hold one either. The
+  // two quest staves (hst Horadric Staff, msf Staff of Kings) are not spawnable
+  // bases and are never touched.
+  'sst', // Short Staff (hides Bane Ash)
+  'lst', // Long Staff (hides Serpent Lord)
+  'cst', // Gnarled Staff (hides Lazarus Spire)
+  'bst', // Battle Staff (hides The Salamander and Cathan's Rule)
+  'wst', // War Staff (hides The Iron Jang Bong and Arcanna's Deathwand)
+  '8ss', // Jo Staff (hides Razorswitch)
+  '8ls', // Quarterstaff (hides Ribcracker)
+  '8cs', // Cedar Staff (hides Chromatic Ire)
+  '8bs', // Gothic Staff (hides Warpspear)
+  '8ws', // Rune Staff (6os; hides Skullcollector)
+  '6ss', // Walking Stick
+  '6ls', // Stalagmite
+  '6cs', // Elder Staff (hides Ondal's Wisdom and Naj's Puzzler)
+  '6bs', // Shillelagh (4os Memory/Insight staff shell)
+  '6ws', // Archon Staff (6os; hides Mang Song's Lesson)
+  // Amazon spears and pikes — class-locked, so no mercenary can ever hold one,
+  // and the only build that uses them is Fend/Impale melee on the squishiest
+  // melee class in the game. Hide Unpopular Bases already hides all six.
+  'am3', // Maiden Spear
+  'am4', // Maiden Pike
+  'am8', // Ceremonial Spear
+  'am9', // Ceremonial Pike (hides Lycander's Flank)
+  'amd', // Matriarchal Spear (hides Stoneraven)
+  'ame', // Matriarchal Pike
+];
+
 // Gem Crunch: compact tiered gem labels — Chipped -> 1, Flawed -> 2,
 // regular -> 3, Flawless -> 4, Perfect -> P (e.g. "Chipped Topaz" -> "1Topaz").
 // Labels are colored per gem by default. If an earlier mod used multiple
@@ -697,6 +741,11 @@ const hideGroups = [
   { name: 'Hide Throwing Potions', enabled: config.hideThrowing, keys: THROWING_KEYS },
   { name: 'Hide Unpopular Bases', enabled: config.hideUnpopularBases, keys: UNPOPULAR_BASE_KEYS },
   { name: 'Hide Good but Common', enabled: config.hideGoodButCommon, keys: GOOD_BUT_COMMON_KEYS },
+  {
+    name: 'Hide Dangerous 2H Bases',
+    enabled: config.hideDangerousTwoHanded,
+    keys: DANGEROUS_TWO_HANDED_KEYS,
+  },
 ].filter((group) => group.enabled);
 
 const gemCrunchEnabled = config.gemCrunch === true;
@@ -817,6 +866,9 @@ if (
   }
 
   let totalChanged = 0;
+  // Hide Dangerous 2H Bases overlaps the other base groups on purpose, so a
+  // string that two enabled groups both claim is still one change overall.
+  const countedKeys = {};
   reportGroups.forEach((group) => {
     if (group.keys === undefined) {
       totalChanged += group.count;
@@ -829,11 +881,14 @@ if (
     group.keys.forEach((key) => {
       if (changedKeys[key] === true) {
         changed += 1;
+        if (countedKeys[key] !== true) {
+          countedKeys[key] = true;
+          totalChanged += 1;
+        }
       } else if (blackLabelChanges.keys[key] !== true) {
         console.warn(`${group.name}: key "${key}" not found in the D2R string files — skipped.`);
       }
     });
-    totalChanged += changed;
     const unit = group.unit === undefined ? 'item names' : group.unit;
     console.log(`${group.name}: ${group.verb} ${changed} of ${group.keys.length} ${unit}.`);
   });

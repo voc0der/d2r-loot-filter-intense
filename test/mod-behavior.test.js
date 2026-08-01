@@ -305,6 +305,58 @@ test('both base passes stack into a single read/write of item-names.json', () =>
   assert.ok(result.logs.includes('Done: 334 change(s) made in total.'));
 });
 
+test('Hide Dangerous 2H Bases hides all 21 bases with every other option off', () => {
+  const dangerKeys = Object.values(policy.twoHandedDanger).flat();
+  const keptTwoHanded = Object.values(policy.twoHandedKept).flat();
+  const result = runMod(
+    { hideDangerousTwoHanded: true },
+    {
+      [ITEM_NAMES_PATH]: [
+        ...dangerKeys.map((key) => localeEntry(key, `Danger ${key}`)),
+        ...keptTwoHanded.map((key) => localeEntry(key, `Keep ${key}`)),
+      ],
+    },
+  );
+  const output = result.files[ITEM_NAMES_PATH];
+
+  dangerKeys.forEach((key) => {
+    const entry = entryByKey(output, key);
+    assert.equal(entry.enUS, 'ÿc5.');
+    assert.equal(entry.deDE, 'ÿc5.');
+    assert.equal(entry.frFR, 'ÿc5.');
+  });
+  // Bows, mercenary polearms, Barbarian two-handers and the versatile swords
+  // survive: this pass never touches a base a mercenary or Barbarian wants.
+  keptTwoHanded.forEach((key) => {
+    assert.equal(entryByKey(output, key).enUS, `Keep ${key}`);
+  });
+  assert.deepEqual(result.reads, [ITEM_NAMES_PATH]);
+  assert.deepEqual(result.writes, [ITEM_NAMES_PATH]);
+  assert.deepEqual(result.warnings, []);
+  assert.ok(result.logs.includes('Hide Dangerous 2H Bases: hid 21 of 21 item names.'));
+  assert.ok(result.logs.includes('Done: 21 change(s) made in total.'));
+});
+
+test('overlapping base groups report per group but count each string once', () => {
+  const dangerKeys = Object.values(policy.twoHandedDanger).flat();
+  const keys = [...new Set([...hiddenKeys, ...policy.goodButCommon, ...dangerKeys])];
+  const result = runMod(
+    { hideUnpopularBases: true, hideGoodButCommon: true, hideDangerousTwoHanded: true },
+    { [ITEM_NAMES_PATH]: keys.map((key) => localeEntry(key, key)) },
+  );
+
+  keys.forEach((key) => {
+    assert.equal(entryByKey(result.files[ITEM_NAMES_PATH], key).enUS, 'ÿc5.');
+  });
+  // 16 of the 21 are already unpopular bases; only the 5 elite staves are new.
+  assert.equal(keys.length, 339);
+  assert.deepEqual(result.warnings, []);
+  assert.ok(result.logs.includes('Hide Unpopular Bases: hid 321 of 321 item names.'));
+  assert.ok(result.logs.includes('Hide Good but Common: hid 13 of 13 item names.'));
+  assert.ok(result.logs.includes('Hide Dangerous 2H Bases: hid 21 of 21 item names.'));
+  assert.ok(result.logs.includes('Done: 339 change(s) made in total.'));
+});
+
 test('legacy or malformed hide styles safely fall back to the gray dot', () => {
   const result = runMod(
     { hideAmmo: true, hideStyle: undefined },

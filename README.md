@@ -20,6 +20,7 @@ All optional features are **off by default** — turn on the ones you want in D2
 | **Hide Throwing Potions** | Rancid/Choking/Strangling Gas Potions and Oil/Exploding/Fulminating Potions. |
 | **Hide Unpopular Bases** | 321 aggressively filtered LoD endgame bases: most normal/exceptional generic weapons, high-volume low-tier armor, weak shields, lower Paladin shields, selected weak elite alternatives (six elite bows, two elite spears and the whole Amazon spear line), and the normal/exceptional class-item bases (Amazon weapons, Assassin claws, Barbarian helms, Druid pelts, Necromancer heads, Sorceress orbs, scepters, wands and staves) below their audited keeps. Every glove and boot stays visible for potentially valuable rare rolls; belt filtering is unchanged. Important utility, mercenary, Tal Rasha, rare-set and runeword bases stay visible. **Read the warning below before enabling.** |
 | **Hide Good but Common** | A stricter second pass over 13 bases that **Hide Unpopular Bases deliberately keeps**: the cheap runeword shells (Double Axe, Flail, Crystal Sword, Broad Sword, Short Bow, Breast Plate, Mage Plate) and the leveling-tier unique bases (Dagger, Tulwar, Battle Sword, Short Siege Bow, Ballista, Chu-Ko-Nu). They are genuinely good, just so common that an endgame character already banked every roll worth owning. The four circlets stay visible. |
+| **Hide Dangerous 2H Bases** | The 21 two-handed bases that only exist to sell a shieldless build Hardcore cannot justify: all 15 spawnable **staves** and all 6 **Amazon spears and pikes**. Bows, crossbows, mercenary polearms and spears, and every Barbarian two-hander stay visible. Self-contained, so it works with the two options above off. **Read the section below before enabling.** |
 | **Red Superior Items** | Removes the shared `Superior`/`Sup` word and makes the base name red instead. Socketed and ethereal superior bases are red; a hidden base remains only the selected gray or black dot. |
 | **Black Labels to Dots** | Converts direct labels whose final active inline color is D2's `#000`/black code (`ÿc6`) into the selected tiny dot. Composed inferior-quality labels have an engine limitation explained below. This mod must load later. |
 | **Gem Crunch** | All 35 gems get compact, colored tier labels: `1Topaz`, `2Topaz`, `3Topaz`, `4Topaz`, `PTopaz`. Standard gem-type colors from an earlier filter are recognized inside multi-color labels. |
@@ -128,6 +129,29 @@ That second question is why Double Axe and Breast Plate stay on your screen with
 **All four circlets are deliberately excluded.** The dividing line is not tier or rarity — it is whether a *good roll* on that base is still worth stopping for, and a rare circlet can roll anything, so those keep their labels. Mage Plate used to be on the visible side of that line as the low-strength Enigma base, but it drops often enough that an endgame character has already banked the three-socket rolls worth owning, and elite Archon Plate stays visible for the roll that is actually worth a stop. Nobody needs a fourth five-socket Flail either.
 
 The option is independent of **Hide Unpopular Bases**: the two lists never overlap, each reports its own count, and you can run either one alone. The test suite enforces the split.
+
+## Hide Dangerous 2H Bases
+
+The other two options ask whether a base is good or whether it is too common. This one asks a Hardcore question: **would equipping this base kill you?**
+
+A two-handed weapon costs the shield slot outright — no block, no shield resists, no Spirit, Sanctuary or Spirit Ward. That trade is perfectly fine in three places, and this option keeps all of them. It is not fine on a caster staff or a class-locked melee spear, which is all it hides:
+
+| Group | Bases | Why it is hidden |
+| --- | --- | --- |
+| **Staves** (15) | Short, Long, Gnarled, Battle and War Staff; Jo Staff, Quarterstaff, Cedar, Gothic and Rune Staff; Walking Stick, Stalagmite, Elder Staff, Shillelagh, Archon Staff | Every staffmod on a staff is a **Sorceress** skill, so the whole line exists to sell a shieldless caster — the squishiest character in the game giving up block and resists. No mercenary can hold one either. |
+| **Amazon spears and pikes** (6) | Maiden Spear, Maiden Pike, Ceremonial Spear, Ceremonial Pike, Matriarchal Spear, Matriarchal Pike | Class-locked, so no mercenary can ever use one, and the only build that wants them is Fend/Impale melee on a low-life class. **Hide Unpopular Bases** already hides all six for a different reason. |
+
+**Every other two-handed base in the game stays visible under this option**, on audited grounds:
+
+- **Bows and crossbows (42)** — ranged, and the Act 1 Rogue mercenary's only weapon. A bowazon never wanted a shield, and Faith, Windforce and Eaglehorn are Hardcore staples.
+- **Mercenary polearms and spears (33)** — Insight and Infinity are what keep a Hardcore character alive. Your Act 2 mercenary carrying a two-hander is not your survivability problem.
+- **Two-handed axes and mauls (21)** — Barbarian territory. Weapon mastery plus Battle Orders is exactly the compensation that makes going shieldless survivable.
+- **Versatile swords (18)** — Two-Handed Sword through Colossus Blade are `1or2handed`: **one-handed for a Barbarian**, and Act 5 mercenary bases besides.
+- **Quest staves** — Horadric Staff and Staff of Kings are not spawnable bases and are never touched by any option in this mod.
+
+This is a **self-contained** group and therefore overlaps the other two on purpose: 16 of the 21 are already **Hide Unpopular Bases** entries, and the 5 elite staves are not. Enable it alone and you still never see a staff. Enable all three and each reports its own count while the grand total counts every string once.
+
+The usual quality-blind warning applies, and it is expensive here: hiding the staff line also hides **Mang Song's Lesson**, **Ondal's Wisdom**, **Naj's Puzzler**, **Ribcracker**, Skullcollector, Warpspear, Chromatic Ire, Razorswitch, The Iron Jang Bong, Arcanna's Deathwand, The Salamander, Cathan's Rule, Lazarus Spire, Serpent Lord and Bane Ash, plus four- and six-socket staff shells for Memory, Leaf and a staff Insight. The Amazon half costs **Stoneraven** and Lycander's Flank. Those are real items; the option's premise is that you will not play the build that uses them.
 
 ## Limitations — runtime rarity, quality, sockets and ethereal status
 

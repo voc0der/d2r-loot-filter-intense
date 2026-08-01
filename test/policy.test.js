@@ -16,6 +16,7 @@ const canonicalHidden = Object.values(policy.hiddenGroups).flat();
 const canonicalKeeps = Object.values(policy.mustStayVisible).flat();
 const productionKeys = runMod().constants.UNPOPULAR_BASE_KEYS;
 const goodButCommonKeys = runMod().constants.GOOD_BUT_COMMON_KEYS;
+const dangerousTwoHandedKeys = runMod().constants.DANGEROUS_TWO_HANDED_KEYS;
 const catalog = catalogFixture.items;
 
 function flattenConfig(nodes) {
@@ -71,6 +72,13 @@ test('every policy code resolves in the independent pinned LoD base catalog', ()
     assert.ok(['weapon', 'armor'].includes(item.kind));
     assert.equal(typeof item.type, 'string');
     assert.ok(['normal', 'exceptional', 'elite', 'other'].includes(item.tier));
+    if (item.kind === 'weapon') {
+      // Straight from d2data's 2handed/1or2handed columns; "oneOrTwo" is
+      // two-handed for every class except the Barbarian.
+      assert.ok(['one', 'two', 'oneOrTwo'].includes(item.handed), `${code} needs a handedness`);
+    } else {
+      assert.equal(item.handed, undefined, `${code} is armor and has no handedness`);
+    }
     assert.equal(Number.isInteger(item.maxSockets), true);
     assert.ok(item.maxSockets >= 0);
     assert.equal(Array.isArray(item.unique), true);
@@ -78,7 +86,7 @@ test('every policy code resolves in the independent pinned LoD base catalog', ()
     item.unique.forEach((name) => assert.equal(typeof name, 'string'));
     item.set.forEach((name) => assert.equal(typeof name, 'string'));
   });
-  [...productionKeys, ...canonicalKeeps, ...goodButCommonKeys].forEach((code) => {
+  [...productionKeys, ...canonicalKeeps, ...goodButCommonKeys, ...dangerousTwoHandedKeys].forEach((code) => {
     assert.ok(catalog[code], `${code} must exist in the pinned LoD catalog`);
     assert.ok(catalog[code].name, `${code} must have a localized base name`);
     assert.ok(['weapon', 'armor'].includes(catalog[code].kind));
@@ -99,11 +107,20 @@ test('every policy code resolves in the independent pinned LoD base catalog', ()
 
   assert.deepEqual(catalog['9s9'], {
     name: 'Simbilan', kind: 'weapon', type: 'jave', tier: 'exceptional',
-    maxSockets: 0, unique: [], set: [],
+    handed: 'one', maxSockets: 0, unique: [], set: [],
   });
   assert.deepEqual(catalog['9ba'], {
     name: 'Bearded Axe', kind: 'weapon', type: 'axe', tier: 'exceptional',
-    maxSockets: 5, unique: ['Spellsteel'], set: [],
+    handed: 'two', maxSockets: 5, unique: ['Spellsteel'], set: [],
+  });
+  assert.deepEqual(catalog['6ws'], {
+    name: 'Archon Staff', kind: 'weapon', type: 'staf', tier: 'elite',
+    handed: 'two', maxSockets: 6, unique: ["Mang Song's Lesson"], set: [],
+  });
+  assert.deepEqual(catalog['7gd'], {
+    name: 'Colossus Blade', kind: 'weapon', type: 'swor', tier: 'elite',
+    handed: 'oneOrTwo', maxSockets: 6,
+    unique: ['The Grandfather'], set: ["Bul-Kathos' Sacred Charge"],
   });
   assert.deepEqual(catalog.vgl, {
     name: 'Heavy Gloves', kind: 'armor', type: 'glov', tier: 'normal',
@@ -158,6 +175,73 @@ test('Hide Good but Common is a separate, non-overlapping second pass', () => {
   ['ci0', 'ci1', 'ci2', 'ci3'].forEach((code) => {
     assert.equal(goodButCommonKeys.includes(code), false, `${code} stays visible for good rolls`);
     assert.equal(hidden.has(code), false, `${code} stays visible for good rolls`);
+  });
+});
+
+test('Hide Dangerous 2H Bases hides only shieldless builds Hardcore cannot justify', () => {
+  const canonicalDanger = Object.values(policy.twoHandedDanger).flat();
+  assert.deepEqual(dangerousTwoHandedKeys, canonicalDanger);
+  assert.equal(dangerousTwoHandedKeys.length, 21);
+  assert.equal(new Set(dangerousTwoHandedKeys).size, dangerousTwoHandedKeys.length);
+
+  // Every hidden base must actually be two-handed, and must be a caster staff
+  // or a class-locked Amazon spear — nothing a mercenary could ever hold.
+  dangerousTwoHandedKeys.forEach((code) => {
+    assert.equal(catalog[code].handed, 'two', `${code} must be two-handed`);
+    assert.ok(['staf', 'aspe'].includes(catalog[code].type), `${code} must be a staff or Amazon spear`);
+  });
+  assert.deepEqual(policy.twoHandedDanger.staves.map((code) => catalog[code].type), Array(15).fill('staf'));
+  assert.deepEqual(policy.twoHandedDanger.amazonSpears.map((code) => catalog[code].type), Array(6).fill('aspe'));
+
+  // Quest staves are not spawnable bases and must never appear in any group.
+  policy.questStavesNeverHidden.forEach((code) => {
+    assert.equal(catalog[code], undefined, `${code} is a quest item, not a spawnable base`);
+    [dangerousTwoHandedKeys, productionKeys, goodButCommonKeys].forEach((group) => {
+      assert.equal(group.includes(code), false, `${code} must never be hidden`);
+    });
+  });
+});
+
+test('the two-handed audit covers every two-handed base in the pinned catalog', () => {
+  const canonicalDanger = Object.values(policy.twoHandedDanger).flat();
+  const { barbarianVersatileSwords, ...trueTwoHandedKeeps } = policy.twoHandedKept;
+  const kept = Object.values(trueTwoHandedKeeps).flat();
+  const twoHandedCodes = Object.entries(catalog)
+    .filter(([, item]) => item.handed === 'two')
+    .map(([code]) => code)
+    .sort();
+
+  // Nothing two-handed may be silently unclassified: it is hidden or audited.
+  assert.deepEqual([...canonicalDanger, ...kept].sort(), twoHandedCodes);
+  assert.equal(twoHandedCodes.length, 117);
+  canonicalDanger.forEach((code) => {
+    assert.equal(kept.includes(code), false, `${code} cannot be both hidden and kept`);
+  });
+
+  // The kept groups are the audited reasons a two-hander survives this pass.
+  assert.deepEqual(
+    Object.fromEntries(Object.entries(policy.twoHandedKept).map(([group, codes]) => [group, codes.length])),
+    {
+      rangedBowsAndCrossbows: 42,
+      mercenaryPolearmsAndSpears: 33,
+      barbarianAxesAndMauls: 21,
+      barbarianVersatileSwords: 18,
+    },
+  );
+  policy.twoHandedKept.rangedBowsAndCrossbows.forEach((code) => {
+    assert.ok(['bow', 'abow', 'xbow'].includes(catalog[code].type), `${code} must be ranged`);
+  });
+  policy.twoHandedKept.mercenaryPolearmsAndSpears.forEach((code) => {
+    assert.ok(['pole', 'spea'].includes(catalog[code].type), `${code} must be an Act 2 mercenary base`);
+  });
+  policy.twoHandedKept.barbarianAxesAndMauls.forEach((code) => {
+    assert.ok(['axe', 'hamm'].includes(catalog[code].type), `${code} must be a Barbarian two-hander`);
+  });
+  // 1or2handed swords are one-handed for a Barbarian, so they are not part of
+  // the two-handed census at all — they are listed purely to record the audit.
+  barbarianVersatileSwords.forEach((code) => {
+    assert.equal(catalog[code].handed, 'oneOrTwo', `${code} must be a versatile sword`);
+    assert.equal(twoHandedCodes.includes(code), false);
   });
 });
 
@@ -226,6 +310,7 @@ test('configuration defaults and option values are internally valid', () => {
     hideThrowing: false,
     hideUnpopularBases: false,
     hideGoodButCommon: false,
+    hideDangerousTwoHanded: false,
     redSuperiorItems: false,
     blackLabelsToDots: false,
     gemCrunch: false,
@@ -289,6 +374,8 @@ test('documentation retains the dangerous runtime and collision warnings', () =>
     'Ribcracker',
     "Arreat's Face",
     "Titan's Revenge",
+    "Mang Song's Lesson",
+    'one-handed for a Barbarian',
     'shared by every rarity and quality',
   ].forEach((warning) => assert.ok(readme.includes(warning), warning));
 });
