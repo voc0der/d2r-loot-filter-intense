@@ -5,6 +5,8 @@ const test = require('node:test');
 
 const catalogFixture = require('./fixtures/lod-base-catalog.json');
 const policy = require('./fixtures/lod-policy.json');
+const rotwCatalogFixture = require('./fixtures/rotw-base-catalog.json');
+const rotwPolicy = require('./fixtures/rotw-policy.json');
 const {
   MOD_MANIFEST,
   ROOT,
@@ -12,12 +14,17 @@ const {
   runMod,
 } = require('./helpers/run-mod');
 
-const canonicalHidden = Object.values(policy.hiddenGroups).flat();
+// The Warlock grimoires are a Reign of the Warlock addendum appended after the
+// LoD audit, so both the hidden list and the catalog are LoD-then-RotW.
+const canonicalHidden = [
+  ...Object.values(policy.hiddenGroups).flat(),
+  ...Object.values(rotwPolicy.hiddenGroups).flat(),
+];
 const canonicalKeeps = Object.values(policy.mustStayVisible).flat();
 const productionKeys = runMod().constants.UNPOPULAR_BASE_KEYS;
 const goodButCommonKeys = runMod().constants.GOOD_BUT_COMMON_KEYS;
 const dangerousTwoHandedKeys = runMod().constants.DANGEROUS_TWO_HANDED_KEYS;
-const catalog = catalogFixture.items;
+const catalog = { ...catalogFixture.items, ...rotwCatalogFixture.items };
 
 function flattenConfig(nodes) {
   return nodes.flatMap((node) => (
@@ -25,13 +32,16 @@ function flattenConfig(nodes) {
   ));
 }
 
-test('the production base policy exactly matches the audited LoD fixture', () => {
+test('the production base policy exactly matches the audited fixtures', () => {
   assert.deepEqual(productionKeys, canonicalHidden);
-  assert.equal(productionKeys.length, 321);
+  assert.equal(productionKeys.length, 336);
   assert.equal(new Set(productionKeys).size, productionKeys.length);
   assert.match(policy.source.ruleset, /Lord of Destruction/);
   assert.match(policy.source.note, /Pre-Reign-of-the-Warlock/);
   assert.equal(policy.source.d2dataCommit, catalogFixture.source.d2dataCommit);
+  assert.match(rotwPolicy.source.ruleset, /Reign of the Warlock/);
+  assert.equal(rotwPolicy.source.d2dataCommit, rotwCatalogFixture.source.d2dataCommit);
+  assert.notEqual(rotwPolicy.source.d2dataCommit, policy.source.d2dataCommit);
   assert.deepEqual(
     Object.fromEntries(Object.entries(policy.hiddenGroups).map(([group, keys]) => [group, keys.length])),
     {
@@ -61,10 +71,16 @@ test('the production base policy exactly matches the audited LoD fixture', () =>
       paladinShields: 11,
     },
   );
+  assert.deepEqual(
+    Object.fromEntries(Object.entries(rotwPolicy.hiddenGroups).map(([group, keys]) => [group, keys.length])),
+    { warlockGrimoires: 15 },
+  );
 });
 
-test('every policy code resolves in the independent pinned LoD base catalog', () => {
-  assert.equal(Object.keys(catalog).length, 499);
+test('every policy code resolves in the independent pinned base catalogs', () => {
+  assert.equal(Object.keys(catalogFixture.items).length, 499);
+  assert.equal(Object.keys(rotwCatalogFixture.items).length, 15);
+  assert.equal(Object.keys(catalog).length, 514);
   Object.entries(catalog).forEach(([code, item]) => {
     assert.match(code, /^[0-9a-z]{3}$/);
     assert.equal(typeof item.name, 'string');
@@ -87,9 +103,15 @@ test('every policy code resolves in the independent pinned LoD base catalog', ()
     item.set.forEach((name) => assert.equal(typeof name, 'string'));
   });
   [...productionKeys, ...canonicalKeeps, ...goodButCommonKeys, ...dangerousTwoHandedKeys].forEach((code) => {
-    assert.ok(catalog[code], `${code} must exist in the pinned LoD catalog`);
+    assert.ok(catalog[code], `${code} must exist in a pinned catalog`);
     assert.ok(catalog[code].name, `${code} must have a localized base name`);
     assert.ok(['weapon', 'armor'].includes(catalog[code].kind));
+  });
+
+  // The two catalogs must stay separate: the LoD audit never claims a base that
+  // only Reign of the Warlock can spawn, and vice versa.
+  Object.keys(rotwCatalogFixture.items).forEach((code) => {
+    assert.equal(catalogFixture.items[code], undefined, `${code} is RotW-only data`);
   });
 
   const weaponGroups = [
@@ -104,6 +126,15 @@ test('every policy code resolves in the independent pinned LoD base catalog', ()
     .filter((group) => !weaponGroups.includes(group))
     .flatMap((group) => policy.hiddenGroups[group])
     .forEach((code) => assert.equal(catalog[code].kind, 'armor', `${code} must be armor`));
+
+  // Grimoires are the Warlock's shield-slot off-hand, so they are armor and can
+  // never enter the two-handed census.
+  rotwPolicy.hiddenGroups.warlockGrimoires.forEach((code) => {
+    assert.equal(catalog[code].kind, 'armor', `${code} must be armor`);
+    assert.equal(catalog[code].type, 'grim', `${code} must be a grimoire`);
+    assert.equal(catalog[code].handed, undefined, `${code} is armor and has no handedness`);
+    assert.equal(catalog[code].maxSockets, 2, `${code} caps at two sockets`);
+  });
 
   assert.deepEqual(catalog['9s9'], {
     name: 'Simbilan', kind: 'weapon', type: 'jave', tier: 'exceptional',
@@ -137,6 +168,14 @@ test('every policy code resolves in the independent pinned LoD base catalog', ()
   assert.deepEqual(catalog.dr8, {
     name: "Hunter's Guise", kind: 'armor', type: 'pelt', tier: 'exceptional',
     maxSockets: 3, unique: [], set: ["Aldur's Stony Gaze"],
+  });
+  assert.deepEqual(catalog.waf, {
+    name: 'Blasphemous Grimoire', kind: 'armor', type: 'grim', tier: 'elite',
+    maxSockets: 2, unique: ["Ars Al'Diabolos"], set: [],
+  });
+  assert.deepEqual(catalog.wad, {
+    name: 'Occult Codex', kind: 'armor', type: 'grim', tier: 'elite',
+    maxSockets: 2, unique: [], set: ["Horazon's Secrets"],
   });
 });
 
@@ -264,22 +303,35 @@ test('important policy tradeoffs are recorded instead of silently masked', () =>
     '6sw', '7p7', '7sr', '8ls', '9ba', '9bw', '9wn', 'am7',
     'am9', 'amb', 'amd', 'ba5', 'dr8', 'msk', 'tbl', 'xul',
   ]);
-  Object.keys(policy.notableAcceptedCollisions).forEach((code) => {
-    assert.equal(productionKeys.includes(code), true);
-    assert.ok(policy.notableAcceptedCollisions[code].length > 0);
+  assert.deepEqual(Object.keys(rotwPolicy.notableAcceptedCollisions).sort(), [
+    'wa6', 'wac', 'wad', 'wae', 'waf',
+  ]);
+  [policy, rotwPolicy].forEach((audit) => {
+    Object.keys(audit.notableAcceptedCollisions).forEach((code) => {
+      assert.equal(productionKeys.includes(code), true);
+      assert.ok(audit.notableAcceptedCollisions[code].length > 0);
+    });
   });
 
+  const acceptedCollisionCodes = [
+    ...policy.acceptedHiddenCollisionCodes,
+    ...rotwPolicy.acceptedHiddenCollisionCodes,
+  ];
   const hiddenWithCollisions = productionKeys.filter((code) => (
     catalog[code].unique.length > 0 || catalog[code].set.length > 0
   ));
-  assert.equal(hiddenWithCollisions.length, 224);
-  assert.deepEqual(hiddenWithCollisions, policy.acceptedHiddenCollisionCodes);
-  policy.acceptedHiddenCollisionCodes.forEach((code) => {
+  assert.equal(hiddenWithCollisions.length, 229);
+  assert.deepEqual(hiddenWithCollisions, acceptedCollisionCodes);
+  acceptedCollisionCodes.forEach((code) => {
     assert.ok(
       catalog[code].unique.length > 0 || catalog[code].set.length > 0,
       `${code} must have an explicit catalog collision`,
     );
   });
+
+  // Vigilance is the only runeword that accepts a grimoire, and it also accepts
+  // three base types this pass leaves visible, so no shell is lost.
+  assert.deepEqual(rotwPolicy.runewordsUnaffected.Vigilance.alsoFits, ['shld', 'head', 'ashd']);
 
   policy.mustStayVisible.rareSetBases.forEach((code) => {
     assert.ok(catalog[code].set.length > 0, `${code} must protect a rare set base`);
@@ -353,8 +405,8 @@ test('published descriptions use the exact audited base count', () => {
   const files = ['mod.json', 'README.md', 'docs/NEXUS.md'];
   files.forEach((relativePath) => {
     const contents = fs.readFileSync(path.join(ROOT, relativePath), 'utf8');
-    assert.match(contents, /321 (?:aggressively filtered|low-priority)/, relativePath);
-    assert.doesNotMatch(contents, /310 (?:aggressively filtered|low-priority)/, relativePath);
+    assert.match(contents, /336 (?:aggressively filtered|low-priority)/, relativePath);
+    assert.doesNotMatch(contents, /321 (?:aggressively filtered|low-priority)/, relativePath);
   });
 });
 
@@ -377,5 +429,8 @@ test('documentation retains the dangerous runtime and collision warnings', () =>
     "Mang Song's Lesson",
     'one-handed for a Barbarian',
     'shared by every rarity and quality',
+    "Ars Al'Diabolos",
+    "Horazon's Secrets",
+    'Vigilance',
   ].forEach((warning) => assert.ok(readme.includes(warning), warning));
 });

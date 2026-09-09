@@ -2,10 +2,11 @@
 
 # Audited Hide Unpopular Bases policy
 
-This generated table is the authoritative list of all **321** hidden equipment base strings.
-It targets the **Diablo II: Resurrected — Lord of Destruction** ruleset and is pinned to d2data commit `bb26870f321c05479df88119285f26b76c4cec32`.
+This generated table is the authoritative list of all **336** hidden equipment base strings.
+321 of them target the **Diablo II: Resurrected — Lord of Destruction** ruleset and are pinned to d2data commit `bb26870f321c05479df88119285f26b76c4cec32`.
+The remaining 15 are the **Diablo II: Resurrected — Reign of the Warlock** grimoire line, pinned to d2data commit `fc469993502d0498809b9fc1af140ee2a9eb8902`; those codes are not spawnable bases in a Lord of Destruction game, so hiding them changes nothing there.
 
-The filter is quality-blind: every listed code hides ordinary, superior, socketed, magic, rare, unique and set labels on that base. Named unique/set collisions from the pinned LoD data appear below. Staffmods, crafting uses and other runtime tradeoffs are documented in the README and policy fixture.
+The filter is quality-blind: every listed code hides ordinary, superior, socketed, magic, rare, unique and set labels on that base. Named unique/set collisions from the pinned data appear below. Staffmods, crafting uses and other runtime tradeoffs are documented in the README and policy fixture.
 
 ## Headline accepted tradeoffs
 
@@ -25,6 +26,11 @@ The filter is quality-blind: every listed code hides ordinary, superior, sockete
 - `7sr` Hyperion Spear: Arioc's Needle
 - `7p7` War Pike: Steelpillar
 - `6sw` Ward Bow: Widowmaker
+- `wa6` Burnt Text: hides Measured Wrath, the exceptional-tier Warlock unique
+- `wac` Occult Tome: hides Ars Dul'Mephistos
+- `wad` Occult Codex: hides Horazon's Secrets, the Horazon's Splendor set grimoire
+- `wae` Blasphemous Compendium: hides Ars Tor'Baalos
+- `waf` Blasphemous Grimoire: hides Ars Al'Diabolos, the level-85 Warlock unique
 
 ## Axes (27)
 
@@ -466,6 +472,26 @@ The filter is quality-blind: every listed code hides ordinary, superior, sockete
 | `paa` | Royal Shield | exceptional | 4 | — |
 | `pad` | Kurast Shield | elite | 4 | — |
 | `pae` | Zakarum Shield | elite | 4 | Unique: Dragonscale |
+
+## Warlock grimoires — Reign of the Warlock (15)
+
+| Code | Base | Tier | Max sockets | Named unique/set collisions intentionally hidden |
+| --- | --- | --- | ---: | --- |
+| `wa1` | Old Book | normal | 2 | — |
+| `wa2` | Tome | normal | 2 | — |
+| `wa3` | Codex | normal | 2 | — |
+| `wa4` | Compendium | normal | 2 | — |
+| `wa5` | Grimoire | normal | 2 | — |
+| `wa6` | Burnt Text | exceptional | 2 | Unique: Measured Wrath |
+| `wa7` | Dark Tome | exceptional | 2 | — |
+| `wa8` | Dark Codex | exceptional | 2 | — |
+| `wa9` | Possessed Compendium | exceptional | 2 | — |
+| `waa` | Possessed Grimoire | exceptional | 2 | — |
+| `wab` | Forgotten Volume | elite | 2 | — |
+| `wac` | Occult Tome | elite | 2 | Unique: Ars Dul'Mephistos |
+| `wad` | Occult Codex | elite | 2 | Set: Horazon's Secrets |
+| `wae` | Blasphemous Compendium | elite | 2 | Unique: Ars Tor'Baalos |
+| `waf` | Blasphemous Grimoire | elite | 2 | Unique: Ars Al'Diabolos |
 
 ## Hide Good but Common — separate opt-in pass (13)
 

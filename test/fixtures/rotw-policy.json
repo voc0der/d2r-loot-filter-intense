@@ -1,0 +1,61 @@
+{
+  "source": {
+    "ruleset": "Diablo II: Resurrected — Reign of the Warlock",
+    "d2dataCommit": "fc469993502d0498809b9fc1af140ee2a9eb8902",
+    "note": "Reign-of-the-Warlock addendum to the LoD policy. These codes are inert in a Lord of Destruction game, so the pass stays safe for LoD-only players."
+  },
+  "hiddenGroups": {
+    "warlockGrimoires": [
+      "wa1",
+      "wa2",
+      "wa3",
+      "wa4",
+      "wa5",
+      "wa6",
+      "wa7",
+      "wa8",
+      "wa9",
+      "waa",
+      "wab",
+      "wac",
+      "wad",
+      "wae",
+      "waf"
+    ]
+  },
+  "notableAcceptedCollisions": {
+    "wa6": [
+      "hides Measured Wrath, the exceptional-tier Warlock unique"
+    ],
+    "wac": [
+      "hides Ars Dul'Mephistos"
+    ],
+    "wad": [
+      "hides Horazon's Secrets, the Horazon's Splendor set grimoire"
+    ],
+    "wae": [
+      "hides Ars Tor'Baalos"
+    ],
+    "waf": [
+      "hides Ars Al'Diabolos, the level-85 Warlock unique"
+    ]
+  },
+  "acceptedHiddenCollisionCodes": [
+    "wa6",
+    "wac",
+    "wad",
+    "wae",
+    "waf"
+  ],
+  "runewordsUnaffected": {
+    "Vigilance": {
+      "runes": "DolGul",
+      "alsoFits": [
+        "shld",
+        "head",
+        "ashd"
+      ],
+      "note": "The only runeword that accepts a grimoire also accepts generic shields, Necromancer heads and Paladin shields, so hiding the grimoire line never removes the only shell for it."
+    }
+  }
+}

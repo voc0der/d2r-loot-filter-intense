@@ -1,0 +1,161 @@
+{
+  "source": {
+    "ruleset": "Diablo II: Resurrected — Reign of the Warlock",
+    "d2dataCommit": "fc469993502d0498809b9fc1af140ee2a9eb8902",
+    "note": "Bases that only spawn under Reign of the Warlock. The LoD tables carry the same codes with spawnable=0, so these strings never appear on the ground in a Lord of Destruction game.",
+    "generatedFrom": [
+      "json/armor.json",
+      "json/itemtypes.json",
+      "json/uniqueitems.json",
+      "json/setitems.json",
+      "json/allstrings-eng.json"
+    ]
+  },
+  "items": {
+    "wa1": {
+      "name": "Old Book",
+      "kind": "armor",
+      "type": "grim",
+      "tier": "normal",
+      "maxSockets": 2,
+      "unique": [],
+      "set": []
+    },
+    "wa2": {
+      "name": "Tome",
+      "kind": "armor",
+      "type": "grim",
+      "tier": "normal",
+      "maxSockets": 2,
+      "unique": [],
+      "set": []
+    },
+    "wa3": {
+      "name": "Codex",
+      "kind": "armor",
+      "type": "grim",
+      "tier": "normal",
+      "maxSockets": 2,
+      "unique": [],
+      "set": []
+    },
+    "wa4": {
+      "name": "Compendium",
+      "kind": "armor",
+      "type": "grim",
+      "tier": "normal",
+      "maxSockets": 2,
+      "unique": [],
+      "set": []
+    },
+    "wa5": {
+      "name": "Grimoire",
+      "kind": "armor",
+      "type": "grim",
+      "tier": "normal",
+      "maxSockets": 2,
+      "unique": [],
+      "set": []
+    },
+    "wa6": {
+      "name": "Burnt Text",
+      "kind": "armor",
+      "type": "grim",
+      "tier": "exceptional",
+      "maxSockets": 2,
+      "unique": [
+        "Measured Wrath"
+      ],
+      "set": []
+    },
+    "wa7": {
+      "name": "Dark Tome",
+      "kind": "armor",
+      "type": "grim",
+      "tier": "exceptional",
+      "maxSockets": 2,
+      "unique": [],
+      "set": []
+    },
+    "wa8": {
+      "name": "Dark Codex",
+      "kind": "armor",
+      "type": "grim",
+      "tier": "exceptional",
+      "maxSockets": 2,
+      "unique": [],
+      "set": []
+    },
+    "wa9": {
+      "name": "Possessed Compendium",
+      "kind": "armor",
+      "type": "grim",
+      "tier": "exceptional",
+      "maxSockets": 2,
+      "unique": [],
+      "set": []
+    },
+    "waa": {
+      "name": "Possessed Grimoire",
+      "kind": "armor",
+      "type": "grim",
+      "tier": "exceptional",
+      "maxSockets": 2,
+      "unique": [],
+      "set": []
+    },
+    "wab": {
+      "name": "Forgotten Volume",
+      "kind": "armor",
+      "type": "grim",
+      "tier": "elite",
+      "maxSockets": 2,
+      "unique": [],
+      "set": []
+    },
+    "wac": {
+      "name": "Occult Tome",
+      "kind": "armor",
+      "type": "grim",
+      "tier": "elite",
+      "maxSockets": 2,
+      "unique": [
+        "Ars Dul'Mephistos"
+      ],
+      "set": []
+    },
+    "wad": {
+      "name": "Occult Codex",
+      "kind": "armor",
+      "type": "grim",
+      "tier": "elite",
+      "maxSockets": 2,
+      "unique": [],
+      "set": [
+        "Horazon's Secrets"
+      ]
+    },
+    "wae": {
+      "name": "Blasphemous Compendium",
+      "kind": "armor",
+      "type": "grim",
+      "tier": "elite",
+      "maxSockets": 2,
+      "unique": [
+        "Ars Tor'Baalos"
+      ],
+      "set": []
+    },
+    "waf": {
+      "name": "Blasphemous Grimoire",
+      "kind": "armor",
+      "type": "grim",
+      "tier": "elite",
+      "maxSockets": 2,
+      "unique": [
+        "Ars Al'Diabolos"
+      ],
+      "set": []
+    }
+  }
+}

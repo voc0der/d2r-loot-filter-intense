@@ -1,9 +1,9 @@
 {
   "name": "D2R Loot Filter — Intense",
-  "description": "A D2R Lord of Destruction loot-filter overlay. Hides trash drops and 321 aggressively filtered equipment bases including high-volume normal/exceptional weapons, armor and class items, weak elite bows and spears, and the whole Amazon spear line, while keeping all gloves and boots visible for rare rolls; optionally hides a further 13 good-but-common runeword shells and leveling unique bases, or the 21 two-handed staves and Amazon spears that only sell shieldless builds Hardcore cannot justify; can mark superior bases in red; converts inherited black labels to dots; crunches gem names; compacts Gold pile labels; and can mute the Slain Monsters Rest in Peace corpse chime without removing its animation. Reign of the Warlock content is intentionally excluded. Drops and mechanics are unchanged.",
+  "description": "A D2R Lord of Destruction loot-filter overlay. Hides trash drops and 336 aggressively filtered equipment bases including high-volume normal/exceptional weapons, armor and class items, weak elite bows and spears, the whole Amazon spear line, and the entire Reign of the Warlock grimoire line, while keeping all gloves and boots visible for rare rolls; optionally hides a further 13 good-but-common runeword shells and leveling unique bases, or the 21 two-handed staves and Amazon spears that only sell shieldless builds Hardcore cannot justify; can mark superior bases in red; converts inherited black labels to dots; crunches gem names; compacts Gold pile labels; and can mute the Slain Monsters Rest in Peace corpse chime without removing its animation. Reign of the Warlock content is otherwise excluded, and the 15 grimoire codes are inert in a Lord of Destruction game. Drops and mechanics are unchanged.",
   "author": "voc0der",
   "website": "https://github.com/voc0der/d2r-loot-filter-intense",
-  "version": "0.7.0",
+  "version": "0.7.1",
   "config": [
     {
       "type": "section",
@@ -44,7 +44,7 @@
           "type": "checkbox",
           "id": "hideUnpopularBases",
           "name": "Hide Unpopular Bases",
-          "description": "Aggressively hide 321 high-volume LoD endgame bases: most normal/exceptional generic weapons, common low-tier armor, weak shields, lower Paladin shields, selected weak elite alternatives, and normal/exceptional class items (Amazon weapons, claws, Barbarian helms, Druid pelts, Necromancer heads, Sorceress orbs, scepters, wands, staves) below their audited keeps. Only Hydra Bow, Crusader Bow and Grand Matron Bow survive the bow pass; War Pike and Hyperion Spear join it, and the whole Amazon spear/pike line is hidden because no mercenary can hold a class weapon. All gloves and boots stay visible for rare rolls; belt filtering is unchanged. Important utility, mercenary, Tal Rasha, rare-set, and runeword bases stay visible. ENDGAME WARNING: hides ALL rarities and qualities, including documented unique/set/staffmod collisions.",
+          "description": "Aggressively hide 336 high-volume endgame bases. 321 are LoD bases: most normal/exceptional generic weapons, common low-tier armor, weak shields, lower Paladin shields, selected weak elite alternatives, and normal/exceptional class items (Amazon weapons, claws, Barbarian helms, Druid pelts, Necromancer heads, Sorceress orbs, scepters, wands, staves) below their audited keeps. Only Hydra Bow, Crusader Bow and Grand Matron Bow survive the bow pass; War Pike and Hyperion Spear join it, and the whole Amazon spear/pike line is hidden because no mercenary can hold a class weapon. The other 15 are the entire Reign of the Warlock grimoire line, Old Book through Blasphemous Grimoire: class-locked two-socket off-hands no mercenary can hold, whose codes are inert in a Lord of Destruction game. All gloves and boots stay visible for rare rolls; belt filtering is unchanged. Important utility, mercenary, Tal Rasha, rare-set, and runeword bases stay visible. ENDGAME WARNING: hides ALL rarities and qualities, including documented unique/set/staffmod collisions such as Ars Al'Diabolos and Horazon's Secrets.",
           "defaultValue": false
         },
         {

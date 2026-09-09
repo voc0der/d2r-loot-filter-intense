@@ -3,6 +3,7 @@ const test = require('node:test');
 
 const qualityFormats = require('./fixtures/lod-quality-formats.json');
 const policy = require('./fixtures/lod-policy.json');
+const rotwPolicy = require('./fixtures/rotw-policy.json');
 const {
   ITEM_NAMES_PATH,
   ITEM_NAME_AFFIXES_PATH,
@@ -12,7 +13,10 @@ const {
   runMod,
 } = require('./helpers/run-mod');
 
-const hiddenKeys = Object.values(policy.hiddenGroups).flat();
+const hiddenKeys = [
+  ...Object.values(policy.hiddenGroups).flat(),
+  ...Object.values(rotwPolicy.hiddenGroups).flat(),
+];
 const keepKeys = Object.values(policy.mustStayVisible).flat();
 
 function entryByKey(entries, key) {
@@ -229,7 +233,7 @@ test('missing string keys are skipped with a precise warning', () => {
   assert.ok(result.logs.includes('Hide Ammo: hid 1 of 2 item names.'));
 });
 
-test('Hide Unpopular Bases rewrites all 321 audited keys across locales', () => {
+test('Hide Unpopular Bases rewrites all 336 audited keys across locales', () => {
   const entries = [
     ...hiddenKeys.map((key, index) => localeEntry(key, `Hidden ${key}`, { id: index + 1 })),
     ...keepKeys.map((key, index) => localeEntry(key, `Keep ${key}`, { id: 1000 + index })),
@@ -257,7 +261,7 @@ test('Hide Unpopular Bases rewrites all 321 audited keys across locales', () => 
   assert.deepEqual(result.reads, [ITEM_NAMES_PATH]);
   assert.deepEqual(result.writes, [ITEM_NAMES_PATH]);
   assert.deepEqual(result.warnings, []);
-  assert.ok(result.logs.includes('Hide Unpopular Bases: hid 321 of 321 item names.'));
+  assert.ok(result.logs.includes('Hide Unpopular Bases: hid 336 of 336 item names.'));
 });
 
 test('Hide Good but Common hides its 13 bases independently of the unpopular pass', () => {
@@ -300,9 +304,9 @@ test('both base passes stack into a single read/write of item-names.json', () =>
   assert.deepEqual(result.reads, [ITEM_NAMES_PATH]);
   assert.deepEqual(result.writes, [ITEM_NAMES_PATH]);
   assert.deepEqual(result.warnings, []);
-  assert.ok(result.logs.includes('Hide Unpopular Bases: hid 321 of 321 item names.'));
+  assert.ok(result.logs.includes('Hide Unpopular Bases: hid 336 of 336 item names.'));
   assert.ok(result.logs.includes('Hide Good but Common: hid 13 of 13 item names.'));
-  assert.ok(result.logs.includes('Done: 334 change(s) made in total.'));
+  assert.ok(result.logs.includes('Done: 349 change(s) made in total.'));
 });
 
 test('Hide Dangerous 2H Bases hides all 21 bases with every other option off', () => {
@@ -349,12 +353,12 @@ test('overlapping base groups report per group but count each string once', () =
     assert.equal(entryByKey(result.files[ITEM_NAMES_PATH], key).enUS, 'ÿc5.');
   });
   // 16 of the 21 are already unpopular bases; only the 5 elite staves are new.
-  assert.equal(keys.length, 339);
+  assert.equal(keys.length, 354);
   assert.deepEqual(result.warnings, []);
-  assert.ok(result.logs.includes('Hide Unpopular Bases: hid 321 of 321 item names.'));
+  assert.ok(result.logs.includes('Hide Unpopular Bases: hid 336 of 336 item names.'));
   assert.ok(result.logs.includes('Hide Good but Common: hid 13 of 13 item names.'));
   assert.ok(result.logs.includes('Hide Dangerous 2H Bases: hid 21 of 21 item names.'));
-  assert.ok(result.logs.includes('Done: 339 change(s) made in total.'));
+  assert.ok(result.logs.includes('Done: 354 change(s) made in total.'));
 });
 
 test('legacy or malformed hide styles safely fall back to the gray dot', () => {

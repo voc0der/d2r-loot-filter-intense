@@ -8,7 +8,9 @@
  * and can mute the repeated
  * Slain Monsters Rest in Peace sound. Runs after any base loot filter in D2RMM
  * load order: D2RMM reads earlier output, so this mod's changes win. Targets
- * D2R's Lord of Destruction ruleset.
+ * D2R's Lord of Destruction ruleset, with one deliberate exception: Hide
+ * Unpopular Bases also covers the Reign of the Warlock grimoire line, whose
+ * codes are inert in a Lord of Destruction game.
  */
 
 const ITEM_NAMES_PATH = 'local/lng/strings/item-names.json';
@@ -70,6 +72,8 @@ const THROWING_KEYS = [
 // otherwise low-priority base. A ground label is ONE string shared by every
 // rarity and quality, so hiding a base also hides its superior/socketed/magic/
 // rare/unique/set versions; see the README warning and audited collision list.
+// Everything here is Lord of Destruction data except the trailing Warlock
+// grimoires, which only spawn under Reign of the Warlock.
 const UNPOPULAR_BASE_KEYS = [
   // Axes (normal) — Double Axe is a Hide Good but Common base, not hidden here
   'hax', // Hand Axe
@@ -457,6 +461,30 @@ const UNPOPULAR_BASE_KEYS = [
   // Paladin shields (elite) — Sacred Targe/Rondache and Vortex stay visible
   'pad', // Kurast Shield
   'pae', // Zakarum Shield (hides Dragonscale)
+  // Warlock grimoires (Reign of the Warlock) — the whole `grim` off-hand line,
+  // normal through elite. These are the one deliberate exception to this mod's
+  // LoD-only scope: they are RotW-only spawnables that share the same string
+  // table, so the codes are inert in a Lord of Destruction game and hide the
+  // entire Warlock book line in a Reign of the Warlock one. Class-locked, so no
+  // mercenary can ever hold one, and every tier caps at two sockets — the one
+  // grimoire runeword (Vigilance, Dol + Gul) also fits a shield, Necromancer
+  // head or Paladin shield, so this never costs the only shell. The elite Ars
+  // uniques and Horazon's Secrets are accepted casualties; see BASE_POLICY.md.
+  'wa1', // Old Book
+  'wa2', // Tome
+  'wa3', // Codex
+  'wa4', // Compendium
+  'wa5', // Grimoire
+  'wa6', // Burnt Text (hides Measured Wrath)
+  'wa7', // Dark Tome
+  'wa8', // Dark Codex
+  'wa9', // Possessed Compendium
+  'waa', // Possessed Grimoire
+  'wab', // Forgotten Volume
+  'wac', // Occult Tome (hides Ars Dul'Mephistos)
+  'wad', // Occult Codex (hides Horazon's Secrets)
+  'wae', // Blasphemous Compendium (hides Ars Tor'Baalos)
+  'waf', // Blasphemous Grimoire (hides Ars Al'Diabolos)
 ];
 
 // Bases that are genuinely good but so common that an endgame character has
