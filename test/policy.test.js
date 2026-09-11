@@ -360,15 +360,25 @@ test('configuration defaults and option values are internally valid', () => {
     hideAmmo: false,
     hideLargeCharms: false,
     hideThrowing: false,
+    filterCommonItems: false,
     hideUnpopularBases: false,
     hideGoodButCommon: false,
     hideDangerousTwoHanded: false,
     redSuperiorItems: false,
     blackLabelsToDots: false,
     gemCrunch: false,
+    gemQuality: 'all',
     muteRestInPeaceSound: false,
     hideStyle: 'ÿc5.',
     goldLabel: 'unchanged',
+  });
+
+  // D2RMM only offers a section's Enable All toggle when every control in it is
+  // a checkbox, so selects must never be added to the Filters section.
+  const filters = MOD_MANIFEST.config.find((node) => node.id === 'filters');
+  assert.equal(filters.allowToggleAll, true);
+  flattenConfig(filters.children).forEach((control) => {
+    assert.equal(control.type, 'checkbox', `${control.id} would hide the Filters Enable All toggle`);
   });
 
   const hideStyle = controls.find((control) => control.id === 'hideStyle');
@@ -378,6 +388,12 @@ test('configuration defaults and option values are internally valid', () => {
   assert.deepEqual(
     goldLabel.options.map((option) => option.value),
     ['unchanged', ...Object.keys(constants.GOLD_LABELS)],
+  );
+
+  const gemQuality = controls.find((control) => control.id === 'gemQuality');
+  assert.deepEqual(
+    gemQuality.options.map((option) => option.value),
+    ['all', ...Object.keys(constants.GEM_QUALITY_MIN_TIERS)],
   );
 });
 
@@ -390,6 +406,7 @@ test('small hide groups and gem tiers retain their canonical contracts', () => {
   assert.deepEqual(constants.AMMO_KEYS, ['aqv', 'cqv']);
   assert.deepEqual(constants.LARGE_CHARM_KEYS, ['cm2']);
   assert.deepEqual(constants.THROWING_KEYS, ['gpl', 'gpm', 'gps', 'opl', 'opm', 'ops']);
+  assert.deepEqual(constants.COMMON_ITEM_KEYS, ['tsc', 'isc', 'key']);
   assert.equal(constants.RED_COLOR_CODE, 'ÿc1');
   assert.equal(constants.SUPERIOR_PREFIX_KEY, 'Hiquality');
   assert.equal(constants.SUPERIOR_FORMAT_KEY, 'HiqualityFormat');
@@ -399,6 +416,13 @@ test('small hide groups and gem tiers retain their canonical contracts', () => {
   assert.equal(constants.GEM_CRUNCH.length, 7);
   assert.equal(gemCodes.length, 35);
   assert.equal(new Set(gemCodes).size, 35);
+
+  // Each gem quality option is named after the Gem Crunch label of the lowest
+  // tier it keeps visible.
+  assert.deepEqual(constants.GEM_QUALITY_MIN_TIERS, { '3+': 2, '4+': 3 });
+  Object.entries(constants.GEM_QUALITY_MIN_TIERS).forEach(([option, minTier]) => {
+    assert.equal(`${constants.GEM_TIER_LABELS[minTier]}+`, option);
+  });
 });
 
 test('published descriptions use the exact audited base count', () => {

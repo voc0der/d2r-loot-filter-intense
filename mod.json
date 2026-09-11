@@ -1,9 +1,9 @@
 {
   "name": "D2R Loot Filter — Intense",
-  "description": "A D2R Lord of Destruction loot-filter overlay. Hides trash drops and 336 aggressively filtered equipment bases including high-volume normal/exceptional weapons, armor and class items, weak elite bows and spears, the whole Amazon spear line, and the entire Reign of the Warlock grimoire line, while keeping all gloves and boots visible for rare rolls; optionally hides a further 13 good-but-common runeword shells and leveling unique bases, or the 21 two-handed staves and Amazon spears that only sell shieldless builds Hardcore cannot justify; can mark superior bases in red; converts inherited black labels to dots; crunches gem names; compacts Gold pile labels; and can mute the Slain Monsters Rest in Peace corpse chime without removing its animation. Reign of the Warlock content is otherwise excluded, and the 15 grimoire codes are inert in a Lord of Destruction game. Drops and mechanics are unchanged.",
+  "description": "A D2R Lord of Destruction loot-filter overlay. Hides trash drops and 336 aggressively filtered equipment bases including high-volume normal/exceptional weapons, armor and class items, weak elite bows and spears, the whole Amazon spear line, and the entire Reign of the Warlock grimoire line, while keeping all gloves and boots visible for rare rolls; optionally hides a further 13 good-but-common runeword shells and leveling unique bases, or the 21 two-handed staves and Amazon spears that only sell shieldless builds Hardcore cannot justify; can hide Town Portal and Identify scrolls and Keys, and every gem below a chosen 3+ or 4+ quality tier; can mark superior bases in red; converts inherited black labels to dots; crunches gem names; compacts Gold pile labels; and can mute the Slain Monsters Rest in Peace corpse chime without removing its animation. Reign of the Warlock content is otherwise excluded, and the 15 grimoire codes are inert in a Lord of Destruction game. Drops and mechanics are unchanged.",
   "author": "voc0der",
   "website": "https://github.com/voc0der/d2r-loot-filter-intense",
-  "version": "0.7.1",
+  "version": "0.7.2",
   "config": [
     {
       "type": "section",
@@ -38,6 +38,13 @@
           "id": "hideThrowing",
           "name": "Hide Throwing Potions",
           "description": "Hide all gas and oil throwing potions.",
+          "defaultValue": false
+        },
+        {
+          "type": "checkbox",
+          "id": "filterCommonItems",
+          "name": "Filter Common Items",
+          "description": "Hide Scrolls of Town Portal, Scrolls of Identify, and Keys. Tomes of Town Portal and Identify stay visible. Only the name label changes: keys you carry still open chests and vendors still sell scrolls, but these items show the selected dot wherever their name appears.",
           "defaultValue": false
         },
         {
@@ -79,8 +86,37 @@
           "type": "checkbox",
           "id": "gemCrunch",
           "name": "Gem Crunch",
-          "description": "Rename every gem to a compact colored tier label: 1 = Chipped, 2 = Flawed, 3 = regular, 4 = Flawless, P = Perfect (for example, 1Topaz and PTopaz). Recognizes standard gem-type colors in multi-color labels from an earlier filter; otherwise preserves its first inline color. See the README for the shared-affix caveat.",
+          "description": "Rename every gem to a compact colored tier label: 1 = Chipped, 2 = Flawed, 3 = regular, 4 = Flawless, P = Perfect (for example, 1Topaz and PTopaz). Recognizes standard gem-type colors in multi-color labels from an earlier filter; otherwise preserves its first inline color. Combine with Filter Gem Quality to hide the low tiers.",
           "defaultValue": false
+        }
+      ]
+    },
+    {
+      "type": "section",
+      "id": "gems",
+      "name": "Gems",
+      "defaultExpanded": true,
+      "children": [
+        {
+          "type": "select",
+          "id": "gemQuality",
+          "name": "Filter Gem Quality",
+          "description": "Hide every gem below the chosen quality, across all seven gem types including Skulls. 3+ hides the 14 Chipped and Flawed gems; 4+ also hides the 7 regular gems, leaving only Flawless and Perfect. Works with or without Gem Crunch: hidden gems become the selected dot, and Gem Crunch renames only the gems that stay visible. Matches gems by item code, so labels renamed by an earlier filter are still caught.",
+          "defaultValue": "all",
+          "options": [
+            {
+              "label": "Show all gems",
+              "value": "all"
+            },
+            {
+              "label": "3+ (hide Chipped and Flawed)",
+              "value": "3+"
+            },
+            {
+              "label": "4+ (hide Chipped, Flawed and regular)",
+              "value": "4+"
+            }
+          ]
         }
       ]
     },

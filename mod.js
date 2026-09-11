@@ -3,9 +3,10 @@
  *
  * Hides trash drops with a tiny-dot label, can additionally hide good-but-common
  * runeword shells that endgame characters no longer stop for and the two-handed
- * bases that only sell shieldless builds Hardcore cannot justify, optionally
- * crunches gem names into compact tier labels, can shorten Gold pile labels,
- * and can mute the repeated
+ * bases that only sell shieldless builds Hardcore cannot justify, can hide
+ * Town Portal/Identify scrolls, Keys, and every gem below a chosen quality tier,
+ * optionally crunches gem names into compact tier labels, can shorten Gold pile
+ * labels, and can mute the repeated
  * Slain Monsters Rest in Peace sound. Runs after any base loot filter in D2RMM
  * load order: D2RMM reads earlier output, so this mod's changes win. Targets
  * D2R's Lord of Destruction ruleset, with one deliberate exception: Hide
@@ -65,6 +66,12 @@ const THROWING_KEYS = [
   'opl', // Oil Potion
   'opm', // Exploding Potion
   'ops', // Fulminating Potion
+];
+
+const COMMON_ITEM_KEYS = [
+  'tsc', // Scroll of Town Portal — 'tbk' (Tome of Town Portal) stays visible
+  'isc', // Scroll of Identify — 'ibk' (Tome of Identify) stays visible
+  'key', // Key
 ];
 
 // Aggressively filtered, high-volume endgame equipment bases. Signal-to-noise
@@ -574,6 +581,18 @@ const GEM_CRUNCH = [
   { gem: 'Skull', color: 'ÿc5', codes: ['skc', 'skf', 'sku', 'skl', 'skz'] },
 ];
 
+// Filter Gem Quality: the GEM_CRUNCH tier index of the lowest gem quality that
+// stays visible, named after its Gem Crunch label. Every lower tier of all
+// seven gem types is hidden: 3+ hides Chipped and Flawed, 4+ also hides regular.
+// Matching is by string key, never by label text, so it works the same whether
+// Gem Crunch or an earlier filter has already renamed a gem. The four regular
+// Diamond/Emerald/Ruby/Sapphire gems live in item-nameaffixes.json under their
+// own gem keys; the same-named magic prefixes use separate keys and are untouched.
+const GEM_QUALITY_MIN_TIERS = {
+  '3+': 2,
+  '4+': 3,
+};
+
 function crunchGemLabel(current, gem) {
   const currentString = typeof current === 'string' ? current : '';
   // Some localizations begin with a grammatical-gender token. D2R ignores a
@@ -762,11 +781,22 @@ function muteRestInPeaceSound() {
   return changed;
 }
 
+const gemQualityMinTier = Object.prototype.hasOwnProperty.call(GEM_QUALITY_MIN_TIERS, config.gemQuality)
+  ? GEM_QUALITY_MIN_TIERS[config.gemQuality]
+  : 0;
+const lowQualityGemKeys = [];
+GEM_CRUNCH.forEach((gemEntry) => {
+  gemEntry.codes.slice(0, gemQualityMinTier).forEach((code) => {
+    lowQualityGemKeys.push(code);
+  });
+});
+
 const hideGroups = [
   { name: '100% Rejuv Only', enabled: config.rejuvOnly, keys: REJUV_ONLY_KEYS },
   { name: 'Hide Ammo', enabled: config.hideAmmo, keys: AMMO_KEYS },
   { name: 'Hide Large Charms', enabled: config.hideLargeCharms, keys: LARGE_CHARM_KEYS },
   { name: 'Hide Throwing Potions', enabled: config.hideThrowing, keys: THROWING_KEYS },
+  { name: 'Filter Common Items', enabled: config.filterCommonItems, keys: COMMON_ITEM_KEYS },
   { name: 'Hide Unpopular Bases', enabled: config.hideUnpopularBases, keys: UNPOPULAR_BASE_KEYS },
   { name: 'Hide Good but Common', enabled: config.hideGoodButCommon, keys: GOOD_BUT_COMMON_KEYS },
   {
@@ -774,6 +804,7 @@ const hideGroups = [
     enabled: config.hideDangerousTwoHanded,
     keys: DANGEROUS_TWO_HANDED_KEYS,
   },
+  { name: 'Filter Gem Quality', enabled: lowQualityGemKeys.length > 0, keys: lowQualityGemKeys },
 ].filter((group) => group.enabled);
 
 const gemCrunchEnabled = config.gemCrunch === true;
@@ -806,11 +837,22 @@ if (
     });
   });
 
+  // Only gem hides apply to item-nameaffixes.json: every other hide group names
+  // item-names.json keys, and that file also holds unrelated affix strings.
+  const affixKeysToHide = {};
+  lowQualityGemKeys.forEach((key) => {
+    affixKeysToHide[key] = true;
+  });
+
   const gemRenames = {};
   const gemKeys = [];
   if (gemCrunchEnabled) {
     GEM_CRUNCH.forEach((gemEntry) => {
       gemEntry.codes.forEach((code, tier) => {
+        // Filter Gem Quality hides this tier, so Gem Crunch has nothing to rename.
+        if (tier < gemQualityMinTier) {
+          return;
+        }
         gemRenames[code] = { label: GEM_TIER_LABELS[tier] + gemEntry.gem, color: gemEntry.color };
         gemKeys.push(code);
       });
@@ -843,17 +885,19 @@ if (
   }
   if (
     gemCrunchEnabled
+    || lowQualityGemKeys.length > 0
     || blackLabelsToDotsEnabled
     || redSuperiorItemsEnabled
     || goldLabel !== null
   ) {
     // Regular Diamond/Emerald/Ruby/Sapphire are stored here instead of in
-    // item-names.json. Processing the full rename map keeps this resilient if
-    // Blizzard moves any other gem strings between the two files. This is also
-    // where the upstream filter writes its black inferior-quality prefixes.
+    // item-names.json. Processing the full gem hide and rename maps keeps this
+    // resilient if Blizzard moves any other gem strings between the two files.
+    // This is also where the upstream filter writes its black inferior-quality
+    // prefixes.
     updateStringFile(
       ITEM_NAME_AFFIXES_PATH,
-      {},
+      affixKeysToHide,
       stringOverrides,
       gemRenames,
       goldLabel,

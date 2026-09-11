@@ -97,11 +97,13 @@ function runMod(configOverrides = {}, inputFiles = {}) {
     AMMO_KEYS,
     LARGE_CHARM_KEYS,
     THROWING_KEYS,
+    COMMON_ITEM_KEYS,
     UNPOPULAR_BASE_KEYS,
     GOOD_BUT_COMMON_KEYS,
     DANGEROUS_TWO_HANDED_KEYS,
     GEM_TIER_LABELS,
     GEM_CRUNCH,
+    GEM_QUALITY_MIN_TIERS,
   })`, context));
 
   return {

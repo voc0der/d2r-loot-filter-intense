@@ -33,6 +33,21 @@ function terminalInlineColor(value) {
   return matches === null ? null : matches[matches.length - 1];
 }
 
+// D2R keeps the regular Diamond/Emerald/Ruby/Sapphire gem strings in
+// item-nameaffixes.json and the other 31 gem strings in item-names.json.
+const AFFIX_GEM_KEYS = new Set(['gsw', 'gsg', 'gsr', 'gsb']);
+
+function gemStringFiles(gemCrunch, labelFor) {
+  const files = { [ITEM_NAMES_PATH]: [], [ITEM_NAME_AFFIXES_PATH]: [] };
+  gemCrunch.forEach((gem) => {
+    gem.codes.forEach((code) => {
+      const filePath = AFFIX_GEM_KEYS.has(code) ? ITEM_NAME_AFFIXES_PATH : ITEM_NAMES_PATH;
+      files[filePath].push(localeEntry(code, labelFor(code)));
+    });
+  });
+  return files;
+}
+
 test('all options off performs no file reads or writes', () => {
   const result = runMod();
   assert.deepEqual(result.reads, []);
@@ -173,11 +188,12 @@ test('each simple hide group changes exactly its configured keys', async (t) => 
     ['hideAmmo', constants.AMMO_KEYS],
     ['hideLargeCharms', constants.LARGE_CHARM_KEYS],
     ['hideThrowing', constants.THROWING_KEYS],
+    ['filterCommonItems', constants.COMMON_ITEM_KEYS],
   ];
 
   for (const [configId, keys] of specs) {
     await t.test(configId, () => {
-      const sentinels = ['rvl', 'cm1', 'cm3', 'sentinel'];
+      const sentinels = ['rvl', 'cm1', 'cm3', 'tbk', 'ibk', 'sentinel'];
       const entries = [...new Set([...keys, ...sentinels])]
         .map((key) => localeEntry(key, `Original ${key}`));
       const result = runMod(
@@ -198,6 +214,38 @@ test('each simple hide group changes exactly its configured keys', async (t) => 
   }
 });
 
+test('Filter Common Items hides only the two scrolls and Keys, replacing an earlier filter label', () => {
+  const result = runMod(
+    { filterCommonItems: true, hideStyle: 'ÿc6.' },
+    {
+      [ITEM_NAMES_PATH]: [
+        localeEntry('tsc', 'ÿc3•ÿc0Portal'),
+        localeEntry('isc', 'ÿc1•ÿc0Identify'),
+        localeEntry('key', 'Key'),
+        localeEntry('tbk', 'Tome of Town Portal'),
+        localeEntry('ibk', 'Tome of Identify'),
+        localeEntry('pk1', 'Key of Terror'),
+      ],
+    },
+  );
+  const output = result.files[ITEM_NAMES_PATH];
+
+  ['tsc', 'isc', 'key'].forEach((key) => {
+    const entry = entryByKey(output, key);
+    assert.equal(entry.enUS, 'ÿc6.');
+    assert.equal(entry.deDE, 'ÿc6.');
+    assert.equal(entry.frFR, 'ÿc6.');
+  });
+  // Tomes and the Uber keys are different item codes and keep their names.
+  assert.equal(entryByKey(output, 'tbk').enUS, 'Tome of Town Portal');
+  assert.equal(entryByKey(output, 'ibk').enUS, 'Tome of Identify');
+  assert.equal(entryByKey(output, 'pk1').enUS, 'Key of Terror');
+  assert.deepEqual(result.reads, [ITEM_NAMES_PATH]);
+  assert.deepEqual(result.writes, [ITEM_NAMES_PATH]);
+  assert.deepEqual(result.warnings, []);
+  assert.ok(result.logs.includes('Filter Common Items: hid 3 of 3 item names.'));
+});
+
 test('combined hide groups still read and write item names only once', () => {
   const constants = runMod().constants;
   const keys = [
@@ -205,6 +253,7 @@ test('combined hide groups still read and write item names only once', () => {
     ...constants.AMMO_KEYS,
     ...constants.LARGE_CHARM_KEYS,
     ...constants.THROWING_KEYS,
+    ...constants.COMMON_ITEM_KEYS,
     ...hiddenKeys,
   ];
   const result = runMod(
@@ -213,6 +262,7 @@ test('combined hide groups still read and write item names only once', () => {
       hideAmmo: true,
       hideLargeCharms: true,
       hideThrowing: true,
+      filterCommonItems: true,
       hideUnpopularBases: true,
     },
     { [ITEM_NAMES_PATH]: keys.map((key) => localeEntry(key, key)) },
@@ -531,22 +581,9 @@ test('explicit base hiding wins over inherited black and supports the black dot'
 
 test('Gem Crunch renames all 35 gems and preserves the reported colors', () => {
   const constants = runMod().constants;
-  const affixGemKeys = new Set(['gsw', 'gsg', 'gsr', 'gsb']);
-  const itemEntries = [];
-  const affixEntries = [];
-
-  constants.GEM_CRUNCH.forEach((gem) => {
-    gem.codes.forEach((code) => {
-      const target = affixGemKeys.has(code) ? affixEntries : itemEntries;
-      target.push(localeEntry(code, `Vanilla ${code}`));
-    });
-  });
   const result = runMod(
     { gemCrunch: true },
-    {
-      [ITEM_NAMES_PATH]: itemEntries,
-      [ITEM_NAME_AFFIXES_PATH]: affixEntries,
-    },
+    gemStringFiles(constants.GEM_CRUNCH, (code) => `Vanilla ${code}`),
   );
   const allOutput = [
     ...result.files[ITEM_NAMES_PATH],
@@ -554,11 +591,89 @@ test('Gem Crunch renames all 35 gems and preserves the reported colors', () => {
   ];
 
   assert.equal(allOutput.length, 35);
+  assert.equal(result.files[ITEM_NAME_AFFIXES_PATH].length, 4);
   assert.equal(entryByKey(allOutput, 'gfg').enUS, 'ÿc22Emerald');
   assert.equal(entryByKey(allOutput, 'glb').enUS, 'ÿc34Sapphire');
   assert.equal(entryByKey(allOutput, 'gpy').enUS, 'ÿc9PTopaz');
   assert.equal(entryByKey(allOutput, 'skc').enUS, 'ÿc51Skull');
   assert.ok(result.logs.includes('Gem Crunch: renamed 35 of 35 item names.'));
+});
+
+test('Filter Gem Quality hides every gem below 3+ or 4+ across both string files', () => {
+  const constants = runMod().constants;
+  [['3+', 14], ['4+', 21]].forEach(([gemQuality, hiddenCount]) => {
+    const minTier = constants.GEM_QUALITY_MIN_TIERS[gemQuality];
+    const result = runMod(
+      { gemQuality },
+      gemStringFiles(constants.GEM_CRUNCH, (code) => `Vanilla ${code}`),
+    );
+    const allOutput = [
+      ...result.files[ITEM_NAMES_PATH],
+      ...result.files[ITEM_NAME_AFFIXES_PATH],
+    ];
+
+    constants.GEM_CRUNCH.forEach((gem) => {
+      gem.codes.forEach((code, tier) => {
+        const entry = entryByKey(allOutput, code);
+        const hidden = tier < minTier;
+        assert.equal(entry.enUS, hidden ? 'ÿc5.' : `Vanilla ${code}`, `${gemQuality} ${code}`);
+        assert.equal(entry.deDE, hidden ? 'ÿc5.' : `DE:Vanilla ${code}`, `${gemQuality} ${code}`);
+        assert.equal(entry.frFR, hidden ? 'ÿc5.' : `FR:Vanilla ${code}`, `${gemQuality} ${code}`);
+      });
+    });
+    assert.equal(allOutput.filter((entry) => entry.enUS === 'ÿc5.').length, hiddenCount);
+    assert.deepEqual(result.reads, [ITEM_NAMES_PATH, ITEM_NAME_AFFIXES_PATH]);
+    assert.deepEqual(result.writes, [ITEM_NAMES_PATH, ITEM_NAME_AFFIXES_PATH]);
+    assert.deepEqual(result.warnings, []);
+    assert.ok(result.logs.includes(`Filter Gem Quality: hid ${hiddenCount} of ${hiddenCount} item names.`));
+    assert.ok(result.logs.includes(`Done: ${hiddenCount} change(s) made in total.`));
+  });
+});
+
+test('Filter Gem Quality wins over Gem Crunch, which renames only the visible gems', () => {
+  const constants = runMod().constants;
+  const files = gemStringFiles(constants.GEM_CRUNCH, (code) => `Vanilla ${code}`);
+  // An earlier filter's multi-color label is still matched by its key.
+  entryByKey(files[ITEM_NAMES_PATH], 'gcv').enUS = 'ÿc0Chip ÿc;Amethyst';
+  // The magic prefix shares the regular gem's text but has its own key.
+  files[ITEM_NAME_AFFIXES_PATH].push(localeEntry('Ruby', 'Ruby'));
+
+  const flawlessUp = runMod({ gemCrunch: true, gemQuality: '4+' }, files);
+  const flawlessAffixes = flawlessUp.files[ITEM_NAME_AFFIXES_PATH];
+  const flawlessOutput = [...flawlessUp.files[ITEM_NAMES_PATH], ...flawlessAffixes];
+  assert.equal(entryByKey(flawlessOutput, 'gcv').enUS, 'ÿc5.');
+  assert.equal(entryByKey(flawlessOutput, 'gfg').deDE, 'ÿc5.');
+  assert.equal(entryByKey(flawlessOutput, 'gsr').enUS, 'ÿc5.');
+  assert.equal(entryByKey(flawlessOutput, 'sku').enUS, 'ÿc5.');
+  assert.equal(entryByKey(flawlessOutput, 'glb').enUS, 'ÿc34Sapphire');
+  assert.equal(entryByKey(flawlessOutput, 'skl').enUS, 'ÿc54Skull');
+  assert.equal(entryByKey(flawlessOutput, 'gpy').enUS, 'ÿc9PTopaz');
+  assert.deepEqual(entryByKey(flawlessAffixes, 'Ruby'), localeEntry('Ruby', 'Ruby'));
+  assert.deepEqual(flawlessUp.warnings, []);
+  assert.ok(flawlessUp.logs.includes('Filter Gem Quality: hid 21 of 21 item names.'));
+  assert.ok(flawlessUp.logs.includes('Gem Crunch: renamed 14 of 14 item names.'));
+  assert.ok(flawlessUp.logs.includes('Done: 35 change(s) made in total.'));
+
+  const regularUp = runMod({ gemCrunch: true, gemQuality: '3+' }, files);
+  const regularAffixes = regularUp.files[ITEM_NAME_AFFIXES_PATH];
+  const regularOutput = [...regularUp.files[ITEM_NAMES_PATH], ...regularAffixes];
+  assert.equal(entryByKey(regularOutput, 'gcv').enUS, 'ÿc5.');
+  assert.equal(entryByKey(regularOutput, 'skf').enUS, 'ÿc5.');
+  assert.equal(entryByKey(regularOutput, 'gsr').enUS, 'ÿc13Ruby');
+  assert.equal(entryByKey(regularOutput, 'sku').enUS, 'ÿc53Skull');
+  assert.deepEqual(entryByKey(regularAffixes, 'Ruby'), localeEntry('Ruby', 'Ruby'));
+  assert.ok(regularUp.logs.includes('Filter Gem Quality: hid 14 of 14 item names.'));
+  assert.ok(regularUp.logs.includes('Gem Crunch: renamed 21 of 21 item names.'));
+  assert.ok(regularUp.logs.includes('Done: 35 change(s) made in total.'));
+});
+
+test('a missing or unknown gem quality leaves every gem visible', () => {
+  [undefined, 'all', '5+', 'toString'].forEach((gemQuality) => {
+    const result = runMod({ gemQuality });
+    assert.deepEqual(result.reads, []);
+    assert.deepEqual(result.writes, []);
+    assert.deepEqual(result.logs, ['No options enabled — nothing to do.']);
+  });
 });
 
 test('compact Gold changes only the runtime amount suffix', () => {

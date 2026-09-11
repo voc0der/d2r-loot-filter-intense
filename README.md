@@ -1,6 +1,6 @@
 # D2R Loot Filter — Intense
 
-A tiny [D2RMM](https://www.nexusmods.com/diablo2resurrected/mods/169) mod for Diablo II: Resurrected's **Lord of Destruction ruleset** with options to hide trash drops behind a barely-visible dot, mark superior bases in red, crunch gem names into compact tier labels, shorten Gold pile labels, and mute the repetitive Slain Monsters Rest in Peace kill sound.
+A tiny [D2RMM](https://www.nexusmods.com/diablo2resurrected/mods/169) mod for Diablo II: Resurrected's **Lord of Destruction ruleset** with options to hide trash drops behind a barely-visible dot, mark superior bases in red, hide gems below a chosen quality, crunch gem names into compact tier labels, shorten Gold pile labels, and mute the repetitive Slain Monsters Rest in Peace kill sound.
 
 > **Ruleset:** This mod targets Lord of Destruction content, with one deliberate exception: **Hide Unpopular Bases** also covers the 15 Reign of the Warlock grimoire bases, whose codes are inert in a Lord of Destruction game. Every other Reign of the Warlock item, runeword, class and mechanic is still excluded from its filtering decisions.
 
@@ -18,12 +18,14 @@ All optional features are **off by default** — turn on the ones you want in D2
 | **Hide Ammo** | Arrows and Bolts. |
 | **Hide Large Charms** | The Large Charm base label. **This includes unidentified Hellfire Torch drops; read the warning below.** Small and Grand Charms stay visible. |
 | **Hide Throwing Potions** | Rancid/Choking/Strangling Gas Potions and Oil/Exploding/Fulminating Potions. |
+| **Filter Common Items** | Scrolls of Town Portal, Scrolls of Identify, and Keys. Tomes of Town Portal and Identify stay visible. Only the name changes, so these items show the selected dot wherever their name appears, including a key stack you carry — the keys still open chests and vendors still sell scrolls. |
 | **Hide Unpopular Bases** | 336 aggressively filtered endgame bases — 321 LoD ones plus all 15 Reign of the Warlock grimoires: most normal/exceptional generic weapons, high-volume low-tier armor, weak shields, lower Paladin shields, selected weak elite alternatives (six elite bows, two elite spears and the whole Amazon spear line), and the normal/exceptional class-item bases (Amazon weapons, Assassin claws, Barbarian helms, Druid pelts, Necromancer heads, Sorceress orbs, scepters, wands and staves) below their audited keeps. Every glove and boot stays visible for potentially valuable rare rolls; belt filtering is unchanged. Important utility, mercenary, Tal Rasha, rare-set and runeword bases stay visible. **Read the warning below before enabling.** |
 | **Hide Good but Common** | A stricter second pass over 13 bases that **Hide Unpopular Bases deliberately keeps**: the cheap runeword shells (Double Axe, Flail, Crystal Sword, Broad Sword, Short Bow, Breast Plate, Mage Plate) and the leveling-tier unique bases (Dagger, Tulwar, Battle Sword, Short Siege Bow, Ballista, Chu-Ko-Nu). They are genuinely good, just so common that an endgame character already banked every roll worth owning. The four circlets stay visible. |
 | **Hide Dangerous 2H Bases** | The 21 two-handed bases that only exist to sell a shieldless build Hardcore cannot justify: all 15 spawnable **staves** and all 6 **Amazon spears and pikes**. Bows, crossbows, mercenary polearms and spears, and every Barbarian two-hander stay visible. Self-contained, so it works with the two options above off. **Read the section below before enabling.** |
 | **Red Superior Items** | Removes the shared `Superior`/`Sup` word and makes the base name red instead. Socketed and ethereal superior bases are red; a hidden base remains only the selected gray or black dot. |
 | **Black Labels to Dots** | Converts direct labels whose final active inline color is D2's `#000`/black code (`ÿc6`) into the selected tiny dot. Composed inferior-quality labels have an engine limitation explained below. This mod must load later. |
 | **Gem Crunch** | All 35 gems get compact, colored tier labels: `1Topaz`, `2Topaz`, `3Topaz`, `4Topaz`, `PTopaz`. Standard gem-type colors from an earlier filter are recognized inside multi-color labels. |
+| **Filter Gem Quality** | A dropdown that hides every gem below the chosen quality: **3+** hides the 14 Chipped and Flawed gems, **4+** also hides the 7 regular gems. Works with or without Gem Crunch; see below. |
 | **Compact Gold Label** | Replaces the word after a ground-pile amount with `$`, neutral `G`, or nothing: `1234 $`, `1234 G`, or `1234`. |
 | **Mute Rest in Peace Sound** | Silences the per-kill Slain Monsters Rest in Peace (SMRIP) chime from Nature's Peace, Tyrael's Might, and Lawbringer. The visual effect and corpse-suppression mechanic remain unchanged. It also silences Paladin Redemption's shared per-corpse soul chime, while preserving the separate aura sound and mechanics. |
 
@@ -62,7 +64,23 @@ Gem Crunch replaces the quality word with a one-character tier while keeping the
 
 The same scheme applies to Amethyst, Diamond, Emerald, Ruby, Sapphire, Topaz and Skull. When an earlier D2RMM filter uses separate colors for the quality word and gem name, Gem Crunch recognizes and keeps the standard gem-type color; otherwise it preserves the first existing inline color or uses purple/white/green/red/blue/yellow/gray by gem type. The compact English labels are written to every locale.
 
-**Shared-affix caveat:** D2R stores the regular Diamond, Emerald, Ruby and Sapphire strings in `item-nameaffixes.json`, where those four keys can also be reused in generated magic-item names. Renaming all 35 gems therefore can also change that shared word — for example, `Ruby Jewel of Fervor` may display as `3Ruby Jewel of Fervor`. There is no separate gem-only display string for those four regular gems.
+**Regular Diamond, Emerald, Ruby and Sapphire:** D2R stores those four gem strings in `item-nameaffixes.json` rather than `item-names.json`, so Gem Crunch writes both files. They use gem-only keys (`gsw`, `gsg`, `gsr`, `gsb`). The magic prefixes with the same names have their own separate `Diamond`, `Emerald`, `Ruby` and `Sapphire` keys, so magic item names keep their normal prefix.
+
+## Filter Gem Quality
+
+Hides every gem below the quality you pick, across all seven gem types: Amethyst, Diamond, Emerald, Ruby, Sapphire, Topaz and Skull. The settings are named after Gem Crunch's labels, so **4+** means "keep `4Topaz` and `PTopaz`":
+
+| Setting | Hidden | Still visible |
+| --- | --- | --- |
+| **Show all gems** (default) | nothing | every gem |
+| **3+** | Chipped and Flawed — 14 gems | regular, Flawless, Perfect |
+| **4+** | Chipped, Flawed and regular — 21 gems | Flawless, Perfect |
+
+It works with or without **Gem Crunch**. Gems are matched by item code, never by label text, so a gem already renamed by Gem Crunch or by an earlier filter (for example `Chip Amethyst`) is still caught. When both options are on, hiding wins: a hidden gem becomes the selected dot and Gem Crunch renames only the gems that stay visible. At **4+** the install log therefore reads `Filter Gem Quality: hid 21 of 21 item names.` and `Gem Crunch: renamed 14 of 14 item names.`
+
+**4+** also writes `item-nameaffixes.json`, because that is where the four regular Diamond, Emerald, Ruby and Sapphire gems live. As described above, those are gem-only keys, so magic items with a Diamond, Emerald, Ruby or Sapphire prefix are not affected.
+
+The option sits in its own **Gems** section of the config panel rather than under **Filters**: D2RMM only shows a section's **Enable All** toggle when every option in it is a checkbox, and a dropdown there would remove it.
 
 ## Compact Gold Label
 
@@ -185,8 +203,8 @@ _Before/after screenshots coming soon._
 ## Troubleshooting — "items are still labeled the old way"
 
 1. **Re-install after every config change.** Toggling checkboxes does nothing until you click **Install Mods** again.
-2. **Read D2RMM's install log.** This mod prints one line per enabled option, e.g. `Hide Ammo: hid 2 of 2 item names.`, `Red Superior Items: recolored 2 of 2 strings.`, `Black Labels to Dots: replaced 4 black string entries.`, `Gem Crunch: renamed 35 of 35 item names.`, `Compact Gold Label: renamed 1 of 1 item names.`, or `Mute Rest in Peace Sound: muted 2 of 2 state sound references.` A warning means an expected key or state wasn't found in the current game data.
-3. **Check the output actually contains the change.** Open `mods\D2RMM\D2RMM.mpq\data\local\lng\strings\item-names.json` and search for `"aqv"` (hidden ammo) or `"gcy"` (Chipped Topaz). Hidden ammo should be a tiny `ÿc5.` dot and Chipped Topaz should end in `1Topaz`. The four regular Diamond/Emerald/Ruby/Sapphire entries, Gold's `"gld"` suffix, and the red `"Hiquality"` fragment are in `item-nameaffixes.json`; the matching `"HiqualityFormat"` is in `ui.json`. For the sound option, open the LoD table at `data\global\excel\base\states.txt`: both the `restinpeace` and `redeemed` rows' `onsound` fields should be empty, while their `missile`/`skill` fields remain unchanged. The similarly named file without `base` is the Reign of the Warlock table and does not control LoD characters. If the output is correct but the game still shows the old label or sound, the game isn't loading D2RMM's output (next two points).
+2. **Read D2RMM's install log.** This mod prints one line per enabled option, e.g. `Hide Ammo: hid 2 of 2 item names.`, `Filter Common Items: hid 3 of 3 item names.`, `Filter Gem Quality: hid 14 of 14 item names.`, `Red Superior Items: recolored 2 of 2 strings.`, `Black Labels to Dots: replaced 4 black string entries.`, `Gem Crunch: renamed 35 of 35 item names.`, `Compact Gold Label: renamed 1 of 1 item names.`, or `Mute Rest in Peace Sound: muted 2 of 2 state sound references.` A warning means an expected key or state wasn't found in the current game data.
+3. **Check the output actually contains the change.** Open `mods\D2RMM\D2RMM.mpq\data\local\lng\strings\item-names.json` and search for `"aqv"` (hidden ammo) or `"gcy"` (Chipped Topaz). Hidden ammo should be a tiny `ÿc5.` dot and Chipped Topaz should end in `1Topaz` (or be the dot when **Filter Gem Quality** is set to 3+ or 4+). The four regular Diamond/Emerald/Ruby/Sapphire entries, Gold's `"gld"` suffix, and the red `"Hiquality"` fragment are in `item-nameaffixes.json`; the matching `"HiqualityFormat"` is in `ui.json`. For the sound option, open the LoD table at `data\global\excel\base\states.txt`: both the `restinpeace` and `redeemed` rows' `onsound` fields should be empty, while their `missile`/`skill` fields remain unchanged. The similarly named file without `base` is the Reign of the Warlock table and does not control LoD characters. If the output is correct but the game still shows the old label or sound, the game isn't loading D2RMM's output (next two points).
 4. **Launch with `-mod D2RMM -txt`** — use D2RMM's own Launch Game button to be sure. Launching through Battle.net loads vanilla data.
 5. **Don't combine with MPQ-based filters** (like ChrisTitusTech's) — only one `-mod` loads at a time; whichever argument you launch with wins and the other filter is ignored entirely.
 6. **Order matters within D2RMM**: if another enabled mod rewrites the same item strings or state data and sits *after* this one, its changes win. Put this mod last.
@@ -197,4 +215,4 @@ The loot-filter features only change **display strings** (`item-names.json`, `it
 
 ## Extending
 
-The item-code lists live at the top of [mod.js](mod.js) as plain arrays (`REJUV_ONLY_KEYS`, `AMMO_KEYS`, `LARGE_CHARM_KEYS`, `THROWING_KEYS`, `UNPOPULAR_BASE_KEYS`), the gem mapping lives in `GEM_CRUNCH`, and the Gold suffix choices live in `GOLD_LABELS`. Add any item code from the relevant string file's `Key` field to extend a group. Codes that don't exist in the current game data are skipped with a warning in D2RMM's log — a missing key never fails the install.
+The item-code lists live at the top of [mod.js](mod.js) as plain arrays (`REJUV_ONLY_KEYS`, `AMMO_KEYS`, `LARGE_CHARM_KEYS`, `THROWING_KEYS`, `COMMON_ITEM_KEYS`, `UNPOPULAR_BASE_KEYS`), the gem mapping lives in `GEM_CRUNCH`, the gem quality cutoffs live in `GEM_QUALITY_MIN_TIERS`, and the Gold suffix choices live in `GOLD_LABELS`. Add any item code from the relevant string file's `Key` field to extend a group. Codes that don't exist in the current game data are skipped with a warning in D2RMM's log — a missing key never fails the install.
